@@ -99,3 +99,4 @@ class Course(models.Model):
     # category_id = models.CharField(max_length=100)
     # description_id = models.TextField()
     # syllabus_id = models.TextField()
+

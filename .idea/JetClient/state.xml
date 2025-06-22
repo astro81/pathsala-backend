@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JetClientState">
+    <option name="folders">
+      <list>
+        <folderState>
+          <option name="environmentGroups">
+            <list>
+              <environmentGroupState>
+                <option name="name" value="Default" />
+              </environmentGroupState>
+            </list>
+          </option>
+          <option name="folders">
+            <list>
+              <folderState>
+                <option name="id" value="f08e4cb4-c3e2-400a-a588-263a90e9f78c" />
+                <option name="name" value="user" />
+                <option name="requests">
+                  <list>
+                    <requestState>
+                      <option name="id" value="51e7bd75-2481-46b6-b714-9bc172a4b51e" />
+                      <option name="method" value="POST" />
+                      <option name="name" value="register" />
+                      <option name="sortWeight" value="1000000" />
+                    </requestState>
+                  </list>
+                </option>
+                <option name="sortWeight" value="1000000" />
+              </folderState>
+            </list>
+          </option>
+          <option name="id" value="955b3e74-61d3-44d9-8c42-624b89c419d6" />
+          <option name="name" value="patshala" />
+          <option name="selectedEnvironmentIds">
+            <map>
+              <entry key="default" />
+            </map>
+          </option>
+          <option name="syncProperties">
+            <synchronizationPropertiesState>
+              <option name="autoSync" value="true" />
+              <option name="folderPath" value="$PROJECT_DIR$/.jetclient" />
+            </synchronizationPropertiesState>
+          </option>
+        </folderState>
+      </list>
+    </option>
+    <option name="id" value="a25c1f05-52e5-4c03-a223-f3ea6d6947be" />
+    <option name="version" value="6" />
+  </component>
+</project>
