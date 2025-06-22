@@ -19,3 +19,4 @@ class HasCoursePermission(BasePermission):
 class IsAdmin(BasePermission):
     def has_permission(self, request, view):
         return has_role(request.user, 'admin')
+

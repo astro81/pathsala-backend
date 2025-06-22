@@ -19,10 +19,132 @@
                 <option name="requests">
                   <list>
                     <requestState>
+                      <option name="body">
+                        <bodyState>
+                          <option name="raw" value="{&#10;  &quot;username&quot;: &quot;john_doe&quot;,&#10;  &quot;email&quot;: &quot;john@example.com&quot;,&#10;  &quot;password&quot;: &quot;securePass123&quot;,&#10;  &quot;password2&quot;: &quot;securePass123&quot;,&#10;  &quot;first_name&quot;: &quot;John&quot;,&#10;  &quot;last_name&quot;: &quot;Doe&quot;,&#10;  &quot;address&quot;: &quot;123 Street, City&quot;,&#10;  &quot;phone_no&quot;: &quot;+997-981234567&quot;&#10;}&#10;" />
+                          <option name="type" value="JSON" />
+                        </bodyState>
+                      </option>
                       <option name="id" value="51e7bd75-2481-46b6-b714-9bc172a4b51e" />
                       <option name="method" value="POST" />
                       <option name="name" value="register" />
                       <option name="sortWeight" value="1000000" />
+                      <option name="url" value="http://localhost:8000/api/auth/register/" />
+                    </requestState>
+                    <requestState>
+                      <option name="body">
+                        <bodyState>
+                          <option name="raw" value="{&#10;  &quot;username&quot;: &quot;admin&quot;,&#10;  &quot;password&quot;: &quot;root&quot;&#10;}&#10;" />
+                          <option name="type" value="JSON" />
+                        </bodyState>
+                      </option>
+                      <option name="id" value="2f231e11-bbee-425d-956c-ae180ceb2f77" />
+                      <option name="method" value="POST" />
+                      <option name="name" value="login" />
+                      <option name="sortWeight" value="2000000" />
+                      <option name="url" value="http://localhost:8000/api/auth/login/" />
+                    </requestState>
+                    <requestState>
+                      <option name="body">
+                        <bodyState>
+                          <option name="type" value="JSON" />
+                        </bodyState>
+                      </option>
+                      <option name="headers">
+                        <list>
+                          <headerState>
+                            <option name="key" value="Authorization" />
+                            <option name="value" value="Token 44435ed10d6fa74fc4d1c688bdad2475c75256e8" />
+                          </headerState>
+                        </list>
+                      </option>
+                      <option name="id" value="065f1ddf-9a61-4abb-87d6-c04f55134250" />
+                      <option name="method" value="POST" />
+                      <option name="name" value="logout" />
+                      <option name="sortWeight" value="3000000" />
+                      <option name="url" value="http://localhost:8000/api/auth/logout/" />
+                    </requestState>
+                    <requestState>
+                      <option name="body">
+                        <bodyState>
+                          <option name="type" value="JSON" />
+                        </bodyState>
+                      </option>
+                      <option name="headers">
+                        <list>
+                          <headerState>
+                            <option name="key" value="Authorization" />
+                            <option name="value" value="Token 44435ed10d6fa74fc4d1c688bdad2475c75256e8" />
+                          </headerState>
+                        </list>
+                      </option>
+                      <option name="id" value="d1ba7ba8-1bdb-431b-a1e4-d7b12b6f7b70" />
+                      <option name="method" value="GET" />
+                      <option name="name" value="view self profile" />
+                      <option name="sortWeight" value="4000000" />
+                      <option name="url" value="http://localhost:8000/api/auth/user/profile/" />
+                    </requestState>
+                    <requestState>
+                      <option name="body">
+                        <bodyState>
+                          <option name="raw" value="{&#10;  &quot;first_name&quot;: &quot;Johnathan&quot;,&#10;  &quot;last_name&quot;: &quot;Doe&quot;,&#10;  &quot;email&quot;: &quot;john.doe@example.com&quot;,&#10;  &quot;username&quot;: &quot;john_doe&quot;,&#10;  &quot;password&quot;: &quot;securePass123&quot;,&#10;  &quot;password2&quot;: &quot;securePass123&quot;&#10;}&#10;" />
+                          <option name="type" value="JSON" />
+                        </bodyState>
+                      </option>
+                      <option name="headers">
+                        <list>
+                          <headerState>
+                            <option name="key" value="Authorization" />
+                            <option name="value" value="Token 44435ed10d6fa74fc4d1c688bdad2475c75256e8" />
+                          </headerState>
+                        </list>
+                      </option>
+                      <option name="id" value="8c70fd9d-e004-4690-b0ad-8771f62b2591" />
+                      <option name="method" value="PUT" />
+                      <option name="name" value="edit self profile" />
+                      <option name="sortWeight" value="5000000" />
+                      <option name="url" value="http://localhost:8000/api/auth/user/edit/" />
+                    </requestState>
+                    <requestState>
+                      <option name="body">
+                        <bodyState>
+                          <option name="type" value="JSON" />
+                        </bodyState>
+                      </option>
+                      <option name="headers">
+                        <list>
+                          <headerState>
+                            <option name="key" value="Authorization" />
+                            <option name="value" value="Token 44435ed10d6fa74fc4d1c688bdad2475c75256e8" />
+                          </headerState>
+                        </list>
+                      </option>
+                      <option name="id" value="63d22de4-81e0-465a-917e-1b7825011dbf" />
+                      <option name="method" value="DELETE" />
+                      <option name="name" value="delte self profile" />
+                      <option name="sortWeight" value="6000000" />
+                      <option name="url" value="http://localhost:8000/api/auth/user/delete/" />
+                    </requestState>
+                    <requestState>
+                      <option name="body">
+                        <bodyState>
+                          <option name="raw" value="{&#10;  &quot;username&quot;: &quot;moderator_user&quot;,&#10;  &quot;email&quot;: &quot;mod@example.com&quot;,&#10;  &quot;password&quot;: &quot;moderator123&quot;,&#10;  &quot;password2&quot;: &quot;moderator123&quot;&#10;}&#10;" />
+                          <option name="type" value="JSON" />
+                        </bodyState>
+                      </option>
+                      <option name="headers">
+                        <list>
+                          <headerState>
+                            <option name="key" value="Authorization" />
+                            <option name="value" value="Token 4498fbfab0d9141229112206e29f4b3478075fe4" />
+                          </headerState>
+                        </list>
+                      </option>
+                      <option name="id" value="d4c0ed78-15f8-43f3-9a59-6a219f0dc805" />
+                      <option name="method" value="POST" />
+                      <option name="name" value="create moderator (only admin)" />
+                      <option name="sortWeight" value="7000000" />
+                      <option name="url" value="http://localhost:8000/api/auth/create-moderator/" />
                     </requestState>
                   </list>
                 </option>

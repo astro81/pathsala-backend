@@ -15,7 +15,7 @@ User = get_user_model()
 
 # Create your views here.
 class RegisterUserView(APIView):
-    permission_classes = AllowAny,
+    permission_classes = [AllowAny]
 
     def post(self, request):
         serializer = UserSerializer(data=request.data)
@@ -33,7 +33,7 @@ class RegisterUserView(APIView):
 
 
 class LoginUserView(APIView):
-    permission_classes = AllowAny,
+    permission_classes = [AllowAny]
     def post(self, request):
         username = request.data.get('username')
         password = request.data.get('password')
@@ -52,7 +52,7 @@ class LoginUserView(APIView):
 
 
 class LogoutUserView(APIView):
-    permission_classes = IsAuthenticated,
+    permission_classes = [IsAuthenticated]
 
     def post(self, request):
         request.user.auth_token.delete()
@@ -60,7 +60,7 @@ class LogoutUserView(APIView):
 
 
 class CreateModeratorView(APIView):
-    permission_classes = (IsAuthenticated, IsAdmin)
+    permission_classes = [IsAuthenticated, IsAdmin]
 
     def post(self, request):
         serializer = UserSerializer(data=request.data)

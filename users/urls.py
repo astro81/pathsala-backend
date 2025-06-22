@@ -14,3 +14,5 @@ urlpatterns = [
     path('user/profile/', UserProfileView.as_view(), name='profile_self'),
     path('user/profile/<str:username>/', UserProfileView.as_view(), name='profile_by_username'),
 ]
+
+
