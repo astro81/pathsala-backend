@@ -1,0 +1,101 @@
+import uuid
+from django.db import models
+
+class Course(models.Model):
+    id = models.UUIDField(
+        primary_key=True,
+        default=uuid.uuid4,
+        editable=False
+    )
+
+    name = models.CharField(
+        max_length=100,
+        unique=True,
+        help_text="Short name of the course (e.g., Python Basics)"
+    )
+
+    title = models.CharField(
+        max_length=500,
+        help_text="Full title or description of the course"
+    )
+
+    duration = models.DurationField(
+        help_text="Expected course duration (e.g., 1 week, 30 days)"
+    )
+
+    price = models.DecimalField(
+        max_digits=10,
+        decimal_places=2,
+        default=0.00,
+        help_text="Course price in NPR"
+    )
+
+    rating = models.DecimalField(
+        max_digits=3,
+        decimal_places=2,
+        default=0.0,
+        help_text="Average course rating from 0.0 to 5.0"
+    )
+
+    training_level = models.CharField(
+        max_length=100,
+        choices=[
+            ('beginner', 'Beginner'),
+            ('intermediate', 'Intermediate'),
+            ('advanced', 'Advanced')
+        ],
+        default='beginner',
+        help_text="Skill level required to take this course"
+    )
+
+    class_type = models.CharField(
+        max_length=100,
+        choices=[
+            ('online', 'Online'),
+            ('offline', 'Offline'),
+            ('hybrid', 'Hybrid')
+        ],
+        default='online',
+        help_text="Type of class delivery"
+    )
+
+    career_prospect = models.CharField(
+        max_length=100,
+        help_text="Main career outcomes this course prepares for"
+    )
+
+    image = models.ImageField(
+        upload_to='courses/images/',
+        null=True,
+        blank=True,
+        help_text="Course promotional image"
+    )
+
+    created_at = models.DateTimeField(
+        auto_now_add=True
+    )
+
+    updated_at = models.DateTimeField(
+        auto_now=True
+    )
+
+    class Meta:
+        verbose_name = "Course"
+        verbose_name_plural = "Courses"
+        ordering = ['duration', '-rating', 'price', '-created_at', 'training_level']
+        indexes = [
+            models.Index(fields=['name']),
+            models.Index(fields=[ 'duration']),
+            models.Index(fields=['rating']),
+            models.Index(fields=['price']),
+            models.Index(fields=['training_level']),
+        ]
+
+    def __str__(self):
+        return self.name
+
+
+    # todo: link category, syllabus and description table
+    # category_id = models.CharField(max_length=100)
+    # description_id = models.TextField()
+    # syllabus_id = models.TextField()
