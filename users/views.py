@@ -1,165 +1,240 @@
 from django.contrib.auth import authenticate, get_user_model
 from rest_framework import status
-from rest_framework.authtoken.models import Token
-from rest_framework.permissions import AllowAny, IsAuthenticated
-from rest_framework.response import Response
 from rest_framework.views import APIView
-from rolepermissions.checkers import has_role
+from rest_framework.response import Response
+from rest_framework.permissions import AllowAny, IsAuthenticated
+from rest_framework.authtoken.models import Token
 from rolepermissions.roles import assign_role
 
 from users.permissions import IsAdmin
 from users.serializers import UserSerializer
+from users.utils import get_user_or_403, is_superuser_blocked
 
 User = get_user_model()
 
 
-# Create your views here.
 class RegisterUserView(APIView):
+    """
+    API endpoint for user registration.
+
+    Allows unauthenticated users to register.
+    Automatically assigns the "student" role to newly created users.
+    """
     permission_classes = [AllowAny]
 
     def post(self, request):
-        serializer = UserSerializer(data=request.data)
+        """
+        Create a new user.
 
+        Request body:
+            - username: str
+            - email: str
+            - password: str
+            - other optional user fields
+
+        Returns:
+            - 201: User created successfully.
+            - 400: Validation error.
+        """
+        serializer = UserSerializer(data=request.data)
         if serializer.is_valid():
             user = serializer.save()
-
-            assign_role(user, 'student')    #! force student role
-
-            return Response(
-                {'message': 'User registered successfully'},
-                status=status.HTTP_201_CREATED
-            )
+            assign_role(user, 'student')  # Default role assignment
+            return Response({'message': 'User registered successfully'}, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
 class LoginUserView(APIView):
+    """
+    API endpoint for user login.
+
+    Authenticates user and returns a token for authenticated access to other endpoints.
+    """
     permission_classes = [AllowAny]
+
     def post(self, request):
+        """
+        Authenticate user and return a token.
+
+        Request body:
+            - username: str
+            - password: str
+
+        Returns:
+            - 200: Token if credentials are valid.
+            - 400: Error if credentials are invalid or missing.
+        """
         username = request.data.get('username')
         password = request.data.get('password')
 
         if not username:
-            return Response({'error': 'Username is required'}, status=status.HTTP_400_BAD_REQUEST)
+            return Response({'error': 'Username is required.'}, status=status.HTTP_400_BAD_REQUEST)
         if not password:
-            return Response({'error': 'Password is required'}, status=status.HTTP_400_BAD_REQUEST)
+            return Response({'error': 'Password is required.'}, status=status.HTTP_400_BAD_REQUEST)
 
         user = authenticate(username=username, password=password)
         if user:
             token, _ = Token.objects.get_or_create(user=user)
             return Response({'token': token.key}, status=status.HTTP_200_OK)
 
-        return Response({'error': 'Login Failed!\nInvalid credentials'}, status=status.HTTP_400_BAD_REQUEST)
+        return Response({'error': 'Invalid credentials'}, status=status.HTTP_400_BAD_REQUEST)
 
 
 class LogoutUserView(APIView):
+    """
+    API endpoint for logging out.
+
+    Deletes the user's auth token to revoke access.
+    """
     permission_classes = [IsAuthenticated]
 
     def post(self, request):
+        """
+        Invalidate user's token.
+
+        Returns:
+            - 200: Success message.
+        """
         request.user.auth_token.delete()
         return Response({'message': 'Logged out successfully'}, status=status.HTTP_200_OK)
 
 
 class CreateModeratorView(APIView):
+    """
+    API endpoint for creating moderator accounts.
+
+    Restricted to users with the 'admin' role.
+    """
     permission_classes = [IsAuthenticated, IsAdmin]
 
     def post(self, request):
-        serializer = UserSerializer(data=request.data)
+        """
+        Create a new moderator.
 
+        Request body:
+            - Same as standard user registration fields.
+
+        Returns:
+            - 201: Moderator created.
+            - 400: Validation error.
+        """
+        serializer = UserSerializer(data=request.data)
         if serializer.is_valid():
             user = serializer.save()
-
             assign_role(user, 'moderator')
-
-            return Response(
-                {'message': 'Moderator created successfully'},
-                status=status.HTTP_201_CREATED
-            )
+            return Response({'message': 'Moderator created successfully'}, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
 class EditUserView(APIView):
+    """
+    API endpoint to update user profile.
+
+    Users can edit their own profile. Admins can edit any user's profile.
+    """
     permission_classes = [IsAuthenticated]
 
     def put(self, request, username=None):
-        return self.update_user(request, username, full_update=True)
+        """
+        Fully update a user's profile (all fields required).
+
+        Parameters:
+            - username: Optional[str] (default to current user if not provided)
+
+        Returns:
+            - 200: Updated successfully.
+            - 400/403/404: Error.
+        """
+        return self._update_user(request, username, full_update=True)
 
     def patch(self, request, username=None):
-        return self.update_user(request, username, full_update=False)
+        """
+        Partially update a user's profile (some fields).
 
-    def update_user(self, request, username, full_update):
-        # Handle self-edit
-        if not username:
-            user = request.user
-        else:
-            # Reject if not admin and trying to edit others
-            if username != request.user.username and not has_role(request.user, 'admin'):
-                return Response(
-                    {'error': 'Only admins can edit other users.'},
-                    status=status.HTTP_403_FORBIDDEN
-                )
+        Parameters:
+            - username: Optional[str] (default to current user if not provided)
 
-            user = User.objects.filter(username=username).first()
-            if not user:
-                return Response({'error': 'User not found.'}, status=status.HTTP_404_NOT_FOUND)
+        Returns:
+            - 200: Updated successfully.
+            - 400/403/404: Error.
+        """
+        return self._update_user(request, username, full_update=False)
 
-        # Validate and save
+    def _update_user(self, request, username, full_update):
+        """
+        Internal handler for both PUT and PATCH operations.
+
+        Ensures permission checks and superuser safety.
+        """
+        user = get_user_or_403(request, username)
+        if isinstance(user, Response):
+            return user
+
+        superuser_block = is_superuser_blocked(user)
+        if superuser_block:
+            return superuser_block
+
         serializer = UserSerializer(user, data=request.data, partial=not full_update)
-        if not serializer.is_valid():
-            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-        serializer.save()
-        return Response({'message': 'User updated successfully.'})
+        if serializer.is_valid():
+            serializer.save()
+            return Response({'message': 'User updated successfully.'})
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
 class DeleteUserView(APIView):
+    """
+    API endpoint to delete user accounts.
+
+    Users can delete their own account. Admins can delete any non-superuser.
+    """
     permission_classes = [IsAuthenticated]
 
     def delete(self, request, username=None):
-        # Handle self-deletion
-        if not username:
-            user = request.user
-        else:
-            # Reject if not admin and trying to delete others
-            if username != request.user.username and not has_role(request.user, 'admin'):
-                return Response(
-                    {'error': 'Only admins can delete other users.'},
-                    status=status.HTTP_403_FORBIDDEN
-                )
+        """
+        Delete a user.
 
-            user = User.objects.filter(username=username).first()
-            if not user:
-                return Response({'error': 'User not found.'}, status=status.HTTP_404_NOT_FOUND)
+        Parameters:
+            - username: Optional[str] (default to current user)
 
-        # Prevent superuser deletion
-        if user.is_superuser:
-            return Response(
-                {'error': 'Superuser accounts cannot be deleted via API.'},
-                status=status.HTTP_403_FORBIDDEN
-            )
+        Returns:
+            - 200: Deleted.
+            - 403: Not authorized.
+            - 404: User not found.
+        """
+        user = get_user_or_403(request, username)
+        if isinstance(user, Response):
+            return user
+
+        superuser_block = is_superuser_blocked(user)
+        if superuser_block:
+            return superuser_block
 
         user.delete()
         return Response({'message': 'User deleted successfully.'}, status=status.HTTP_200_OK)
 
 
 class UserProfileView(APIView):
+    """
+    API endpoint to view user profiles.
+
+    Users can view their own profile. Admins can view any profile.
+    """
     permission_classes = [IsAuthenticated]
 
     def get(self, request, username=None):
-        # Self profile access
-        if not username:
-            user = request.user
-        else:
-            # Prevent unauthorized access to other profiles
-            if username != request.user.username and not has_role(request.user, 'admin'):
-                return Response(
-                    {'error': 'You do not have permission to view other users\' profiles.'},
-                    status=status.HTTP_403_FORBIDDEN
-                )
+        """
+        Retrieve user profile.
 
-            user = User.objects.filter(username=username).first()
-            if not user:
-                return Response({'error': 'User not found.'}, status=status.HTTP_404_NOT_FOUND)
+        Parameters:
+            - username: Optional[str] (defaults to current user)
+
+        Returns:
+            - 200: User data.
+            - 403/404: Not allowed or not found.
+        """
+        user = get_user_or_403(request, username)
+        if isinstance(user, Response):
+            return user
 
         serializer = UserSerializer(user)
         return Response(serializer.data, status=status.HTTP_200_OK)
-
