@@ -1,6 +1,6 @@
 import uuid
 from django.contrib.auth.models import AbstractUser
-from django.core.validators import RegexValidator
+from django.core.validators import RegexValidator, EmailValidator
 from django.db import models
 
 class User(AbstractUser):
@@ -17,6 +17,7 @@ class User(AbstractUser):
         unique=True,
         blank=False,
         null=False,
+        validators=[EmailValidator(message="Enter a valid email address.")],
         verbose_name="Email Address",
         help_text="User's unique email address."
     )
