@@ -7,16 +7,16 @@ id = 'd4c0ed78-15f8-43f3-9a59-6a219f0dc805'
 
 [[headers]]
 key = 'Authorization'
-value = 'Token 4498fbfab0d9141229112206e29f4b3478075fe4'
+value = 'Token 8c6a53b8e088fa58c1fe4d637b5e7d6f05f90d12'
 
 [body]
 type = 'JSON'
 raw = '''
 {
-  "username": "moderator_user",
-  "email": "mod@example.com",
-  "password": "moderator123",
-  "password2": "moderator123"
+  "username": "moderator_User",
+  "email": "moderator_User@example.com",
+  "password": "adminpassword",
+  "password2": "adminpassword"
 }
 '''
 ```
