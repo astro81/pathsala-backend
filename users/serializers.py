@@ -102,6 +102,7 @@ class UserSerializer(serializers.ModelSerializer):
             'id': {'read_only': True},
             'last_login': {'read_only': True},
             'date_joined': {'read_only': True},
+            'is_active': {'read_only': True}
         }
 
 

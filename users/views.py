@@ -1,14 +1,17 @@
+from datetime import timezone
+from tokenize import TokenError
+
 from django.contrib.auth import authenticate, get_user_model
-from django.core.exceptions import ObjectDoesNotExist
 from django.db import IntegrityError, DatabaseError
 from rest_framework import status
-from rest_framework.exceptions import ValidationError, NotAuthenticated
+from rest_framework.exceptions import ValidationError
 from rest_framework.generics import ListAPIView
 from rest_framework.pagination import PageNumberPagination
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.permissions import AllowAny, IsAuthenticated
-from rest_framework.authtoken.models import Token
+from rest_framework_simplejwt.token_blacklist.models import OutstandingToken, BlacklistedToken
+from rest_framework_simplejwt.tokens import RefreshToken
 from rolepermissions.checkers import has_role
 from rolepermissions.roles import assign_role
 
@@ -113,8 +116,11 @@ class LoginUserView(APIView):
             if not user.is_active:
                 return Response({'error': 'User account is inactive.'}, status=status.HTTP_403_FORBIDDEN)
 
-            token, _ = Token.objects.get_or_create(user=user)
-            return Response({'token': token.key}, status=status.HTTP_200_OK)
+            refresh = RefreshToken.for_user(user)
+            return Response({
+                'refresh': str(refresh),
+                'access': str(refresh.access_token)
+            }, status=status.HTTP_200_OK)
 
         except ValidationError as ve:
             return Response(ve.detail, status=status.HTTP_400_BAD_REQUEST)
@@ -151,20 +157,58 @@ class LogoutUserView(APIView):
         """
         try:
             # Attempt to delete the user's token
-            request.user.auth_token.delete()
+            refresh_token = request.data.get('refresh')
+            if not refresh_token:
+                return Response({
+                    'error': 'Refresh token is required.'},
+                    status=status.HTTP_400_BAD_REQUEST
+                )
+
+            token = RefreshToken(refresh_token)
+            token.blacklist()
             return Response({'message': 'Logged out successfully'}, status=status.HTTP_200_OK)
 
-        except AttributeError:
-            # If the user has no token (shouldn't happen with IsAuthenticated but possible)
-            raise NotAuthenticated(detail="User token not found.")
-
-        except ObjectDoesNotExist:
-            # Token might already be deleted (e.g., logged out from another device)
-            return Response({'error': 'Token already deleted or does not exist.'}, status=status.HTTP_400_BAD_REQUEST)
+        except TokenError as te:
+            return Response({'error': 'Invalid or expired token.'}, status=status.HTTP_400_BAD_REQUEST)
 
         except Exception as e:
             return Response(
                 {'error': 'An unexpected error occurred during logout.', 'details': str(e)},
+                status=status.HTTP_500_INTERNAL_SERVER_ERROR
+            )
+
+
+class RefreshTokenView(APIView):
+    """
+    API endpoint to refresh access token using refresh token.
+    """
+    permission_classes = [AllowAny]
+
+    def post(self, request):
+        """
+        Generate a new access token from refresh token.
+        """
+        try:
+            refresh_token = request.data.get('refresh')
+            if not refresh_token:
+                return Response(
+                    {'error': 'Refresh token is required.'},
+                    status=status.HTTP_400_BAD_REQUEST
+                )
+
+            refresh = RefreshToken(refresh_token)
+            return Response({
+                'access': str(refresh.access_token),
+            }, status=status.HTTP_200_OK)
+
+        except TokenError as te:
+            return Response(
+                {'error': 'Invalid or expired refresh token.', 'details': str(te)},
+                status=status.HTTP_401_UNAUTHORIZED
+            )
+        except Exception as e:
+            return Response(
+                {'error': 'Token refresh failed.', 'details': str(e)},
                 status=status.HTTP_500_INTERNAL_SERVER_ERROR
             )
 
@@ -231,22 +275,69 @@ class EditUserView(APIView):
         """
         return self._update_user(request, username, full_update=False)
 
+    def _invalidate_user_tokens(self, user):
+        """
+        Invalidate all active tokens for a user.
+        This is called when sensitive information (password/email) is changed.
+        """
+        try:
+            # Get all outstanding tokens for the user
+            tokens = OutstandingToken.objects.filter(user=user)
+
+            # Blacklist tokens that haven't expired yet
+            for token in tokens:
+                if token.expires_at > timezone.now():
+                    BlacklistedToken.objects.get_or_create(token=token)
+
+            # Optional: Delete expired tokens to clean up
+            expired_tokens = OutstandingToken.objects.filter(
+                user=user,
+                expires_at__lte=timezone.now()
+            )
+            expired_tokens.delete()
+
+            # If using refresh token rotation, you might want to add additional handling
+            return True
+
+        except Exception as e:
+            # Log this error in production
+            print(f"Error invalidating tokens for user {user.id}: {str(e)}")
+            return False
+
     def _update_user(self, request, username, full_update):
         """
         Internal handler for both PUT and PATCH operations.
         """
+        # Resolve user object or return appropriate error (403 or 404)
         user = get_user_or_403(request, username)
         if isinstance(user, Response):
-            return user  # Already a Response (403/404)
+            return user
 
+        # Prevent superuser updates in restricted contexts
         superuser_block = is_superuser_blocked(user)
         if superuser_block:
             return superuser_block
 
         try:
+            # Check if the password is being changed
+            is_password_changed = False
+            if 'password' in request.data:
+                if not user.check_password(request.data.get('password')):
+                    is_password_changed = True
+
+            # Validate and save user data
             serializer = UserSerializer(user, data=request.data, partial=not full_update)
             serializer.is_valid(raise_exception=True)
             serializer.save()
+
+            # Invalidate tokens if the password has changed
+            if is_password_changed:
+                self._invalidate_user_tokens(user)
+                return Response({
+                    'message': 'User updated successfully. Please login again with your new password.',
+                    'logout_required': True
+                }, status=status.HTTP_200_OK)
+
             return Response({'message': 'User updated successfully.'}, status=status.HTTP_200_OK)
 
         except ValidationError as ve:
@@ -304,6 +395,68 @@ class DeleteUserView(APIView):
 
         except Exception as e:
             return Response({'error': 'Unexpected error occurred.', 'details': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+
+class ReactivateUserView(APIView):
+    """
+    API endpoint to reactivate (enable) a previously deactivated user account.
+
+    Permissions:
+        - Only authenticated users with admin privileges can reactivate accounts.
+
+    HTTP Methods:
+        - POST: Reactivate the user specified by username.
+
+    Parameters:
+        - username (str, optional): The username of the user to reactivate.
+          If not provided, defaults to the current user (can be adjusted as needed).
+
+    Responses:
+        - 200 OK: If the user is successfully reactivated or already active.
+        - 404 Not Found or 403 Forbidden: If the user does not exist or is inaccessible.
+        - 500 Internal Server Error: For unexpected errors during reactivation.
+    """
+    permission_classes = [IsAuthenticated, IsAdmin]  # Restrict access to authenticated admins
+
+    def post(self, request, username=None):
+        """
+        Handle POST request to reactivate a user account.
+
+        Args:
+            request (Request): DRF request object.
+            username (str, optional): Target user's username.
+
+        Returns:
+            Response: DRF response with a success or error message.
+        """
+        # Retrieve the target user or return the appropriate 403/404 response
+        user = get_user_or_403(request, username)
+        if isinstance(user, Response):
+            return user  # Early return if user retrieval failed
+
+        # Check if the user is already active to avoid unnecessary updates
+        if user.is_active:
+            return Response(
+                {'message': 'User is already active.'},
+                status=status.HTTP_200_OK
+            )
+
+        try:
+            # Reactivate the user by setting is_active to True
+            user.is_active = True
+            user.save()
+
+            return Response(
+                {'message': 'User reactivated successfully.'},
+                status=status.HTTP_200_OK
+            )
+
+        except Exception as e:
+            # Catch all unexpected exceptions and respond with error details
+            return Response(
+                {'error': 'Unexpected error.', 'details': str(e)},
+                status=status.HTTP_500_INTERNAL_SERVER_ERROR
+            )
 
 
 class UserProfileView(APIView):
@@ -384,3 +537,4 @@ class UserListView(ListAPIView):
 
         serializer = self.get_serializer(filtered_users, many=True)
         return Response(serializer.data)
+
