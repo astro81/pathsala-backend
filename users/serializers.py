@@ -1,3 +1,17 @@
+"""
+serializers.py
+
+Defines a UserSerializer for serializing and deserializing User instances.
+Includes comprehensive field validation including
+- Email format and uniqueness
+- Password strength
+- Phone number formatting
+- Cross-field validation (e.g., password confirmation)
+
+Used in APIs for user registration, update, and retrieval.
+"""
+
+
 import re
 
 from django.contrib.auth import get_user_model
@@ -7,9 +21,21 @@ from rest_framework import serializers
 from rest_framework.exceptions import ValidationError
 from rest_framework.validators import UniqueValidator
 
+
 User = get_user_model()
 
+
 class UserSerializer(serializers.ModelSerializer):
+    """
+    Serializer for the custom User model.
+
+    Adds:
+        - Unique validation for `username` and `email`
+        - Strong password validation (uppercase, lowercase, digit, special char)
+        - Confirm password field (`password2`)
+        - Phone number validation
+    """
+
 
     username = serializers.CharField(
         required=True,
@@ -78,44 +104,82 @@ class UserSerializer(serializers.ModelSerializer):
             'date_joined': {'read_only': True},
         }
 
+
     def validate_email(self, value):
+        """
+        Validates email using Django's validator and additional regex.
+
+        Args:
+            value (str): Email address to validate.
+
+        Returns:
+            str: Normalized lowercase email.
+
+        Raises:
+            serializers.ValidationError: If the email is invalid.
+        """
         try:
             validate_email(value)
         except ValidationError:
-            raise serializers.ValidationError("Enter a valid email address.")
+            raise serializers.ValidationError({"error": "Enter a valid email address."})
 
         # Additional email validation if needed
         if not re.match(r'^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$', value):
-            raise serializers.ValidationError("Enter a valid email address.")
+            raise serializers.ValidationError({"error": "Enter a valid email address."})
 
         return value.lower()  # Normalize email to lowercase
 
+
     def validate_password(self, value):
+        """
+        Validates password strength and rules.
+
+        Args:
+            value (str): Password string.
+
+        Returns:
+            str: Validated password.
+
+        Raises:
+            serializers.ValidationError: If password does not meet strength rules.
+        """
         try:
             validate_password(value)
         except ValidationError as e:
-            raise serializers.ValidationError(list(e.messages))
+            raise serializers.ValidationError({"error": "Invalid password."})
 
         # Additional custom password validation
         if not re.search(r'[A-Z]', value):
-            raise serializers.ValidationError("Password must contain at least one uppercase letter.")
+            raise serializers.ValidationError({"error": "Password must contain at least one uppercase letter."})
         if not re.search(r'[a-z]', value):
-            raise serializers.ValidationError("Password must contain at least one lowercase letter.")
+            raise serializers.ValidationError({"error": "Password must contain at least one lowercase letter."})
         if not re.search(r'[0-9]', value):
-            raise serializers.ValidationError("Password must contain at least one digit.")
+            raise serializers.ValidationError({"error": "Password must contain at least one digit."})
         if not re.search(r'[!@#$%^&*(),.?":{}|<>]', value):
-            raise serializers.ValidationError("Password must contain at least one special character.")
+            raise serializers.ValidationError({"error": "Password must contain at least one special character."})
 
         return value
 
     def validate_phone_no(self, value):
+        """
+        Validates a phone number format.
+
+        Args:
+            value (str): Phone number string.
+
+        Returns:
+            str: Cleaned phone number.
+
+        Raises:
+            serializers.ValidationError: If a phone number format is incorrect.
+        """
         if not value:  # Allow empty/null
             return value
 
         # Phone number validation
         if not re.match(r'^\+?[0-9\-]{10,15}$', value):
             raise serializers.ValidationError(
-                "Phone number must be 10-15 digits, can start with + and contain hyphens."
+                {"error": "Phone number must be 10-15 digits, can start with + and contain hyphens."}
             )
 
         # Remove any non-digit characters except leading +
@@ -123,25 +187,69 @@ class UserSerializer(serializers.ModelSerializer):
         return cleaned
 
     def validate(self, data):
+        """
+        Cross-field validation for serializer.
+
+        - Ensures password and password2 match.
+        - Removes 'id' if passed.
+
+        Returns:
+            dict: Validated data
+
+        Raises:
+            serializers.ValidationError: If passwords do not match.
+        """
 
         if 'id' in data:
             data.pop('id')
 
         if data.get('password') != data.get('password2'):
-            raise serializers.ValidationError({'error': 'Passwords must match.'})
+            raise serializers.ValidationError({"error": "Passwords must match."})
 
         return data
 
     def create(self, validated_data):
+        """
+        Creates and returns a new User instance.
+
+        Args:
+            validated_data (dict): Cleaned input data.
+
+        Returns:
+            User: Created user object.
+        """
         validated_data.pop('password2')
         return User.objects.create_user(**validated_data)
 
     def _validate_unique_field(self, instance, field_name, value):
+        """
+        Validates uniqueness of a field during updates.
+
+        Args:
+            instance (User): Current user instance.
+            field_name (str): Field to check (e.g., 'email').
+            value (str): Value to validate.
+
+        Raises:
+            serializers.ValidationError: If value is not unique.
+        """
         if value and User.objects.exclude(pk=self.instance.pk).filter(**{field_name: value}).exists():
-            raise serializers.ValidationError({'error': f"This {field_name.replace('_', ' ')} is already taken."})
+            raise serializers.ValidationError({"error": f"This {field_name.replace('_', ' ')} is already taken."})
 
     def update(self, instance, validated_data):
+        """
+        Updates an existing User instance.
 
+        - Handles password change with hashing.
+        - Ensures email and username are still unique.
+
+        Args:
+            instance (User): The existing user instance.
+            validated_data (dict): New data for update.
+
+        Returns:
+            User: Updated user instance.
+        """
         if 'id' in validated_data:
             validated_data.pop('id')
 
@@ -151,8 +259,11 @@ class UserSerializer(serializers.ModelSerializer):
         self._validate_unique_field(instance, 'email', validated_data.get('email'))
 
         for attr, value in validated_data.items():
+            if attr == 'password':
+                continue  # Password handled separately
             setattr(instance, attr, value)
 
+        # Set and hash a new password if provided
         if password := validated_data.pop('password', None):
             instance.set_password(password)
 
