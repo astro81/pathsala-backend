@@ -3,6 +3,8 @@ from tokenize import TokenError
 
 from django.contrib.auth import authenticate, get_user_model
 from django.db import IntegrityError, DatabaseError
+from drf_yasg import openapi
+from drf_yasg.utils import swagger_auto_schema
 from rest_framework import status
 from rest_framework.exceptions import ValidationError
 from rest_framework.generics import ListAPIView
@@ -31,6 +33,14 @@ class RegisterUserView(APIView):
     """
     permission_classes = [AllowAny]
 
+    @swagger_auto_schema(
+        request_body=UserSerializer,
+        responses={
+            201: openapi.Response("User registered successfully"),
+            400: "Validation or input error",
+            500: "Internal server error"
+        }
+    )
     def post(self, request):
         """
         Create a new user.
@@ -85,6 +95,23 @@ class LoginUserView(APIView):
     """
     permission_classes = [AllowAny]
 
+    @swagger_auto_schema(
+        operation_summary="User login",
+        request_body=openapi.Schema(
+            type=openapi.TYPE_OBJECT,
+            required=['username', 'password'],
+            properties={
+                'username': openapi.Schema(type=openapi.TYPE_STRING),
+                'password': openapi.Schema(type=openapi.TYPE_STRING)
+            }
+        ),
+        responses={
+            200: openapi.Response("Token returned"),
+            400: "Invalid credentials",
+            403: "Inactive user",
+            500: "Internal error"
+        }
+    )
     def post(self, request):
         """
         Authenticate a user and return a token.
@@ -146,6 +173,21 @@ class LogoutUserView(APIView):
     """
     permission_classes = [IsAuthenticated]
 
+    @swagger_auto_schema(
+        operation_summary="Logout user",
+        request_body=openapi.Schema(
+            type=openapi.TYPE_OBJECT,
+            required=['refresh'],
+            properties={
+                'refresh': openapi.Schema(type=openapi.TYPE_STRING)
+            }
+        ),
+        responses={
+            200: "Logout successful",
+            400: "Missing or invalid token",
+            500: "Unexpected error"
+        }
+    )
     def post(self, request):
         """
         Invalidate user's token.
@@ -184,6 +226,21 @@ class RefreshTokenView(APIView):
     """
     permission_classes = [AllowAny]
 
+    @swagger_auto_schema(
+        operation_summary="Refresh access token",
+        request_body=openapi.Schema(
+            type=openapi.TYPE_OBJECT,
+            required=['refresh'],
+            properties={
+                'refresh': openapi.Schema(type=openapi.TYPE_STRING)
+            }
+        ),
+        responses={
+            200: openapi.Response("New access token"),
+            401: "Invalid refresh token",
+            500: "Error"
+        }
+    )
     def post(self, request):
         """
         Generate a new access token from refresh token.
@@ -221,6 +278,14 @@ class CreateModeratorView(APIView):
     """
     permission_classes = [IsAuthenticated, IsAdmin]
 
+    @swagger_auto_schema(
+        request_body=UserSerializer,
+        responses={
+            201: "Moderator created",
+            400: "Validation error",
+            500: "Unexpected error"
+        }
+    )
     def post(self, request):
         """
         Create a new moderator.
@@ -263,12 +328,20 @@ class EditUserView(APIView):
     """
     permission_classes = [IsAuthenticated]
 
+    @swagger_auto_schema(
+        request_body=UserSerializer,
+        responses={200: "User updated", 400: "Validation error", 500: "Error"}
+    )
     def put(self, request, username=None):
         """
         Fully update a user's profile (all fields required).
         """
         return self._update_user(request, username, full_update=True)
 
+    @swagger_auto_schema(
+        request_body=UserSerializer,
+        responses={200: "User updated", 400: "Validation error", 500: "Error"}
+    )
     def patch(self, request, username=None):
         """
         Partially update a user's profile (some fields).
@@ -361,6 +434,14 @@ class DeleteUserView(APIView):
     """
     permission_classes = [IsAuthenticated]
 
+    @swagger_auto_schema(
+        responses={
+            200: "User deactivated",
+            403: "Not allowed",
+            404: "User not found",
+            500: "Error"
+        }
+    )
     def delete(self, request, username=None):
         """
         Deactivate a user (soft delete).
@@ -418,6 +499,17 @@ class ReactivateUserView(APIView):
     """
     permission_classes = [IsAuthenticated, IsAdmin]  # Restrict access to authenticated admins
 
+    @swagger_auto_schema(
+        manual_parameters=[
+            openapi.Parameter('username', openapi.IN_PATH, type=openapi.TYPE_STRING, required=True)
+        ],
+        responses={
+            200: "User reactivated",
+            403: "Permission denied",
+            404: "User not found",
+            500: "Error"
+        }
+    )
     def post(self, request, username=None):
         """
         Handle POST request to reactivate a user account.
@@ -467,6 +559,17 @@ class UserProfileView(APIView):
     """
     permission_classes = [IsAuthenticated]
 
+    @swagger_auto_schema(
+        manual_parameters=[
+            openapi.Parameter('username', openapi.IN_PATH, type=openapi.TYPE_STRING, required=True)
+        ],
+        responses={
+            200: openapi.Response("User data", UserSerializer),
+            403: "Forbidden",
+            404: "Not found",
+            500: "Error"
+        }
+    )
     def get(self, request, username=None):
         """
         Retrieve user profile.
@@ -507,6 +610,18 @@ class UserListView(ListAPIView):
     serializer_class = UserSerializer
     pagination_class = PageNumberPagination
 
+    @swagger_auto_schema(
+        operation_summary="List users",
+        manual_parameters=[
+            openapi.Parameter(
+                'role',
+                openapi.IN_QUERY,
+                description="Optional user role to filter by (e.g. 'student')",
+                type=openapi.TYPE_STRING
+            )
+        ],
+        responses={200: UserSerializer(many=True)}
+    )
     def get_queryset(self):
         role = self.request.query_params.get('role')
         users = User.objects.all().order_by('username')
