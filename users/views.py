@@ -3,10 +3,13 @@ from django.core.exceptions import ObjectDoesNotExist
 from django.db import IntegrityError, DatabaseError
 from rest_framework import status
 from rest_framework.exceptions import ValidationError, NotAuthenticated
+from rest_framework.generics import ListAPIView
+from rest_framework.pagination import PageNumberPagination
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.authtoken.models import Token
+from rolepermissions.checkers import has_role
 from rolepermissions.roles import assign_role
 
 from users.permissions import IsAdmin
@@ -75,13 +78,13 @@ class LoginUserView(APIView):
     """
     API endpoint for user login.
 
-    Authenticates user and returns a token for authenticated access to other endpoints.
+    Authenticates a user and returns a token for authenticated access to other endpoints.
     """
     permission_classes = [AllowAny]
 
     def post(self, request):
         """
-        Authenticate user and return a token.
+        Authenticate a user and return a token.
 
         Request body:
             - username: str
@@ -143,8 +146,8 @@ class LogoutUserView(APIView):
 
         Returns:
             - 200: Success message.
-            - 401: If user is not authenticated.
-            - 500: If unexpected error occurs.
+            - 401: If the user is not authenticated.
+            - 500: If an unexpected error occurs.
         """
         try:
             # Attempt to delete the user's token
@@ -152,7 +155,7 @@ class LogoutUserView(APIView):
             return Response({'message': 'Logged out successfully'}, status=status.HTTP_200_OK)
 
         except AttributeError:
-            # If user has no token (shouldn't happen with IsAuthenticated but possible)
+            # If the user has no token (shouldn't happen with IsAuthenticated but possible)
             raise NotAuthenticated(detail="User token not found.")
 
         except ObjectDoesNotExist:
@@ -261,7 +264,7 @@ class EditUserView(APIView):
 
 class DeleteUserView(APIView):
     """
-    API endpoint to soft delete user accounts.
+    API endpoint to softly delete user accounts.
 
     Users can deactivate their own account. Admins can deactivate any non-superuser.
     """
@@ -346,3 +349,38 @@ class UserProfileView(APIView):
                 status=status.HTTP_500_INTERNAL_SERVER_ERROR
             )
 
+class UserListView(ListAPIView):
+    permission_classes = [IsAuthenticated, IsAdmin]
+    serializer_class = UserSerializer
+    pagination_class = PageNumberPagination
+
+    def get_queryset(self):
+        role = self.request.query_params.get('role')
+        users = User.objects.all().order_by('username')
+
+        if role:
+            # Filter users in Python to those with the requested role
+            # But first limit queryset to a manageable size for performance
+            # Here we do full queryset and filter below in a pagination step
+            self.role = role
+            return users
+
+        self.role = None
+        return users
+
+    def list(self, request, *args, **kwargs):
+        queryset = self.get_queryset()
+
+        if self.role:
+            # Filter users who have the specified role
+            filtered_users = [user for user in queryset if has_role(user, self.role)]
+        else:
+            filtered_users = list(queryset)
+
+        page = self.paginate_queryset(filtered_users)
+        if page is not None:
+            serializer = self.get_serializer(page, many=True)
+            return self.get_paginated_response(serializer.data)
+
+        serializer = self.get_serializer(filtered_users, many=True)
+        return Response(serializer.data)
