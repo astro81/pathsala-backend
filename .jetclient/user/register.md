@@ -9,13 +9,12 @@ id = '51e7bd75-2481-46b6-b714-9bc172a4b51e'
 type = 'JSON'
 raw = '''
 {
-  "id": "6119be9f-9u11-45fa-92c8-3022f6833176",
   "username": "pathsala",
   "email": "pathsala@gmail.com",
   "password": "securePass@321",
   "password2": "securePass@321",
-  "first_name": "aship",
-  "last_name": "aalam",
+  "first_name": "path",
+  "last_name": "sala",
   "address": "123 Street, City",
   "phone_no": "+997-981234567"
 }

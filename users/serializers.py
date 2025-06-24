@@ -82,7 +82,8 @@ class UserSerializer(serializers.ModelSerializer):
             'profile_picture',
             'last_login',
             'date_joined',
-            'is_active'
+            'is_active',
+            'role'
         )
         extra_kwargs = {
             # 'id': {'read_only': True},

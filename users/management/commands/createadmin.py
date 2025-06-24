@@ -11,12 +11,13 @@ class Command(BaseCommand):
         username = input("Username: ")
         email = input("Email: ")
         password = input("Password: ")
+        role = 'admin'
 
         if User.objects.filter(username=username).exists():
             self.stdout.write(self.style.ERROR('User already exists'))
             return
 
-        user = User.objects.create_superuser(username=username, email=email, password=password)
+        user = User.objects.create_superuser(username=username, email=email, password=password, role=role)
 
         assign_role(user, 'admin')
 
