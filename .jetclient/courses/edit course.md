@@ -7,21 +7,15 @@ id = 'b1e88c78-0712-4926-a3e4-7ec3973daf52'
 
 [[headers]]
 key = 'Authorization'
-value = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUwNzc2Nzc3LCJpYXQiOjE3NTA3NzY0NzcsImp0aSI6ImFlYWQ5OGY5MTMwOTQ3OGQ4YWFhM2ZmODk0MDA5ODExIiwidXNlcl9pZCI6IjY4OGQzOWIzLWI2YzItNDU1MC1iOWMzLWQyZTIyZjM1YzFiNSJ9.yAoE9DkydivEVKKCzRa7TfQxzTRgAfmaI743curqKEY'
+value = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUwNzgyMDE1LCJpYXQiOjE3NTA3ODE3MTUsImp0aSI6IjJkYmMwNDc5NWFlNjQ5ZWM4YjMwNTRiMGEyMDcyMWRlIiwidXNlcl9pZCI6IjY4OGQzOWIzLWI2YzItNDU1MC1iOWMzLWQyZTIyZjM1YzFiNSJ9.VO4LWKzT4AYnaQ3QbrC_i6NT5cIZ9cCsJIlwOyvbF6A'
 
 [body]
 type = 'JSON'
 raw = '''
 {
-  "id": "d75a4b50-1b5b-4e06-96ee-5b49822137bb",
-  "name": "Django",
-  "title": "Python with django developer",
-  "duration": "00:00:30",
-  "price": "4000.00",
-  "rating": "3.40",
-  "training_level": "beginner",
-  "class_type": "offline",
-  "career_prospect": "A FUll fledged backend developer",
+  "price": "4500.00",
+  "rating": "3.60",
+
 }
    '''
 ```

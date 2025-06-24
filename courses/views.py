@@ -64,7 +64,7 @@ class ViewCourse(RetrieveAPIView):
     def get(self, request, *args, **kwargs):
         try:
             return super().get(request, *args, **kwargs)
-        except Http404:
+        except Exception as e:
             return Response({"error": "Course not found"}, status=status.HTTP_404_NOT_FOUND)
 
 
