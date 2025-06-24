@@ -62,17 +62,21 @@ class User(AbstractUser):
 
     def save(self, *args, **kwargs):
         """Prevent role changes after initial assignment"""
-        if self.pk:  # Existing user
-            original = User.objects.get(pk=self.pk)
-            if self.role != original.role:
-                raise ValueError("User roles cannot be changed after assignment")
+        try:
+            if self.pk and not self._state.adding:  # Only for existing users
+                original = User.objects.get(pk=self.pk)
+                if self.role != original.role:
+                    raise ValueError("User roles cannot be changed after assignment")
 
-        super().save(*args, **kwargs)
+            super().save(*args, **kwargs)
 
-        # Only assign role on creation
-        if self._state.adding:
-            from rolepermissions.roles import assign_role
-            assign_role(self, self.role)
+            # Only assign role on creation
+            if self._state.adding:
+                from rolepermissions.roles import assign_role
+                assign_role(self, self.role)
+        except Exception as e:
+            # Log the error or handle it appropriately
+            raise
 
     def __str__(self):
         return self.username
