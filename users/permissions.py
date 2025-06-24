@@ -1,6 +1,8 @@
+from django.contrib.auth import get_user_model
 from rest_framework.permissions import BasePermission
 from rolepermissions.checkers import has_permission, has_role
 
+User = get_user_model()
 
 class HasCoursePermission(BasePermission):
     """
@@ -38,4 +40,4 @@ class IsAdmin(BasePermission):
 
     def has_permission(self, request, view):
         # Grant access only if the user has the 'admin' role
-        return has_role(request.user, 'admin')
+        return (request.user.role == User.Role.ADMIN) and  has_role(request.user, 'admin')

@@ -4,6 +4,11 @@ from django.core.validators import RegexValidator, EmailValidator
 from django.db import models
 
 class User(AbstractUser):
+    class Role(models.TextChoices):
+        ADMIN = 'admin', 'Admin'
+        MODERATOR = 'moderator', 'Moderator'
+        STUDENT = 'student', 'Student'
+
     id = models.UUIDField(
         primary_key=True,
         default=uuid.uuid4,
@@ -20,6 +25,14 @@ class User(AbstractUser):
         validators=[EmailValidator(message="Enter a valid email address.")],
         verbose_name="Email Address",
         help_text="User's unique email address."
+    )
+
+    role = models.CharField(
+        max_length=20,
+        choices=Role.choices,
+        default=Role.STUDENT,
+        verbose_name="User Role",
+        help_text="Primary role determining user permissions and access level."
     )
 
     address = models.TextField(
@@ -45,6 +58,21 @@ class User(AbstractUser):
         verbose_name="Profile Picture",
         help_text="Optional profile picture uploaded by the user."
     )
+
+
+    def save(self, *args, **kwargs):
+        """Prevent role changes after initial assignment"""
+        if self.pk:  # Existing user
+            original = User.objects.get(pk=self.pk)
+            if self.role != original.role:
+                raise ValueError("User roles cannot be changed after assignment")
+
+        super().save(*args, **kwargs)
+
+        # Only assign role on creation
+        if self._state.adding:
+            from rolepermissions.roles import assign_role
+            assign_role(self, self.role)
 
     def __str__(self):
         return self.username
