@@ -1,6 +1,9 @@
+from datetime import timezone
+
 from django.contrib.auth import get_user_model
 from rest_framework import status
 from rest_framework.response import Response
+from rest_framework_simplejwt.token_blacklist.models import OutstandingToken, BlacklistedToken
 from rolepermissions.checkers import has_role
 
 User = get_user_model()
@@ -61,3 +64,25 @@ def is_superuser_blocked(user):
             status=status.HTTP_403_FORBIDDEN
         )
     return None
+
+
+def invalidate_user_tokens(user):
+    """
+    Invalidate all active tokens for the user and clean up expired ones.
+    """
+    try:
+        tokens = OutstandingToken.objects.filter(user=user)
+
+        # Blacklist valid tokens
+        for token in tokens:
+            if token.expires_at > timezone.now():
+                BlacklistedToken.objects.get_or_create(token=token)
+
+        # Delete expired tokens
+        tokens.filter(expires_at__lte=timezone.now()).delete()
+
+        return True
+    except Exception as e:
+        # Log this in production
+        print(f"Error invalidating tokens for user {user.id}: {str(e)}")
+        return False
