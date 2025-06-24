@@ -21,7 +21,7 @@
                     <requestState>
                       <option name="body">
                         <bodyState>
-                          <option name="raw" value="{&#10;  &quot;username&quot;: &quot;john_doe&quot;,&#10;  &quot;email&quot;: &quot;john@example.com&quot;,&#10;  &quot;password&quot;: &quot;securePass123&quot;,&#10;  &quot;password2&quot;: &quot;securePass123&quot;,&#10;  &quot;first_name&quot;: &quot;John&quot;,&#10;  &quot;last_name&quot;: &quot;Doe&quot;,&#10;  &quot;address&quot;: &quot;123 Street, City&quot;,&#10;  &quot;phone_no&quot;: &quot;+997-981234567&quot;&#10;}&#10;" />
+                          <option name="raw" value="{&#10;  &quot;id&quot;: &quot;6119be9f-9u11-45fa-92c8-3022f6833176&quot;,&#10;  &quot;username&quot;: &quot;pathsala&quot;,&#10;  &quot;email&quot;: &quot;pathsala@gmail.com&quot;,&#10;  &quot;password&quot;: &quot;securePass@321&quot;,&#10;  &quot;password2&quot;: &quot;securePass@321&quot;,&#10;  &quot;first_name&quot;: &quot;aship&quot;,&#10;  &quot;last_name&quot;: &quot;aalam&quot;,&#10;  &quot;address&quot;: &quot;123 Street, City&quot;,&#10;  &quot;phone_no&quot;: &quot;+997-981234567&quot;&#10;}&#10;" />
                           <option name="type" value="JSON" />
                         </bodyState>
                       </option>
@@ -34,7 +34,7 @@
                     <requestState>
                       <option name="body">
                         <bodyState>
-                          <option name="raw" value="{&#10;  &quot;username&quot;: &quot;admin&quot;,&#10;  &quot;password&quot;: &quot;root&quot;&#10;}&#10;" />
+                          <option name="raw" value="{&#10;  &quot;username&quot;: &quot;admin&quot;,&#10;  &quot;password&quot;: &quot;12345678&quot;&#10;}&#10;" />
                           <option name="type" value="JSON" />
                         </bodyState>
                       </option>
@@ -47,6 +47,7 @@
                     <requestState>
                       <option name="body">
                         <bodyState>
+                          <option name="raw" value="{&#10;  &quot;refresh&quot; : &quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc1MDgyMzQ1NywiaWF0IjoxNzUwNzM3MDU3LCJqdGkiOiJjYWYwMDdmM2I2ODU0ZjYxYjUyOTE0ODBmNGEyN2E2NyIsInVzZXJfaWQiOiIyNTViYWU4My1jNTAxLTQwMzktOWUxMC1hNjg1ZmQ3NGY2OGEifQ.TSPnMxysR1r-j8qZhHJfZDmsh4dNTfwU8ZUZt_LhtZE&quot;&#10;}" />
                           <option name="type" value="JSON" />
                         </bodyState>
                       </option>
@@ -54,7 +55,7 @@
                         <list>
                           <headerState>
                             <option name="key" value="Authorization" />
-                            <option name="value" value="Token 44435ed10d6fa74fc4d1c688bdad2475c75256e8" />
+                            <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUwNzM3MzU3LCJpYXQiOjE3NTA3MzcwNTcsImp0aSI6ImQ3ODM4MGNkNzQ3ZDRhZWRiNGIzMGZjYWE3NmZlYTQ2IiwidXNlcl9pZCI6IjI1NWJhZTgzLWM1MDEtNDAzOS05ZTEwLWE2ODVmZDc0ZjY4YSJ9.IfZPdEsvTIPdyPet-BzzZYp5GheLGBJhngzc9r2x3PA" />
                           </headerState>
                         </list>
                       </option>
@@ -65,6 +66,16 @@
                       <option name="url" value="http://localhost:8000/api/auth/logout/" />
                     </requestState>
                     <requestState>
+                      <option name="auth">
+                        <authState>
+                          <option name="bearer">
+                            <pF>
+                              <option name="token" value="{   &quot;refresh&quot;: &quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc1MDc3NDgzMywiaWF0IjoxNzUwNjg4NDMzLCJqdGkiOiIzZDM0OGRlN2ZiODI0ZjQ4YWU5ZWNlNjA2YTcyOGU5MSIsInVzZXJfaWQiOiI3Y2NhYmQyMC05ZTc4LTRlZWYtYTEzZi0wNDVlMTE5MjhiMDUifQ.6lg75HjYlWRchr2lpBcNM5CVyPcxCtbpP9avNoSIslY&quot;,   &quot;access&quot;: &quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUwNjg4NzMzLCJpYXQiOjE3NTA2ODg0MzMsImp0aSI6IjE4NTFiZmRlMTg2MjQwMmFiMzU4ZTIwMjk1NzBhZDg3IiwidXNlcl9pZCI6IjdjY2FiZDIwLTllNzgtNGVlZi1hMTNmLTA0NWUxMTkyOGIwNSJ9.Cm5gYwMEKx0xuQ0w4ebQAfgxh3ZSaEfZIi3qwu893Og&quot; }" />
+                            </pF>
+                          </option>
+                          <option name="type" value="BEARER" />
+                        </authState>
+                      </option>
                       <option name="body">
                         <bodyState>
                           <option name="type" value="JSON" />
@@ -74,7 +85,12 @@
                         <list>
                           <headerState>
                             <option name="key" value="Authorization" />
-                            <option name="value" value="Token 44435ed10d6fa74fc4d1c688bdad2475c75256e8" />
+                            <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUwNzYyODA5LCJpYXQiOjE3NTA3NjI1MDksImp0aSI6ImY5ODJlNGRmNTc0NzQ2NzE4N2U2ODU3YTRmNDJlNTg1IiwidXNlcl9pZCI6IjgyNTM3M2U2LWNiM2YtNGIwYS04NGE4LWZiZjg5MTMwM2ZiNCJ9.oV_paV5pM7eOe7yq9LIV4-j6c-k9DPpIK5GUV-ds9vg" />
+                          </headerState>
+                          <headerState>
+                            <option name="disabled" value="true" />
+                            <option name="key" value="access" />
+                            <option name="value" value="Token &quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc1MDc3NDUyOCwiaWF0IjoxNzUwNjg4MTI4LCJqdGkiOiI2ZmY4NWNlMGNlODM0ZWM5OTk4NGViMDA0NTYyMzA5OCIsInVzZXJfaWQiOiI3Y2NhYmQyMC05ZTc4LTRlZWYtYTEzZi0wNDVlMTE5MjhiMDUifQ.ai5dfXyhlGZmnulPTPYy_2wSYfqNSgHPPSvkUSTr5P0&quot;," />
                           </headerState>
                         </list>
                       </option>
@@ -87,7 +103,7 @@
                     <requestState>
                       <option name="body">
                         <bodyState>
-                          <option name="raw" value="{&#10;  &quot;first_name&quot;: &quot;Johnathan&quot;,&#10;  &quot;last_name&quot;: &quot;Doe&quot;,&#10;  &quot;email&quot;: &quot;john.doe@example.com&quot;,&#10;  &quot;username&quot;: &quot;john_doe&quot;,&#10;  &quot;password&quot;: &quot;securePass123&quot;,&#10;  &quot;password2&quot;: &quot;securePass123&quot;&#10;}&#10;" />
+                          <option name="raw" value="{&#10;  &quot;id&quot;: &quot;6119be9f-9f54-45fa-92c8-3022f6833176&quot;,&#10;  &quot;first_name&quot;: &quot;ACERRR&quot;,&#10;  &quot;last_name&quot;: &quot;okk&quot;,&#10;  &quot;email&quot;: &quot;aship100@gmail.com&quot;,&#10;  &quot;username&quot;: &quot;aship100&quot;,&#10;  &quot;password&quot;: &quot;securePass@321&quot;,&#10;  &quot;password2&quot;: &quot;securePass@321&quot;,&#10;  &quot;last_login&quot;: &quot;2025-06-23T03:41:31.630005Z&quot;,&#10;  &quot;date_joined&quot;: &quot;2025-02-23T03:41:31.630005Z&quot;,&#10;  &quot;is_active&quot;: false&#10;}&#10;" />
                           <option name="type" value="JSON" />
                         </bodyState>
                       </option>
@@ -95,12 +111,12 @@
                         <list>
                           <headerState>
                             <option name="key" value="Authorization" />
-                            <option name="value" value="Token 44435ed10d6fa74fc4d1c688bdad2475c75256e8" />
+                            <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUwNzM3Njk1LCJpYXQiOjE3NTA3MzczOTUsImp0aSI6Ijg2Njg4NjUyM2ZlMzQ4NmU5ODQyZWY3NmY0OTc4YWQyIiwidXNlcl9pZCI6IjI1NWJhZTgzLWM1MDEtNDAzOS05ZTEwLWE2ODVmZDc0ZjY4YSJ9.Xqyfz-UKSGOqrMegivMw7JvnaV7lS_5znPcW7gAltvM" />
                           </headerState>
                         </list>
                       </option>
                       <option name="id" value="8c70fd9d-e004-4690-b0ad-8771f62b2591" />
-                      <option name="method" value="PUT" />
+                      <option name="method" value="PATCH" />
                       <option name="name" value="edit self profile" />
                       <option name="sortWeight" value="5000000" />
                       <option name="url" value="http://localhost:8000/api/auth/user/edit/" />
@@ -115,7 +131,7 @@
                         <list>
                           <headerState>
                             <option name="key" value="Authorization" />
-                            <option name="value" value="Token 44435ed10d6fa74fc4d1c688bdad2475c75256e8" />
+                            <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUwNzMyNzU3LCJpYXQiOjE3NTA3MzI0NTcsImp0aSI6IjAxMTg0NGNhZjBiZDRhODZiYmQ3OTRjMDUyYzJlYzZlIiwidXNlcl9pZCI6IjliN2YzMmMyLThlYmQtNGI2NS1hMTA5LWRhYjU4NGNhNThmNiJ9.OXE7OARgHtaCXiejkJWW_05lAGW3Kvba1LVyc3wFzFg" />
                           </headerState>
                         </list>
                       </option>
@@ -128,7 +144,7 @@
                     <requestState>
                       <option name="body">
                         <bodyState>
-                          <option name="raw" value="{&#10;  &quot;username&quot;: &quot;moderator_user&quot;,&#10;  &quot;email&quot;: &quot;mod@example.com&quot;,&#10;  &quot;password&quot;: &quot;moderator123&quot;,&#10;  &quot;password2&quot;: &quot;moderator123&quot;&#10;}&#10;" />
+                          <option name="raw" value="{&#10;  &quot;username&quot;: &quot;moderator&quot;,&#10;  &quot;email&quot;: &quot;moderator_User@example.com&quot;,&#10;  &quot;password&quot;: &quot;Adminpassword1@&quot;,&#10;  &quot;password2&quot;: &quot;Adminpassword1@&quot;&#10;}&#10;" />
                           <option name="type" value="JSON" />
                         </bodyState>
                       </option>
@@ -136,7 +152,7 @@
                         <list>
                           <headerState>
                             <option name="key" value="Authorization" />
-                            <option name="value" value="Token 4498fbfab0d9141229112206e29f4b3478075fe4" />
+                            <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUwNzYyODA5LCJpYXQiOjE3NTA3NjI1MDksImp0aSI6ImY5ODJlNGRmNTc0NzQ2NzE4N2U2ODU3YTRmNDJlNTg1IiwidXNlcl9pZCI6IjgyNTM3M2U2LWNiM2YtNGIwYS04NGE4LWZiZjg5MTMwM2ZiNCJ9.oV_paV5pM7eOe7yq9LIV4-j6c-k9DPpIK5GUV-ds9vg" />
                           </headerState>
                         </list>
                       </option>
@@ -146,9 +162,75 @@
                       <option name="sortWeight" value="7000000" />
                       <option name="url" value="http://localhost:8000/api/auth/create-moderator/" />
                     </requestState>
+                    <requestState>
+                      <option name="body">
+                        <bodyState>
+                          <option name="raw" value="&#10;" />
+                          <option name="type" value="JSON" />
+                        </bodyState>
+                      </option>
+                      <option name="headers">
+                        <list>
+                          <headerState>
+                            <option name="key" value="Authorization" />
+                            <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUwNzMyNzU3LCJpYXQiOjE3NTA3MzI0NTcsImp0aSI6IjAxMTg0NGNhZjBiZDRhODZiYmQ3OTRjMDUyYzJlYzZlIiwidXNlcl9pZCI6IjliN2YzMmMyLThlYmQtNGI2NS1hMTA5LWRhYjU4NGNhNThmNiJ9.OXE7OARgHtaCXiejkJWW_05lAGW3Kvba1LVyc3wFzFg" />
+                          </headerState>
+                        </list>
+                      </option>
+                      <option name="id" value="ae3ce878-8c84-4b1b-a70e-707c1c3ecd04" />
+                      <option name="method" value="GET" />
+                      <option name="name" value="user list (only admin)" />
+                      <option name="sortWeight" value="8000000" />
+                      <option name="url" value="http://localhost:8000/api/auth/user/list/" />
+                    </requestState>
                   </list>
                 </option>
                 <option name="sortWeight" value="1000000" />
+              </folderState>
+              <folderState>
+                <option name="id" value="21130c12-f790-4dd7-8237-5b5f0ad71e85" />
+                <option name="name" value="courses" />
+                <option name="requests">
+                  <list>
+                    <requestState>
+                      <option name="id" value="91a82eae-1d77-4769-974d-30a6ca416a21" />
+                      <option name="method" value="GET" />
+                      <option name="name" value="list courses" />
+                      <option name="queryParams">
+                        <list>
+                          <queryParamState>
+                            <option name="key" value="class_type" />
+                            <option name="value" value="hybrid" />
+                          </queryParamState>
+                        </list>
+                      </option>
+                      <option name="sortWeight" value="1000000" />
+                      <option name="url" value="http://127.0.0.1:8000/api/courses/list-courses/?class_type=hybrid" />
+                    </requestState>
+                    <requestState>
+                      <option name="body">
+                        <bodyState>
+                          <option name="raw" value="{&#10;  &quot;name&quot;: &quot;Data Science&quot;,&#10;  &quot;title&quot;: &quot;Data Analysis&quot;,&#10;  &quot;duration&quot;: 30,&#10;  &quot;price&quot;: 4000,&#10;  &quot;rating&quot;: 3.4,&#10;  &quot;training_level&quot;: &quot;begginner&quot;,&#10;  &quot;class_type&quot;: &quot;hybrid&quot;,&#10;  &quot;career_prospect&quot;: &quot;A FUll fledged backend developer&quot;,&#10;}" />
+                          <option name="type" value="JSON" />
+                        </bodyState>
+                      </option>
+                      <option name="headers">
+                        <list>
+                          <headerState>
+                            <option name="key" value="Authorization" />
+                            <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUwNzYzNjQ5LCJpYXQiOjE3NTA3NjMzNDksImp0aSI6Ijk1OGYzNTY1YjJmODRjMDU4M2ViN2NjYjZjMGRkMDhmIiwidXNlcl9pZCI6IjgyNTM3M2U2LWNiM2YtNGIwYS04NGE4LWZiZjg5MTMwM2ZiNCJ9.IhjOWW_wLO83qhYpPr39bGQgxd4UWDBgBWfGFUGIjAs" />
+                          </headerState>
+                        </list>
+                      </option>
+                      <option name="id" value="53c86376-5da4-4fe3-b68d-a794ee016325" />
+                      <option name="method" value="POST" />
+                      <option name="name" value="add course" />
+                      <option name="sortWeight" value="2000000" />
+                      <option name="url" value="http://127.0.0.1:8000/api/courses/add-course/" />
+                    </requestState>
+                  </list>
+                </option>
+                <option name="sortWeight" value="2000000" />
               </folderState>
             </list>
           </option>
