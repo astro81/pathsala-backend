@@ -1,8 +1,8 @@
 from django.urls import path
 from .views import (
     RegisterUserView, LoginUserView, LogoutUserView, RefreshTokenView,
-    CreateModeratorView, EditUserView, DeleteUserView,
-    ReactivateUserView, UserProfileView, UserListView
+    CreateModeratorView,  DeleteUserView,
+    ReactivateUserView, UserProfileView,
 )
 
 app_name = 'users'
@@ -16,8 +16,8 @@ urlpatterns = [
 
     path('create-moderator/', CreateModeratorView.as_view(), name='create_moderator'),
 
-    path('user/edit/', EditUserView.as_view(), name='edit_self'),
-    path('user/edit/<str:username>/', EditUserView.as_view(), name='edit_user_by_admin'),
+    # path('user/edit/', EditUserView.as_view(), name='edit_self'),
+    # path('user/edit/<str:username>/', EditUserView.as_view(), name='edit_user_by_admin'),
 
     path('user/delete/', DeleteUserView.as_view(), name='delete_self'),
     path('user/delete/<str:username>/', DeleteUserView.as_view(), name='delete_user_by_admin'),
@@ -27,5 +27,5 @@ urlpatterns = [
     path('user/profile/', UserProfileView.as_view(), name='profile_self'),
     path('user/profile/<str:username>/', UserProfileView.as_view(), name='profile_by_username'),
 
-    path('user/list/', UserListView.as_view(), name='user_list'),
+    # path('user/list/', UserListView.as_view(), name='user_list'),
 ]
