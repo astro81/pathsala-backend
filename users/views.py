@@ -19,7 +19,7 @@ from rolepermissions.roles import assign_role
 
 from users.permissions import IsAdmin
 from users.serializers import UserSerializer
-from users.utils import get_user_or_403, is_superuser_blocked
+from users.utils import get_user_or_403, is_superuser_blocked, invalidate_user_tokens
 
 User = get_user_model()
 
@@ -199,19 +199,9 @@ class LogoutUserView(APIView):
         """
         try:
             # Attempt to delete the user's token
-            refresh_token = request.data.get('refresh')
-            if not refresh_token:
-                return Response({
-                    'error': 'Refresh token is required.'},
-                    status=status.HTTP_400_BAD_REQUEST
-                )
-
-            token = RefreshToken(refresh_token)
-            token.blacklist()
+            user = request.user
+            invalidate_user_tokens(user)
             return Response({'message': 'Logged out successfully'}, status=status.HTTP_200_OK)
-
-        except TokenError as te:
-            return Response({'error': 'Invalid or expired token.'}, status=status.HTTP_400_BAD_REQUEST)
 
         except Exception as e:
             return Response(
@@ -348,35 +338,6 @@ class EditUserView(APIView):
         """
         return self._update_user(request, username, full_update=False)
 
-    def _invalidate_user_tokens(self, user):
-        """
-        Invalidate all active tokens for a user.
-        This is called when sensitive information (password/email) is changed.
-        """
-        try:
-            # Get all outstanding tokens for the user
-            tokens = OutstandingToken.objects.filter(user=user)
-
-            # Blacklist tokens that haven't expired yet
-            for token in tokens:
-                if token.expires_at > timezone.now():
-                    BlacklistedToken.objects.get_or_create(token=token)
-
-            # Optional: Delete expired tokens to clean up
-            expired_tokens = OutstandingToken.objects.filter(
-                user=user,
-                expires_at__lte=timezone.now()
-            )
-            expired_tokens.delete()
-
-            # If using refresh token rotation, you might want to add additional handling
-            return True
-
-        except Exception as e:
-            # Log this error in production
-            print(f"Error invalidating tokens for user {user.id}: {str(e)}")
-            return False
-
     def _update_user(self, request, username, full_update):
         """
         Internal handler for both PUT and PATCH operations.
@@ -405,7 +366,7 @@ class EditUserView(APIView):
 
             # Invalidate tokens if the password has changed
             if is_password_changed:
-                self._invalidate_user_tokens(user)
+                invalidate_user_tokens(user)
                 return Response({
                     'message': 'User updated successfully. Please login again with your new password.',
                     'logout_required': True
