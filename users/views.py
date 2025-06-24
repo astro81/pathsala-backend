@@ -190,17 +190,19 @@ class LogoutUserView(APIView):
             - 401: If the user is not authenticated.
             - 500: If an unexpected error occurs.
         """
-        try:
-            # Attempt to delete the user's token
-            user = request.user
-            invalidate_user_tokens(user)
-            return Response({'message': 'Logged out successfully'}, status=status.HTTP_200_OK)
 
-        except Exception as e:
-            return Response(
-                {'error': 'An unexpected error occurred during logout.', 'details': str(e)},
-                status=status.HTTP_500_INTERNAL_SERVER_ERROR
-            )
+
+        refresh_token = request.data.get("refresh")
+        # access_token = request.data.get("access")
+
+            # 1. Blacklist refresh token
+        if refresh_token:
+            try:
+                token = RefreshToken(refresh_token)
+                token.blacklist()
+                return Response({'message': 'Successfully logged out.'}, status=status.HTTP_200_OK)
+            except Exception:
+                return Response({"detail": "Invalid refresh token"}, status=status.HTTP_400_BAD_REQUEST)
 
 
 class RefreshTokenView(APIView):
