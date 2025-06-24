@@ -485,3 +485,87 @@ class UserProfileView(APIView):
                 status=status.HTTP_500_INTERNAL_SERVER_ERROR
             )
 
+
+class EditUserView(APIView):
+    """
+    API endpoint to edit user details with the PATCH method.
+
+    Users can edit their own profile. Admins can edit any profile.
+    The user role cannot be modified after the initial assignment.
+    """
+    permission_classes = [IsAuthenticated]
+
+    @swagger_auto_schema(
+        manual_parameters=[
+            openapi.Parameter('username', openapi.IN_PATH, type=openapi.TYPE_STRING, required=True)
+        ],
+        request_body=UserSerializer,
+        responses={
+            200: "User updated successfully",
+            400: "Validation error",
+            403: "Forbidden",
+            404: "Not found",
+            500: "Error"
+        }
+    )
+    def patch(self, request, username=None):
+        """
+        Partially update user details.
+
+        Parameters:
+            - username: Optional[str] (defaults to current user)
+
+        Request Body:
+            - Any editable user fields (only include fields to update)
+
+        Returns:
+            - 200: User updated successfully
+            - 400: Validation error
+            - 403/404: Not allowed or not found
+            - 500: Internal server error
+        """
+        try:
+            # Get the user to be updated
+            user = get_user_or_403(request, username)
+            if isinstance(user, Response):
+                return user
+
+            # Prevent editing superusers unless current user is superuser
+            if user.is_superuser and not request.user.is_superuser:
+                return Response(
+                    {'error': 'You cannot edit superuser accounts.'},
+                    status=status.HTTP_403_FORBIDDEN
+                )
+
+            # Make a copy of the data and remove a role if present
+            data = request.data.copy()
+            if 'role' in data:
+                data.pop('role')  # Remove a role to prevent changes
+
+            # Validate and update the user with partial=True
+            serializer = UserSerializer(user, data=data, partial=True)
+            serializer.is_valid(raise_exception=True)
+            serializer.save()
+
+            return Response(
+                {
+                    'message': 'User updated successfully.',
+                    'data': serializer.data
+                },
+                status=status.HTTP_200_OK
+            )
+
+        except ValidationError as ve:
+            return Response(ve.detail, status=status.HTTP_400_BAD_REQUEST)
+
+        except (DatabaseError, IntegrityError) as db_err:
+            return Response(
+                {'error': 'Database error while updating profile.', 'details': str(db_err)},
+                status=status.HTTP_500_INTERNAL_SERVER_ERROR
+            )
+
+        except Exception as e:
+            return Response(
+                {'error': 'An unexpected error occurred while updating profile.', 'details': str(e)},
+                status=status.HTTP_500_INTERNAL_SERVER_ERROR
+            )
