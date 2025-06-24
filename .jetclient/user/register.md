@@ -10,10 +10,10 @@ type = 'JSON'
 raw = '''
 {
   "id": "6119be9f-9u11-45fa-92c8-3022f6833176",
-  "username": "h123",
-  "email": "hack@gmail.com",
-  "password": "securePass@123",
-  "password2": "securePass@123",
+  "username": "pathsala",
+  "email": "pathsala@gmail.com",
+  "password": "securePass@321",
+  "password2": "securePass@321",
   "first_name": "aship",
   "last_name": "aalam",
   "address": "123 Street, City",

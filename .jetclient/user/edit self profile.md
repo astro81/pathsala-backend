@@ -1,20 +1,20 @@
 ```toml
 name = 'edit self profile'
-method = 'PUT'
+method = 'PATCH'
 url = 'http://localhost:8000/api/auth/user/edit/'
 sortWeight = 5000000
 id = '8c70fd9d-e004-4690-b0ad-8771f62b2591'
 
 [[headers]]
 key = 'Authorization'
-value = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUwNzMzMjc0LCJpYXQiOjE3NTA3MzI5NzQsImp0aSI6Ijk0MzZkNjI3ZmZmMDRkYWRhMDU5NDE3MTM3MzAzODBkIiwidXNlcl9pZCI6ImQ1MTgwNjAwLWEzMjUtNGRiZi05NjM5LTM3NTQ2ZjZmZmMyNSJ9.dSSAEpnjXR0f8Hjw0PxnPTe1SI6tiv7Qn2FVPlp3kik'
+value = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUwNzM3Njk1LCJpYXQiOjE3NTA3MzczOTUsImp0aSI6Ijg2Njg4NjUyM2ZlMzQ4NmU5ODQyZWY3NmY0OTc4YWQyIiwidXNlcl9pZCI6IjI1NWJhZTgzLWM1MDEtNDAzOS05ZTEwLWE2ODVmZDc0ZjY4YSJ9.Xqyfz-UKSGOqrMegivMw7JvnaV7lS_5znPcW7gAltvM'
 
 [body]
 type = 'JSON'
 raw = '''
 {
   "id": "6119be9f-9f54-45fa-92c8-3022f6833176",
-  "first_name": "Ashif",
+  "first_name": "ACERRR",
   "last_name": "okk",
   "email": "aship100@gmail.com",
   "username": "aship100",

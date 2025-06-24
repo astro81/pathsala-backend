@@ -1,6 +1,4 @@
 from datetime import timezone
-from tokenize import TokenError
-
 from django.contrib.auth import authenticate, get_user_model
 from django.db import IntegrityError, DatabaseError
 from drf_yasg import openapi
@@ -14,6 +12,7 @@ from rest_framework.response import Response
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework_simplejwt.token_blacklist.models import OutstandingToken, BlacklistedToken
 from rest_framework_simplejwt.tokens import RefreshToken
+from rest_framework_simplejwt.exceptions import TokenError
 from rolepermissions.checkers import has_role
 from rolepermissions.roles import assign_role
 
@@ -188,6 +187,9 @@ class LogoutUserView(APIView):
             500: "Unexpected error"
         }
     )
+
+
+
     def post(self, request):
         """
         Invalidate user's token.
@@ -198,16 +200,12 @@ class LogoutUserView(APIView):
             - 500: If an unexpected error occurs.
         """
         try:
-            # Attempt to delete the user's token
-            user = request.user
-            invalidate_user_tokens(user)
-            return Response({'message': 'Logged out successfully'}, status=status.HTTP_200_OK)
-
+            refresh_token = request.data["refresh"]
+            token = RefreshToken(refresh_token)
+            token.blacklist()
+            return Response({"message":"Logout Successfully."},status=status.HTTP_205_RESET_CONTENT)
         except Exception as e:
-            return Response(
-                {'error': 'An unexpected error occurred during logout.', 'details': str(e)},
-                status=status.HTTP_500_INTERNAL_SERVER_ERROR
-            )
+            return Response({"Error":"Already Logout."},status=status.HTTP_400_BAD_REQUEST)
 
 
 class RefreshTokenView(APIView):

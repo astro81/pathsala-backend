@@ -68,21 +68,18 @@ def is_superuser_blocked(user):
 
 def invalidate_user_tokens(user):
     """
-    Invalidate all active tokens for the user and clean up expired ones.
+    Properly invalidate all tokens for a user
     """
     try:
-        tokens = OutstandingToken.objects.filter(user=user)
-
-        # Blacklist valid tokens
-        for token in tokens:
-            if token.expires_at > timezone.now():
+        # Invalidate all refresh tokens (which cascades to access tokens)
+        for token in OutstandingToken.objects.filter(user=user):
+            if not token.expires_at or token.expires_at > timezone.now():
                 BlacklistedToken.objects.get_or_create(token=token)
 
-        # Delete expired tokens
-        tokens.filter(expires_at__lte=timezone.now()).delete()
+        # Alternative: SimpleJWT's built-in blacklist
+        for token in OutstandingToken.objects.filter(user=user):
+            RefreshToken(token.token).blacklist()
 
         return True
     except Exception as e:
-        # Log this in production
-        print(f"Error invalidating tokens for user {user.id}: {str(e)}")
-        return False
+        return Response(f"Token invalidation failed for {user.username}: {str(e)}", status=status.HTTP_500_INTERNAL_SERVER_ERROR)
