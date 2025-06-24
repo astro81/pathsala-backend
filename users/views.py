@@ -1,21 +1,14 @@
-from datetime import timezone
-from tokenize import TokenError
-
 from django.contrib.auth import authenticate, get_user_model
 from django.db import IntegrityError, DatabaseError
 from drf_yasg import openapi
 from drf_yasg.utils import swagger_auto_schema
 from rest_framework import status
 from rest_framework.exceptions import ValidationError
-from rest_framework.generics import ListAPIView
-from rest_framework.pagination import PageNumberPagination
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.permissions import AllowAny, IsAuthenticated
-from rest_framework_simplejwt.token_blacklist.models import OutstandingToken, BlacklistedToken
 from rest_framework_simplejwt.tokens import RefreshToken
-from rolepermissions.checkers import has_role
-from rolepermissions.roles import assign_role
+from rest_framework_simplejwt.exceptions import TokenError
 
 from users.permissions import IsAdmin
 from users.serializers import UserSerializer
@@ -60,7 +53,7 @@ class RegisterUserView(APIView):
         try:
             serializer.is_valid(raise_exception=True)
             user = serializer.save()
-            assign_role(user, 'student')  # Assign default role
+            # assign_role(user, 'student')   #* Automatic role assignment via User.save()
             return Response({'message': 'User registered successfully'}, status=status.HTTP_201_CREATED)
 
         except ValidationError as ve:
@@ -289,90 +282,16 @@ class CreateModeratorView(APIView):
             - 500: Unexpected error.
         """
         try:
-            serializer = UserSerializer(data=request.data)
+            data = request.data.copy()
+            data['role'] = User.Role.MODERATOR  #! Force moderator role
+
+            serializer = UserSerializer(data=data)
             serializer.is_valid(raise_exception=True)  # DRF-native validation
 
             user = serializer.save()
-            assign_role(user, 'moderator')
+            # assign_role(user, 'moderator')
 
             return Response({'message': 'Moderator created successfully'}, status=status.HTTP_201_CREATED)
-
-        except ValidationError as ve:
-            return Response(ve.detail, status=status.HTTP_400_BAD_REQUEST)
-
-        except IntegrityError as ie:
-            return Response({'error': 'Database integrity error.', 'details': str(ie)}, status=status.HTTP_400_BAD_REQUEST)
-
-        except DatabaseError as db_err:
-            return Response({'error': 'Database error occurred.', 'details': str(db_err)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
-
-        except Exception as e:
-            return Response({'error': 'Unexpected error occurred.', 'details': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
-
-
-class EditUserView(APIView):
-    """
-    API endpoint to update user profile.
-
-    Users can edit their own profile. Admins can edit any user's profile.
-    """
-    permission_classes = [IsAuthenticated]
-
-    @swagger_auto_schema(
-        request_body=UserSerializer,
-        responses={200: "User updated", 400: "Validation error", 500: "Error"}
-    )
-    def put(self, request, username=None):
-        """
-        Fully update a user's profile (all fields required).
-        """
-        return self._update_user(request, username, full_update=True)
-
-    @swagger_auto_schema(
-        request_body=UserSerializer,
-        responses={200: "User updated", 400: "Validation error", 500: "Error"}
-    )
-    def patch(self, request, username=None):
-        """
-        Partially update a user's profile (some fields).
-        """
-        return self._update_user(request, username, full_update=False)
-
-    def _update_user(self, request, username, full_update):
-        """
-        Internal handler for both PUT and PATCH operations.
-        """
-        # Resolve user object or return appropriate error (403 or 404)
-        user = get_user_or_403(request, username)
-        if isinstance(user, Response):
-            return user
-
-        # Prevent superuser updates in restricted contexts
-        superuser_block = is_superuser_blocked(user)
-        if superuser_block:
-            return superuser_block
-
-        try:
-            # Check if the password is being changed
-            is_password_changed = False
-            if 'password' in request.data:
-                if not user.check_password(request.data.get('password')):
-                    is_password_changed = True
-
-            # Validate and save user data
-            serializer = UserSerializer(user, data=request.data, partial=not full_update)
-            serializer.is_valid(raise_exception=True)
-            serializer.save()
-
-            # Invalidate tokens if the password has changed
-            if is_password_changed:
-                invalidate_user_tokens(user)
-                return Response({
-                    'message': 'User updated successfully. Please login again with your new password.',
-                    'logout_required': True
-                }, status=status.HTTP_200_OK)
-
-            return Response({'message': 'User updated successfully.'}, status=status.HTTP_200_OK)
 
         except ValidationError as ve:
             return Response(ve.detail, status=status.HTTP_400_BAD_REQUEST)
@@ -565,52 +484,4 @@ class UserProfileView(APIView):
                 {'error': 'An unexpected error occurred while retrieving profile.', 'details': str(e)},
                 status=status.HTTP_500_INTERNAL_SERVER_ERROR
             )
-
-class UserListView(ListAPIView):
-    permission_classes = [IsAuthenticated, IsAdmin]
-    serializer_class = UserSerializer
-    pagination_class = PageNumberPagination
-
-    @swagger_auto_schema(
-        operation_summary="List users",
-        manual_parameters=[
-            openapi.Parameter(
-                'role',
-                openapi.IN_QUERY,
-                description="Optional user role to filter by (e.g. 'student')",
-                type=openapi.TYPE_STRING
-            )
-        ],
-        responses={200: UserSerializer(many=True)}
-    )
-    def get_queryset(self):
-        role = self.request.query_params.get('role')
-        users = User.objects.all().order_by('username')
-
-        if role:
-            # Filter users in Python to those with the requested role
-            # But first limit queryset to a manageable size for performance
-            # Here we do full queryset and filter below in a pagination step
-            self.role = role
-            return users
-
-        self.role = None
-        return users
-
-    def list(self, request, *args, **kwargs):
-        queryset = self.get_queryset()
-
-        if self.role:
-            # Filter users who have the specified role
-            filtered_users = [user for user in queryset if has_role(user, self.role)]
-        else:
-            filtered_users = list(queryset)
-
-        page = self.paginate_queryset(filtered_users)
-        if page is not None:
-            serializer = self.get_serializer(page, many=True)
-            return self.get_paginated_response(serializer.data)
-
-        serializer = self.get_serializer(filtered_users, many=True)
-        return Response(serializer.data)
 

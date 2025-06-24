@@ -1,17 +1,3 @@
-"""
-serializers.py
-
-Defines a UserSerializer for serializing and deserializing User instances.
-Includes comprehensive field validation including
-- Email format and uniqueness
-- Password strength
-- Phone number formatting
-- Cross-field validation (e.g., password confirmation)
-
-Used in APIs for user registration, update, and retrieval.
-"""
-
-
 import re
 
 from django.contrib.auth import get_user_model
@@ -204,6 +190,12 @@ class UserSerializer(serializers.ModelSerializer):
         if 'id' in data:
             data.pop('id')
 
+        if self.instance and 'role' in data:
+            if data['role'] != self.instance.role:
+                raise serializers.ValidationError({
+                    'role': 'User roles cannot be changed after assignment'
+                })
+
         if data.get('password') != data.get('password2'):
             raise serializers.ValidationError({"error": "Passwords must match."})
 
@@ -255,6 +247,7 @@ class UserSerializer(serializers.ModelSerializer):
             validated_data.pop('id')
 
         validated_data.pop('password2', None)
+        validated_data.pop('role', None)
 
         self._validate_unique_field(instance, 'username', validated_data.get('username'))
         self._validate_unique_field(instance, 'email', validated_data.get('email'))
