@@ -1,9 +1,9 @@
 ```toml
-name = 'delte self profile'
-method = 'DELETE'
-url = 'http://localhost:8000/api/auth/user/delete/'
-sortWeight = 6000000
-id = '63d22de4-81e0-465a-917e-1b7825011dbf'
+name = 'user list (only admin)'
+method = 'GET'
+url = 'http://localhost:8000/api/auth/user/list/'
+sortWeight = 8000000
+id = 'ae3ce878-8c84-4b1b-a70e-707c1c3ecd04'
 
 [[headers]]
 key = 'Authorization'
@@ -11,4 +11,7 @@ value = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXN
 
 [body]
 type = 'JSON'
+raw = '''
+
+'''
 ```

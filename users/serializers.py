@@ -84,7 +84,7 @@ class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = (
-            'id',
+            # 'id',
             'username',
             'email',
             'password',
@@ -99,7 +99,7 @@ class UserSerializer(serializers.ModelSerializer):
             'is_active'
         )
         extra_kwargs = {
-            'id': {'read_only': True},
+            # 'id': {'read_only': True},
             'last_login': {'read_only': True},
             'date_joined': {'read_only': True},
             'is_active': {'read_only': True}
