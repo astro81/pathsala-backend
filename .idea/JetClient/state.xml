@@ -34,7 +34,7 @@
                     <requestState>
                       <option name="body">
                         <bodyState>
-                          <option name="raw" value="{&#10;  &quot;username&quot;: &quot;admin&quot;,&#10;  &quot;password&quot;: &quot;12345678&quot;&#10;}&#10;" />
+                          <option name="raw" value="{&#10;  &quot;username&quot;: &quot;moderator&quot;,&#10;  &quot;password&quot;: &quot;Mod@1234&quot;&#10;}&#10;" />
                           <option name="type" value="JSON" />
                         </bodyState>
                       </option>
@@ -144,7 +144,7 @@
                     <requestState>
                       <option name="body">
                         <bodyState>
-                          <option name="raw" value="{&#10;  &quot;username&quot;: &quot;moderator_User3&quot;,&#10;  &quot;email&quot;: &quot;moderator_User33@example.com&quot;,&#10;  &quot;password&quot;: &quot;Adminpassword1@&quot;,&#10;  &quot;password2&quot;: &quot;Adminpassword1@&quot;&#10;}&#10;" />
+                          <option name="raw" value="{&#10;  &quot;username&quot;: &quot;moderator&quot;,&#10;  &quot;email&quot;: &quot;moderator@example.com&quot;,&#10;  &quot;password&quot;: &quot;Mod@1234&quot;,&#10;  &quot;password2&quot;: &quot;Mod@1234&quot;&#10;}&#10;" />
                           <option name="type" value="JSON" />
                         </bodyState>
                       </option>
@@ -152,7 +152,7 @@
                         <list>
                           <headerState>
                             <option name="key" value="Authorization" />
-                            <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUwODE5Njg3LCJpYXQiOjE3NTA4MTkzODcsImp0aSI6ImZiNTZhN2UzZTM2MjQyZDk4M2MyMjY1YjY1MzdiZmFjIiwidXNlcl9pZCI6IjY4OGQzOWIzLWI2YzItNDU1MC1iOWMzLWQyZTIyZjM1YzFiNSJ9.NywBbf-HA1iq0FVLD_Eks_YPPI-gdIkk37Z4y_l5EnM" />
+                            <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUwODU1NjkxLCJpYXQiOjE3NTA4NTUzOTEsImp0aSI6IjhmNGQxNDc5Y2M1YzQ5ZmFhN2QwM2Q4OGUyN2RjNzI5IiwidXNlcl9pZCI6IjlkMzVhZGUwLTkwMTItNGM4Ni1iNjFiLWJkNjE3N2E0ZWEzYyJ9.EFVoB6WI1_gL_zV5rLlchwdxKBk4f7WjKgq2mF5yZnc" />
                           </headerState>
                         </list>
                       </option>
@@ -243,7 +243,7 @@
                     <requestState>
                       <option name="body">
                         <bodyState>
-                          <option name="raw" value="{&#10;  &quot;name&quot;: &quot;Django&quot;,&#10;  &quot;title&quot;: &quot;Django developer&quot;,&#10;  &quot;duration&quot;: 45,&#10;  &quot;price&quot;: 3500,&#10;  &quot;rating&quot;: 3.88,&#10;  &quot;training_level&quot;: &quot;intermediate&quot;,&#10;  &quot;class_type&quot;: &quot;hybrid&quot;,&#10;  &quot;career_prospect&quot;: &quot;A FUll fledged Django developer&quot;,&#10;}" />
+                          <option name="raw" value="{&#10;  &quot;name&quot;: &quot;advanced-python&quot;,&#10;  &quot;title&quot;: &quot;Advanced Python Programming&quot;,&#10;  &quot;duration_value&quot;: 8,&#10;  &quot;duration_unit&quot;: &quot;weeks&quot;,&#10;  &quot;price&quot;: 2500.00,&#10;  &quot;rating&quot;: 4.8,&#10;  &quot;training_level&quot;: &quot;advanced&quot;,&#10;  &quot;class_type&quot;: &quot;hybrid&quot;,&#10;  &quot;career_prospect&quot;: &quot;Backend Developer&quot;&#10;}&#10;" />
                           <option name="type" value="JSON" />
                         </bodyState>
                       </option>
@@ -251,7 +251,7 @@
                         <list>
                           <headerState>
                             <option name="key" value="Authorization" />
-                            <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUwODIxMjI2LCJpYXQiOjE3NTA4MjA5MjYsImp0aSI6IjFjN2E4MGM3Yjk0MDQ1MDdiZWZhZDg0YTg5NmYwNDAyIiwidXNlcl9pZCI6IjY4OGQzOWIzLWI2YzItNDU1MC1iOWMzLWQyZTIyZjM1YzFiNSJ9.8Rv02foYsOm4mzgzGpYsMyDg9gCeYW3tNQO05OQSXeM" />
+                            <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUwODU2ODg0LCJpYXQiOjE3NTA4NTY1ODQsImp0aSI6IjZmNmMzNGE4MDIyNDQyNzQ5ZWJmMzQwZTFiMzQ2ZTVlIiwidXNlcl9pZCI6IjhhYTFjYzk5LTA4NjctNDBlZC05NjNjLWQ0YWY4MjhlODY1NyJ9.7oOwIIBmZ_Z-wFYLtfYH4lK9NBkG2HNx2K-LZE69JTQ" />
                           </headerState>
                         </list>
                       </option>
@@ -285,7 +285,7 @@
                     <requestState>
                       <option name="body">
                         <bodyState>
-                          <option name="raw" value="{&#10; &quot;rating&quot;: &quot;3.8&quot;&#10;}&#10;   " />
+                          <option name="raw" value="{&#10;  &quot;career_prospect&quot;: &quot;Software Developer&quot;,&#10;  &quot;description&quot;: {&#10;    &quot;course_introduction&quot;: &quot;Learn the basics of Python.&quot;,&#10;    &quot;course_overview&quot;: &quot;Variables, control flow, functions, lambda&quot;,&#10;  }&#10;}&#10;" />
                           <option name="type" value="JSON" />
                         </bodyState>
                       </option>
@@ -293,7 +293,7 @@
                         <list>
                           <headerState>
                             <option name="key" value="Authorization" />
-                            <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUwODIwNjE5LCJpYXQiOjE3NTA4MjAzMTksImp0aSI6ImJjMGIwNTUxY2Q4MDRkYWZhYTc4ZjE4ZTI5YTVjY2U3IiwidXNlcl9pZCI6ImJjN2M1NThlLTQ4YWEtNDFkZC1hNWRjLWExYzNhMjUyZjA0YSJ9.ODNdJwWUdYyxMMH7Kyc5va-aTzr5ckfFCN3KNiZCOxM" />
+                            <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUwODU2ODg0LCJpYXQiOjE3NTA4NTY1ODQsImp0aSI6IjZmNmMzNGE4MDIyNDQyNzQ5ZWJmMzQwZTFiMzQ2ZTVlIiwidXNlcl9pZCI6IjhhYTFjYzk5LTA4NjctNDBlZC05NjNjLWQ0YWY4MjhlODY1NyJ9.7oOwIIBmZ_Z-wFYLtfYH4lK9NBkG2HNx2K-LZE69JTQ" />
                           </headerState>
                         </list>
                       </option>
@@ -301,7 +301,7 @@
                       <option name="method" value="PATCH" />
                       <option name="name" value="edit course" />
                       <option name="sortWeight" value="4000000" />
-                      <option name="url" value="http://127.0.0.1:8000/api/courses/edit-course/PHP/" />
+                      <option name="url" value="http://127.0.0.1:8000/api/courses/edit-course/Python Basics/" />
                     </requestState>
                     <requestState>
                       <option name="body">

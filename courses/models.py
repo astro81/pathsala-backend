@@ -110,14 +110,7 @@ class Course(models.Model):
         CourseDescription,
         on_delete=models.CASCADE,
         null=True,
-        blank=True
-    )
-
-    syllabus = models.OneToOneField(
-        CourseSyllabus,
-        on_delete=models.CASCADE,
-        null=True,
-        blank=True
+        blank=True,
     )
 
     class Meta:
