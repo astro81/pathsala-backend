@@ -1,6 +1,8 @@
 import uuid
 from django.db import models
 
+from course_description.models import CourseDescription
+
 class Course(models.Model):
     id = models.UUIDField(
         primary_key=True,
@@ -79,6 +81,8 @@ class Course(models.Model):
         auto_now=True
     )
 
+    description = models.OneToOneField(CourseDescription, on_delete=models.CASCADE)
+
     class Meta:
         verbose_name = "Course"
         verbose_name_plural = "Courses"
@@ -99,4 +103,5 @@ class Course(models.Model):
     # category_id = models.CharField(max_length=100)
     # description_id = models.TextField()
     # syllabus_id = models.TextField()
+
 

@@ -2966,352 +2966,6 @@
           <option name="workspaceId" value="955b3e74-61d3-44d9-8c42-624b89c419d6" />
         </requestHistoryState>
         <requestHistoryState>
-          <option name="dateTime" value="1750764548951" />
-          <option name="id" value="8e09dce6-d8f5-4b31-81f2-67f229d49591" />
-          <option name="request">
-            <requestState>
-              <option name="id" value="91a82eae-1d77-4769-974d-30a6ca416a21" />
-              <option name="method" value="GET" />
-              <option name="name" value="list courses" />
-              <option name="queryParams">
-                <list>
-                  <queryParamState>
-                    <option name="key" value="search" />
-                    <option name="value" value="django" />
-                  </queryParamState>
-                </list>
-              </option>
-              <option name="sortWeight" value="1000000" />
-              <option name="url" value="http://127.0.0.1:8000/api/courses/?search=django" />
-            </requestState>
-          </option>
-          <option name="response">
-            <responseState>
-              <option name="bodyBytesBase64" value="PCFET0NUWVBFIGh0bWw+CjxodG1sIGxhbmc9ImVuIj4KPGhlYWQ+CiAgPG1ldGEgaHR0cC1lcXVpdj0iY29udGVudC10eXBlIiBjb250ZW50PSJ0ZXh0L2h0bWw7IGNoYXJzZXQ9dXRmLTgiPgogIDx0aXRsZT5QYWdlIG5vdCBmb3VuZCBhdCAvYXBpL2NvdXJzZXMvPC90aXRsZT4KICA8bWV0YSBuYW1lPSJyb2JvdHMiIGNvbnRlbnQ9Ik5PTkUsTk9BUkNISVZFIj4KICA8c3R5bGU+CiAgICBodG1sICogeyBwYWRkaW5nOjA7IG1hcmdpbjowOyB9CiAgICBib2R5ICogeyBwYWRkaW5nOjEwcHggMjBweDsgfQogICAgYm9keSAqICogeyBwYWRkaW5nOjA7IH0KICAgIGJvZHkgeyBmb250LWZhbWlseTogc2Fucy1zZXJpZjsgYmFja2dyb3VuZDojZWVlOyBjb2xvcjojMDAwOyB9CiAgICBib2R5ID4gOndoZXJlKGhlYWRlciwgbWFpbiwgZm9vdGVyKSB7IGJvcmRlci1ib3R0b206MXB4IHNvbGlkICNkZGQ7IH0KICAgIGgxIHsgZm9udC13ZWlnaHQ6bm9ybWFsOyBtYXJnaW4tYm90dG9tOi40ZW07IH0KICAgIGgxIHNtYWxsIHsgZm9udC1zaXplOjYwJTsgY29sb3I6IzY2NjsgZm9udC13ZWlnaHQ6bm9ybWFsOyB9CiAgICB0YWJsZSB7IGJvcmRlcjpub25lOyBib3JkZXItY29sbGFwc2U6IGNvbGxhcHNlOyB3aWR0aDoxMDAlOyB9CiAgICB0ZCwgdGggeyB2ZXJ0aWNhbC1hbGlnbjp0b3A7IHBhZGRpbmc6MnB4IDNweDsgfQogICAgdGggeyB3aWR0aDoxMmVtOyB0ZXh0LWFsaWduOnJpZ2h0OyBjb2xvcjojNjY2OyBwYWRkaW5nLXJpZ2h0Oi41ZW07IH0KICAgICNpbmZvIHsgYmFja2dyb3VuZDojZjZmNmY2OyB9CiAgICAjaW5mbyBvbCB7IG1hcmdpbjogMC41ZW0gNGVtOyB9CiAgICAjaW5mbyBvbCBsaSB7IGZvbnQtZmFtaWx5OiBtb25vc3BhY2U7IH0KICAgICNzdW1tYXJ5IHsgYmFja2dyb3VuZDogI2ZmYzsgfQogICAgI2V4cGxhbmF0aW9uIHsgYmFja2dyb3VuZDojZWVlOyBib3JkZXItYm90dG9tOiAwcHggbm9uZTsgfQogICAgcHJlLmV4Y2VwdGlvbl92YWx1ZSB7IGZvbnQtZmFtaWx5OiBzYW5zLXNlcmlmOyBjb2xvcjogIzU3NTc1NzsgZm9udC1zaXplOiAxLjVlbTsgbWFyZ2luOiAxMHB4IDAgMTBweCAwOyB9CiAgPC9zdHlsZT4KPC9oZWFkPgo8Ym9keT4KICA8aGVhZGVyIGlkPSJzdW1tYXJ5Ij4KICAgIDxoMT5QYWdlIG5vdCBmb3VuZCA8c21hbGw+KDQwNCk8L3NtYWxsPjwvaDE+CiAgICAKICAgIDx0YWJsZSBjbGFzcz0ibWV0YSI+CiAgICAgIDx0cj4KICAgICAgICA8dGggc2NvcGU9InJvdyI+UmVxdWVzdCBNZXRob2Q6PC90aD4KICAgICAgICA8dGQ+R0VUPC90ZD4KICAgICAgPC90cj4KICAgICAgPHRyPgogICAgICAgIDx0aCBzY29wZT0icm93Ij5SZXF1ZXN0IFVSTDo8L3RoPgogICAgICAgIDx0ZD5odHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2NvdXJzZXMvP3NlYXJjaD1kamFuZ288L3RkPgogICAgICA8L3RyPgogICAgICAKICAgIDwvdGFibGU+CiAgPC9oZWFkZXI+CgogIDxtYWluIGlkPSJpbmZvIj4KICAgIAogICAgICA8cD4KICAgICAgVXNpbmcgdGhlIFVSTGNvbmYgZGVmaW5lZCBpbiA8Y29kZT5jb25maWcudXJsczwvY29kZT4sCiAgICAgIERqYW5nbyB0cmllZCB0aGVzZSBVUkwgcGF0dGVybnMsIGluIHRoaXMgb3JkZXI6CiAgICAgIDwvcD4KICAgICAgPG9sPgogICAgICAgIAogICAgICAgICAgPGxpPgogICAgICAgICAgICAKICAgICAgICAgICAgICA8Y29kZT4KICAgICAgICAgICAgICAgIGFkbWluLwogICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgPC9jb2RlPgogICAgICAgICAgICAKICAgICAgICAgIDwvbGk+CiAgICAgICAgCiAgICAgICAgICA8bGk+CiAgICAgICAgICAgIAogICAgICAgICAgICAgIDxjb2RlPgogICAgICAgICAgICAgICAgYXBpL2F1dGgvCiAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICA8L2NvZGU+CiAgICAgICAgICAgIAogICAgICAgICAgPC9saT4KICAgICAgICAKICAgICAgICAgIDxsaT4KICAgICAgICAgICAgCiAgICAgICAgICAgICAgPGNvZGU+CiAgICAgICAgICAgICAgICBhcGkvY291cnNlcy8KICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgIDwvY29kZT4KICAgICAgICAgICAgCiAgICAgICAgICAgICAgPGNvZGU+CiAgICAgICAgICAgICAgICBsaXN0LWNvdXJzZXMvCiAgICAgICAgICAgICAgICBbbmFtZT0nbGlzdC1jb3Vyc2VzJ10KICAgICAgICAgICAgICA8L2NvZGU+CiAgICAgICAgICAgIAogICAgICAgICAgPC9saT4KICAgICAgICAKICAgICAgICAgIDxsaT4KICAgICAgICAgICAgCiAgICAgICAgICAgICAgPGNvZGU+CiAgICAgICAgICAgICAgICBhcGkvY291cnNlcy8KICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgIDwvY29kZT4KICAgICAgICAgICAgCiAgICAgICAgICAgICAgPGNvZGU+CiAgICAgICAgICAgICAgICBhZGQtY291cnNlLwogICAgICAgICAgICAgICAgW25hbWU9J2FkZC1jb3Vyc2UnXQogICAgICAgICAgICAgIDwvY29kZT4KICAgICAgICAgICAgCiAgICAgICAgICA8L2xpPgogICAgICAgIAogICAgICAgICAgPGxpPgogICAgICAgICAgICAKICAgICAgICAgICAgICA8Y29kZT4KICAgICAgICAgICAgICAgIHN3YWdnZXIvCiAgICAgICAgICAgICAgICBbbmFtZT0nc2NoZW1hLXN3YWdnZXItdWknXQogICAgICAgICAgICAgIDwvY29kZT4KICAgICAgICAgICAgCiAgICAgICAgICA8L2xpPgogICAgICAgIAogICAgICAgICAgPGxpPgogICAgICAgICAgICAKICAgICAgICAgICAgICA8Y29kZT4KICAgICAgICAgICAgICAgIHJlZG9jLwogICAgICAgICAgICAgICAgW25hbWU9J3NjaGVtYS1yZWRvYyddCiAgICAgICAgICAgICAgPC9jb2RlPgogICAgICAgICAgICAKICAgICAgICAgIDwvbGk+CiAgICAgICAgCiAgICAgICAgICA8bGk+CiAgICAgICAgICAgIAogICAgICAgICAgICAgIDxjb2RlPgogICAgICAgICAgICAgICAgc3dhZ2dlci5qc29uCiAgICAgICAgICAgICAgICBbbmFtZT0nc2NoZW1hLWpzb24nXQogICAgICAgICAgICAgIDwvY29kZT4KICAgICAgICAgICAgCiAgICAgICAgICA8L2xpPgogICAgICAgIAogICAgICA8L29sPgogICAgICA8cD4KICAgICAgICAKICAgICAgICAgIFRoZSBjdXJyZW50IHBhdGgsIDxjb2RlPmFwaS9jb3Vyc2VzLzwvY29kZT4sCiAgICAgICAgCiAgICAgICAgZGlkbuKAmXQgbWF0Y2ggYW55IG9mIHRoZXNlLgogICAgICA8L3A+CiAgICAKICA8L21haW4+CgogIDxmb290ZXIgaWQ9ImV4cGxhbmF0aW9uIj4KICAgIDxwPgogICAgICBZb3XigJlyZSBzZWVpbmcgdGhpcyBlcnJvciBiZWNhdXNlIHlvdSBoYXZlIDxjb2RlPkRFQlVHID0gVHJ1ZTwvY29kZT4gaW4KICAgICAgeW91ciBEamFuZ28gc2V0dGluZ3MgZmlsZS4gQ2hhbmdlIHRoYXQgdG8gPGNvZGU+RmFsc2U8L2NvZGU+LCBhbmQgRGphbmdvCiAgICAgIHdpbGwgZGlzcGxheSBhIHN0YW5kYXJkIDQwNCBwYWdlLgogICAgPC9wPgogIDwvZm9vdGVyPgo8L2JvZHk+CjwvaHRtbD4K" />
-              <option name="bodyString" value="&lt;!DOCTYPE html&gt;&#10;&lt;html lang=&quot;en&quot;&gt;&#10;&lt;head&gt;&#10;  &lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html; charset=utf-8&quot;&gt;&#10;  &lt;title&gt;Page not found at /api/courses/&lt;/title&gt;&#10;  &lt;meta name=&quot;robots&quot; content=&quot;NONE,NOARCHIVE&quot;&gt;&#10;  &lt;style&gt;&#10;    html * { padding:0; margin:0; }&#10;    body * { padding:10px 20px; }&#10;    body * * { padding:0; }&#10;    body { font-family: sans-serif; background:#eee; color:#000; }&#10;    body &gt; :where(header, main, footer) { border-bottom:1px solid #ddd; }&#10;    h1 { font-weight:normal; margin-bottom:.4em; }&#10;    h1 small { font-size:60%; color:#666; font-weight:normal; }&#10;    table { border:none; border-collapse: collapse; width:100%; }&#10;    td, th { vertical-align:top; padding:2px 3px; }&#10;    th { width:12em; text-align:right; color:#666; padding-right:.5em; }&#10;    #info { background:#f6f6f6; }&#10;    #info ol { margin: 0.5em 4em; }&#10;    #info ol li { font-family: monospace; }&#10;    #summary { background: #ffc; }&#10;    #explanation { background:#eee; border-bottom: 0px none; }&#10;    pre.exception_value { font-family: sans-serif; color: #575757; font-size: 1.5em; margin: 10px 0 10px 0; }&#10;  &lt;/style&gt;&#10;&lt;/head&gt;&#10;&lt;body&gt;&#10;  &lt;header id=&quot;summary&quot;&gt;&#10;    &lt;h1&gt;Page not found &lt;small&gt;(404)&lt;/small&gt;&lt;/h1&gt;&#10;    &#10;    &lt;table class=&quot;meta&quot;&gt;&#10;      &lt;tr&gt;&#10;        &lt;th scope=&quot;row&quot;&gt;Request Method:&lt;/th&gt;&#10;        &lt;td&gt;GET&lt;/td&gt;&#10;      &lt;/tr&gt;&#10;      &lt;tr&gt;&#10;        &lt;th scope=&quot;row&quot;&gt;Request URL:&lt;/th&gt;&#10;        &lt;td&gt;http://127.0.0.1:8000/api/courses/?search=django&lt;/td&gt;&#10;      &lt;/tr&gt;&#10;      &#10;    &lt;/table&gt;&#10;  &lt;/header&gt;&#10;&#10;  &lt;main id=&quot;info&quot;&gt;&#10;    &#10;      &lt;p&gt;&#10;      Using the URLconf defined in &lt;code&gt;config.urls&lt;/code&gt;,&#10;      Django tried these URL patterns, in this order:&#10;      &lt;/p&gt;&#10;      &lt;ol&gt;&#10;        &#10;          &lt;li&gt;&#10;            &#10;              &lt;code&gt;&#10;                admin/&#10;                &#10;              &lt;/code&gt;&#10;            &#10;          &lt;/li&gt;&#10;        &#10;          &lt;li&gt;&#10;            &#10;              &lt;code&gt;&#10;                api/auth/&#10;                &#10;              &lt;/code&gt;&#10;            &#10;          &lt;/li&gt;&#10;        &#10;          &lt;li&gt;&#10;            &#10;              &lt;code&gt;&#10;                api/courses/&#10;                &#10;              &lt;/code&gt;&#10;            &#10;              &lt;code&gt;&#10;                list-courses/&#10;                [name='list-courses']&#10;              &lt;/code&gt;&#10;            &#10;          &lt;/li&gt;&#10;        &#10;          &lt;li&gt;&#10;            &#10;              &lt;code&gt;&#10;                api/courses/&#10;                &#10;              &lt;/code&gt;&#10;            &#10;              &lt;code&gt;&#10;                add-course/&#10;                [name='add-course']&#10;              &lt;/code&gt;&#10;            &#10;          &lt;/li&gt;&#10;        &#10;          &lt;li&gt;&#10;            &#10;              &lt;code&gt;&#10;                swagger/&#10;                [name='schema-swagger-ui']&#10;              &lt;/code&gt;&#10;            &#10;          &lt;/li&gt;&#10;        &#10;          &lt;li&gt;&#10;            &#10;              &lt;code&gt;&#10;                redoc/&#10;                [name='schema-redoc']&#10;              &lt;/code&gt;&#10;            &#10;          &lt;/li&gt;&#10;        &#10;          &lt;li&gt;&#10;            &#10;              &lt;code&gt;&#10;                swagger.json&#10;                [name='schema-json']&#10;              &lt;/code&gt;&#10;            &#10;          &lt;/li&gt;&#10;        &#10;      &lt;/ol&gt;&#10;      &lt;p&gt;&#10;        &#10;          The current path, &lt;code&gt;api/courses/&lt;/code&gt;,&#10;        &#10;        didn’t match any of these.&#10;      &lt;/p&gt;&#10;    &#10;  &lt;/main&gt;&#10;&#10;  &lt;footer id=&quot;explanation&quot;&gt;&#10;    &lt;p&gt;&#10;      You’re seeing this error because you have &lt;code&gt;DEBUG = True&lt;/code&gt; in&#10;      your Django settings file. Change that to &lt;code&gt;False&lt;/code&gt;, and Django&#10;      will display a standard 404 page.&#10;    &lt;/p&gt;&#10;  &lt;/footer&gt;&#10;&lt;/body&gt;&#10;&lt;/html&gt;&#10;" />
-              <option name="code" value="404" />
-              <option name="connectionEstablishingTime" value="1" />
-              <option name="contentType" value="text/html; charset=utf-8" />
-              <option name="headers">
-                <list>
-                  <headerState>
-                    <option name="key" value="Date" />
-                    <option name="value" value="Tue, 24 Jun 2025 11:29:08 GMT" />
-                  </headerState>
-                  <headerState>
-                    <option name="key" value="Server" />
-                    <option name="value" value="WSGIServer/0.2 CPython/3.12.10" />
-                  </headerState>
-                  <headerState>
-                    <option name="key" value="Content-Type" />
-                    <option name="value" value="text/html; charset=utf-8" />
-                  </headerState>
-                  <headerState>
-                    <option name="key" value="X-Frame-Options" />
-                    <option name="value" value="DENY" />
-                  </headerState>
-                  <headerState>
-                    <option name="key" value="Content-Length" />
-                    <option name="value" value="3453" />
-                  </headerState>
-                  <headerState>
-                    <option name="key" value="X-Content-Type-Options" />
-                    <option name="value" value="nosniff" />
-                  </headerState>
-                  <headerState>
-                    <option name="key" value="Referrer-Policy" />
-                    <option name="value" value="same-origin" />
-                  </headerState>
-                  <headerState>
-                    <option name="key" value="Cross-Origin-Opener-Policy" />
-                    <option name="value" value="same-origin" />
-                  </headerState>
-                </list>
-              </option>
-              <option name="id" value="8e09dce6-d8f5-4b31-81f2-67f229d49591" />
-              <option name="message" value="Not Found" />
-              <option name="prettyResponseType" value="HTML" />
-              <option name="previewType" value="HTML" />
-              <option name="rawBodyString" value="&lt;!DOCTYPE html&gt;&#10;&lt;html lang=&quot;en&quot;&gt;&#10;&lt;head&gt;&#10;  &lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html; charset=utf-8&quot;&gt;&#10;  &lt;title&gt;Page not found at /api/courses/&lt;/title&gt;&#10;  &lt;meta name=&quot;robots&quot; content=&quot;NONE,NOARCHIVE&quot;&gt;&#10;  &lt;style&gt;&#10;    html * { padding:0; margin:0; }&#10;    body * { padding:10px 20px; }&#10;    body * * { padding:0; }&#10;    body { font-family: sans-serif; background:#eee; color:#000; }&#10;    body &gt; :where(header, main, footer) { border-bottom:1px solid #ddd; }&#10;    h1 { font-weight:normal; margin-bottom:.4em; }&#10;    h1 small { font-size:60%; color:#666; font-weight:normal; }&#10;    table { border:none; border-collapse: collapse; width:100%; }&#10;    td, th { vertical-align:top; padding:2px 3px; }&#10;    th { width:12em; text-align:right; color:#666; padding-right:.5em; }&#10;    #info { background:#f6f6f6; }&#10;    #info ol { margin: 0.5em 4em; }&#10;    #info ol li { font-family: monospace; }&#10;    #summary { background: #ffc; }&#10;    #explanation { background:#eee; border-bottom: 0px none; }&#10;    pre.exception_value { font-family: sans-serif; color: #575757; font-size: 1.5em; margin: 10px 0 10px 0; }&#10;  &lt;/style&gt;&#10;&lt;/head&gt;&#10;&lt;body&gt;&#10;  &lt;header id=&quot;summary&quot;&gt;&#10;    &lt;h1&gt;Page not found &lt;small&gt;(404)&lt;/small&gt;&lt;/h1&gt;&#10;    &#10;    &lt;table class=&quot;meta&quot;&gt;&#10;      &lt;tr&gt;&#10;        &lt;th scope=&quot;row&quot;&gt;Request Method:&lt;/th&gt;&#10;        &lt;td&gt;GET&lt;/td&gt;&#10;      &lt;/tr&gt;&#10;      &lt;tr&gt;&#10;        &lt;th scope=&quot;row&quot;&gt;Request URL:&lt;/th&gt;&#10;        &lt;td&gt;http://127.0.0.1:8000/api/courses/?search=django&lt;/td&gt;&#10;      &lt;/tr&gt;&#10;      &#10;    &lt;/table&gt;&#10;  &lt;/header&gt;&#10;&#10;  &lt;main id=&quot;info&quot;&gt;&#10;    &#10;      &lt;p&gt;&#10;      Using the URLconf defined in &lt;code&gt;config.urls&lt;/code&gt;,&#10;      Django tried these URL patterns, in this order:&#10;      &lt;/p&gt;&#10;      &lt;ol&gt;&#10;        &#10;          &lt;li&gt;&#10;            &#10;              &lt;code&gt;&#10;                admin/&#10;                &#10;              &lt;/code&gt;&#10;            &#10;          &lt;/li&gt;&#10;        &#10;          &lt;li&gt;&#10;            &#10;              &lt;code&gt;&#10;                api/auth/&#10;                &#10;              &lt;/code&gt;&#10;            &#10;          &lt;/li&gt;&#10;        &#10;          &lt;li&gt;&#10;            &#10;              &lt;code&gt;&#10;                api/courses/&#10;                &#10;              &lt;/code&gt;&#10;            &#10;              &lt;code&gt;&#10;                list-courses/&#10;                [name='list-courses']&#10;              &lt;/code&gt;&#10;            &#10;          &lt;/li&gt;&#10;        &#10;          &lt;li&gt;&#10;            &#10;              &lt;code&gt;&#10;                api/courses/&#10;                &#10;              &lt;/code&gt;&#10;            &#10;              &lt;code&gt;&#10;                add-course/&#10;                [name='add-course']&#10;              &lt;/code&gt;&#10;            &#10;          &lt;/li&gt;&#10;        &#10;          &lt;li&gt;&#10;            &#10;              &lt;code&gt;&#10;                swagger/&#10;                [name='schema-swagger-ui']&#10;              &lt;/code&gt;&#10;            &#10;          &lt;/li&gt;&#10;        &#10;          &lt;li&gt;&#10;            &#10;              &lt;code&gt;&#10;                redoc/&#10;                [name='schema-redoc']&#10;              &lt;/code&gt;&#10;            &#10;          &lt;/li&gt;&#10;        &#10;          &lt;li&gt;&#10;            &#10;              &lt;code&gt;&#10;                swagger.json&#10;                [name='schema-json']&#10;              &lt;/code&gt;&#10;            &#10;          &lt;/li&gt;&#10;        &#10;      &lt;/ol&gt;&#10;      &lt;p&gt;&#10;        &#10;          The current path, &lt;code&gt;api/courses/&lt;/code&gt;,&#10;        &#10;        didn’t match any of these.&#10;      &lt;/p&gt;&#10;    &#10;  &lt;/main&gt;&#10;&#10;  &lt;footer id=&quot;explanation&quot;&gt;&#10;    &lt;p&gt;&#10;      You’re seeing this error because you have &lt;code&gt;DEBUG = True&lt;/code&gt; in&#10;      your Django settings file. Change that to &lt;code&gt;False&lt;/code&gt;, and Django&#10;      will display a standard 404 page.&#10;    &lt;/p&gt;&#10;  &lt;/footer&gt;&#10;&lt;/body&gt;&#10;&lt;/html&gt;&#10;" />
-              <option name="size" value="3453" />
-              <option name="time" value="13" />
-            </responseState>
-          </option>
-          <option name="workspaceId" value="955b3e74-61d3-44d9-8c42-624b89c419d6" />
-        </requestHistoryState>
-        <requestHistoryState>
-          <option name="dateTime" value="1750764554280" />
-          <option name="id" value="3c296410-4c01-4221-a523-1ee93f55fe6a" />
-          <option name="request">
-            <requestState>
-              <option name="id" value="91a82eae-1d77-4769-974d-30a6ca416a21" />
-              <option name="method" value="GET" />
-              <option name="name" value="list courses" />
-              <option name="queryParams">
-                <list>
-                  <queryParamState>
-                    <option name="key" value="search" />
-                    <option name="value" value="Django" />
-                  </queryParamState>
-                </list>
-              </option>
-              <option name="sortWeight" value="1000000" />
-              <option name="url" value="http://127.0.0.1:8000/api/courses/?search=Django" />
-            </requestState>
-          </option>
-          <option name="response">
-            <responseState>
-              <option name="bodyBytesBase64" value="PCFET0NUWVBFIGh0bWw+CjxodG1sIGxhbmc9ImVuIj4KPGhlYWQ+CiAgPG1ldGEgaHR0cC1lcXVpdj0iY29udGVudC10eXBlIiBjb250ZW50PSJ0ZXh0L2h0bWw7IGNoYXJzZXQ9dXRmLTgiPgogIDx0aXRsZT5QYWdlIG5vdCBmb3VuZCBhdCAvYXBpL2NvdXJzZXMvPC90aXRsZT4KICA8bWV0YSBuYW1lPSJyb2JvdHMiIGNvbnRlbnQ9Ik5PTkUsTk9BUkNISVZFIj4KICA8c3R5bGU+CiAgICBodG1sICogeyBwYWRkaW5nOjA7IG1hcmdpbjowOyB9CiAgICBib2R5ICogeyBwYWRkaW5nOjEwcHggMjBweDsgfQogICAgYm9keSAqICogeyBwYWRkaW5nOjA7IH0KICAgIGJvZHkgeyBmb250LWZhbWlseTogc2Fucy1zZXJpZjsgYmFja2dyb3VuZDojZWVlOyBjb2xvcjojMDAwOyB9CiAgICBib2R5ID4gOndoZXJlKGhlYWRlciwgbWFpbiwgZm9vdGVyKSB7IGJvcmRlci1ib3R0b206MXB4IHNvbGlkICNkZGQ7IH0KICAgIGgxIHsgZm9udC13ZWlnaHQ6bm9ybWFsOyBtYXJnaW4tYm90dG9tOi40ZW07IH0KICAgIGgxIHNtYWxsIHsgZm9udC1zaXplOjYwJTsgY29sb3I6IzY2NjsgZm9udC13ZWlnaHQ6bm9ybWFsOyB9CiAgICB0YWJsZSB7IGJvcmRlcjpub25lOyBib3JkZXItY29sbGFwc2U6IGNvbGxhcHNlOyB3aWR0aDoxMDAlOyB9CiAgICB0ZCwgdGggeyB2ZXJ0aWNhbC1hbGlnbjp0b3A7IHBhZGRpbmc6MnB4IDNweDsgfQogICAgdGggeyB3aWR0aDoxMmVtOyB0ZXh0LWFsaWduOnJpZ2h0OyBjb2xvcjojNjY2OyBwYWRkaW5nLXJpZ2h0Oi41ZW07IH0KICAgICNpbmZvIHsgYmFja2dyb3VuZDojZjZmNmY2OyB9CiAgICAjaW5mbyBvbCB7IG1hcmdpbjogMC41ZW0gNGVtOyB9CiAgICAjaW5mbyBvbCBsaSB7IGZvbnQtZmFtaWx5OiBtb25vc3BhY2U7IH0KICAgICNzdW1tYXJ5IHsgYmFja2dyb3VuZDogI2ZmYzsgfQogICAgI2V4cGxhbmF0aW9uIHsgYmFja2dyb3VuZDojZWVlOyBib3JkZXItYm90dG9tOiAwcHggbm9uZTsgfQogICAgcHJlLmV4Y2VwdGlvbl92YWx1ZSB7IGZvbnQtZmFtaWx5OiBzYW5zLXNlcmlmOyBjb2xvcjogIzU3NTc1NzsgZm9udC1zaXplOiAxLjVlbTsgbWFyZ2luOiAxMHB4IDAgMTBweCAwOyB9CiAgPC9zdHlsZT4KPC9oZWFkPgo8Ym9keT4KICA8aGVhZGVyIGlkPSJzdW1tYXJ5Ij4KICAgIDxoMT5QYWdlIG5vdCBmb3VuZCA8c21hbGw+KDQwNCk8L3NtYWxsPjwvaDE+CiAgICAKICAgIDx0YWJsZSBjbGFzcz0ibWV0YSI+CiAgICAgIDx0cj4KICAgICAgICA8dGggc2NvcGU9InJvdyI+UmVxdWVzdCBNZXRob2Q6PC90aD4KICAgICAgICA8dGQ+R0VUPC90ZD4KICAgICAgPC90cj4KICAgICAgPHRyPgogICAgICAgIDx0aCBzY29wZT0icm93Ij5SZXF1ZXN0IFVSTDo8L3RoPgogICAgICAgIDx0ZD5odHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2NvdXJzZXMvP3NlYXJjaD1EamFuZ288L3RkPgogICAgICA8L3RyPgogICAgICAKICAgIDwvdGFibGU+CiAgPC9oZWFkZXI+CgogIDxtYWluIGlkPSJpbmZvIj4KICAgIAogICAgICA8cD4KICAgICAgVXNpbmcgdGhlIFVSTGNvbmYgZGVmaW5lZCBpbiA8Y29kZT5jb25maWcudXJsczwvY29kZT4sCiAgICAgIERqYW5nbyB0cmllZCB0aGVzZSBVUkwgcGF0dGVybnMsIGluIHRoaXMgb3JkZXI6CiAgICAgIDwvcD4KICAgICAgPG9sPgogICAgICAgIAogICAgICAgICAgPGxpPgogICAgICAgICAgICAKICAgICAgICAgICAgICA8Y29kZT4KICAgICAgICAgICAgICAgIGFkbWluLwogICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgPC9jb2RlPgogICAgICAgICAgICAKICAgICAgICAgIDwvbGk+CiAgICAgICAgCiAgICAgICAgICA8bGk+CiAgICAgICAgICAgIAogICAgICAgICAgICAgIDxjb2RlPgogICAgICAgICAgICAgICAgYXBpL2F1dGgvCiAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICA8L2NvZGU+CiAgICAgICAgICAgIAogICAgICAgICAgPC9saT4KICAgICAgICAKICAgICAgICAgIDxsaT4KICAgICAgICAgICAgCiAgICAgICAgICAgICAgPGNvZGU+CiAgICAgICAgICAgICAgICBhcGkvY291cnNlcy8KICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgIDwvY29kZT4KICAgICAgICAgICAgCiAgICAgICAgICAgICAgPGNvZGU+CiAgICAgICAgICAgICAgICBsaXN0LWNvdXJzZXMvCiAgICAgICAgICAgICAgICBbbmFtZT0nbGlzdC1jb3Vyc2VzJ10KICAgICAgICAgICAgICA8L2NvZGU+CiAgICAgICAgICAgIAogICAgICAgICAgPC9saT4KICAgICAgICAKICAgICAgICAgIDxsaT4KICAgICAgICAgICAgCiAgICAgICAgICAgICAgPGNvZGU+CiAgICAgICAgICAgICAgICBhcGkvY291cnNlcy8KICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgIDwvY29kZT4KICAgICAgICAgICAgCiAgICAgICAgICAgICAgPGNvZGU+CiAgICAgICAgICAgICAgICBhZGQtY291cnNlLwogICAgICAgICAgICAgICAgW25hbWU9J2FkZC1jb3Vyc2UnXQogICAgICAgICAgICAgIDwvY29kZT4KICAgICAgICAgICAgCiAgICAgICAgICA8L2xpPgogICAgICAgIAogICAgICAgICAgPGxpPgogICAgICAgICAgICAKICAgICAgICAgICAgICA8Y29kZT4KICAgICAgICAgICAgICAgIHN3YWdnZXIvCiAgICAgICAgICAgICAgICBbbmFtZT0nc2NoZW1hLXN3YWdnZXItdWknXQogICAgICAgICAgICAgIDwvY29kZT4KICAgICAgICAgICAgCiAgICAgICAgICA8L2xpPgogICAgICAgIAogICAgICAgICAgPGxpPgogICAgICAgICAgICAKICAgICAgICAgICAgICA8Y29kZT4KICAgICAgICAgICAgICAgIHJlZG9jLwogICAgICAgICAgICAgICAgW25hbWU9J3NjaGVtYS1yZWRvYyddCiAgICAgICAgICAgICAgPC9jb2RlPgogICAgICAgICAgICAKICAgICAgICAgIDwvbGk+CiAgICAgICAgCiAgICAgICAgICA8bGk+CiAgICAgICAgICAgIAogICAgICAgICAgICAgIDxjb2RlPgogICAgICAgICAgICAgICAgc3dhZ2dlci5qc29uCiAgICAgICAgICAgICAgICBbbmFtZT0nc2NoZW1hLWpzb24nXQogICAgICAgICAgICAgIDwvY29kZT4KICAgICAgICAgICAgCiAgICAgICAgICA8L2xpPgogICAgICAgIAogICAgICA8L29sPgogICAgICA8cD4KICAgICAgICAKICAgICAgICAgIFRoZSBjdXJyZW50IHBhdGgsIDxjb2RlPmFwaS9jb3Vyc2VzLzwvY29kZT4sCiAgICAgICAgCiAgICAgICAgZGlkbuKAmXQgbWF0Y2ggYW55IG9mIHRoZXNlLgogICAgICA8L3A+CiAgICAKICA8L21haW4+CgogIDxmb290ZXIgaWQ9ImV4cGxhbmF0aW9uIj4KICAgIDxwPgogICAgICBZb3XigJlyZSBzZWVpbmcgdGhpcyBlcnJvciBiZWNhdXNlIHlvdSBoYXZlIDxjb2RlPkRFQlVHID0gVHJ1ZTwvY29kZT4gaW4KICAgICAgeW91ciBEamFuZ28gc2V0dGluZ3MgZmlsZS4gQ2hhbmdlIHRoYXQgdG8gPGNvZGU+RmFsc2U8L2NvZGU+LCBhbmQgRGphbmdvCiAgICAgIHdpbGwgZGlzcGxheSBhIHN0YW5kYXJkIDQwNCBwYWdlLgogICAgPC9wPgogIDwvZm9vdGVyPgo8L2JvZHk+CjwvaHRtbD4K" />
-              <option name="bodyString" value="&lt;!DOCTYPE html&gt;&#10;&lt;html lang=&quot;en&quot;&gt;&#10;&lt;head&gt;&#10;  &lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html; charset=utf-8&quot;&gt;&#10;  &lt;title&gt;Page not found at /api/courses/&lt;/title&gt;&#10;  &lt;meta name=&quot;robots&quot; content=&quot;NONE,NOARCHIVE&quot;&gt;&#10;  &lt;style&gt;&#10;    html * { padding:0; margin:0; }&#10;    body * { padding:10px 20px; }&#10;    body * * { padding:0; }&#10;    body { font-family: sans-serif; background:#eee; color:#000; }&#10;    body &gt; :where(header, main, footer) { border-bottom:1px solid #ddd; }&#10;    h1 { font-weight:normal; margin-bottom:.4em; }&#10;    h1 small { font-size:60%; color:#666; font-weight:normal; }&#10;    table { border:none; border-collapse: collapse; width:100%; }&#10;    td, th { vertical-align:top; padding:2px 3px; }&#10;    th { width:12em; text-align:right; color:#666; padding-right:.5em; }&#10;    #info { background:#f6f6f6; }&#10;    #info ol { margin: 0.5em 4em; }&#10;    #info ol li { font-family: monospace; }&#10;    #summary { background: #ffc; }&#10;    #explanation { background:#eee; border-bottom: 0px none; }&#10;    pre.exception_value { font-family: sans-serif; color: #575757; font-size: 1.5em; margin: 10px 0 10px 0; }&#10;  &lt;/style&gt;&#10;&lt;/head&gt;&#10;&lt;body&gt;&#10;  &lt;header id=&quot;summary&quot;&gt;&#10;    &lt;h1&gt;Page not found &lt;small&gt;(404)&lt;/small&gt;&lt;/h1&gt;&#10;    &#10;    &lt;table class=&quot;meta&quot;&gt;&#10;      &lt;tr&gt;&#10;        &lt;th scope=&quot;row&quot;&gt;Request Method:&lt;/th&gt;&#10;        &lt;td&gt;GET&lt;/td&gt;&#10;      &lt;/tr&gt;&#10;      &lt;tr&gt;&#10;        &lt;th scope=&quot;row&quot;&gt;Request URL:&lt;/th&gt;&#10;        &lt;td&gt;http://127.0.0.1:8000/api/courses/?search=Django&lt;/td&gt;&#10;      &lt;/tr&gt;&#10;      &#10;    &lt;/table&gt;&#10;  &lt;/header&gt;&#10;&#10;  &lt;main id=&quot;info&quot;&gt;&#10;    &#10;      &lt;p&gt;&#10;      Using the URLconf defined in &lt;code&gt;config.urls&lt;/code&gt;,&#10;      Django tried these URL patterns, in this order:&#10;      &lt;/p&gt;&#10;      &lt;ol&gt;&#10;        &#10;          &lt;li&gt;&#10;            &#10;              &lt;code&gt;&#10;                admin/&#10;                &#10;              &lt;/code&gt;&#10;            &#10;          &lt;/li&gt;&#10;        &#10;          &lt;li&gt;&#10;            &#10;              &lt;code&gt;&#10;                api/auth/&#10;                &#10;              &lt;/code&gt;&#10;            &#10;          &lt;/li&gt;&#10;        &#10;          &lt;li&gt;&#10;            &#10;              &lt;code&gt;&#10;                api/courses/&#10;                &#10;              &lt;/code&gt;&#10;            &#10;              &lt;code&gt;&#10;                list-courses/&#10;                [name='list-courses']&#10;              &lt;/code&gt;&#10;            &#10;          &lt;/li&gt;&#10;        &#10;          &lt;li&gt;&#10;            &#10;              &lt;code&gt;&#10;                api/courses/&#10;                &#10;              &lt;/code&gt;&#10;            &#10;              &lt;code&gt;&#10;                add-course/&#10;                [name='add-course']&#10;              &lt;/code&gt;&#10;            &#10;          &lt;/li&gt;&#10;        &#10;          &lt;li&gt;&#10;            &#10;              &lt;code&gt;&#10;                swagger/&#10;                [name='schema-swagger-ui']&#10;              &lt;/code&gt;&#10;            &#10;          &lt;/li&gt;&#10;        &#10;          &lt;li&gt;&#10;            &#10;              &lt;code&gt;&#10;                redoc/&#10;                [name='schema-redoc']&#10;              &lt;/code&gt;&#10;            &#10;          &lt;/li&gt;&#10;        &#10;          &lt;li&gt;&#10;            &#10;              &lt;code&gt;&#10;                swagger.json&#10;                [name='schema-json']&#10;              &lt;/code&gt;&#10;            &#10;          &lt;/li&gt;&#10;        &#10;      &lt;/ol&gt;&#10;      &lt;p&gt;&#10;        &#10;          The current path, &lt;code&gt;api/courses/&lt;/code&gt;,&#10;        &#10;        didn’t match any of these.&#10;      &lt;/p&gt;&#10;    &#10;  &lt;/main&gt;&#10;&#10;  &lt;footer id=&quot;explanation&quot;&gt;&#10;    &lt;p&gt;&#10;      You’re seeing this error because you have &lt;code&gt;DEBUG = True&lt;/code&gt; in&#10;      your Django settings file. Change that to &lt;code&gt;False&lt;/code&gt;, and Django&#10;      will display a standard 404 page.&#10;    &lt;/p&gt;&#10;  &lt;/footer&gt;&#10;&lt;/body&gt;&#10;&lt;/html&gt;&#10;" />
-              <option name="code" value="404" />
-              <option name="connectionEstablishingTime" value="1" />
-              <option name="contentType" value="text/html; charset=utf-8" />
-              <option name="headers">
-                <list>
-                  <headerState>
-                    <option name="key" value="Date" />
-                    <option name="value" value="Tue, 24 Jun 2025 11:29:14 GMT" />
-                  </headerState>
-                  <headerState>
-                    <option name="key" value="Server" />
-                    <option name="value" value="WSGIServer/0.2 CPython/3.12.10" />
-                  </headerState>
-                  <headerState>
-                    <option name="key" value="Content-Type" />
-                    <option name="value" value="text/html; charset=utf-8" />
-                  </headerState>
-                  <headerState>
-                    <option name="key" value="X-Frame-Options" />
-                    <option name="value" value="DENY" />
-                  </headerState>
-                  <headerState>
-                    <option name="key" value="Content-Length" />
-                    <option name="value" value="3453" />
-                  </headerState>
-                  <headerState>
-                    <option name="key" value="X-Content-Type-Options" />
-                    <option name="value" value="nosniff" />
-                  </headerState>
-                  <headerState>
-                    <option name="key" value="Referrer-Policy" />
-                    <option name="value" value="same-origin" />
-                  </headerState>
-                  <headerState>
-                    <option name="key" value="Cross-Origin-Opener-Policy" />
-                    <option name="value" value="same-origin" />
-                  </headerState>
-                </list>
-              </option>
-              <option name="id" value="3c296410-4c01-4221-a523-1ee93f55fe6a" />
-              <option name="message" value="Not Found" />
-              <option name="prettyResponseType" value="HTML" />
-              <option name="previewType" value="HTML" />
-              <option name="rawBodyString" value="&lt;!DOCTYPE html&gt;&#10;&lt;html lang=&quot;en&quot;&gt;&#10;&lt;head&gt;&#10;  &lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html; charset=utf-8&quot;&gt;&#10;  &lt;title&gt;Page not found at /api/courses/&lt;/title&gt;&#10;  &lt;meta name=&quot;robots&quot; content=&quot;NONE,NOARCHIVE&quot;&gt;&#10;  &lt;style&gt;&#10;    html * { padding:0; margin:0; }&#10;    body * { padding:10px 20px; }&#10;    body * * { padding:0; }&#10;    body { font-family: sans-serif; background:#eee; color:#000; }&#10;    body &gt; :where(header, main, footer) { border-bottom:1px solid #ddd; }&#10;    h1 { font-weight:normal; margin-bottom:.4em; }&#10;    h1 small { font-size:60%; color:#666; font-weight:normal; }&#10;    table { border:none; border-collapse: collapse; width:100%; }&#10;    td, th { vertical-align:top; padding:2px 3px; }&#10;    th { width:12em; text-align:right; color:#666; padding-right:.5em; }&#10;    #info { background:#f6f6f6; }&#10;    #info ol { margin: 0.5em 4em; }&#10;    #info ol li { font-family: monospace; }&#10;    #summary { background: #ffc; }&#10;    #explanation { background:#eee; border-bottom: 0px none; }&#10;    pre.exception_value { font-family: sans-serif; color: #575757; font-size: 1.5em; margin: 10px 0 10px 0; }&#10;  &lt;/style&gt;&#10;&lt;/head&gt;&#10;&lt;body&gt;&#10;  &lt;header id=&quot;summary&quot;&gt;&#10;    &lt;h1&gt;Page not found &lt;small&gt;(404)&lt;/small&gt;&lt;/h1&gt;&#10;    &#10;    &lt;table class=&quot;meta&quot;&gt;&#10;      &lt;tr&gt;&#10;        &lt;th scope=&quot;row&quot;&gt;Request Method:&lt;/th&gt;&#10;        &lt;td&gt;GET&lt;/td&gt;&#10;      &lt;/tr&gt;&#10;      &lt;tr&gt;&#10;        &lt;th scope=&quot;row&quot;&gt;Request URL:&lt;/th&gt;&#10;        &lt;td&gt;http://127.0.0.1:8000/api/courses/?search=Django&lt;/td&gt;&#10;      &lt;/tr&gt;&#10;      &#10;    &lt;/table&gt;&#10;  &lt;/header&gt;&#10;&#10;  &lt;main id=&quot;info&quot;&gt;&#10;    &#10;      &lt;p&gt;&#10;      Using the URLconf defined in &lt;code&gt;config.urls&lt;/code&gt;,&#10;      Django tried these URL patterns, in this order:&#10;      &lt;/p&gt;&#10;      &lt;ol&gt;&#10;        &#10;          &lt;li&gt;&#10;            &#10;              &lt;code&gt;&#10;                admin/&#10;                &#10;              &lt;/code&gt;&#10;            &#10;          &lt;/li&gt;&#10;        &#10;          &lt;li&gt;&#10;            &#10;              &lt;code&gt;&#10;                api/auth/&#10;                &#10;              &lt;/code&gt;&#10;            &#10;          &lt;/li&gt;&#10;        &#10;          &lt;li&gt;&#10;            &#10;              &lt;code&gt;&#10;                api/courses/&#10;                &#10;              &lt;/code&gt;&#10;            &#10;              &lt;code&gt;&#10;                list-courses/&#10;                [name='list-courses']&#10;              &lt;/code&gt;&#10;            &#10;          &lt;/li&gt;&#10;        &#10;          &lt;li&gt;&#10;            &#10;              &lt;code&gt;&#10;                api/courses/&#10;                &#10;              &lt;/code&gt;&#10;            &#10;              &lt;code&gt;&#10;                add-course/&#10;                [name='add-course']&#10;              &lt;/code&gt;&#10;            &#10;          &lt;/li&gt;&#10;        &#10;          &lt;li&gt;&#10;            &#10;              &lt;code&gt;&#10;                swagger/&#10;                [name='schema-swagger-ui']&#10;              &lt;/code&gt;&#10;            &#10;          &lt;/li&gt;&#10;        &#10;          &lt;li&gt;&#10;            &#10;              &lt;code&gt;&#10;                redoc/&#10;                [name='schema-redoc']&#10;              &lt;/code&gt;&#10;            &#10;          &lt;/li&gt;&#10;        &#10;          &lt;li&gt;&#10;            &#10;              &lt;code&gt;&#10;                swagger.json&#10;                [name='schema-json']&#10;              &lt;/code&gt;&#10;            &#10;          &lt;/li&gt;&#10;        &#10;      &lt;/ol&gt;&#10;      &lt;p&gt;&#10;        &#10;          The current path, &lt;code&gt;api/courses/&lt;/code&gt;,&#10;        &#10;        didn’t match any of these.&#10;      &lt;/p&gt;&#10;    &#10;  &lt;/main&gt;&#10;&#10;  &lt;footer id=&quot;explanation&quot;&gt;&#10;    &lt;p&gt;&#10;      You’re seeing this error because you have &lt;code&gt;DEBUG = True&lt;/code&gt; in&#10;      your Django settings file. Change that to &lt;code&gt;False&lt;/code&gt;, and Django&#10;      will display a standard 404 page.&#10;    &lt;/p&gt;&#10;  &lt;/footer&gt;&#10;&lt;/body&gt;&#10;&lt;/html&gt;&#10;" />
-              <option name="size" value="3453" />
-              <option name="time" value="15" />
-            </responseState>
-          </option>
-          <option name="workspaceId" value="955b3e74-61d3-44d9-8c42-624b89c419d6" />
-        </requestHistoryState>
-        <requestHistoryState>
-          <option name="dateTime" value="1750764586901" />
-          <option name="id" value="9623eec2-a2b7-426a-ab80-5cc4e0455720" />
-          <option name="request">
-            <requestState>
-              <option name="id" value="91a82eae-1d77-4769-974d-30a6ca416a21" />
-              <option name="method" value="GET" />
-              <option name="name" value="list courses" />
-              <option name="sortWeight" value="1000000" />
-              <option name="url" value="http://127.0.0.1:8000/api/courses/" />
-            </requestState>
-          </option>
-          <option name="response">
-            <responseState>
-              <option name="bodyBytesBase64" value="PCFET0NUWVBFIGh0bWw+CjxodG1sIGxhbmc9ImVuIj4KPGhlYWQ+CiAgPG1ldGEgaHR0cC1lcXVpdj0iY29udGVudC10eXBlIiBjb250ZW50PSJ0ZXh0L2h0bWw7IGNoYXJzZXQ9dXRmLTgiPgogIDx0aXRsZT5QYWdlIG5vdCBmb3VuZCBhdCAvYXBpL2NvdXJzZXMvPC90aXRsZT4KICA8bWV0YSBuYW1lPSJyb2JvdHMiIGNvbnRlbnQ9Ik5PTkUsTk9BUkNISVZFIj4KICA8c3R5bGU+CiAgICBodG1sICogeyBwYWRkaW5nOjA7IG1hcmdpbjowOyB9CiAgICBib2R5ICogeyBwYWRkaW5nOjEwcHggMjBweDsgfQogICAgYm9keSAqICogeyBwYWRkaW5nOjA7IH0KICAgIGJvZHkgeyBmb250LWZhbWlseTogc2Fucy1zZXJpZjsgYmFja2dyb3VuZDojZWVlOyBjb2xvcjojMDAwOyB9CiAgICBib2R5ID4gOndoZXJlKGhlYWRlciwgbWFpbiwgZm9vdGVyKSB7IGJvcmRlci1ib3R0b206MXB4IHNvbGlkICNkZGQ7IH0KICAgIGgxIHsgZm9udC13ZWlnaHQ6bm9ybWFsOyBtYXJnaW4tYm90dG9tOi40ZW07IH0KICAgIGgxIHNtYWxsIHsgZm9udC1zaXplOjYwJTsgY29sb3I6IzY2NjsgZm9udC13ZWlnaHQ6bm9ybWFsOyB9CiAgICB0YWJsZSB7IGJvcmRlcjpub25lOyBib3JkZXItY29sbGFwc2U6IGNvbGxhcHNlOyB3aWR0aDoxMDAlOyB9CiAgICB0ZCwgdGggeyB2ZXJ0aWNhbC1hbGlnbjp0b3A7IHBhZGRpbmc6MnB4IDNweDsgfQogICAgdGggeyB3aWR0aDoxMmVtOyB0ZXh0LWFsaWduOnJpZ2h0OyBjb2xvcjojNjY2OyBwYWRkaW5nLXJpZ2h0Oi41ZW07IH0KICAgICNpbmZvIHsgYmFja2dyb3VuZDojZjZmNmY2OyB9CiAgICAjaW5mbyBvbCB7IG1hcmdpbjogMC41ZW0gNGVtOyB9CiAgICAjaW5mbyBvbCBsaSB7IGZvbnQtZmFtaWx5OiBtb25vc3BhY2U7IH0KICAgICNzdW1tYXJ5IHsgYmFja2dyb3VuZDogI2ZmYzsgfQogICAgI2V4cGxhbmF0aW9uIHsgYmFja2dyb3VuZDojZWVlOyBib3JkZXItYm90dG9tOiAwcHggbm9uZTsgfQogICAgcHJlLmV4Y2VwdGlvbl92YWx1ZSB7IGZvbnQtZmFtaWx5OiBzYW5zLXNlcmlmOyBjb2xvcjogIzU3NTc1NzsgZm9udC1zaXplOiAxLjVlbTsgbWFyZ2luOiAxMHB4IDAgMTBweCAwOyB9CiAgPC9zdHlsZT4KPC9oZWFkPgo8Ym9keT4KICA8aGVhZGVyIGlkPSJzdW1tYXJ5Ij4KICAgIDxoMT5QYWdlIG5vdCBmb3VuZCA8c21hbGw+KDQwNCk8L3NtYWxsPjwvaDE+CiAgICAKICAgIDx0YWJsZSBjbGFzcz0ibWV0YSI+CiAgICAgIDx0cj4KICAgICAgICA8dGggc2NvcGU9InJvdyI+UmVxdWVzdCBNZXRob2Q6PC90aD4KICAgICAgICA8dGQ+R0VUPC90ZD4KICAgICAgPC90cj4KICAgICAgPHRyPgogICAgICAgIDx0aCBzY29wZT0icm93Ij5SZXF1ZXN0IFVSTDo8L3RoPgogICAgICAgIDx0ZD5odHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2NvdXJzZXMvPC90ZD4KICAgICAgPC90cj4KICAgICAgCiAgICA8L3RhYmxlPgogIDwvaGVhZGVyPgoKICA8bWFpbiBpZD0iaW5mbyI+CiAgICAKICAgICAgPHA+CiAgICAgIFVzaW5nIHRoZSBVUkxjb25mIGRlZmluZWQgaW4gPGNvZGU+Y29uZmlnLnVybHM8L2NvZGU+LAogICAgICBEamFuZ28gdHJpZWQgdGhlc2UgVVJMIHBhdHRlcm5zLCBpbiB0aGlzIG9yZGVyOgogICAgICA8L3A+CiAgICAgIDxvbD4KICAgICAgICAKICAgICAgICAgIDxsaT4KICAgICAgICAgICAgCiAgICAgICAgICAgICAgPGNvZGU+CiAgICAgICAgICAgICAgICBhZG1pbi8KICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgIDwvY29kZT4KICAgICAgICAgICAgCiAgICAgICAgICA8L2xpPgogICAgICAgIAogICAgICAgICAgPGxpPgogICAgICAgICAgICAKICAgICAgICAgICAgICA8Y29kZT4KICAgICAgICAgICAgICAgIGFwaS9hdXRoLwogICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgPC9jb2RlPgogICAgICAgICAgICAKICAgICAgICAgIDwvbGk+CiAgICAgICAgCiAgICAgICAgICA8bGk+CiAgICAgICAgICAgIAogICAgICAgICAgICAgIDxjb2RlPgogICAgICAgICAgICAgICAgYXBpL2NvdXJzZXMvCiAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICA8L2NvZGU+CiAgICAgICAgICAgIAogICAgICAgICAgICAgIDxjb2RlPgogICAgICAgICAgICAgICAgbGlzdC1jb3Vyc2VzLwogICAgICAgICAgICAgICAgW25hbWU9J2xpc3QtY291cnNlcyddCiAgICAgICAgICAgICAgPC9jb2RlPgogICAgICAgICAgICAKICAgICAgICAgIDwvbGk+CiAgICAgICAgCiAgICAgICAgICA8bGk+CiAgICAgICAgICAgIAogICAgICAgICAgICAgIDxjb2RlPgogICAgICAgICAgICAgICAgYXBpL2NvdXJzZXMvCiAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICA8L2NvZGU+CiAgICAgICAgICAgIAogICAgICAgICAgICAgIDxjb2RlPgogICAgICAgICAgICAgICAgYWRkLWNvdXJzZS8KICAgICAgICAgICAgICAgIFtuYW1lPSdhZGQtY291cnNlJ10KICAgICAgICAgICAgICA8L2NvZGU+CiAgICAgICAgICAgIAogICAgICAgICAgPC9saT4KICAgICAgICAKICAgICAgICAgIDxsaT4KICAgICAgICAgICAgCiAgICAgICAgICAgICAgPGNvZGU+CiAgICAgICAgICAgICAgICBzd2FnZ2VyLwogICAgICAgICAgICAgICAgW25hbWU9J3NjaGVtYS1zd2FnZ2VyLXVpJ10KICAgICAgICAgICAgICA8L2NvZGU+CiAgICAgICAgICAgIAogICAgICAgICAgPC9saT4KICAgICAgICAKICAgICAgICAgIDxsaT4KICAgICAgICAgICAgCiAgICAgICAgICAgICAgPGNvZGU+CiAgICAgICAgICAgICAgICByZWRvYy8KICAgICAgICAgICAgICAgIFtuYW1lPSdzY2hlbWEtcmVkb2MnXQogICAgICAgICAgICAgIDwvY29kZT4KICAgICAgICAgICAgCiAgICAgICAgICA8L2xpPgogICAgICAgIAogICAgICAgICAgPGxpPgogICAgICAgICAgICAKICAgICAgICAgICAgICA8Y29kZT4KICAgICAgICAgICAgICAgIHN3YWdnZXIuanNvbgogICAgICAgICAgICAgICAgW25hbWU9J3NjaGVtYS1qc29uJ10KICAgICAgICAgICAgICA8L2NvZGU+CiAgICAgICAgICAgIAogICAgICAgICAgPC9saT4KICAgICAgICAKICAgICAgPC9vbD4KICAgICAgPHA+CiAgICAgICAgCiAgICAgICAgICBUaGUgY3VycmVudCBwYXRoLCA8Y29kZT5hcGkvY291cnNlcy88L2NvZGU+LAogICAgICAgIAogICAgICAgIGRpZG7igJl0IG1hdGNoIGFueSBvZiB0aGVzZS4KICAgICAgPC9wPgogICAgCiAgPC9tYWluPgoKICA8Zm9vdGVyIGlkPSJleHBsYW5hdGlvbiI+CiAgICA8cD4KICAgICAgWW914oCZcmUgc2VlaW5nIHRoaXMgZXJyb3IgYmVjYXVzZSB5b3UgaGF2ZSA8Y29kZT5ERUJVRyA9IFRydWU8L2NvZGU+IGluCiAgICAgIHlvdXIgRGphbmdvIHNldHRpbmdzIGZpbGUuIENoYW5nZSB0aGF0IHRvIDxjb2RlPkZhbHNlPC9jb2RlPiwgYW5kIERqYW5nbwogICAgICB3aWxsIGRpc3BsYXkgYSBzdGFuZGFyZCA0MDQgcGFnZS4KICAgIDwvcD4KICA8L2Zvb3Rlcj4KPC9ib2R5Pgo8L2h0bWw+Cg==" />
-              <option name="bodyString" value="&lt;!DOCTYPE html&gt;&#10;&lt;html lang=&quot;en&quot;&gt;&#10;&lt;head&gt;&#10;  &lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html; charset=utf-8&quot;&gt;&#10;  &lt;title&gt;Page not found at /api/courses/&lt;/title&gt;&#10;  &lt;meta name=&quot;robots&quot; content=&quot;NONE,NOARCHIVE&quot;&gt;&#10;  &lt;style&gt;&#10;    html * { padding:0; margin:0; }&#10;    body * { padding:10px 20px; }&#10;    body * * { padding:0; }&#10;    body { font-family: sans-serif; background:#eee; color:#000; }&#10;    body &gt; :where(header, main, footer) { border-bottom:1px solid #ddd; }&#10;    h1 { font-weight:normal; margin-bottom:.4em; }&#10;    h1 small { font-size:60%; color:#666; font-weight:normal; }&#10;    table { border:none; border-collapse: collapse; width:100%; }&#10;    td, th { vertical-align:top; padding:2px 3px; }&#10;    th { width:12em; text-align:right; color:#666; padding-right:.5em; }&#10;    #info { background:#f6f6f6; }&#10;    #info ol { margin: 0.5em 4em; }&#10;    #info ol li { font-family: monospace; }&#10;    #summary { background: #ffc; }&#10;    #explanation { background:#eee; border-bottom: 0px none; }&#10;    pre.exception_value { font-family: sans-serif; color: #575757; font-size: 1.5em; margin: 10px 0 10px 0; }&#10;  &lt;/style&gt;&#10;&lt;/head&gt;&#10;&lt;body&gt;&#10;  &lt;header id=&quot;summary&quot;&gt;&#10;    &lt;h1&gt;Page not found &lt;small&gt;(404)&lt;/small&gt;&lt;/h1&gt;&#10;    &#10;    &lt;table class=&quot;meta&quot;&gt;&#10;      &lt;tr&gt;&#10;        &lt;th scope=&quot;row&quot;&gt;Request Method:&lt;/th&gt;&#10;        &lt;td&gt;GET&lt;/td&gt;&#10;      &lt;/tr&gt;&#10;      &lt;tr&gt;&#10;        &lt;th scope=&quot;row&quot;&gt;Request URL:&lt;/th&gt;&#10;        &lt;td&gt;http://127.0.0.1:8000/api/courses/&lt;/td&gt;&#10;      &lt;/tr&gt;&#10;      &#10;    &lt;/table&gt;&#10;  &lt;/header&gt;&#10;&#10;  &lt;main id=&quot;info&quot;&gt;&#10;    &#10;      &lt;p&gt;&#10;      Using the URLconf defined in &lt;code&gt;config.urls&lt;/code&gt;,&#10;      Django tried these URL patterns, in this order:&#10;      &lt;/p&gt;&#10;      &lt;ol&gt;&#10;        &#10;          &lt;li&gt;&#10;            &#10;              &lt;code&gt;&#10;                admin/&#10;                &#10;              &lt;/code&gt;&#10;            &#10;          &lt;/li&gt;&#10;        &#10;          &lt;li&gt;&#10;            &#10;              &lt;code&gt;&#10;                api/auth/&#10;                &#10;              &lt;/code&gt;&#10;            &#10;          &lt;/li&gt;&#10;        &#10;          &lt;li&gt;&#10;            &#10;              &lt;code&gt;&#10;                api/courses/&#10;                &#10;              &lt;/code&gt;&#10;            &#10;              &lt;code&gt;&#10;                list-courses/&#10;                [name='list-courses']&#10;              &lt;/code&gt;&#10;            &#10;          &lt;/li&gt;&#10;        &#10;          &lt;li&gt;&#10;            &#10;              &lt;code&gt;&#10;                api/courses/&#10;                &#10;              &lt;/code&gt;&#10;            &#10;              &lt;code&gt;&#10;                add-course/&#10;                [name='add-course']&#10;              &lt;/code&gt;&#10;            &#10;          &lt;/li&gt;&#10;        &#10;          &lt;li&gt;&#10;            &#10;              &lt;code&gt;&#10;                swagger/&#10;                [name='schema-swagger-ui']&#10;              &lt;/code&gt;&#10;            &#10;          &lt;/li&gt;&#10;        &#10;          &lt;li&gt;&#10;            &#10;              &lt;code&gt;&#10;                redoc/&#10;                [name='schema-redoc']&#10;              &lt;/code&gt;&#10;            &#10;          &lt;/li&gt;&#10;        &#10;          &lt;li&gt;&#10;            &#10;              &lt;code&gt;&#10;                swagger.json&#10;                [name='schema-json']&#10;              &lt;/code&gt;&#10;            &#10;          &lt;/li&gt;&#10;        &#10;      &lt;/ol&gt;&#10;      &lt;p&gt;&#10;        &#10;          The current path, &lt;code&gt;api/courses/&lt;/code&gt;,&#10;        &#10;        didn’t match any of these.&#10;      &lt;/p&gt;&#10;    &#10;  &lt;/main&gt;&#10;&#10;  &lt;footer id=&quot;explanation&quot;&gt;&#10;    &lt;p&gt;&#10;      You’re seeing this error because you have &lt;code&gt;DEBUG = True&lt;/code&gt; in&#10;      your Django settings file. Change that to &lt;code&gt;False&lt;/code&gt;, and Django&#10;      will display a standard 404 page.&#10;    &lt;/p&gt;&#10;  &lt;/footer&gt;&#10;&lt;/body&gt;&#10;&lt;/html&gt;&#10;" />
-              <option name="code" value="404" />
-              <option name="connectionEstablishingTime" value="1" />
-              <option name="contentType" value="text/html; charset=utf-8" />
-              <option name="headers">
-                <list>
-                  <headerState>
-                    <option name="key" value="Date" />
-                    <option name="value" value="Tue, 24 Jun 2025 11:29:46 GMT" />
-                  </headerState>
-                  <headerState>
-                    <option name="key" value="Server" />
-                    <option name="value" value="WSGIServer/0.2 CPython/3.12.10" />
-                  </headerState>
-                  <headerState>
-                    <option name="key" value="Content-Type" />
-                    <option name="value" value="text/html; charset=utf-8" />
-                  </headerState>
-                  <headerState>
-                    <option name="key" value="X-Frame-Options" />
-                    <option name="value" value="DENY" />
-                  </headerState>
-                  <headerState>
-                    <option name="key" value="Content-Length" />
-                    <option name="value" value="3439" />
-                  </headerState>
-                  <headerState>
-                    <option name="key" value="X-Content-Type-Options" />
-                    <option name="value" value="nosniff" />
-                  </headerState>
-                  <headerState>
-                    <option name="key" value="Referrer-Policy" />
-                    <option name="value" value="same-origin" />
-                  </headerState>
-                  <headerState>
-                    <option name="key" value="Cross-Origin-Opener-Policy" />
-                    <option name="value" value="same-origin" />
-                  </headerState>
-                </list>
-              </option>
-              <option name="id" value="9623eec2-a2b7-426a-ab80-5cc4e0455720" />
-              <option name="message" value="Not Found" />
-              <option name="prettyResponseType" value="HTML" />
-              <option name="previewType" value="HTML" />
-              <option name="rawBodyString" value="&lt;!DOCTYPE html&gt;&#10;&lt;html lang=&quot;en&quot;&gt;&#10;&lt;head&gt;&#10;  &lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html; charset=utf-8&quot;&gt;&#10;  &lt;title&gt;Page not found at /api/courses/&lt;/title&gt;&#10;  &lt;meta name=&quot;robots&quot; content=&quot;NONE,NOARCHIVE&quot;&gt;&#10;  &lt;style&gt;&#10;    html * { padding:0; margin:0; }&#10;    body * { padding:10px 20px; }&#10;    body * * { padding:0; }&#10;    body { font-family: sans-serif; background:#eee; color:#000; }&#10;    body &gt; :where(header, main, footer) { border-bottom:1px solid #ddd; }&#10;    h1 { font-weight:normal; margin-bottom:.4em; }&#10;    h1 small { font-size:60%; color:#666; font-weight:normal; }&#10;    table { border:none; border-collapse: collapse; width:100%; }&#10;    td, th { vertical-align:top; padding:2px 3px; }&#10;    th { width:12em; text-align:right; color:#666; padding-right:.5em; }&#10;    #info { background:#f6f6f6; }&#10;    #info ol { margin: 0.5em 4em; }&#10;    #info ol li { font-family: monospace; }&#10;    #summary { background: #ffc; }&#10;    #explanation { background:#eee; border-bottom: 0px none; }&#10;    pre.exception_value { font-family: sans-serif; color: #575757; font-size: 1.5em; margin: 10px 0 10px 0; }&#10;  &lt;/style&gt;&#10;&lt;/head&gt;&#10;&lt;body&gt;&#10;  &lt;header id=&quot;summary&quot;&gt;&#10;    &lt;h1&gt;Page not found &lt;small&gt;(404)&lt;/small&gt;&lt;/h1&gt;&#10;    &#10;    &lt;table class=&quot;meta&quot;&gt;&#10;      &lt;tr&gt;&#10;        &lt;th scope=&quot;row&quot;&gt;Request Method:&lt;/th&gt;&#10;        &lt;td&gt;GET&lt;/td&gt;&#10;      &lt;/tr&gt;&#10;      &lt;tr&gt;&#10;        &lt;th scope=&quot;row&quot;&gt;Request URL:&lt;/th&gt;&#10;        &lt;td&gt;http://127.0.0.1:8000/api/courses/&lt;/td&gt;&#10;      &lt;/tr&gt;&#10;      &#10;    &lt;/table&gt;&#10;  &lt;/header&gt;&#10;&#10;  &lt;main id=&quot;info&quot;&gt;&#10;    &#10;      &lt;p&gt;&#10;      Using the URLconf defined in &lt;code&gt;config.urls&lt;/code&gt;,&#10;      Django tried these URL patterns, in this order:&#10;      &lt;/p&gt;&#10;      &lt;ol&gt;&#10;        &#10;          &lt;li&gt;&#10;            &#10;              &lt;code&gt;&#10;                admin/&#10;                &#10;              &lt;/code&gt;&#10;            &#10;          &lt;/li&gt;&#10;        &#10;          &lt;li&gt;&#10;            &#10;              &lt;code&gt;&#10;                api/auth/&#10;                &#10;              &lt;/code&gt;&#10;            &#10;          &lt;/li&gt;&#10;        &#10;          &lt;li&gt;&#10;            &#10;              &lt;code&gt;&#10;                api/courses/&#10;                &#10;              &lt;/code&gt;&#10;            &#10;              &lt;code&gt;&#10;                list-courses/&#10;                [name='list-courses']&#10;              &lt;/code&gt;&#10;            &#10;          &lt;/li&gt;&#10;        &#10;          &lt;li&gt;&#10;            &#10;              &lt;code&gt;&#10;                api/courses/&#10;                &#10;              &lt;/code&gt;&#10;            &#10;              &lt;code&gt;&#10;                add-course/&#10;                [name='add-course']&#10;              &lt;/code&gt;&#10;            &#10;          &lt;/li&gt;&#10;        &#10;          &lt;li&gt;&#10;            &#10;              &lt;code&gt;&#10;                swagger/&#10;                [name='schema-swagger-ui']&#10;              &lt;/code&gt;&#10;            &#10;          &lt;/li&gt;&#10;        &#10;          &lt;li&gt;&#10;            &#10;              &lt;code&gt;&#10;                redoc/&#10;                [name='schema-redoc']&#10;              &lt;/code&gt;&#10;            &#10;          &lt;/li&gt;&#10;        &#10;          &lt;li&gt;&#10;            &#10;              &lt;code&gt;&#10;                swagger.json&#10;                [name='schema-json']&#10;              &lt;/code&gt;&#10;            &#10;          &lt;/li&gt;&#10;        &#10;      &lt;/ol&gt;&#10;      &lt;p&gt;&#10;        &#10;          The current path, &lt;code&gt;api/courses/&lt;/code&gt;,&#10;        &#10;        didn’t match any of these.&#10;      &lt;/p&gt;&#10;    &#10;  &lt;/main&gt;&#10;&#10;  &lt;footer id=&quot;explanation&quot;&gt;&#10;    &lt;p&gt;&#10;      You’re seeing this error because you have &lt;code&gt;DEBUG = True&lt;/code&gt; in&#10;      your Django settings file. Change that to &lt;code&gt;False&lt;/code&gt;, and Django&#10;      will display a standard 404 page.&#10;    &lt;/p&gt;&#10;  &lt;/footer&gt;&#10;&lt;/body&gt;&#10;&lt;/html&gt;&#10;" />
-              <option name="size" value="3439" />
-              <option name="time" value="13" />
-            </responseState>
-          </option>
-          <option name="workspaceId" value="955b3e74-61d3-44d9-8c42-624b89c419d6" />
-        </requestHistoryState>
-        <requestHistoryState>
-          <option name="dateTime" value="1750764594164" />
-          <option name="id" value="8ce4e0f8-def8-4c4f-9aac-4e9b70ce49b5" />
-          <option name="request">
-            <requestState>
-              <option name="id" value="91a82eae-1d77-4769-974d-30a6ca416a21" />
-              <option name="method" value="GET" />
-              <option name="name" value="list courses" />
-              <option name="sortWeight" value="1000000" />
-              <option name="url" value="http://127.0.0.1:8000/api/courses/" />
-            </requestState>
-          </option>
-          <option name="response">
-            <responseState>
-              <option name="bodyBytesBase64" value="PCFET0NUWVBFIGh0bWw+CjxodG1sIGxhbmc9ImVuIj4KPGhlYWQ+CiAgPG1ldGEgaHR0cC1lcXVpdj0iY29udGVudC10eXBlIiBjb250ZW50PSJ0ZXh0L2h0bWw7IGNoYXJzZXQ9dXRmLTgiPgogIDx0aXRsZT5QYWdlIG5vdCBmb3VuZCBhdCAvYXBpL2NvdXJzZXMvPC90aXRsZT4KICA8bWV0YSBuYW1lPSJyb2JvdHMiIGNvbnRlbnQ9Ik5PTkUsTk9BUkNISVZFIj4KICA8c3R5bGU+CiAgICBodG1sICogeyBwYWRkaW5nOjA7IG1hcmdpbjowOyB9CiAgICBib2R5ICogeyBwYWRkaW5nOjEwcHggMjBweDsgfQogICAgYm9keSAqICogeyBwYWRkaW5nOjA7IH0KICAgIGJvZHkgeyBmb250LWZhbWlseTogc2Fucy1zZXJpZjsgYmFja2dyb3VuZDojZWVlOyBjb2xvcjojMDAwOyB9CiAgICBib2R5ID4gOndoZXJlKGhlYWRlciwgbWFpbiwgZm9vdGVyKSB7IGJvcmRlci1ib3R0b206MXB4IHNvbGlkICNkZGQ7IH0KICAgIGgxIHsgZm9udC13ZWlnaHQ6bm9ybWFsOyBtYXJnaW4tYm90dG9tOi40ZW07IH0KICAgIGgxIHNtYWxsIHsgZm9udC1zaXplOjYwJTsgY29sb3I6IzY2NjsgZm9udC13ZWlnaHQ6bm9ybWFsOyB9CiAgICB0YWJsZSB7IGJvcmRlcjpub25lOyBib3JkZXItY29sbGFwc2U6IGNvbGxhcHNlOyB3aWR0aDoxMDAlOyB9CiAgICB0ZCwgdGggeyB2ZXJ0aWNhbC1hbGlnbjp0b3A7IHBhZGRpbmc6MnB4IDNweDsgfQogICAgdGggeyB3aWR0aDoxMmVtOyB0ZXh0LWFsaWduOnJpZ2h0OyBjb2xvcjojNjY2OyBwYWRkaW5nLXJpZ2h0Oi41ZW07IH0KICAgICNpbmZvIHsgYmFja2dyb3VuZDojZjZmNmY2OyB9CiAgICAjaW5mbyBvbCB7IG1hcmdpbjogMC41ZW0gNGVtOyB9CiAgICAjaW5mbyBvbCBsaSB7IGZvbnQtZmFtaWx5OiBtb25vc3BhY2U7IH0KICAgICNzdW1tYXJ5IHsgYmFja2dyb3VuZDogI2ZmYzsgfQogICAgI2V4cGxhbmF0aW9uIHsgYmFja2dyb3VuZDojZWVlOyBib3JkZXItYm90dG9tOiAwcHggbm9uZTsgfQogICAgcHJlLmV4Y2VwdGlvbl92YWx1ZSB7IGZvbnQtZmFtaWx5OiBzYW5zLXNlcmlmOyBjb2xvcjogIzU3NTc1NzsgZm9udC1zaXplOiAxLjVlbTsgbWFyZ2luOiAxMHB4IDAgMTBweCAwOyB9CiAgPC9zdHlsZT4KPC9oZWFkPgo8Ym9keT4KICA8aGVhZGVyIGlkPSJzdW1tYXJ5Ij4KICAgIDxoMT5QYWdlIG5vdCBmb3VuZCA8c21hbGw+KDQwNCk8L3NtYWxsPjwvaDE+CiAgICAKICAgIDx0YWJsZSBjbGFzcz0ibWV0YSI+CiAgICAgIDx0cj4KICAgICAgICA8dGggc2NvcGU9InJvdyI+UmVxdWVzdCBNZXRob2Q6PC90aD4KICAgICAgICA8dGQ+R0VUPC90ZD4KICAgICAgPC90cj4KICAgICAgPHRyPgogICAgICAgIDx0aCBzY29wZT0icm93Ij5SZXF1ZXN0IFVSTDo8L3RoPgogICAgICAgIDx0ZD5odHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2NvdXJzZXMvPC90ZD4KICAgICAgPC90cj4KICAgICAgCiAgICA8L3RhYmxlPgogIDwvaGVhZGVyPgoKICA8bWFpbiBpZD0iaW5mbyI+CiAgICAKICAgICAgPHA+CiAgICAgIFVzaW5nIHRoZSBVUkxjb25mIGRlZmluZWQgaW4gPGNvZGU+Y29uZmlnLnVybHM8L2NvZGU+LAogICAgICBEamFuZ28gdHJpZWQgdGhlc2UgVVJMIHBhdHRlcm5zLCBpbiB0aGlzIG9yZGVyOgogICAgICA8L3A+CiAgICAgIDxvbD4KICAgICAgICAKICAgICAgICAgIDxsaT4KICAgICAgICAgICAgCiAgICAgICAgICAgICAgPGNvZGU+CiAgICAgICAgICAgICAgICBhZG1pbi8KICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgIDwvY29kZT4KICAgICAgICAgICAgCiAgICAgICAgICA8L2xpPgogICAgICAgIAogICAgICAgICAgPGxpPgogICAgICAgICAgICAKICAgICAgICAgICAgICA8Y29kZT4KICAgICAgICAgICAgICAgIGFwaS9hdXRoLwogICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgPC9jb2RlPgogICAgICAgICAgICAKICAgICAgICAgIDwvbGk+CiAgICAgICAgCiAgICAgICAgICA8bGk+CiAgICAgICAgICAgIAogICAgICAgICAgICAgIDxjb2RlPgogICAgICAgICAgICAgICAgYXBpL2NvdXJzZXMvCiAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICA8L2NvZGU+CiAgICAgICAgICAgIAogICAgICAgICAgICAgIDxjb2RlPgogICAgICAgICAgICAgICAgbGlzdC1jb3Vyc2VzLwogICAgICAgICAgICAgICAgW25hbWU9J2xpc3QtY291cnNlcyddCiAgICAgICAgICAgICAgPC9jb2RlPgogICAgICAgICAgICAKICAgICAgICAgIDwvbGk+CiAgICAgICAgCiAgICAgICAgICA8bGk+CiAgICAgICAgICAgIAogICAgICAgICAgICAgIDxjb2RlPgogICAgICAgICAgICAgICAgYXBpL2NvdXJzZXMvCiAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICA8L2NvZGU+CiAgICAgICAgICAgIAogICAgICAgICAgICAgIDxjb2RlPgogICAgICAgICAgICAgICAgYWRkLWNvdXJzZS8KICAgICAgICAgICAgICAgIFtuYW1lPSdhZGQtY291cnNlJ10KICAgICAgICAgICAgICA8L2NvZGU+CiAgICAgICAgICAgIAogICAgICAgICAgPC9saT4KICAgICAgICAKICAgICAgICAgIDxsaT4KICAgICAgICAgICAgCiAgICAgICAgICAgICAgPGNvZGU+CiAgICAgICAgICAgICAgICBzd2FnZ2VyLwogICAgICAgICAgICAgICAgW25hbWU9J3NjaGVtYS1zd2FnZ2VyLXVpJ10KICAgICAgICAgICAgICA8L2NvZGU+CiAgICAgICAgICAgIAogICAgICAgICAgPC9saT4KICAgICAgICAKICAgICAgICAgIDxsaT4KICAgICAgICAgICAgCiAgICAgICAgICAgICAgPGNvZGU+CiAgICAgICAgICAgICAgICByZWRvYy8KICAgICAgICAgICAgICAgIFtuYW1lPSdzY2hlbWEtcmVkb2MnXQogICAgICAgICAgICAgIDwvY29kZT4KICAgICAgICAgICAgCiAgICAgICAgICA8L2xpPgogICAgICAgIAogICAgICAgICAgPGxpPgogICAgICAgICAgICAKICAgICAgICAgICAgICA8Y29kZT4KICAgICAgICAgICAgICAgIHN3YWdnZXIuanNvbgogICAgICAgICAgICAgICAgW25hbWU9J3NjaGVtYS1qc29uJ10KICAgICAgICAgICAgICA8L2NvZGU+CiAgICAgICAgICAgIAogICAgICAgICAgPC9saT4KICAgICAgICAKICAgICAgPC9vbD4KICAgICAgPHA+CiAgICAgICAgCiAgICAgICAgICBUaGUgY3VycmVudCBwYXRoLCA8Y29kZT5hcGkvY291cnNlcy88L2NvZGU+LAogICAgICAgIAogICAgICAgIGRpZG7igJl0IG1hdGNoIGFueSBvZiB0aGVzZS4KICAgICAgPC9wPgogICAgCiAgPC9tYWluPgoKICA8Zm9vdGVyIGlkPSJleHBsYW5hdGlvbiI+CiAgICA8cD4KICAgICAgWW914oCZcmUgc2VlaW5nIHRoaXMgZXJyb3IgYmVjYXVzZSB5b3UgaGF2ZSA8Y29kZT5ERUJVRyA9IFRydWU8L2NvZGU+IGluCiAgICAgIHlvdXIgRGphbmdvIHNldHRpbmdzIGZpbGUuIENoYW5nZSB0aGF0IHRvIDxjb2RlPkZhbHNlPC9jb2RlPiwgYW5kIERqYW5nbwogICAgICB3aWxsIGRpc3BsYXkgYSBzdGFuZGFyZCA0MDQgcGFnZS4KICAgIDwvcD4KICA8L2Zvb3Rlcj4KPC9ib2R5Pgo8L2h0bWw+Cg==" />
-              <option name="bodyString" value="&lt;!DOCTYPE html&gt;&#10;&lt;html lang=&quot;en&quot;&gt;&#10;&lt;head&gt;&#10;  &lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html; charset=utf-8&quot;&gt;&#10;  &lt;title&gt;Page not found at /api/courses/&lt;/title&gt;&#10;  &lt;meta name=&quot;robots&quot; content=&quot;NONE,NOARCHIVE&quot;&gt;&#10;  &lt;style&gt;&#10;    html * { padding:0; margin:0; }&#10;    body * { padding:10px 20px; }&#10;    body * * { padding:0; }&#10;    body { font-family: sans-serif; background:#eee; color:#000; }&#10;    body &gt; :where(header, main, footer) { border-bottom:1px solid #ddd; }&#10;    h1 { font-weight:normal; margin-bottom:.4em; }&#10;    h1 small { font-size:60%; color:#666; font-weight:normal; }&#10;    table { border:none; border-collapse: collapse; width:100%; }&#10;    td, th { vertical-align:top; padding:2px 3px; }&#10;    th { width:12em; text-align:right; color:#666; padding-right:.5em; }&#10;    #info { background:#f6f6f6; }&#10;    #info ol { margin: 0.5em 4em; }&#10;    #info ol li { font-family: monospace; }&#10;    #summary { background: #ffc; }&#10;    #explanation { background:#eee; border-bottom: 0px none; }&#10;    pre.exception_value { font-family: sans-serif; color: #575757; font-size: 1.5em; margin: 10px 0 10px 0; }&#10;  &lt;/style&gt;&#10;&lt;/head&gt;&#10;&lt;body&gt;&#10;  &lt;header id=&quot;summary&quot;&gt;&#10;    &lt;h1&gt;Page not found &lt;small&gt;(404)&lt;/small&gt;&lt;/h1&gt;&#10;    &#10;    &lt;table class=&quot;meta&quot;&gt;&#10;      &lt;tr&gt;&#10;        &lt;th scope=&quot;row&quot;&gt;Request Method:&lt;/th&gt;&#10;        &lt;td&gt;GET&lt;/td&gt;&#10;      &lt;/tr&gt;&#10;      &lt;tr&gt;&#10;        &lt;th scope=&quot;row&quot;&gt;Request URL:&lt;/th&gt;&#10;        &lt;td&gt;http://127.0.0.1:8000/api/courses/&lt;/td&gt;&#10;      &lt;/tr&gt;&#10;      &#10;    &lt;/table&gt;&#10;  &lt;/header&gt;&#10;&#10;  &lt;main id=&quot;info&quot;&gt;&#10;    &#10;      &lt;p&gt;&#10;      Using the URLconf defined in &lt;code&gt;config.urls&lt;/code&gt;,&#10;      Django tried these URL patterns, in this order:&#10;      &lt;/p&gt;&#10;      &lt;ol&gt;&#10;        &#10;          &lt;li&gt;&#10;            &#10;              &lt;code&gt;&#10;                admin/&#10;                &#10;              &lt;/code&gt;&#10;            &#10;          &lt;/li&gt;&#10;        &#10;          &lt;li&gt;&#10;            &#10;              &lt;code&gt;&#10;                api/auth/&#10;                &#10;              &lt;/code&gt;&#10;            &#10;          &lt;/li&gt;&#10;        &#10;          &lt;li&gt;&#10;            &#10;              &lt;code&gt;&#10;                api/courses/&#10;                &#10;              &lt;/code&gt;&#10;            &#10;              &lt;code&gt;&#10;                list-courses/&#10;                [name='list-courses']&#10;              &lt;/code&gt;&#10;            &#10;          &lt;/li&gt;&#10;        &#10;          &lt;li&gt;&#10;            &#10;              &lt;code&gt;&#10;                api/courses/&#10;                &#10;              &lt;/code&gt;&#10;            &#10;              &lt;code&gt;&#10;                add-course/&#10;                [name='add-course']&#10;              &lt;/code&gt;&#10;            &#10;          &lt;/li&gt;&#10;        &#10;          &lt;li&gt;&#10;            &#10;              &lt;code&gt;&#10;                swagger/&#10;                [name='schema-swagger-ui']&#10;              &lt;/code&gt;&#10;            &#10;          &lt;/li&gt;&#10;        &#10;          &lt;li&gt;&#10;            &#10;              &lt;code&gt;&#10;                redoc/&#10;                [name='schema-redoc']&#10;              &lt;/code&gt;&#10;            &#10;          &lt;/li&gt;&#10;        &#10;          &lt;li&gt;&#10;            &#10;              &lt;code&gt;&#10;                swagger.json&#10;                [name='schema-json']&#10;              &lt;/code&gt;&#10;            &#10;          &lt;/li&gt;&#10;        &#10;      &lt;/ol&gt;&#10;      &lt;p&gt;&#10;        &#10;          The current path, &lt;code&gt;api/courses/&lt;/code&gt;,&#10;        &#10;        didn’t match any of these.&#10;      &lt;/p&gt;&#10;    &#10;  &lt;/main&gt;&#10;&#10;  &lt;footer id=&quot;explanation&quot;&gt;&#10;    &lt;p&gt;&#10;      You’re seeing this error because you have &lt;code&gt;DEBUG = True&lt;/code&gt; in&#10;      your Django settings file. Change that to &lt;code&gt;False&lt;/code&gt;, and Django&#10;      will display a standard 404 page.&#10;    &lt;/p&gt;&#10;  &lt;/footer&gt;&#10;&lt;/body&gt;&#10;&lt;/html&gt;&#10;" />
-              <option name="code" value="404" />
-              <option name="connectionEstablishingTime" value="1" />
-              <option name="contentType" value="text/html; charset=utf-8" />
-              <option name="headers">
-                <list>
-                  <headerState>
-                    <option name="key" value="Date" />
-                    <option name="value" value="Tue, 24 Jun 2025 11:29:54 GMT" />
-                  </headerState>
-                  <headerState>
-                    <option name="key" value="Server" />
-                    <option name="value" value="WSGIServer/0.2 CPython/3.12.10" />
-                  </headerState>
-                  <headerState>
-                    <option name="key" value="Content-Type" />
-                    <option name="value" value="text/html; charset=utf-8" />
-                  </headerState>
-                  <headerState>
-                    <option name="key" value="X-Frame-Options" />
-                    <option name="value" value="DENY" />
-                  </headerState>
-                  <headerState>
-                    <option name="key" value="Content-Length" />
-                    <option name="value" value="3439" />
-                  </headerState>
-                  <headerState>
-                    <option name="key" value="X-Content-Type-Options" />
-                    <option name="value" value="nosniff" />
-                  </headerState>
-                  <headerState>
-                    <option name="key" value="Referrer-Policy" />
-                    <option name="value" value="same-origin" />
-                  </headerState>
-                  <headerState>
-                    <option name="key" value="Cross-Origin-Opener-Policy" />
-                    <option name="value" value="same-origin" />
-                  </headerState>
-                </list>
-              </option>
-              <option name="id" value="8ce4e0f8-def8-4c4f-9aac-4e9b70ce49b5" />
-              <option name="message" value="Not Found" />
-              <option name="prettyResponseType" value="HTML" />
-              <option name="previewType" value="HTML" />
-              <option name="rawBodyString" value="&lt;!DOCTYPE html&gt;&#10;&lt;html lang=&quot;en&quot;&gt;&#10;&lt;head&gt;&#10;  &lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html; charset=utf-8&quot;&gt;&#10;  &lt;title&gt;Page not found at /api/courses/&lt;/title&gt;&#10;  &lt;meta name=&quot;robots&quot; content=&quot;NONE,NOARCHIVE&quot;&gt;&#10;  &lt;style&gt;&#10;    html * { padding:0; margin:0; }&#10;    body * { padding:10px 20px; }&#10;    body * * { padding:0; }&#10;    body { font-family: sans-serif; background:#eee; color:#000; }&#10;    body &gt; :where(header, main, footer) { border-bottom:1px solid #ddd; }&#10;    h1 { font-weight:normal; margin-bottom:.4em; }&#10;    h1 small { font-size:60%; color:#666; font-weight:normal; }&#10;    table { border:none; border-collapse: collapse; width:100%; }&#10;    td, th { vertical-align:top; padding:2px 3px; }&#10;    th { width:12em; text-align:right; color:#666; padding-right:.5em; }&#10;    #info { background:#f6f6f6; }&#10;    #info ol { margin: 0.5em 4em; }&#10;    #info ol li { font-family: monospace; }&#10;    #summary { background: #ffc; }&#10;    #explanation { background:#eee; border-bottom: 0px none; }&#10;    pre.exception_value { font-family: sans-serif; color: #575757; font-size: 1.5em; margin: 10px 0 10px 0; }&#10;  &lt;/style&gt;&#10;&lt;/head&gt;&#10;&lt;body&gt;&#10;  &lt;header id=&quot;summary&quot;&gt;&#10;    &lt;h1&gt;Page not found &lt;small&gt;(404)&lt;/small&gt;&lt;/h1&gt;&#10;    &#10;    &lt;table class=&quot;meta&quot;&gt;&#10;      &lt;tr&gt;&#10;        &lt;th scope=&quot;row&quot;&gt;Request Method:&lt;/th&gt;&#10;        &lt;td&gt;GET&lt;/td&gt;&#10;      &lt;/tr&gt;&#10;      &lt;tr&gt;&#10;        &lt;th scope=&quot;row&quot;&gt;Request URL:&lt;/th&gt;&#10;        &lt;td&gt;http://127.0.0.1:8000/api/courses/&lt;/td&gt;&#10;      &lt;/tr&gt;&#10;      &#10;    &lt;/table&gt;&#10;  &lt;/header&gt;&#10;&#10;  &lt;main id=&quot;info&quot;&gt;&#10;    &#10;      &lt;p&gt;&#10;      Using the URLconf defined in &lt;code&gt;config.urls&lt;/code&gt;,&#10;      Django tried these URL patterns, in this order:&#10;      &lt;/p&gt;&#10;      &lt;ol&gt;&#10;        &#10;          &lt;li&gt;&#10;            &#10;              &lt;code&gt;&#10;                admin/&#10;                &#10;              &lt;/code&gt;&#10;            &#10;          &lt;/li&gt;&#10;        &#10;          &lt;li&gt;&#10;            &#10;              &lt;code&gt;&#10;                api/auth/&#10;                &#10;              &lt;/code&gt;&#10;            &#10;          &lt;/li&gt;&#10;        &#10;          &lt;li&gt;&#10;            &#10;              &lt;code&gt;&#10;                api/courses/&#10;                &#10;              &lt;/code&gt;&#10;            &#10;              &lt;code&gt;&#10;                list-courses/&#10;                [name='list-courses']&#10;              &lt;/code&gt;&#10;            &#10;          &lt;/li&gt;&#10;        &#10;          &lt;li&gt;&#10;            &#10;              &lt;code&gt;&#10;                api/courses/&#10;                &#10;              &lt;/code&gt;&#10;            &#10;              &lt;code&gt;&#10;                add-course/&#10;                [name='add-course']&#10;              &lt;/code&gt;&#10;            &#10;          &lt;/li&gt;&#10;        &#10;          &lt;li&gt;&#10;            &#10;              &lt;code&gt;&#10;                swagger/&#10;                [name='schema-swagger-ui']&#10;              &lt;/code&gt;&#10;            &#10;          &lt;/li&gt;&#10;        &#10;          &lt;li&gt;&#10;            &#10;              &lt;code&gt;&#10;                redoc/&#10;                [name='schema-redoc']&#10;              &lt;/code&gt;&#10;            &#10;          &lt;/li&gt;&#10;        &#10;          &lt;li&gt;&#10;            &#10;              &lt;code&gt;&#10;                swagger.json&#10;                [name='schema-json']&#10;              &lt;/code&gt;&#10;            &#10;          &lt;/li&gt;&#10;        &#10;      &lt;/ol&gt;&#10;      &lt;p&gt;&#10;        &#10;          The current path, &lt;code&gt;api/courses/&lt;/code&gt;,&#10;        &#10;        didn’t match any of these.&#10;      &lt;/p&gt;&#10;    &#10;  &lt;/main&gt;&#10;&#10;  &lt;footer id=&quot;explanation&quot;&gt;&#10;    &lt;p&gt;&#10;      You’re seeing this error because you have &lt;code&gt;DEBUG = True&lt;/code&gt; in&#10;      your Django settings file. Change that to &lt;code&gt;False&lt;/code&gt;, and Django&#10;      will display a standard 404 page.&#10;    &lt;/p&gt;&#10;  &lt;/footer&gt;&#10;&lt;/body&gt;&#10;&lt;/html&gt;&#10;" />
-              <option name="size" value="3439" />
-              <option name="time" value="14" />
-            </responseState>
-          </option>
-          <option name="workspaceId" value="955b3e74-61d3-44d9-8c42-624b89c419d6" />
-        </requestHistoryState>
-        <requestHistoryState>
-          <option name="dateTime" value="1750764606214" />
-          <option name="id" value="4e674cda-5150-43fc-a189-79a4123595e0" />
-          <option name="request">
-            <requestState>
-              <option name="id" value="91a82eae-1d77-4769-974d-30a6ca416a21" />
-              <option name="method" value="GET" />
-              <option name="name" value="list courses" />
-              <option name="sortWeight" value="1000000" />
-              <option name="url" value="http://127.0.0.1:8000/api/list-courses/" />
-            </requestState>
-          </option>
-          <option name="response">
-            <responseState>
-              <option name="bodyBytesBase64" value="PCFET0NUWVBFIGh0bWw+CjxodG1sIGxhbmc9ImVuIj4KPGhlYWQ+CiAgPG1ldGEgaHR0cC1lcXVpdj0iY29udGVudC10eXBlIiBjb250ZW50PSJ0ZXh0L2h0bWw7IGNoYXJzZXQ9dXRmLTgiPgogIDx0aXRsZT5QYWdlIG5vdCBmb3VuZCBhdCAvYXBpL2xpc3QtY291cnNlcy88L3RpdGxlPgogIDxtZXRhIG5hbWU9InJvYm90cyIgY29udGVudD0iTk9ORSxOT0FSQ0hJVkUiPgogIDxzdHlsZT4KICAgIGh0bWwgKiB7IHBhZGRpbmc6MDsgbWFyZ2luOjA7IH0KICAgIGJvZHkgKiB7IHBhZGRpbmc6MTBweCAyMHB4OyB9CiAgICBib2R5ICogKiB7IHBhZGRpbmc6MDsgfQogICAgYm9keSB7IGZvbnQtZmFtaWx5OiBzYW5zLXNlcmlmOyBiYWNrZ3JvdW5kOiNlZWU7IGNvbG9yOiMwMDA7IH0KICAgIGJvZHkgPiA6d2hlcmUoaGVhZGVyLCBtYWluLCBmb290ZXIpIHsgYm9yZGVyLWJvdHRvbToxcHggc29saWQgI2RkZDsgfQogICAgaDEgeyBmb250LXdlaWdodDpub3JtYWw7IG1hcmdpbi1ib3R0b206LjRlbTsgfQogICAgaDEgc21hbGwgeyBmb250LXNpemU6NjAlOyBjb2xvcjojNjY2OyBmb250LXdlaWdodDpub3JtYWw7IH0KICAgIHRhYmxlIHsgYm9yZGVyOm5vbmU7IGJvcmRlci1jb2xsYXBzZTogY29sbGFwc2U7IHdpZHRoOjEwMCU7IH0KICAgIHRkLCB0aCB7IHZlcnRpY2FsLWFsaWduOnRvcDsgcGFkZGluZzoycHggM3B4OyB9CiAgICB0aCB7IHdpZHRoOjEyZW07IHRleHQtYWxpZ246cmlnaHQ7IGNvbG9yOiM2NjY7IHBhZGRpbmctcmlnaHQ6LjVlbTsgfQogICAgI2luZm8geyBiYWNrZ3JvdW5kOiNmNmY2ZjY7IH0KICAgICNpbmZvIG9sIHsgbWFyZ2luOiAwLjVlbSA0ZW07IH0KICAgICNpbmZvIG9sIGxpIHsgZm9udC1mYW1pbHk6IG1vbm9zcGFjZTsgfQogICAgI3N1bW1hcnkgeyBiYWNrZ3JvdW5kOiAjZmZjOyB9CiAgICAjZXhwbGFuYXRpb24geyBiYWNrZ3JvdW5kOiNlZWU7IGJvcmRlci1ib3R0b206IDBweCBub25lOyB9CiAgICBwcmUuZXhjZXB0aW9uX3ZhbHVlIHsgZm9udC1mYW1pbHk6IHNhbnMtc2VyaWY7IGNvbG9yOiAjNTc1NzU3OyBmb250LXNpemU6IDEuNWVtOyBtYXJnaW46IDEwcHggMCAxMHB4IDA7IH0KICA8L3N0eWxlPgo8L2hlYWQ+Cjxib2R5PgogIDxoZWFkZXIgaWQ9InN1bW1hcnkiPgogICAgPGgxPlBhZ2Ugbm90IGZvdW5kIDxzbWFsbD4oNDA0KTwvc21hbGw+PC9oMT4KICAgIAogICAgPHRhYmxlIGNsYXNzPSJtZXRhIj4KICAgICAgPHRyPgogICAgICAgIDx0aCBzY29wZT0icm93Ij5SZXF1ZXN0IE1ldGhvZDo8L3RoPgogICAgICAgIDx0ZD5HRVQ8L3RkPgogICAgICA8L3RyPgogICAgICA8dHI+CiAgICAgICAgPHRoIHNjb3BlPSJyb3ciPlJlcXVlc3QgVVJMOjwvdGg+CiAgICAgICAgPHRkPmh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9hcGkvbGlzdC1jb3Vyc2VzLzwvdGQ+CiAgICAgIDwvdHI+CiAgICAgIAogICAgPC90YWJsZT4KICA8L2hlYWRlcj4KCiAgPG1haW4gaWQ9ImluZm8iPgogICAgCiAgICAgIDxwPgogICAgICBVc2luZyB0aGUgVVJMY29uZiBkZWZpbmVkIGluIDxjb2RlPmNvbmZpZy51cmxzPC9jb2RlPiwKICAgICAgRGphbmdvIHRyaWVkIHRoZXNlIFVSTCBwYXR0ZXJucywgaW4gdGhpcyBvcmRlcjoKICAgICAgPC9wPgogICAgICA8b2w+CiAgICAgICAgCiAgICAgICAgICA8bGk+CiAgICAgICAgICAgIAogICAgICAgICAgICAgIDxjb2RlPgogICAgICAgICAgICAgICAgYWRtaW4vCiAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICA8L2NvZGU+CiAgICAgICAgICAgIAogICAgICAgICAgPC9saT4KICAgICAgICAKICAgICAgICAgIDxsaT4KICAgICAgICAgICAgCiAgICAgICAgICAgICAgPGNvZGU+CiAgICAgICAgICAgICAgICBhcGkvYXV0aC8KICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgIDwvY29kZT4KICAgICAgICAgICAgCiAgICAgICAgICA8L2xpPgogICAgICAgIAogICAgICAgICAgPGxpPgogICAgICAgICAgICAKICAgICAgICAgICAgICA8Y29kZT4KICAgICAgICAgICAgICAgIGFwaS9jb3Vyc2VzLwogICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgPC9jb2RlPgogICAgICAgICAgICAKICAgICAgICAgIDwvbGk+CiAgICAgICAgCiAgICAgICAgICA8bGk+CiAgICAgICAgICAgIAogICAgICAgICAgICAgIDxjb2RlPgogICAgICAgICAgICAgICAgc3dhZ2dlci8KICAgICAgICAgICAgICAgIFtuYW1lPSdzY2hlbWEtc3dhZ2dlci11aSddCiAgICAgICAgICAgICAgPC9jb2RlPgogICAgICAgICAgICAKICAgICAgICAgIDwvbGk+CiAgICAgICAgCiAgICAgICAgICA8bGk+CiAgICAgICAgICAgIAogICAgICAgICAgICAgIDxjb2RlPgogICAgICAgICAgICAgICAgcmVkb2MvCiAgICAgICAgICAgICAgICBbbmFtZT0nc2NoZW1hLXJlZG9jJ10KICAgICAgICAgICAgICA8L2NvZGU+CiAgICAgICAgICAgIAogICAgICAgICAgPC9saT4KICAgICAgICAKICAgICAgICAgIDxsaT4KICAgICAgICAgICAgCiAgICAgICAgICAgICAgPGNvZGU+CiAgICAgICAgICAgICAgICBzd2FnZ2VyLmpzb24KICAgICAgICAgICAgICAgIFtuYW1lPSdzY2hlbWEtanNvbiddCiAgICAgICAgICAgICAgPC9jb2RlPgogICAgICAgICAgICAKICAgICAgICAgIDwvbGk+CiAgICAgICAgCiAgICAgIDwvb2w+CiAgICAgIDxwPgogICAgICAgIAogICAgICAgICAgVGhlIGN1cnJlbnQgcGF0aCwgPGNvZGU+YXBpL2xpc3QtY291cnNlcy88L2NvZGU+LAogICAgICAgIAogICAgICAgIGRpZG7igJl0IG1hdGNoIGFueSBvZiB0aGVzZS4KICAgICAgPC9wPgogICAgCiAgPC9tYWluPgoKICA8Zm9vdGVyIGlkPSJleHBsYW5hdGlvbiI+CiAgICA8cD4KICAgICAgWW914oCZcmUgc2VlaW5nIHRoaXMgZXJyb3IgYmVjYXVzZSB5b3UgaGF2ZSA8Y29kZT5ERUJVRyA9IFRydWU8L2NvZGU+IGluCiAgICAgIHlvdXIgRGphbmdvIHNldHRpbmdzIGZpbGUuIENoYW5nZSB0aGF0IHRvIDxjb2RlPkZhbHNlPC9jb2RlPiwgYW5kIERqYW5nbwogICAgICB3aWxsIGRpc3BsYXkgYSBzdGFuZGFyZCA0MDQgcGFnZS4KICAgIDwvcD4KICA8L2Zvb3Rlcj4KPC9ib2R5Pgo8L2h0bWw+Cg==" />
-              <option name="bodyString" value="&lt;!DOCTYPE html&gt;&#10;&lt;html lang=&quot;en&quot;&gt;&#10;&lt;head&gt;&#10;  &lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html; charset=utf-8&quot;&gt;&#10;  &lt;title&gt;Page not found at /api/list-courses/&lt;/title&gt;&#10;  &lt;meta name=&quot;robots&quot; content=&quot;NONE,NOARCHIVE&quot;&gt;&#10;  &lt;style&gt;&#10;    html * { padding:0; margin:0; }&#10;    body * { padding:10px 20px; }&#10;    body * * { padding:0; }&#10;    body { font-family: sans-serif; background:#eee; color:#000; }&#10;    body &gt; :where(header, main, footer) { border-bottom:1px solid #ddd; }&#10;    h1 { font-weight:normal; margin-bottom:.4em; }&#10;    h1 small { font-size:60%; color:#666; font-weight:normal; }&#10;    table { border:none; border-collapse: collapse; width:100%; }&#10;    td, th { vertical-align:top; padding:2px 3px; }&#10;    th { width:12em; text-align:right; color:#666; padding-right:.5em; }&#10;    #info { background:#f6f6f6; }&#10;    #info ol { margin: 0.5em 4em; }&#10;    #info ol li { font-family: monospace; }&#10;    #summary { background: #ffc; }&#10;    #explanation { background:#eee; border-bottom: 0px none; }&#10;    pre.exception_value { font-family: sans-serif; color: #575757; font-size: 1.5em; margin: 10px 0 10px 0; }&#10;  &lt;/style&gt;&#10;&lt;/head&gt;&#10;&lt;body&gt;&#10;  &lt;header id=&quot;summary&quot;&gt;&#10;    &lt;h1&gt;Page not found &lt;small&gt;(404)&lt;/small&gt;&lt;/h1&gt;&#10;    &#10;    &lt;table class=&quot;meta&quot;&gt;&#10;      &lt;tr&gt;&#10;        &lt;th scope=&quot;row&quot;&gt;Request Method:&lt;/th&gt;&#10;        &lt;td&gt;GET&lt;/td&gt;&#10;      &lt;/tr&gt;&#10;      &lt;tr&gt;&#10;        &lt;th scope=&quot;row&quot;&gt;Request URL:&lt;/th&gt;&#10;        &lt;td&gt;http://127.0.0.1:8000/api/list-courses/&lt;/td&gt;&#10;      &lt;/tr&gt;&#10;      &#10;    &lt;/table&gt;&#10;  &lt;/header&gt;&#10;&#10;  &lt;main id=&quot;info&quot;&gt;&#10;    &#10;      &lt;p&gt;&#10;      Using the URLconf defined in &lt;code&gt;config.urls&lt;/code&gt;,&#10;      Django tried these URL patterns, in this order:&#10;      &lt;/p&gt;&#10;      &lt;ol&gt;&#10;        &#10;          &lt;li&gt;&#10;            &#10;              &lt;code&gt;&#10;                admin/&#10;                &#10;              &lt;/code&gt;&#10;            &#10;          &lt;/li&gt;&#10;        &#10;          &lt;li&gt;&#10;            &#10;              &lt;code&gt;&#10;                api/auth/&#10;                &#10;              &lt;/code&gt;&#10;            &#10;          &lt;/li&gt;&#10;        &#10;          &lt;li&gt;&#10;            &#10;              &lt;code&gt;&#10;                api/courses/&#10;                &#10;              &lt;/code&gt;&#10;            &#10;          &lt;/li&gt;&#10;        &#10;          &lt;li&gt;&#10;            &#10;              &lt;code&gt;&#10;                swagger/&#10;                [name='schema-swagger-ui']&#10;              &lt;/code&gt;&#10;            &#10;          &lt;/li&gt;&#10;        &#10;          &lt;li&gt;&#10;            &#10;              &lt;code&gt;&#10;                redoc/&#10;                [name='schema-redoc']&#10;              &lt;/code&gt;&#10;            &#10;          &lt;/li&gt;&#10;        &#10;          &lt;li&gt;&#10;            &#10;              &lt;code&gt;&#10;                swagger.json&#10;                [name='schema-json']&#10;              &lt;/code&gt;&#10;            &#10;          &lt;/li&gt;&#10;        &#10;      &lt;/ol&gt;&#10;      &lt;p&gt;&#10;        &#10;          The current path, &lt;code&gt;api/list-courses/&lt;/code&gt;,&#10;        &#10;        didn’t match any of these.&#10;      &lt;/p&gt;&#10;    &#10;  &lt;/main&gt;&#10;&#10;  &lt;footer id=&quot;explanation&quot;&gt;&#10;    &lt;p&gt;&#10;      You’re seeing this error because you have &lt;code&gt;DEBUG = True&lt;/code&gt; in&#10;      your Django settings file. Change that to &lt;code&gt;False&lt;/code&gt;, and Django&#10;      will display a standard 404 page.&#10;    &lt;/p&gt;&#10;  &lt;/footer&gt;&#10;&lt;/body&gt;&#10;&lt;/html&gt;&#10;" />
-              <option name="code" value="404" />
-              <option name="connectionEstablishingTime" value="1" />
-              <option name="contentType" value="text/html; charset=utf-8" />
-              <option name="headers">
-                <list>
-                  <headerState>
-                    <option name="key" value="Date" />
-                    <option name="value" value="Tue, 24 Jun 2025 11:30:06 GMT" />
-                  </headerState>
-                  <headerState>
-                    <option name="key" value="Server" />
-                    <option name="value" value="WSGIServer/0.2 CPython/3.12.10" />
-                  </headerState>
-                  <headerState>
-                    <option name="key" value="Content-Type" />
-                    <option name="value" value="text/html; charset=utf-8" />
-                  </headerState>
-                  <headerState>
-                    <option name="key" value="X-Frame-Options" />
-                    <option name="value" value="DENY" />
-                  </headerState>
-                  <headerState>
-                    <option name="key" value="Content-Length" />
-                    <option name="value" value="3055" />
-                  </headerState>
-                  <headerState>
-                    <option name="key" value="X-Content-Type-Options" />
-                    <option name="value" value="nosniff" />
-                  </headerState>
-                  <headerState>
-                    <option name="key" value="Referrer-Policy" />
-                    <option name="value" value="same-origin" />
-                  </headerState>
-                  <headerState>
-                    <option name="key" value="Cross-Origin-Opener-Policy" />
-                    <option name="value" value="same-origin" />
-                  </headerState>
-                </list>
-              </option>
-              <option name="id" value="4e674cda-5150-43fc-a189-79a4123595e0" />
-              <option name="message" value="Not Found" />
-              <option name="prettyResponseType" value="HTML" />
-              <option name="previewType" value="HTML" />
-              <option name="rawBodyString" value="&lt;!DOCTYPE html&gt;&#10;&lt;html lang=&quot;en&quot;&gt;&#10;&lt;head&gt;&#10;  &lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html; charset=utf-8&quot;&gt;&#10;  &lt;title&gt;Page not found at /api/list-courses/&lt;/title&gt;&#10;  &lt;meta name=&quot;robots&quot; content=&quot;NONE,NOARCHIVE&quot;&gt;&#10;  &lt;style&gt;&#10;    html * { padding:0; margin:0; }&#10;    body * { padding:10px 20px; }&#10;    body * * { padding:0; }&#10;    body { font-family: sans-serif; background:#eee; color:#000; }&#10;    body &gt; :where(header, main, footer) { border-bottom:1px solid #ddd; }&#10;    h1 { font-weight:normal; margin-bottom:.4em; }&#10;    h1 small { font-size:60%; color:#666; font-weight:normal; }&#10;    table { border:none; border-collapse: collapse; width:100%; }&#10;    td, th { vertical-align:top; padding:2px 3px; }&#10;    th { width:12em; text-align:right; color:#666; padding-right:.5em; }&#10;    #info { background:#f6f6f6; }&#10;    #info ol { margin: 0.5em 4em; }&#10;    #info ol li { font-family: monospace; }&#10;    #summary { background: #ffc; }&#10;    #explanation { background:#eee; border-bottom: 0px none; }&#10;    pre.exception_value { font-family: sans-serif; color: #575757; font-size: 1.5em; margin: 10px 0 10px 0; }&#10;  &lt;/style&gt;&#10;&lt;/head&gt;&#10;&lt;body&gt;&#10;  &lt;header id=&quot;summary&quot;&gt;&#10;    &lt;h1&gt;Page not found &lt;small&gt;(404)&lt;/small&gt;&lt;/h1&gt;&#10;    &#10;    &lt;table class=&quot;meta&quot;&gt;&#10;      &lt;tr&gt;&#10;        &lt;th scope=&quot;row&quot;&gt;Request Method:&lt;/th&gt;&#10;        &lt;td&gt;GET&lt;/td&gt;&#10;      &lt;/tr&gt;&#10;      &lt;tr&gt;&#10;        &lt;th scope=&quot;row&quot;&gt;Request URL:&lt;/th&gt;&#10;        &lt;td&gt;http://127.0.0.1:8000/api/list-courses/&lt;/td&gt;&#10;      &lt;/tr&gt;&#10;      &#10;    &lt;/table&gt;&#10;  &lt;/header&gt;&#10;&#10;  &lt;main id=&quot;info&quot;&gt;&#10;    &#10;      &lt;p&gt;&#10;      Using the URLconf defined in &lt;code&gt;config.urls&lt;/code&gt;,&#10;      Django tried these URL patterns, in this order:&#10;      &lt;/p&gt;&#10;      &lt;ol&gt;&#10;        &#10;          &lt;li&gt;&#10;            &#10;              &lt;code&gt;&#10;                admin/&#10;                &#10;              &lt;/code&gt;&#10;            &#10;          &lt;/li&gt;&#10;        &#10;          &lt;li&gt;&#10;            &#10;              &lt;code&gt;&#10;                api/auth/&#10;                &#10;              &lt;/code&gt;&#10;            &#10;          &lt;/li&gt;&#10;        &#10;          &lt;li&gt;&#10;            &#10;              &lt;code&gt;&#10;                api/courses/&#10;                &#10;              &lt;/code&gt;&#10;            &#10;          &lt;/li&gt;&#10;        &#10;          &lt;li&gt;&#10;            &#10;              &lt;code&gt;&#10;                swagger/&#10;                [name='schema-swagger-ui']&#10;              &lt;/code&gt;&#10;            &#10;          &lt;/li&gt;&#10;        &#10;          &lt;li&gt;&#10;            &#10;              &lt;code&gt;&#10;                redoc/&#10;                [name='schema-redoc']&#10;              &lt;/code&gt;&#10;            &#10;          &lt;/li&gt;&#10;        &#10;          &lt;li&gt;&#10;            &#10;              &lt;code&gt;&#10;                swagger.json&#10;                [name='schema-json']&#10;              &lt;/code&gt;&#10;            &#10;          &lt;/li&gt;&#10;        &#10;      &lt;/ol&gt;&#10;      &lt;p&gt;&#10;        &#10;          The current path, &lt;code&gt;api/list-courses/&lt;/code&gt;,&#10;        &#10;        didn’t match any of these.&#10;      &lt;/p&gt;&#10;    &#10;  &lt;/main&gt;&#10;&#10;  &lt;footer id=&quot;explanation&quot;&gt;&#10;    &lt;p&gt;&#10;      You’re seeing this error because you have &lt;code&gt;DEBUG = True&lt;/code&gt; in&#10;      your Django settings file. Change that to &lt;code&gt;False&lt;/code&gt;, and Django&#10;      will display a standard 404 page.&#10;    &lt;/p&gt;&#10;  &lt;/footer&gt;&#10;&lt;/body&gt;&#10;&lt;/html&gt;&#10;" />
-              <option name="size" value="3055" />
-              <option name="time" value="13" />
-            </responseState>
-          </option>
-          <option name="workspaceId" value="955b3e74-61d3-44d9-8c42-624b89c419d6" />
-        </requestHistoryState>
-        <requestHistoryState>
           <option name="dateTime" value="1750764629483" />
           <option name="id" value="faec20b1-89d5-4f4a-871d-49691974fc7f" />
           <option name="request">
@@ -3704,6 +3358,395 @@
               <option name="rawBodyString" value="[{&quot;id&quot;:&quot;b2d16c3f-507d-4ed0-8332-c8bb4703177d&quot;,&quot;name&quot;:&quot;Data Science&quot;,&quot;title&quot;:&quot;Data Analysis&quot;,&quot;duration&quot;:&quot;00:00:30&quot;,&quot;price&quot;:&quot;4000.00&quot;,&quot;rating&quot;:&quot;3.40&quot;,&quot;training_level&quot;:&quot;advanced&quot;,&quot;class_type&quot;:&quot;hybrid&quot;,&quot;career_prospect&quot;:&quot;A FUll fledged backend developer&quot;,&quot;image&quot;:null,&quot;created_at&quot;:&quot;2025-06-24T11:10:22.256040Z&quot;,&quot;updated_at&quot;:&quot;2025-06-24T11:10:22.256085Z&quot;},{&quot;id&quot;:&quot;e39f030e-b9b6-45ab-8bfb-d8bf60046972&quot;,&quot;name&quot;:&quot;Django&quot;,&quot;title&quot;:&quot;Django Backend&quot;,&quot;duration&quot;:&quot;00:00:30&quot;,&quot;price&quot;:&quot;4000.00&quot;,&quot;rating&quot;:&quot;3.40&quot;,&quot;training_level&quot;:&quot;advanced&quot;,&quot;class_type&quot;:&quot;hybrid&quot;,&quot;career_prospect&quot;:&quot;A FUll fledged backend developer&quot;,&quot;image&quot;:null,&quot;created_at&quot;:&quot;2025-06-24T11:09:39.379635Z&quot;,&quot;updated_at&quot;:&quot;2025-06-24T11:09:39.379688Z&quot;}]" />
               <option name="size" value="696" />
               <option name="time" value="14" />
+            </responseState>
+          </option>
+          <option name="workspaceId" value="955b3e74-61d3-44d9-8c42-624b89c419d6" />
+        </requestHistoryState>
+        <requestHistoryState>
+          <option name="dateTime" value="1750819777622" />
+          <option name="id" value="116066c9-2352-47e3-b1e4-33f2c8d0af86" />
+          <option name="request">
+            <requestState>
+              <option name="id" value="91a82eae-1d77-4769-974d-30a6ca416a21" />
+              <option name="method" value="GET" />
+              <option name="name" value="list courses" />
+              <option name="sortWeight" value="1000000" />
+              <option name="url" value="http://127.0.0.1:8000/api/courses/list-courses/" />
+            </requestState>
+          </option>
+          <option name="response">
+            <responseState>
+              <option name="bodyBytesBase64" value="W3siaWQiOiJjNGU3YjQ4NS0wNTM5LTQwZGQtODFhZC0xMzA0MDY3ZDczNTkiLCJuYW1lIjoiUHl0aG9uIiwidGl0bGUiOiJQeXRob24gZGV2ZWxvcGVyIiwiZHVyYXRpb24iOiIwMDowMDozMCIsInByaWNlIjoiNDUwMC4wMCIsInJhdGluZyI6IjMuNjAiLCJ0cmFpbmluZ19sZXZlbCI6ImJlZ2lubmVyIiwiY2xhc3NfdHlwZSI6Imh5YnJpZCIsImNhcmVlcl9wcm9zcGVjdCI6IkEgRlVsbCBmbGVkZ2VkIGJhY2tlbmQgZGV2ZWxvcGVyIiwiaW1hZ2UiOm51bGwsImNyZWF0ZWRfYXQiOiIyMDI1LTA2LTI0VDE1OjU4OjUzLjczNzI4NFoiLCJ1cGRhdGVkX2F0IjoiMjAyNS0wNi0yNFQxNjoxODowNi4yNjIyMThaIn0seyJpZCI6IjgyMDg3NzJmLTNiNjMtNGEyNC04YjRiLWY5MDJmOGFhZmE3YyIsIm5hbWUiOiJEYXRhIFNjaWVuY2UiLCJ0aXRsZSI6IkRhdGEgQW5hbHlzaXMiLCJkdXJhdGlvbiI6IjAwOjAwOjMwIiwicHJpY2UiOiI0MDAwLjAwIiwicmF0aW5nIjoiMy40MCIsInRyYWluaW5nX2xldmVsIjoiYmVnaW5uZXIiLCJjbGFzc190eXBlIjoiaHlicmlkIiwiY2FyZWVyX3Byb3NwZWN0IjoiQSBGVWxsIGZsZWRnZWQgYmFja2VuZCBkZXZlbG9wZXIiLCJpbWFnZSI6bnVsbCwiY3JlYXRlZF9hdCI6IjIwMjUtMDYtMjRUMTI6Mzk6MTAuNDAxODg5WiIsInVwZGF0ZWRfYXQiOiIyMDI1LTA2LTI0VDEyOjM5OjEwLjQwMTg4OVoifV0=" />
+              <option name="bodyString" value="[&#10;  {&#10;    &quot;id&quot;: &quot;c4e7b485-0539-40dd-81ad-1304067d7359&quot;,&#10;    &quot;name&quot;: &quot;Python&quot;,&#10;    &quot;title&quot;: &quot;Python developer&quot;,&#10;    &quot;duration&quot;: &quot;00:00:30&quot;,&#10;    &quot;price&quot;: &quot;4500.00&quot;,&#10;    &quot;rating&quot;: &quot;3.60&quot;,&#10;    &quot;training_level&quot;: &quot;beginner&quot;,&#10;    &quot;class_type&quot;: &quot;hybrid&quot;,&#10;    &quot;career_prospect&quot;: &quot;A FUll fledged backend developer&quot;,&#10;    &quot;image&quot;: null,&#10;    &quot;created_at&quot;: &quot;2025-06-24T15:58:53.737284Z&quot;,&#10;    &quot;updated_at&quot;: &quot;2025-06-24T16:18:06.262218Z&quot;&#10;  },&#10;  {&#10;    &quot;id&quot;: &quot;8208772f-3b63-4a24-8b4b-f902f8aafa7c&quot;,&#10;    &quot;name&quot;: &quot;Data Science&quot;,&#10;    &quot;title&quot;: &quot;Data Analysis&quot;,&#10;    &quot;duration&quot;: &quot;00:00:30&quot;,&#10;    &quot;price&quot;: &quot;4000.00&quot;,&#10;    &quot;rating&quot;: &quot;3.40&quot;,&#10;    &quot;training_level&quot;: &quot;beginner&quot;,&#10;    &quot;class_type&quot;: &quot;hybrid&quot;,&#10;    &quot;career_prospect&quot;: &quot;A FUll fledged backend developer&quot;,&#10;    &quot;image&quot;: null,&#10;    &quot;created_at&quot;: &quot;2025-06-24T12:39:10.401889Z&quot;,&#10;    &quot;updated_at&quot;: &quot;2025-06-24T12:39:10.401889Z&quot;&#10;  }&#10;]" />
+              <option name="code" value="200" />
+              <option name="connectionEstablishingTime" value="214" />
+              <option name="contentType" value="application/json" />
+              <option name="headers">
+                <list>
+                  <headerState>
+                    <option name="key" value="Date" />
+                    <option name="value" value="Wed, 25 Jun 2025 02:49:37 GMT" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Server" />
+                    <option name="value" value="WSGIServer/0.2 CPython/3.12.10" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Content-Type" />
+                    <option name="value" value="application/json" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Vary" />
+                    <option name="value" value="Accept" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Allow" />
+                    <option name="value" value="GET, HEAD, OPTIONS" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="X-Frame-Options" />
+                    <option name="value" value="DENY" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Content-Length" />
+                    <option name="value" value="698" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="X-Content-Type-Options" />
+                    <option name="value" value="nosniff" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Referrer-Policy" />
+                    <option name="value" value="same-origin" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Cross-Origin-Opener-Policy" />
+                    <option name="value" value="same-origin" />
+                  </headerState>
+                </list>
+              </option>
+              <option name="id" value="116066c9-2352-47e3-b1e4-33f2c8d0af86" />
+              <option name="message" value="OK" />
+              <option name="prettyResponseType" value="JSON" />
+              <option name="rawBodyString" value="[{&quot;id&quot;:&quot;c4e7b485-0539-40dd-81ad-1304067d7359&quot;,&quot;name&quot;:&quot;Python&quot;,&quot;title&quot;:&quot;Python developer&quot;,&quot;duration&quot;:&quot;00:00:30&quot;,&quot;price&quot;:&quot;4500.00&quot;,&quot;rating&quot;:&quot;3.60&quot;,&quot;training_level&quot;:&quot;beginner&quot;,&quot;class_type&quot;:&quot;hybrid&quot;,&quot;career_prospect&quot;:&quot;A FUll fledged backend developer&quot;,&quot;image&quot;:null,&quot;created_at&quot;:&quot;2025-06-24T15:58:53.737284Z&quot;,&quot;updated_at&quot;:&quot;2025-06-24T16:18:06.262218Z&quot;},{&quot;id&quot;:&quot;8208772f-3b63-4a24-8b4b-f902f8aafa7c&quot;,&quot;name&quot;:&quot;Data Science&quot;,&quot;title&quot;:&quot;Data Analysis&quot;,&quot;duration&quot;:&quot;00:00:30&quot;,&quot;price&quot;:&quot;4000.00&quot;,&quot;rating&quot;:&quot;3.40&quot;,&quot;training_level&quot;:&quot;beginner&quot;,&quot;class_type&quot;:&quot;hybrid&quot;,&quot;career_prospect&quot;:&quot;A FUll fledged backend developer&quot;,&quot;image&quot;:null,&quot;created_at&quot;:&quot;2025-06-24T12:39:10.401889Z&quot;,&quot;updated_at&quot;:&quot;2025-06-24T12:39:10.401889Z&quot;}]" />
+              <option name="size" value="698" />
+              <option name="time" value="252" />
+            </responseState>
+          </option>
+          <option name="workspaceId" value="955b3e74-61d3-44d9-8c42-624b89c419d6" />
+        </requestHistoryState>
+        <requestHistoryState>
+          <option name="dateTime" value="1750819807841" />
+          <option name="id" value="73693630-c508-465a-9e83-c626a9ff5c57" />
+          <option name="request">
+            <requestState>
+              <option name="id" value="91a82eae-1d77-4769-974d-30a6ca416a21" />
+              <option name="method" value="GET" />
+              <option name="name" value="list courses" />
+              <option name="queryParams">
+                <list>
+                  <queryParamState>
+                    <option name="key" value="search" />
+                    <option name="value" value="Python" />
+                  </queryParamState>
+                </list>
+              </option>
+              <option name="sortWeight" value="1000000" />
+              <option name="url" value="http://127.0.0.1:8000/api/courses/list-courses/?search=Python" />
+            </requestState>
+          </option>
+          <option name="response">
+            <responseState>
+              <option name="bodyBytesBase64" value="W3siaWQiOiJjNGU3YjQ4NS0wNTM5LTQwZGQtODFhZC0xMzA0MDY3ZDczNTkiLCJuYW1lIjoiUHl0aG9uIiwidGl0bGUiOiJQeXRob24gZGV2ZWxvcGVyIiwiZHVyYXRpb24iOiIwMDowMDozMCIsInByaWNlIjoiNDUwMC4wMCIsInJhdGluZyI6IjMuNjAiLCJ0cmFpbmluZ19sZXZlbCI6ImJlZ2lubmVyIiwiY2xhc3NfdHlwZSI6Imh5YnJpZCIsImNhcmVlcl9wcm9zcGVjdCI6IkEgRlVsbCBmbGVkZ2VkIGJhY2tlbmQgZGV2ZWxvcGVyIiwiaW1hZ2UiOm51bGwsImNyZWF0ZWRfYXQiOiIyMDI1LTA2LTI0VDE1OjU4OjUzLjczNzI4NFoiLCJ1cGRhdGVkX2F0IjoiMjAyNS0wNi0yNFQxNjoxODowNi4yNjIyMThaIn1d" />
+              <option name="bodyString" value="[&#10;  {&#10;    &quot;id&quot;: &quot;c4e7b485-0539-40dd-81ad-1304067d7359&quot;,&#10;    &quot;name&quot;: &quot;Python&quot;,&#10;    &quot;title&quot;: &quot;Python developer&quot;,&#10;    &quot;duration&quot;: &quot;00:00:30&quot;,&#10;    &quot;price&quot;: &quot;4500.00&quot;,&#10;    &quot;rating&quot;: &quot;3.60&quot;,&#10;    &quot;training_level&quot;: &quot;beginner&quot;,&#10;    &quot;class_type&quot;: &quot;hybrid&quot;,&#10;    &quot;career_prospect&quot;: &quot;A FUll fledged backend developer&quot;,&#10;    &quot;image&quot;: null,&#10;    &quot;created_at&quot;: &quot;2025-06-24T15:58:53.737284Z&quot;,&#10;    &quot;updated_at&quot;: &quot;2025-06-24T16:18:06.262218Z&quot;&#10;  }&#10;]" />
+              <option name="code" value="200" />
+              <option name="connectionEstablishingTime" value="1" />
+              <option name="contentType" value="application/json" />
+              <option name="headers">
+                <list>
+                  <headerState>
+                    <option name="key" value="Date" />
+                    <option name="value" value="Wed, 25 Jun 2025 02:50:07 GMT" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Server" />
+                    <option name="value" value="WSGIServer/0.2 CPython/3.12.10" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Content-Type" />
+                    <option name="value" value="application/json" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Vary" />
+                    <option name="value" value="Accept" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Allow" />
+                    <option name="value" value="GET, HEAD, OPTIONS" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="X-Frame-Options" />
+                    <option name="value" value="DENY" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Content-Length" />
+                    <option name="value" value="348" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="X-Content-Type-Options" />
+                    <option name="value" value="nosniff" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Referrer-Policy" />
+                    <option name="value" value="same-origin" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Cross-Origin-Opener-Policy" />
+                    <option name="value" value="same-origin" />
+                  </headerState>
+                </list>
+              </option>
+              <option name="id" value="73693630-c508-465a-9e83-c626a9ff5c57" />
+              <option name="message" value="OK" />
+              <option name="prettyResponseType" value="JSON" />
+              <option name="rawBodyString" value="[{&quot;id&quot;:&quot;c4e7b485-0539-40dd-81ad-1304067d7359&quot;,&quot;name&quot;:&quot;Python&quot;,&quot;title&quot;:&quot;Python developer&quot;,&quot;duration&quot;:&quot;00:00:30&quot;,&quot;price&quot;:&quot;4500.00&quot;,&quot;rating&quot;:&quot;3.60&quot;,&quot;training_level&quot;:&quot;beginner&quot;,&quot;class_type&quot;:&quot;hybrid&quot;,&quot;career_prospect&quot;:&quot;A FUll fledged backend developer&quot;,&quot;image&quot;:null,&quot;created_at&quot;:&quot;2025-06-24T15:58:53.737284Z&quot;,&quot;updated_at&quot;:&quot;2025-06-24T16:18:06.262218Z&quot;}]" />
+              <option name="size" value="348" />
+              <option name="time" value="15" />
+            </responseState>
+          </option>
+          <option name="workspaceId" value="955b3e74-61d3-44d9-8c42-624b89c419d6" />
+        </requestHistoryState>
+        <requestHistoryState>
+          <option name="dateTime" value="1750819820756" />
+          <option name="id" value="1125c20b-64d7-48fb-8425-61bef5726c3b" />
+          <option name="request">
+            <requestState>
+              <option name="id" value="91a82eae-1d77-4769-974d-30a6ca416a21" />
+              <option name="method" value="GET" />
+              <option name="name" value="list courses" />
+              <option name="queryParams">
+                <list>
+                  <queryParamState>
+                    <option name="key" value="name" />
+                    <option name="value" value="Python" />
+                  </queryParamState>
+                </list>
+              </option>
+              <option name="sortWeight" value="1000000" />
+              <option name="url" value="http://127.0.0.1:8000/api/courses/list-courses/?name=Python" />
+            </requestState>
+          </option>
+          <option name="response">
+            <responseState>
+              <option name="bodyBytesBase64" value="W3siaWQiOiJjNGU3YjQ4NS0wNTM5LTQwZGQtODFhZC0xMzA0MDY3ZDczNTkiLCJuYW1lIjoiUHl0aG9uIiwidGl0bGUiOiJQeXRob24gZGV2ZWxvcGVyIiwiZHVyYXRpb24iOiIwMDowMDozMCIsInByaWNlIjoiNDUwMC4wMCIsInJhdGluZyI6IjMuNjAiLCJ0cmFpbmluZ19sZXZlbCI6ImJlZ2lubmVyIiwiY2xhc3NfdHlwZSI6Imh5YnJpZCIsImNhcmVlcl9wcm9zcGVjdCI6IkEgRlVsbCBmbGVkZ2VkIGJhY2tlbmQgZGV2ZWxvcGVyIiwiaW1hZ2UiOm51bGwsImNyZWF0ZWRfYXQiOiIyMDI1LTA2LTI0VDE1OjU4OjUzLjczNzI4NFoiLCJ1cGRhdGVkX2F0IjoiMjAyNS0wNi0yNFQxNjoxODowNi4yNjIyMThaIn0seyJpZCI6IjgyMDg3NzJmLTNiNjMtNGEyNC04YjRiLWY5MDJmOGFhZmE3YyIsIm5hbWUiOiJEYXRhIFNjaWVuY2UiLCJ0aXRsZSI6IkRhdGEgQW5hbHlzaXMiLCJkdXJhdGlvbiI6IjAwOjAwOjMwIiwicHJpY2UiOiI0MDAwLjAwIiwicmF0aW5nIjoiMy40MCIsInRyYWluaW5nX2xldmVsIjoiYmVnaW5uZXIiLCJjbGFzc190eXBlIjoiaHlicmlkIiwiY2FyZWVyX3Byb3NwZWN0IjoiQSBGVWxsIGZsZWRnZWQgYmFja2VuZCBkZXZlbG9wZXIiLCJpbWFnZSI6bnVsbCwiY3JlYXRlZF9hdCI6IjIwMjUtMDYtMjRUMTI6Mzk6MTAuNDAxODg5WiIsInVwZGF0ZWRfYXQiOiIyMDI1LTA2LTI0VDEyOjM5OjEwLjQwMTg4OVoifV0=" />
+              <option name="bodyString" value="[&#10;  {&#10;    &quot;id&quot;: &quot;c4e7b485-0539-40dd-81ad-1304067d7359&quot;,&#10;    &quot;name&quot;: &quot;Python&quot;,&#10;    &quot;title&quot;: &quot;Python developer&quot;,&#10;    &quot;duration&quot;: &quot;00:00:30&quot;,&#10;    &quot;price&quot;: &quot;4500.00&quot;,&#10;    &quot;rating&quot;: &quot;3.60&quot;,&#10;    &quot;training_level&quot;: &quot;beginner&quot;,&#10;    &quot;class_type&quot;: &quot;hybrid&quot;,&#10;    &quot;career_prospect&quot;: &quot;A FUll fledged backend developer&quot;,&#10;    &quot;image&quot;: null,&#10;    &quot;created_at&quot;: &quot;2025-06-24T15:58:53.737284Z&quot;,&#10;    &quot;updated_at&quot;: &quot;2025-06-24T16:18:06.262218Z&quot;&#10;  },&#10;  {&#10;    &quot;id&quot;: &quot;8208772f-3b63-4a24-8b4b-f902f8aafa7c&quot;,&#10;    &quot;name&quot;: &quot;Data Science&quot;,&#10;    &quot;title&quot;: &quot;Data Analysis&quot;,&#10;    &quot;duration&quot;: &quot;00:00:30&quot;,&#10;    &quot;price&quot;: &quot;4000.00&quot;,&#10;    &quot;rating&quot;: &quot;3.40&quot;,&#10;    &quot;training_level&quot;: &quot;beginner&quot;,&#10;    &quot;class_type&quot;: &quot;hybrid&quot;,&#10;    &quot;career_prospect&quot;: &quot;A FUll fledged backend developer&quot;,&#10;    &quot;image&quot;: null,&#10;    &quot;created_at&quot;: &quot;2025-06-24T12:39:10.401889Z&quot;,&#10;    &quot;updated_at&quot;: &quot;2025-06-24T12:39:10.401889Z&quot;&#10;  }&#10;]" />
+              <option name="code" value="200" />
+              <option name="connectionEstablishingTime" value="1" />
+              <option name="contentType" value="application/json" />
+              <option name="headers">
+                <list>
+                  <headerState>
+                    <option name="key" value="Date" />
+                    <option name="value" value="Wed, 25 Jun 2025 02:50:20 GMT" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Server" />
+                    <option name="value" value="WSGIServer/0.2 CPython/3.12.10" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Content-Type" />
+                    <option name="value" value="application/json" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Vary" />
+                    <option name="value" value="Accept" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Allow" />
+                    <option name="value" value="GET, HEAD, OPTIONS" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="X-Frame-Options" />
+                    <option name="value" value="DENY" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Content-Length" />
+                    <option name="value" value="698" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="X-Content-Type-Options" />
+                    <option name="value" value="nosniff" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Referrer-Policy" />
+                    <option name="value" value="same-origin" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Cross-Origin-Opener-Policy" />
+                    <option name="value" value="same-origin" />
+                  </headerState>
+                </list>
+              </option>
+              <option name="id" value="1125c20b-64d7-48fb-8425-61bef5726c3b" />
+              <option name="message" value="OK" />
+              <option name="prettyResponseType" value="JSON" />
+              <option name="rawBodyString" value="[{&quot;id&quot;:&quot;c4e7b485-0539-40dd-81ad-1304067d7359&quot;,&quot;name&quot;:&quot;Python&quot;,&quot;title&quot;:&quot;Python developer&quot;,&quot;duration&quot;:&quot;00:00:30&quot;,&quot;price&quot;:&quot;4500.00&quot;,&quot;rating&quot;:&quot;3.60&quot;,&quot;training_level&quot;:&quot;beginner&quot;,&quot;class_type&quot;:&quot;hybrid&quot;,&quot;career_prospect&quot;:&quot;A FUll fledged backend developer&quot;,&quot;image&quot;:null,&quot;created_at&quot;:&quot;2025-06-24T15:58:53.737284Z&quot;,&quot;updated_at&quot;:&quot;2025-06-24T16:18:06.262218Z&quot;},{&quot;id&quot;:&quot;8208772f-3b63-4a24-8b4b-f902f8aafa7c&quot;,&quot;name&quot;:&quot;Data Science&quot;,&quot;title&quot;:&quot;Data Analysis&quot;,&quot;duration&quot;:&quot;00:00:30&quot;,&quot;price&quot;:&quot;4000.00&quot;,&quot;rating&quot;:&quot;3.40&quot;,&quot;training_level&quot;:&quot;beginner&quot;,&quot;class_type&quot;:&quot;hybrid&quot;,&quot;career_prospect&quot;:&quot;A FUll fledged backend developer&quot;,&quot;image&quot;:null,&quot;created_at&quot;:&quot;2025-06-24T12:39:10.401889Z&quot;,&quot;updated_at&quot;:&quot;2025-06-24T12:39:10.401889Z&quot;}]" />
+              <option name="size" value="698" />
+              <option name="time" value="16" />
+            </responseState>
+          </option>
+          <option name="workspaceId" value="955b3e74-61d3-44d9-8c42-624b89c419d6" />
+        </requestHistoryState>
+        <requestHistoryState>
+          <option name="dateTime" value="1750819847764" />
+          <option name="id" value="82c50d2d-2682-48f4-8daf-3cfd753dc735" />
+          <option name="request">
+            <requestState>
+              <option name="id" value="91a82eae-1d77-4769-974d-30a6ca416a21" />
+              <option name="method" value="GET" />
+              <option name="name" value="list courses" />
+              <option name="queryParams">
+                <list>
+                  <queryParamState>
+                    <option name="key" value="search" />
+                    <option name="value" value="Python" />
+                  </queryParamState>
+                </list>
+              </option>
+              <option name="sortWeight" value="1000000" />
+              <option name="url" value="http://127.0.0.1:8000/api/courses/list-courses/?search=Python" />
+            </requestState>
+          </option>
+          <option name="response">
+            <responseState>
+              <option name="bodyBytesBase64" value="W3siaWQiOiJjNGU3YjQ4NS0wNTM5LTQwZGQtODFhZC0xMzA0MDY3ZDczNTkiLCJuYW1lIjoiUHl0aG9uIiwidGl0bGUiOiJQeXRob24gZGV2ZWxvcGVyIiwiZHVyYXRpb24iOiIwMDowMDozMCIsInByaWNlIjoiNDUwMC4wMCIsInJhdGluZyI6IjMuNjAiLCJ0cmFpbmluZ19sZXZlbCI6ImJlZ2lubmVyIiwiY2xhc3NfdHlwZSI6Imh5YnJpZCIsImNhcmVlcl9wcm9zcGVjdCI6IkEgRlVsbCBmbGVkZ2VkIGJhY2tlbmQgZGV2ZWxvcGVyIiwiaW1hZ2UiOm51bGwsImNyZWF0ZWRfYXQiOiIyMDI1LTA2LTI0VDE1OjU4OjUzLjczNzI4NFoiLCJ1cGRhdGVkX2F0IjoiMjAyNS0wNi0yNFQxNjoxODowNi4yNjIyMThaIn1d" />
+              <option name="bodyString" value="[&#10;  {&#10;    &quot;id&quot;: &quot;c4e7b485-0539-40dd-81ad-1304067d7359&quot;,&#10;    &quot;name&quot;: &quot;Python&quot;,&#10;    &quot;title&quot;: &quot;Python developer&quot;,&#10;    &quot;duration&quot;: &quot;00:00:30&quot;,&#10;    &quot;price&quot;: &quot;4500.00&quot;,&#10;    &quot;rating&quot;: &quot;3.60&quot;,&#10;    &quot;training_level&quot;: &quot;beginner&quot;,&#10;    &quot;class_type&quot;: &quot;hybrid&quot;,&#10;    &quot;career_prospect&quot;: &quot;A FUll fledged backend developer&quot;,&#10;    &quot;image&quot;: null,&#10;    &quot;created_at&quot;: &quot;2025-06-24T15:58:53.737284Z&quot;,&#10;    &quot;updated_at&quot;: &quot;2025-06-24T16:18:06.262218Z&quot;&#10;  }&#10;]" />
+              <option name="code" value="200" />
+              <option name="connectionEstablishingTime" value="1" />
+              <option name="contentType" value="application/json" />
+              <option name="headers">
+                <list>
+                  <headerState>
+                    <option name="key" value="Date" />
+                    <option name="value" value="Wed, 25 Jun 2025 02:50:47 GMT" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Server" />
+                    <option name="value" value="WSGIServer/0.2 CPython/3.12.10" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Content-Type" />
+                    <option name="value" value="application/json" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Vary" />
+                    <option name="value" value="Accept" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Allow" />
+                    <option name="value" value="GET, HEAD, OPTIONS" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="X-Frame-Options" />
+                    <option name="value" value="DENY" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Content-Length" />
+                    <option name="value" value="348" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="X-Content-Type-Options" />
+                    <option name="value" value="nosniff" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Referrer-Policy" />
+                    <option name="value" value="same-origin" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Cross-Origin-Opener-Policy" />
+                    <option name="value" value="same-origin" />
+                  </headerState>
+                </list>
+              </option>
+              <option name="id" value="82c50d2d-2682-48f4-8daf-3cfd753dc735" />
+              <option name="message" value="OK" />
+              <option name="prettyResponseType" value="JSON" />
+              <option name="rawBodyString" value="[{&quot;id&quot;:&quot;c4e7b485-0539-40dd-81ad-1304067d7359&quot;,&quot;name&quot;:&quot;Python&quot;,&quot;title&quot;:&quot;Python developer&quot;,&quot;duration&quot;:&quot;00:00:30&quot;,&quot;price&quot;:&quot;4500.00&quot;,&quot;rating&quot;:&quot;3.60&quot;,&quot;training_level&quot;:&quot;beginner&quot;,&quot;class_type&quot;:&quot;hybrid&quot;,&quot;career_prospect&quot;:&quot;A FUll fledged backend developer&quot;,&quot;image&quot;:null,&quot;created_at&quot;:&quot;2025-06-24T15:58:53.737284Z&quot;,&quot;updated_at&quot;:&quot;2025-06-24T16:18:06.262218Z&quot;}]" />
+              <option name="size" value="348" />
+              <option name="time" value="16" />
+            </responseState>
+          </option>
+          <option name="workspaceId" value="955b3e74-61d3-44d9-8c42-624b89c419d6" />
+        </requestHistoryState>
+        <requestHistoryState>
+          <option name="dateTime" value="1750819887429" />
+          <option name="id" value="8ce48469-2ea5-47bf-abfe-66e8450e7a71" />
+          <option name="request">
+            <requestState>
+              <option name="id" value="91a82eae-1d77-4769-974d-30a6ca416a21" />
+              <option name="method" value="GET" />
+              <option name="name" value="list courses" />
+              <option name="sortWeight" value="1000000" />
+              <option name="url" value="http://127.0.0.1:8000/api/courses/list-courses/" />
+            </requestState>
+          </option>
+          <option name="response">
+            <responseState>
+              <option name="bodyBytesBase64" value="W3siaWQiOiJjNGU3YjQ4NS0wNTM5LTQwZGQtODFhZC0xMzA0MDY3ZDczNTkiLCJuYW1lIjoiUHl0aG9uIiwidGl0bGUiOiJQeXRob24gZGV2ZWxvcGVyIiwiZHVyYXRpb24iOiIwMDowMDozMCIsInByaWNlIjoiNDUwMC4wMCIsInJhdGluZyI6IjMuNjAiLCJ0cmFpbmluZ19sZXZlbCI6ImJlZ2lubmVyIiwiY2xhc3NfdHlwZSI6Imh5YnJpZCIsImNhcmVlcl9wcm9zcGVjdCI6IkEgRlVsbCBmbGVkZ2VkIGJhY2tlbmQgZGV2ZWxvcGVyIiwiaW1hZ2UiOm51bGwsImNyZWF0ZWRfYXQiOiIyMDI1LTA2LTI0VDE1OjU4OjUzLjczNzI4NFoiLCJ1cGRhdGVkX2F0IjoiMjAyNS0wNi0yNFQxNjoxODowNi4yNjIyMThaIn0seyJpZCI6IjgyMDg3NzJmLTNiNjMtNGEyNC04YjRiLWY5MDJmOGFhZmE3YyIsIm5hbWUiOiJEYXRhIFNjaWVuY2UiLCJ0aXRsZSI6IkRhdGEgQW5hbHlzaXMiLCJkdXJhdGlvbiI6IjAwOjAwOjMwIiwicHJpY2UiOiI0MDAwLjAwIiwicmF0aW5nIjoiMy40MCIsInRyYWluaW5nX2xldmVsIjoiYmVnaW5uZXIiLCJjbGFzc190eXBlIjoiaHlicmlkIiwiY2FyZWVyX3Byb3NwZWN0IjoiQSBGVWxsIGZsZWRnZWQgYmFja2VuZCBkZXZlbG9wZXIiLCJpbWFnZSI6bnVsbCwiY3JlYXRlZF9hdCI6IjIwMjUtMDYtMjRUMTI6Mzk6MTAuNDAxODg5WiIsInVwZGF0ZWRfYXQiOiIyMDI1LTA2LTI0VDEyOjM5OjEwLjQwMTg4OVoifV0=" />
+              <option name="bodyString" value="[&#10;  {&#10;    &quot;id&quot;: &quot;c4e7b485-0539-40dd-81ad-1304067d7359&quot;,&#10;    &quot;name&quot;: &quot;Python&quot;,&#10;    &quot;title&quot;: &quot;Python developer&quot;,&#10;    &quot;duration&quot;: &quot;00:00:30&quot;,&#10;    &quot;price&quot;: &quot;4500.00&quot;,&#10;    &quot;rating&quot;: &quot;3.60&quot;,&#10;    &quot;training_level&quot;: &quot;beginner&quot;,&#10;    &quot;class_type&quot;: &quot;hybrid&quot;,&#10;    &quot;career_prospect&quot;: &quot;A FUll fledged backend developer&quot;,&#10;    &quot;image&quot;: null,&#10;    &quot;created_at&quot;: &quot;2025-06-24T15:58:53.737284Z&quot;,&#10;    &quot;updated_at&quot;: &quot;2025-06-24T16:18:06.262218Z&quot;&#10;  },&#10;  {&#10;    &quot;id&quot;: &quot;8208772f-3b63-4a24-8b4b-f902f8aafa7c&quot;,&#10;    &quot;name&quot;: &quot;Data Science&quot;,&#10;    &quot;title&quot;: &quot;Data Analysis&quot;,&#10;    &quot;duration&quot;: &quot;00:00:30&quot;,&#10;    &quot;price&quot;: &quot;4000.00&quot;,&#10;    &quot;rating&quot;: &quot;3.40&quot;,&#10;    &quot;training_level&quot;: &quot;beginner&quot;,&#10;    &quot;class_type&quot;: &quot;hybrid&quot;,&#10;    &quot;career_prospect&quot;: &quot;A FUll fledged backend developer&quot;,&#10;    &quot;image&quot;: null,&#10;    &quot;created_at&quot;: &quot;2025-06-24T12:39:10.401889Z&quot;,&#10;    &quot;updated_at&quot;: &quot;2025-06-24T12:39:10.401889Z&quot;&#10;  }&#10;]" />
+              <option name="code" value="200" />
+              <option name="connectionEstablishingTime" value="1" />
+              <option name="contentType" value="application/json" />
+              <option name="headers">
+                <list>
+                  <headerState>
+                    <option name="key" value="Date" />
+                    <option name="value" value="Wed, 25 Jun 2025 02:51:27 GMT" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Server" />
+                    <option name="value" value="WSGIServer/0.2 CPython/3.12.10" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Content-Type" />
+                    <option name="value" value="application/json" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Vary" />
+                    <option name="value" value="Accept" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Allow" />
+                    <option name="value" value="GET, HEAD, OPTIONS" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="X-Frame-Options" />
+                    <option name="value" value="DENY" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Content-Length" />
+                    <option name="value" value="698" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="X-Content-Type-Options" />
+                    <option name="value" value="nosniff" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Referrer-Policy" />
+                    <option name="value" value="same-origin" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Cross-Origin-Opener-Policy" />
+                    <option name="value" value="same-origin" />
+                  </headerState>
+                </list>
+              </option>
+              <option name="id" value="8ce48469-2ea5-47bf-abfe-66e8450e7a71" />
+              <option name="message" value="OK" />
+              <option name="prettyResponseType" value="JSON" />
+              <option name="rawBodyString" value="[{&quot;id&quot;:&quot;c4e7b485-0539-40dd-81ad-1304067d7359&quot;,&quot;name&quot;:&quot;Python&quot;,&quot;title&quot;:&quot;Python developer&quot;,&quot;duration&quot;:&quot;00:00:30&quot;,&quot;price&quot;:&quot;4500.00&quot;,&quot;rating&quot;:&quot;3.60&quot;,&quot;training_level&quot;:&quot;beginner&quot;,&quot;class_type&quot;:&quot;hybrid&quot;,&quot;career_prospect&quot;:&quot;A FUll fledged backend developer&quot;,&quot;image&quot;:null,&quot;created_at&quot;:&quot;2025-06-24T15:58:53.737284Z&quot;,&quot;updated_at&quot;:&quot;2025-06-24T16:18:06.262218Z&quot;},{&quot;id&quot;:&quot;8208772f-3b63-4a24-8b4b-f902f8aafa7c&quot;,&quot;name&quot;:&quot;Data Science&quot;,&quot;title&quot;:&quot;Data Analysis&quot;,&quot;duration&quot;:&quot;00:00:30&quot;,&quot;price&quot;:&quot;4000.00&quot;,&quot;rating&quot;:&quot;3.40&quot;,&quot;training_level&quot;:&quot;beginner&quot;,&quot;class_type&quot;:&quot;hybrid&quot;,&quot;career_prospect&quot;:&quot;A FUll fledged backend developer&quot;,&quot;image&quot;:null,&quot;created_at&quot;:&quot;2025-06-24T12:39:10.401889Z&quot;,&quot;updated_at&quot;:&quot;2025-06-24T12:39:10.401889Z&quot;}]" />
+              <option name="size" value="698" />
+              <option name="time" value="18" />
             </responseState>
           </option>
           <option name="workspaceId" value="955b3e74-61d3-44d9-8c42-624b89c419d6" />
