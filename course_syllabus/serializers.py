@@ -13,3 +13,5 @@ class CourseSyllabusContentSerializer(serializers.ModelSerializer):
     class Meta:
         model = CourseSyllabusTitleContent
         fields = '__all__'
+
+

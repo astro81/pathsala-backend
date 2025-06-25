@@ -102,7 +102,7 @@ class Course(models.Model):
     )
 
     description = models.OneToOneField(CourseDescription, on_delete=models.CASCADE)
-    courseSyllabus = models.OneToOneField(CourseSyllabus, on_delete=models.CASCADE)
+    syllabus = models.OneToOneField(CourseSyllabus, on_delete=models.CASCADE)
 
     class Meta:
         verbose_name = "Course"

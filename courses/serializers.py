@@ -2,12 +2,14 @@ from rest_framework import serializers
 
 from course_description.models import CourseDescription
 from course_description.serializers import CourseDescriptionSerializer
+from course_syllabus.models import CourseSyllabus
+from course_syllabus.serializers import CourseSyllabusSerializer
 from courses.models import Course
 
 class CourseSerializer(serializers.ModelSerializer):
 
     description = CourseDescriptionSerializer()
-
+    syllabus = CourseSyllabusSerializer()
 
     class Meta:
         model = Course
@@ -34,12 +36,21 @@ class CourseSerializer(serializers.ModelSerializer):
 
     def create(self, validated_data):
         description_data = validated_data.pop('description')
+        syllabus_data = validated_data.pop('syllabus')
+
         description = CourseDescription.objects.create(**description_data)
-        course = Course.objects.create(description=description, **validated_data)
+        syllabus = CourseSyllabus.objects.create(**syllabus_data)
+
+        course = Course.objects.create(
+            description=description,
+            syllabus=syllabus,
+            **validated_data
+        )
         return course
 
     def update(self, instance, validated_data):
         description_data = validated_data.pop('description')
+        syllabus_data = validated_data.pop('syllabus')
 
         # Update course fields
         for attr, value in validated_data.items():
@@ -51,6 +62,12 @@ class CourseSerializer(serializers.ModelSerializer):
             for attr, value in description_data.items():
                 setattr(description, attr, value)
             description.save()
+
+        if syllabus_data:
+            syllabus = instance.syllabus
+            for attr, value in syllabus_data.items():
+                setattr(syllabus, attr, value)
+            syllabus.save()
 
         instance.save()
         return instance
