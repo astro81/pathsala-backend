@@ -9,6 +9,7 @@ from rest_framework.response import Response
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework_simplejwt.tokens import RefreshToken
 from rest_framework_simplejwt.exceptions import TokenError
+from rolepermissions.roles import assign_role
 
 from users.permissions import IsAdmin
 from users.serializers import UserSerializer
@@ -291,7 +292,7 @@ class CreateModeratorView(APIView):
             serializer.is_valid(raise_exception=True)  # DRF-native validation
 
             user = serializer.save()
-            # assign_role(user, 'moderator')
+            assign_role(user, 'moderator')
 
             return Response({'message': 'Moderator created successfully'}, status=status.HTTP_201_CREATED)
 

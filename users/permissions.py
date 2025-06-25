@@ -1,6 +1,8 @@
 from django.contrib.auth import get_user_model
 from rest_framework.permissions import BasePermission
 from rolepermissions.checkers import has_permission, has_role
+from icecream import ic
+from rolepermissions.roles import get_user_roles
 
 User = get_user_model()
 
@@ -22,9 +24,13 @@ class HasCoursePermission(BasePermission):
         # Retrieve required permission name from the view
         required_permission = getattr(view, 'required_permission', None)
 
+        ic(required_permission)
+
         # Deny access if no required_permission is defined
         if not required_permission:
             return False
+
+        ic(get_user_roles(request.user))
 
         # Check permission using django-role-permissions
         return has_permission(request.user, required_permission)
