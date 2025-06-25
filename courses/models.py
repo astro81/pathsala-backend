@@ -108,6 +108,13 @@ class Course(models.Model):
         blank=True
     )
 
+    syllabus = models.OneToOneField(
+        CourseSyllabus,
+        on_delete=models.CASCADE,
+        null=True,
+        blank=True
+    )
+
     class Meta:
         verbose_name = "Course"
         verbose_name_plural = "Courses"

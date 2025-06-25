@@ -3773,6 +3773,85 @@
           </option>
           <option name="workspaceId" value="955b3e74-61d3-44d9-8c42-624b89c419d6" />
         </requestHistoryState>
+        <requestHistoryState>
+          <option name="dateTime" value="1750845524596" />
+          <option name="id" value="47bb5993-56ef-4bfa-85f3-99c4b9a8ac19" />
+          <option name="request">
+            <requestState>
+              <option name="body">
+                <bodyState>
+                  <option name="raw" value="{&#10;  &quot;username&quot;: &quot;admin&quot;,&#10;  &quot;password&quot;: &quot;12345678&quot;&#10;}&#10;" />
+                  <option name="type" value="JSON" />
+                </bodyState>
+              </option>
+              <option name="id" value="2f231e11-bbee-425d-956c-ae180ceb2f77" />
+              <option name="method" value="POST" />
+              <option name="name" value="login" />
+              <option name="sortWeight" value="2000000" />
+              <option name="url" value="http://localhost:8000/api/auth/login/" />
+            </requestState>
+          </option>
+          <option name="response">
+            <responseState>
+              <option name="bodyBytesBase64" value="eyJlcnJvciI6IkludmFsaWQgY3JlZGVudGlhbHMuIn0=" />
+              <option name="bodyString" value="{&#10;  &quot;error&quot;: &quot;Invalid credentials.&quot;&#10;}" />
+              <option name="code" value="400" />
+              <option name="connectionEstablishingTime" value="164" />
+              <option name="contentType" value="application/json" />
+              <option name="headers">
+                <list>
+                  <headerState>
+                    <option name="key" value="Date" />
+                    <option name="value" value="Wed, 25 Jun 2025 09:58:44 GMT" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Server" />
+                    <option name="value" value="WSGIServer/0.2 CPython/3.12.10" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Content-Type" />
+                    <option name="value" value="application/json" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Vary" />
+                    <option name="value" value="Accept" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Allow" />
+                    <option name="value" value="POST, OPTIONS" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="X-Frame-Options" />
+                    <option name="value" value="DENY" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Content-Length" />
+                    <option name="value" value="32" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="X-Content-Type-Options" />
+                    <option name="value" value="nosniff" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Referrer-Policy" />
+                    <option name="value" value="same-origin" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Cross-Origin-Opener-Policy" />
+                    <option name="value" value="same-origin" />
+                  </headerState>
+                </list>
+              </option>
+              <option name="id" value="47bb5993-56ef-4bfa-85f3-99c4b9a8ac19" />
+              <option name="message" value="Bad Request" />
+              <option name="prettyResponseType" value="JSON" />
+              <option name="rawBodyString" value="{&quot;error&quot;:&quot;Invalid credentials.&quot;}" />
+              <option name="size" value="32" />
+              <option name="time" value="1073" />
+            </responseState>
+          </option>
+          <option name="workspaceId" value="955b3e74-61d3-44d9-8c42-624b89c419d6" />
+        </requestHistoryState>
       </list>
     </option>
   </component>
