@@ -8,6 +8,7 @@ class CourseSerializer(serializers.ModelSerializer):
 
     description = CourseDescriptionSerializer()
 
+
     class Meta:
         model = Course
         fields = '__all__'
