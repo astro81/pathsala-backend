@@ -16,6 +16,21 @@ class CourseSerializer(serializers.ModelSerializer):
             'price': {'min_value': 0, 'required': False},
         }
 
+
+    def get_duration(self, obj):
+        return obj.duration_display
+
+    def to_internal_value(self, data):
+        if 'duration' in data:
+            duration = data.pop('duration', None)
+            try:
+                value, unit = duration.split()
+                data['duration'] = int(value)
+                data['duration_unit'] = unit
+            except ValueError:
+                raise serializers.ValidationError({'duration': 'Invalid duration format. Expected "value unit".'})
+        return super().to_internal_value(data)
+
     def create(self, validated_data):
         description_data = validated_data.pop('description')
         description = CourseDescription.objects.create(**description_data)
@@ -38,3 +53,4 @@ class CourseSerializer(serializers.ModelSerializer):
 
         instance.save()
         return instance
+

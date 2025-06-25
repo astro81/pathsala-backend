@@ -1,9 +1,18 @@
 import uuid
+from datetime import timedelta
+
+from django.core.validators import MinValueValidator, MaxValueValidator
 from django.db import models
 
 from course_description.models import CourseDescription
 
 class Course(models.Model):
+    DURATION_UNITS = [
+        ('days', 'Days'),
+        ('weeks', 'Weeks'),
+        ('months', 'Months'),
+    ]
+
     id = models.UUIDField(
         primary_key=True,
         default=uuid.uuid4,
@@ -21,8 +30,18 @@ class Course(models.Model):
         help_text="Full title or description of the course"
     )
 
-    duration = models.DurationField(
-        help_text="Expected course duration (e.g., 1 week, 30 days)"
+    duration_value = models.PositiveIntegerField(
+        default=4,
+        validators=[
+            MinValueValidator(1),          #! At least 1 day
+            MaxValueValidator(365)         #! Max 1 year
+        ]
+    )
+
+    duration_unit = models.CharField(
+        max_length=10,
+        choices=DURATION_UNITS,
+        default='weeks'
     )
 
     price = models.DecimalField(
@@ -86,10 +105,11 @@ class Course(models.Model):
     class Meta:
         verbose_name = "Course"
         verbose_name_plural = "Courses"
-        ordering = ['duration', '-rating', 'price', '-created_at', 'training_level']
+        ordering = ['duration_value', '-rating', 'price', '-created_at', 'training_level']
         indexes = [
             models.Index(fields=['name']),
-            models.Index(fields=[ 'duration']),
+            models.Index(fields=[ 'duration_value']),
+            models.Index(fields=['duration_unit']),
             models.Index(fields=['rating']),
             models.Index(fields=['price']),
             models.Index(fields=['training_level']),
@@ -98,6 +118,9 @@ class Course(models.Model):
     def __str__(self):
         return self.name
 
+    @property
+    def duration_display(self):
+        return f"{self.duration_value} {self.duration_unit}"
 
     # todo: link category, syllabus and description table
     # category_id = models.CharField(max_length=100)

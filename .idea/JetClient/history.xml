@@ -2966,160 +2966,6 @@
           <option name="workspaceId" value="955b3e74-61d3-44d9-8c42-624b89c419d6" />
         </requestHistoryState>
         <requestHistoryState>
-          <option name="dateTime" value="1750764629483" />
-          <option name="id" value="faec20b1-89d5-4f4a-871d-49691974fc7f" />
-          <option name="request">
-            <requestState>
-              <option name="id" value="91a82eae-1d77-4769-974d-30a6ca416a21" />
-              <option name="method" value="GET" />
-              <option name="name" value="list courses" />
-              <option name="sortWeight" value="1000000" />
-              <option name="url" value="http://127.0.0.1:8000/api/courses/list-courses/" />
-            </requestState>
-          </option>
-          <option name="response">
-            <responseState>
-              <option name="bodyBytesBase64" value="W3siaWQiOiJiMmQxNmMzZi01MDdkLTRlZDAtODMzMi1jOGJiNDcwMzE3N2QiLCJuYW1lIjoiRGF0YSBTY2llbmNlIiwidGl0bGUiOiJEYXRhIEFuYWx5c2lzIiwiZHVyYXRpb24iOiIwMDowMDozMCIsInByaWNlIjoiNDAwMC4wMCIsInJhdGluZyI6IjMuNDAiLCJ0cmFpbmluZ19sZXZlbCI6ImFkdmFuY2VkIiwiY2xhc3NfdHlwZSI6Imh5YnJpZCIsImNhcmVlcl9wcm9zcGVjdCI6IkEgRlVsbCBmbGVkZ2VkIGJhY2tlbmQgZGV2ZWxvcGVyIiwiaW1hZ2UiOm51bGwsImNyZWF0ZWRfYXQiOiIyMDI1LTA2LTI0VDExOjEwOjIyLjI1NjA0MFoiLCJ1cGRhdGVkX2F0IjoiMjAyNS0wNi0yNFQxMToxMDoyMi4yNTYwODVaIn0seyJpZCI6ImUzOWYwMzBlLWI5YjYtNDVhYi04YmZiLWQ4YmY2MDA0Njk3MiIsIm5hbWUiOiJEamFuZ28iLCJ0aXRsZSI6IkRqYW5nbyBCYWNrZW5kIiwiZHVyYXRpb24iOiIwMDowMDozMCIsInByaWNlIjoiNDAwMC4wMCIsInJhdGluZyI6IjMuNDAiLCJ0cmFpbmluZ19sZXZlbCI6ImFkdmFuY2VkIiwiY2xhc3NfdHlwZSI6Imh5YnJpZCIsImNhcmVlcl9wcm9zcGVjdCI6IkEgRlVsbCBmbGVkZ2VkIGJhY2tlbmQgZGV2ZWxvcGVyIiwiaW1hZ2UiOm51bGwsImNyZWF0ZWRfYXQiOiIyMDI1LTA2LTI0VDExOjA5OjM5LjM3OTYzNVoiLCJ1cGRhdGVkX2F0IjoiMjAyNS0wNi0yNFQxMTowOTozOS4zNzk2ODhaIn1d" />
-              <option name="bodyString" value="[&#10;  {&#10;    &quot;id&quot;: &quot;b2d16c3f-507d-4ed0-8332-c8bb4703177d&quot;,&#10;    &quot;name&quot;: &quot;Data Science&quot;,&#10;    &quot;title&quot;: &quot;Data Analysis&quot;,&#10;    &quot;duration&quot;: &quot;00:00:30&quot;,&#10;    &quot;price&quot;: &quot;4000.00&quot;,&#10;    &quot;rating&quot;: &quot;3.40&quot;,&#10;    &quot;training_level&quot;: &quot;advanced&quot;,&#10;    &quot;class_type&quot;: &quot;hybrid&quot;,&#10;    &quot;career_prospect&quot;: &quot;A FUll fledged backend developer&quot;,&#10;    &quot;image&quot;: null,&#10;    &quot;created_at&quot;: &quot;2025-06-24T11:10:22.256040Z&quot;,&#10;    &quot;updated_at&quot;: &quot;2025-06-24T11:10:22.256085Z&quot;&#10;  },&#10;  {&#10;    &quot;id&quot;: &quot;e39f030e-b9b6-45ab-8bfb-d8bf60046972&quot;,&#10;    &quot;name&quot;: &quot;Django&quot;,&#10;    &quot;title&quot;: &quot;Django Backend&quot;,&#10;    &quot;duration&quot;: &quot;00:00:30&quot;,&#10;    &quot;price&quot;: &quot;4000.00&quot;,&#10;    &quot;rating&quot;: &quot;3.40&quot;,&#10;    &quot;training_level&quot;: &quot;advanced&quot;,&#10;    &quot;class_type&quot;: &quot;hybrid&quot;,&#10;    &quot;career_prospect&quot;: &quot;A FUll fledged backend developer&quot;,&#10;    &quot;image&quot;: null,&#10;    &quot;created_at&quot;: &quot;2025-06-24T11:09:39.379635Z&quot;,&#10;    &quot;updated_at&quot;: &quot;2025-06-24T11:09:39.379688Z&quot;&#10;  }&#10;]" />
-              <option name="code" value="200" />
-              <option name="connectionEstablishingTime" value="2" />
-              <option name="contentType" value="application/json" />
-              <option name="headers">
-                <list>
-                  <headerState>
-                    <option name="key" value="Date" />
-                    <option name="value" value="Tue, 24 Jun 2025 11:30:29 GMT" />
-                  </headerState>
-                  <headerState>
-                    <option name="key" value="Server" />
-                    <option name="value" value="WSGIServer/0.2 CPython/3.12.10" />
-                  </headerState>
-                  <headerState>
-                    <option name="key" value="Content-Type" />
-                    <option name="value" value="application/json" />
-                  </headerState>
-                  <headerState>
-                    <option name="key" value="Vary" />
-                    <option name="value" value="Accept" />
-                  </headerState>
-                  <headerState>
-                    <option name="key" value="Allow" />
-                    <option name="value" value="GET, HEAD, OPTIONS" />
-                  </headerState>
-                  <headerState>
-                    <option name="key" value="X-Frame-Options" />
-                    <option name="value" value="DENY" />
-                  </headerState>
-                  <headerState>
-                    <option name="key" value="Content-Length" />
-                    <option name="value" value="696" />
-                  </headerState>
-                  <headerState>
-                    <option name="key" value="X-Content-Type-Options" />
-                    <option name="value" value="nosniff" />
-                  </headerState>
-                  <headerState>
-                    <option name="key" value="Referrer-Policy" />
-                    <option name="value" value="same-origin" />
-                  </headerState>
-                  <headerState>
-                    <option name="key" value="Cross-Origin-Opener-Policy" />
-                    <option name="value" value="same-origin" />
-                  </headerState>
-                </list>
-              </option>
-              <option name="id" value="faec20b1-89d5-4f4a-871d-49691974fc7f" />
-              <option name="message" value="OK" />
-              <option name="prettyResponseType" value="JSON" />
-              <option name="rawBodyString" value="[{&quot;id&quot;:&quot;b2d16c3f-507d-4ed0-8332-c8bb4703177d&quot;,&quot;name&quot;:&quot;Data Science&quot;,&quot;title&quot;:&quot;Data Analysis&quot;,&quot;duration&quot;:&quot;00:00:30&quot;,&quot;price&quot;:&quot;4000.00&quot;,&quot;rating&quot;:&quot;3.40&quot;,&quot;training_level&quot;:&quot;advanced&quot;,&quot;class_type&quot;:&quot;hybrid&quot;,&quot;career_prospect&quot;:&quot;A FUll fledged backend developer&quot;,&quot;image&quot;:null,&quot;created_at&quot;:&quot;2025-06-24T11:10:22.256040Z&quot;,&quot;updated_at&quot;:&quot;2025-06-24T11:10:22.256085Z&quot;},{&quot;id&quot;:&quot;e39f030e-b9b6-45ab-8bfb-d8bf60046972&quot;,&quot;name&quot;:&quot;Django&quot;,&quot;title&quot;:&quot;Django Backend&quot;,&quot;duration&quot;:&quot;00:00:30&quot;,&quot;price&quot;:&quot;4000.00&quot;,&quot;rating&quot;:&quot;3.40&quot;,&quot;training_level&quot;:&quot;advanced&quot;,&quot;class_type&quot;:&quot;hybrid&quot;,&quot;career_prospect&quot;:&quot;A FUll fledged backend developer&quot;,&quot;image&quot;:null,&quot;created_at&quot;:&quot;2025-06-24T11:09:39.379635Z&quot;,&quot;updated_at&quot;:&quot;2025-06-24T11:09:39.379688Z&quot;}]" />
-              <option name="size" value="696" />
-              <option name="time" value="13" />
-            </responseState>
-          </option>
-          <option name="workspaceId" value="955b3e74-61d3-44d9-8c42-624b89c419d6" />
-        </requestHistoryState>
-        <requestHistoryState>
-          <option name="dateTime" value="1750764639910" />
-          <option name="id" value="c0ca0e1b-5725-4da8-8b25-77a392080913" />
-          <option name="request">
-            <requestState>
-              <option name="id" value="91a82eae-1d77-4769-974d-30a6ca416a21" />
-              <option name="method" value="GET" />
-              <option name="name" value="list courses" />
-              <option name="queryParams">
-                <list>
-                  <queryParamState>
-                    <option name="key" value="search" />
-                    <option name="value" value="Django" />
-                  </queryParamState>
-                </list>
-              </option>
-              <option name="sortWeight" value="1000000" />
-              <option name="url" value="http://127.0.0.1:8000/api/courses/list-courses/?search=Django" />
-            </requestState>
-          </option>
-          <option name="response">
-            <responseState>
-              <option name="bodyBytesBase64" value="W3siaWQiOiJlMzlmMDMwZS1iOWI2LTQ1YWItOGJmYi1kOGJmNjAwNDY5NzIiLCJuYW1lIjoiRGphbmdvIiwidGl0bGUiOiJEamFuZ28gQmFja2VuZCIsImR1cmF0aW9uIjoiMDA6MDA6MzAiLCJwcmljZSI6IjQwMDAuMDAiLCJyYXRpbmciOiIzLjQwIiwidHJhaW5pbmdfbGV2ZWwiOiJhZHZhbmNlZCIsImNsYXNzX3R5cGUiOiJoeWJyaWQiLCJjYXJlZXJfcHJvc3BlY3QiOiJBIEZVbGwgZmxlZGdlZCBiYWNrZW5kIGRldmVsb3BlciIsImltYWdlIjpudWxsLCJjcmVhdGVkX2F0IjoiMjAyNS0wNi0yNFQxMTowOTozOS4zNzk2MzVaIiwidXBkYXRlZF9hdCI6IjIwMjUtMDYtMjRUMTE6MDk6MzkuMzc5Njg4WiJ9XQ==" />
-              <option name="bodyString" value="[&#10;  {&#10;    &quot;id&quot;: &quot;e39f030e-b9b6-45ab-8bfb-d8bf60046972&quot;,&#10;    &quot;name&quot;: &quot;Django&quot;,&#10;    &quot;title&quot;: &quot;Django Backend&quot;,&#10;    &quot;duration&quot;: &quot;00:00:30&quot;,&#10;    &quot;price&quot;: &quot;4000.00&quot;,&#10;    &quot;rating&quot;: &quot;3.40&quot;,&#10;    &quot;training_level&quot;: &quot;advanced&quot;,&#10;    &quot;class_type&quot;: &quot;hybrid&quot;,&#10;    &quot;career_prospect&quot;: &quot;A FUll fledged backend developer&quot;,&#10;    &quot;image&quot;: null,&#10;    &quot;created_at&quot;: &quot;2025-06-24T11:09:39.379635Z&quot;,&#10;    &quot;updated_at&quot;: &quot;2025-06-24T11:09:39.379688Z&quot;&#10;  }&#10;]" />
-              <option name="code" value="200" />
-              <option name="connectionEstablishingTime" value="1" />
-              <option name="contentType" value="application/json" />
-              <option name="headers">
-                <list>
-                  <headerState>
-                    <option name="key" value="Date" />
-                    <option name="value" value="Tue, 24 Jun 2025 11:30:39 GMT" />
-                  </headerState>
-                  <headerState>
-                    <option name="key" value="Server" />
-                    <option name="value" value="WSGIServer/0.2 CPython/3.12.10" />
-                  </headerState>
-                  <headerState>
-                    <option name="key" value="Content-Type" />
-                    <option name="value" value="application/json" />
-                  </headerState>
-                  <headerState>
-                    <option name="key" value="Vary" />
-                    <option name="value" value="Accept" />
-                  </headerState>
-                  <headerState>
-                    <option name="key" value="Allow" />
-                    <option name="value" value="GET, HEAD, OPTIONS" />
-                  </headerState>
-                  <headerState>
-                    <option name="key" value="X-Frame-Options" />
-                    <option name="value" value="DENY" />
-                  </headerState>
-                  <headerState>
-                    <option name="key" value="Content-Length" />
-                    <option name="value" value="346" />
-                  </headerState>
-                  <headerState>
-                    <option name="key" value="X-Content-Type-Options" />
-                    <option name="value" value="nosniff" />
-                  </headerState>
-                  <headerState>
-                    <option name="key" value="Referrer-Policy" />
-                    <option name="value" value="same-origin" />
-                  </headerState>
-                  <headerState>
-                    <option name="key" value="Cross-Origin-Opener-Policy" />
-                    <option name="value" value="same-origin" />
-                  </headerState>
-                </list>
-              </option>
-              <option name="id" value="c0ca0e1b-5725-4da8-8b25-77a392080913" />
-              <option name="message" value="OK" />
-              <option name="prettyResponseType" value="JSON" />
-              <option name="rawBodyString" value="[{&quot;id&quot;:&quot;e39f030e-b9b6-45ab-8bfb-d8bf60046972&quot;,&quot;name&quot;:&quot;Django&quot;,&quot;title&quot;:&quot;Django Backend&quot;,&quot;duration&quot;:&quot;00:00:30&quot;,&quot;price&quot;:&quot;4000.00&quot;,&quot;rating&quot;:&quot;3.40&quot;,&quot;training_level&quot;:&quot;advanced&quot;,&quot;class_type&quot;:&quot;hybrid&quot;,&quot;career_prospect&quot;:&quot;A FUll fledged backend developer&quot;,&quot;image&quot;:null,&quot;created_at&quot;:&quot;2025-06-24T11:09:39.379635Z&quot;,&quot;updated_at&quot;:&quot;2025-06-24T11:09:39.379688Z&quot;}]" />
-              <option name="size" value="346" />
-              <option name="time" value="12" />
-            </responseState>
-          </option>
-          <option name="workspaceId" value="955b3e74-61d3-44d9-8c42-624b89c419d6" />
-        </requestHistoryState>
-        <requestHistoryState>
           <option name="dateTime" value="1750764646114" />
           <option name="id" value="f4f4326d-9023-4a71-88c5-f4505bd35bc5" />
           <option name="request">
@@ -3747,6 +3593,182 @@
               <option name="rawBodyString" value="[{&quot;id&quot;:&quot;c4e7b485-0539-40dd-81ad-1304067d7359&quot;,&quot;name&quot;:&quot;Python&quot;,&quot;title&quot;:&quot;Python developer&quot;,&quot;duration&quot;:&quot;00:00:30&quot;,&quot;price&quot;:&quot;4500.00&quot;,&quot;rating&quot;:&quot;3.60&quot;,&quot;training_level&quot;:&quot;beginner&quot;,&quot;class_type&quot;:&quot;hybrid&quot;,&quot;career_prospect&quot;:&quot;A FUll fledged backend developer&quot;,&quot;image&quot;:null,&quot;created_at&quot;:&quot;2025-06-24T15:58:53.737284Z&quot;,&quot;updated_at&quot;:&quot;2025-06-24T16:18:06.262218Z&quot;},{&quot;id&quot;:&quot;8208772f-3b63-4a24-8b4b-f902f8aafa7c&quot;,&quot;name&quot;:&quot;Data Science&quot;,&quot;title&quot;:&quot;Data Analysis&quot;,&quot;duration&quot;:&quot;00:00:30&quot;,&quot;price&quot;:&quot;4000.00&quot;,&quot;rating&quot;:&quot;3.40&quot;,&quot;training_level&quot;:&quot;beginner&quot;,&quot;class_type&quot;:&quot;hybrid&quot;,&quot;career_prospect&quot;:&quot;A FUll fledged backend developer&quot;,&quot;image&quot;:null,&quot;created_at&quot;:&quot;2025-06-24T12:39:10.401889Z&quot;,&quot;updated_at&quot;:&quot;2025-06-24T12:39:10.401889Z&quot;}]" />
               <option name="size" value="698" />
               <option name="time" value="18" />
+            </responseState>
+          </option>
+          <option name="workspaceId" value="955b3e74-61d3-44d9-8c42-624b89c419d6" />
+        </requestHistoryState>
+        <requestHistoryState>
+          <option name="dateTime" value="1750824654056" />
+          <option name="id" value="c16fc92d-28bd-4a2d-903a-8e3bdf60a83c" />
+          <option name="request">
+            <requestState>
+              <option name="id" value="91a82eae-1d77-4769-974d-30a6ca416a21" />
+              <option name="method" value="GET" />
+              <option name="name" value="list courses" />
+              <option name="queryParams">
+                <list>
+                  <queryParamState>
+                    <option name="disabled" value="true" />
+                    <option name="key" value="training_level" />
+                    <option name="value" value="advanced" />
+                  </queryParamState>
+                  <queryParamState>
+                    <option name="key" value="price_lte" />
+                    <option name="value" value="10000" />
+                  </queryParamState>
+                  <queryParamState>
+                    <option name="key" value="price_gte" />
+                    <option name="value" value="3000" />
+                  </queryParamState>
+                  <queryParamState>
+                    <option name="key" value="ordering" />
+                    <option name="value" value="-rating" />
+                  </queryParamState>
+                  <queryParamState>
+                    <option name="disabled" value="true" />
+                    <option name="key" value="class_type" />
+                    <option name="value" value="offline" />
+                  </queryParamState>
+                  <queryParamState>
+                    <option name="disabled" value="true" />
+                    <option name="key" value="duration" />
+                    <option name="value" value="60" />
+                  </queryParamState>
+                </list>
+              </option>
+              <option name="sortWeight" value="1000000" />
+              <option name="url" value="http://127.0.0.1:8000/api/courses/list-courses/?price_lte=10000&amp;price_gte=3000&amp;ordering=-rating" />
+            </requestState>
+          </option>
+          <option name="response">
+            <responseState>
+              <option name="code" value="500" />
+              <option name="connectionEstablishingTime" value="4" />
+              <option name="contentType" value="text/html; charset=utf-8" />
+              <option name="headers">
+                <list>
+                  <headerState>
+                    <option name="key" value="Date" />
+                    <option name="value" value="Wed, 25 Jun 2025 04:10:54 GMT" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Server" />
+                    <option name="value" value="WSGIServer/0.2 CPython/3.12.10" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Content-Type" />
+                    <option name="value" value="text/html; charset=utf-8" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="X-Frame-Options" />
+                    <option name="value" value="DENY" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Content-Length" />
+                    <option name="value" value="179405" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="X-Content-Type-Options" />
+                    <option name="value" value="nosniff" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Referrer-Policy" />
+                    <option name="value" value="same-origin" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Cross-Origin-Opener-Policy" />
+                    <option name="value" value="same-origin" />
+                  </headerState>
+                </list>
+              </option>
+              <option name="id" value="c16fc92d-28bd-4a2d-903a-8e3bdf60a83c" />
+              <option name="message" value="Internal Server Error" />
+              <option name="prettyResponseType" value="HTML" />
+              <option name="previewType" value="HTML" />
+              <option name="size" value="179405" />
+              <option name="time" value="131" />
+            </responseState>
+          </option>
+          <option name="workspaceId" value="955b3e74-61d3-44d9-8c42-624b89c419d6" />
+        </requestHistoryState>
+        <requestHistoryState>
+          <option name="dateTime" value="1750824707462" />
+          <option name="id" value="42c0c886-f89d-4f4a-87e6-605bd437d00f" />
+          <option name="request">
+            <requestState>
+              <option name="id" value="91a82eae-1d77-4769-974d-30a6ca416a21" />
+              <option name="method" value="GET" />
+              <option name="name" value="list courses" />
+              <option name="queryParams">
+                <list>
+                  <queryParamState>
+                    <option name="disabled" value="true" />
+                    <option name="key" value="training_level" />
+                    <option name="value" value="advanced" />
+                  </queryParamState>
+                  <queryParamState>
+                    <option name="disabled" value="true" />
+                    <option name="key" value="class_type" />
+                    <option name="value" value="offline" />
+                  </queryParamState>
+                  <queryParamState>
+                    <option name="disabled" value="true" />
+                    <option name="key" value="duration" />
+                    <option name="value" value="60" />
+                  </queryParamState>
+                </list>
+              </option>
+              <option name="sortWeight" value="1000000" />
+              <option name="url" value="http://127.0.0.1:8000/api/courses/list-courses/" />
+            </requestState>
+          </option>
+          <option name="response">
+            <responseState>
+              <option name="code" value="500" />
+              <option name="connectionEstablishingTime" value="2" />
+              <option name="contentType" value="text/html; charset=utf-8" />
+              <option name="headers">
+                <list>
+                  <headerState>
+                    <option name="key" value="Date" />
+                    <option name="value" value="Wed, 25 Jun 2025 04:11:47 GMT" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Server" />
+                    <option name="value" value="WSGIServer/0.2 CPython/3.12.10" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Content-Type" />
+                    <option name="value" value="text/html; charset=utf-8" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="X-Frame-Options" />
+                    <option name="value" value="DENY" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Content-Length" />
+                    <option name="value" value="228870" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="X-Content-Type-Options" />
+                    <option name="value" value="nosniff" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Referrer-Policy" />
+                    <option name="value" value="same-origin" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Cross-Origin-Opener-Policy" />
+                    <option name="value" value="same-origin" />
+                  </headerState>
+                </list>
+              </option>
+              <option name="id" value="42c0c886-f89d-4f4a-87e6-605bd437d00f" />
+              <option name="message" value="Internal Server Error" />
+              <option name="prettyResponseType" value="HTML" />
+              <option name="previewType" value="HTML" />
+              <option name="size" value="228870" />
+              <option name="time" value="150" />
             </responseState>
           </option>
           <option name="workspaceId" value="955b3e74-61d3-44d9-8c42-624b89c419d6" />
