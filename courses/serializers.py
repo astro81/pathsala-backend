@@ -55,8 +55,8 @@ class CourseSerializer(serializers.ModelSerializer):
                     syllabus_title_id=syllabus,
                     **content_data
                 )
-
             course.syllabus = syllabus
+            course.save()
 
         return course
 
