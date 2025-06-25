@@ -226,18 +226,6 @@
                             <option name="value" value="advanced" />
                           </queryParamState>
                           <queryParamState>
-                            <option name="key" value="price_lte" />
-                            <option name="value" value="10000" />
-                          </queryParamState>
-                          <queryParamState>
-                            <option name="key" value="price_gte" />
-                            <option name="value" value="3000" />
-                          </queryParamState>
-                          <queryParamState>
-                            <option name="key" value="ordering" />
-                            <option name="value" value="-rating" />
-                          </queryParamState>
-                          <queryParamState>
                             <option name="disabled" value="true" />
                             <option name="key" value="class_type" />
                             <option name="value" value="offline" />
@@ -250,7 +238,7 @@
                         </list>
                       </option>
                       <option name="sortWeight" value="1000000" />
-                      <option name="url" value="http://127.0.0.1:8000/api/courses/list-courses/?price_lte=10000&amp;price_gte=3000&amp;ordering=-rating" />
+                      <option name="url" value="http://127.0.0.1:8000/api/courses/list-courses/" />
                     </requestState>
                     <requestState>
                       <option name="body">

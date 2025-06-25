@@ -22,12 +22,12 @@ class ListCourseView(ListAPIView):
         'class_type': ['exact'],
         'price': ['gte', 'lte'],
         'rating': ['gte', 'lte'],
-        'duration': ['gte', 'lte'],
+        'duration_value': ['gte', 'lte'],
     }
 
     search_fields = ['name', 'title', 'career_prospect']
 
-    ordering_fields = ['name', 'price', 'rating', 'duration', 'created_at']
+    ordering_fields = ['name', 'price', 'rating', 'duration_value', 'created_at']
     ordering = ['-created_at']  # Default ordering (newest first)
 
     def handle_exception(self, exc):
