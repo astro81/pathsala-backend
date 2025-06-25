@@ -101,8 +101,12 @@ class Course(models.Model):
         auto_now=True
     )
 
-    description = models.OneToOneField(CourseDescription, on_delete=models.CASCADE)
-    syllabus = models.OneToOneField(CourseSyllabus, on_delete=models.CASCADE)
+    description = models.OneToOneField(
+        CourseDescription,
+        on_delete=models.CASCADE,
+        null=True,
+        blank=True
+    )
 
     class Meta:
         verbose_name = "Course"
