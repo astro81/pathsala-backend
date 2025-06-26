@@ -14,6 +14,9 @@ class Admin(AbstractUserRole):
         'add_course': True,
         'edit_course': True,
         'delete_course': True,
+        'add_category': True,
+        'edit_category': True,
+        'delete_category': True,
         'manage_users': True,
     }
 
@@ -29,6 +32,8 @@ class Moderator(AbstractUserRole):
         'view_course': True,
         'add_course': True,
         'edit_course': True,
+        'add_category': True,
+        'edit_category': True,
     }
 
 
