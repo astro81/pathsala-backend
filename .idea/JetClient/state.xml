@@ -243,7 +243,7 @@
                     <requestState>
                       <option name="body">
                         <bodyState>
-                          <option name="raw" value="{&#10;  &quot;name&quot;: &quot;advanced-python&quot;,&#10;  &quot;title&quot;: &quot;Advanced Python Programming&quot;,&#10;  &quot;duration_value&quot;: 8,&#10;  &quot;duration_unit&quot;: &quot;weeks&quot;,&#10;  &quot;price&quot;: 2500.00,&#10;  &quot;rating&quot;: 4.8,&#10;  &quot;training_level&quot;: &quot;advanced&quot;,&#10;  &quot;class_type&quot;: &quot;hybrid&quot;,&#10;  &quot;career_prospect&quot;: &quot;Backend Developer&quot;&#10;}&#10;" />
+                          <option name="raw" value="{&#10;  &quot;name&quot;: &quot;advanced-python&quot;,&#10;  &quot;title&quot;: &quot;Advanced Python Programming&quot;,&#10;  &quot;duration_value&quot;: 8,&#10;  &quot;duration_unit&quot;: &quot;weeks&quot;,&#10;  &quot;price&quot;: 2500.00,&#10;  &quot;rating&quot;: 4.8,&#10;  &quot;training_level&quot;: &quot;advanced&quot;,&#10;  &quot;class_type&quot;: &quot;hybrid&quot;,&#10;  &quot;career_prospect&quot;: &quot;Backend Developer&quot;,&#10;   &quot;description&quot;: {&#10;    &quot;course_introduction&quot;: &quot;Learn the advace Python.&quot;,&#10;    &quot;course_context&quot;: &quot;Suitable for students and professionals.&quot;&#10;  }&#10;}&#10;" />
                           <option name="type" value="JSON" />
                         </bodyState>
                       </option>
@@ -285,7 +285,7 @@
                     <requestState>
                       <option name="body">
                         <bodyState>
-                          <option name="raw" value="{&#10;  &quot;career_prospect&quot;: &quot;Software Developer&quot;,&#10;  &quot;description&quot;: {&#10;    &quot;course_introduction&quot;: &quot;Learn the basics of Python.&quot;,&#10;    &quot;course_overview&quot;: &quot;Variables, control flow, functions, lambda&quot;,&#10;  }&#10;}&#10;" />
+                          <option name="raw" value="{&#10;  &quot;career_prospect&quot;: &quot;Software Developer&quot;,&#10;  &quot;description&quot;: {&#10;     &quot;course_overview&quot;: &quot;basic python&quot;,&#10;  }&#10;}&#10;" />
                           <option name="type" value="JSON" />
                         </bodyState>
                       </option>
@@ -293,7 +293,7 @@
                         <list>
                           <headerState>
                             <option name="key" value="Authorization" />
-                            <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUwODU2ODg0LCJpYXQiOjE3NTA4NTY1ODQsImp0aSI6IjZmNmMzNGE4MDIyNDQyNzQ5ZWJmMzQwZTFiMzQ2ZTVlIiwidXNlcl9pZCI6IjhhYTFjYzk5LTA4NjctNDBlZC05NjNjLWQ0YWY4MjhlODY1NyJ9.7oOwIIBmZ_Z-wFYLtfYH4lK9NBkG2HNx2K-LZE69JTQ" />
+                            <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUwODU3MjU3LCJpYXQiOjE3NTA4NTY5NTcsImp0aSI6IjRkNWZlOGI5ZDhjMTQ5NGQ4ZDk3NTYzMmI4NmEwMGM2IiwidXNlcl9pZCI6IjhhYTFjYzk5LTA4NjctNDBlZC05NjNjLWQ0YWY4MjhlODY1NyJ9.NO8BmmDw_J_p6VDYMeK6TbNbryIM4s3zkTN2cQVnQGI" />
                           </headerState>
                         </list>
                       </option>
@@ -301,7 +301,7 @@
                       <option name="method" value="PATCH" />
                       <option name="name" value="edit course" />
                       <option name="sortWeight" value="4000000" />
-                      <option name="url" value="http://127.0.0.1:8000/api/courses/edit-course/Python Basics/" />
+                      <option name="url" value="http://127.0.0.1:8000/api/courses/edit-course/advanced-python/" />
                     </requestState>
                     <requestState>
                       <option name="body">
