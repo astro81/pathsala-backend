@@ -6,6 +6,7 @@ from django.db import models
 
 from course_description.models import CourseDescription
 from course_syllabus.models import CourseSyllabus
+from category.models import Category
 
 class Course(models.Model):
     DURATION_UNITS = [
@@ -99,6 +100,10 @@ class Course(models.Model):
 
     updated_at = models.DateTimeField(
         auto_now=True
+    )
+
+    categories = models.ManyToManyField(
+        Category,
     )
 
     description = models.OneToOneField(

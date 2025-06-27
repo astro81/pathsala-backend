@@ -6,10 +6,18 @@ from course_syllabus.models import CourseSyllabus, CourseSyllabusTitleContent
 from course_syllabus.serializers import CourseSyllabusSerializer
 from courses.models import Course
 
+from category.models import Category
+from category.serializers import CategorySerializer
+
 class CourseSerializer(serializers.ModelSerializer):
 
     description = CourseDescriptionSerializer(required=False, allow_null=True)
     syllabus = CourseSyllabusSerializer(required=False, allow_null=True)
+    categories = serializers.ListField(
+        child=serializers.CharField(),  # Accept category names
+        write_only=True
+    )
+    category_names = serializers.SerializerMethodField(read_only=True)
 
     class Meta:
         model = Course
@@ -35,11 +43,20 @@ class CourseSerializer(serializers.ModelSerializer):
                 raise serializers.ValidationError({'duration': 'Invalid duration format. Expected "value unit".'})
         return super().to_internal_value(data)
 
+    def get_category_names(self, obj):
+        return [cat.name for cat in obj.categories.all()]
+
+
     def create(self, validated_data):
         description_data = validated_data.pop('description', None)
         syllabus_data = validated_data.pop('syllabus', None)
 
+        category_names = validated_data.pop('categories', [])
         course = Course.objects.create(**validated_data)
+
+        for name in category_names:
+            category, _ = Category.objects.get_or_create(name=name.strip())
+            course.categories.add(category)
 
         if description_data:
             course.description = CourseDescription.objects.create(**description_data)
@@ -59,6 +76,8 @@ class CourseSerializer(serializers.ModelSerializer):
             course.save()
 
         return course
+
+
 
     def _handle_description_update(self, instance, description_data):
         if description_data is None:
@@ -106,6 +125,20 @@ class CourseSerializer(serializers.ModelSerializer):
             instance.syllabus = syllabus
 
     def update(self, instance, validated_data):
+
+        # Handle category update
+        category_names = validated_data.pop('categories', None)
+
+        if category_names is not None:
+            instance.categories.clear()
+            for name in category_names:
+                category, _ = Category.objects.get_or_create(name=name.strip())
+                instance.categories.add(category)
+
+        for attr, value in validated_data.items():
+            setattr(instance, attr, value)
+
+
         # Handle description update
         if 'description' in validated_data:
             self._handle_description_update(instance, validated_data.pop('description'))
