@@ -1,10 +1,10 @@
 ```toml
-name = 'Delete Account'
-description = '- Soft Delete others account'
+name = 'DELETE ACCOUNT'
+description = '- Permanently Delete User Account, Cannot be reactivated once deleted'
 method = 'DELETE'
-url = '{{url}}/api/auth/admin/delete/temporary/9298444c-6de0-444b-9158-de435ace54ba/'
-sortWeight = 6000000
-id = '5d45bba4-deb4-4cd2-b7f2-34d4b16ed715'
+url = '{{url/api/auth/admin/delete/permanent/9298444c-6de0-444b-9158-de435ace54ba/'
+sortWeight = 8000000
+id = '5fb1cbca-6781-413b-bff6-5608f62b2fde'
 
 [[headers]]
 key = 'Authorization'
