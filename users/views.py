@@ -1,574 +1,444 @@
 from django.contrib.auth import authenticate, get_user_model
-from django.db import IntegrityError, DatabaseError
-from drf_yasg import openapi
-from drf_yasg.utils import swagger_auto_schema
+from django_filters import rest_framework as filters
+from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import status
 from rest_framework.exceptions import ValidationError
-from rest_framework.views import APIView
-from rest_framework.response import Response
+from rest_framework.filters import SearchFilter, OrderingFilter
+from rest_framework.generics import get_object_or_404, ListAPIView
 from rest_framework.permissions import AllowAny, IsAuthenticated
+from rest_framework.response import Response
+from rest_framework.views import APIView
+from rest_framework_simplejwt.token_blacklist.models import OutstandingToken, BlacklistedToken
 from rest_framework_simplejwt.tokens import RefreshToken
-from rest_framework_simplejwt.exceptions import TokenError
-from rolepermissions.roles import assign_role
+from rolepermissions.roles import remove_role, assign_role
 
-from users.permissions import IsAdmin
-from users.serializers import UserSerializer
-from users.utils import get_user_or_403, is_superuser_blocked, invalidate_user_tokens
+from users.models import Student, Moderator
+from users.permissions import IsAdmin, IsStudent, IsModerator
+from users.serializers import StudentSerializer, UserSerializer, ModeratorSerializer
+
+
+from icecream import ic
 
 User = get_user_model()
 
 
-class RegisterUserView(APIView):
-    """
-    API endpoint for user registration.
+class LoginView(APIView):
+    permission_classes = (AllowAny,)
 
-    Allows unauthenticated users to register.
-    Automatically assigns the "student" role to newly created users.
-    """
-    permission_classes = [AllowAny]
-
-    @swagger_auto_schema(
-        request_body=UserSerializer,
-        responses={
-            201: openapi.Response("User registered successfully"),
-            400: "Validation or input error",
-            500: "Internal server error"
-        }
-    )
     def post(self, request):
-        """
-        Create a new user.
 
-        Request body:
-            - username: str
-            - email: str
-            - password: str
-            - other optional user fields
+        username = request.data.get('username')
+        password = request.data.get('password')
 
-        Returns:
-            - 201: User created successfully.
-            - 400: Validation or input error.
-            - 500: Internal server error.
-        """
-        serializer = UserSerializer(data=request.data)
+        if not username:
+            raise ValidationError({"error": "Username is required"})
+        if not password:
+            raise ValidationError({"error": "Password is required"})
+
+        user = authenticate(username=username, password=password)
+
+        if not user:
+            raise ValidationError({"error": "Invalid credentials"})
+
+        if not user.is_active:
+            return Response({"error": "User is inactive"}, status=status.HTTP_401_UNAUTHORIZED)
+
+        refresh = RefreshToken.for_user(user)
+
+        return Response({
+            'refresh': str(refresh),
+            'access': str(refresh.access_token),
+        }, status=status.HTTP_200_OK)
+
+
+class LogoutView(APIView):
+    permission_classes = (IsAuthenticated,)
+    def post(self, request):
         try:
-            serializer.is_valid(raise_exception=True)
-            user = serializer.save()
-            # assign_role(user, 'student')   #* Automatic role assignment via User.save()
-            return Response({'message': 'User registered successfully'}, status=status.HTTP_201_CREATED)
+            refresh_token = request.data["refresh_token"]
+            token = RefreshToken(refresh_token)
+            token.blacklist()
 
-        except ValidationError as ve:
-            # DRF handles serializer validation errors here
-            return Response(ve.detail, status=status.HTTP_400_BAD_REQUEST)
-
-        except IntegrityError as ie:
-            return Response(
-                {'error': 'Database integrity error. Possibly duplicate or invalid data.', 'details': str(ie)},
-                status=status.HTTP_400_BAD_REQUEST
-            )
-
-        except DatabaseError as db_err:
-            return Response(
-                {'error': 'A database error occurred.', 'details': str(db_err)},
-                status=status.HTTP_500_INTERNAL_SERVER_ERROR
-            )
-
+            return Response({"message": "Successfully logged out"}, status=status.HTTP_205_RESET_CONTENT)
         except Exception as e:
-            # Catch-all for any unexpected errors
-            return Response(
-                {'error': 'An unexpected error occurred.', 'details': str(e)},
-                status=status.HTTP_500_INTERNAL_SERVER_ERROR
-            )
+            return Response({"error": str(e)}, status=status.HTTP_400_BAD_REQUEST)
 
 
-class LoginUserView(APIView):
-    """
-    API endpoint for user login.
-
-    Authenticates a user and returns a token for authenticated access to other endpoints.
-    """
-    permission_classes = [AllowAny]
-
-    @swagger_auto_schema(
-        operation_summary="User login",
-        request_body=openapi.Schema(
-            type=openapi.TYPE_OBJECT,
-            required=['username', 'password'],
-            properties={
-                'username': openapi.Schema(type=openapi.TYPE_STRING),
-                'password': openapi.Schema(type=openapi.TYPE_STRING)
-            }
-        ),
-        responses={
-            200: openapi.Response("Token returned"),
-            400: "Invalid credentials",
-            403: "Inactive user",
-            500: "Internal error"
-        }
-    )
+class LogoutAllView(APIView):
+    permission_classes = (IsAuthenticated,)
     def post(self, request):
-        """
-        Authenticate a user and return a token.
+        tokens = OutstandingToken.objects.filter(user_id=request.user.id)
 
-        Request body:
-            - username: str
-            - password: str
+        for token in tokens:
+            t, _ = BlacklistedToken.objects.get_or_create(token=token)
 
-        Returns:
-            - 200: Token if credentials are valid.
-            - 400: Error if credentials are invalid or missing.
-            - 403: Inactive user.
-            - 500: Internal server error
-        """
-        try:
-            username = request.data.get('username')
-            password = request.data.get('password')
-
-            if not username:
-                raise ValidationError({"username": "Username is required."})
-            if not password:
-                raise ValidationError({"password": "Password is required."})
-
-            user = authenticate(username=username, password=password)
-
-            if not user:
-                return Response({'error': 'Invalid credentials.'}, status=status.HTTP_400_BAD_REQUEST)
-
-            if not user.is_active:
-                return Response({'error': 'User account is inactive.'}, status=status.HTTP_403_FORBIDDEN)
-
-            refresh = RefreshToken.for_user(user)
-            return Response({
-                'refresh': str(refresh),
-                'access': str(refresh.access_token)
-            }, status=status.HTTP_200_OK)
-
-        except ValidationError as ve:
-            return Response(ve.detail, status=status.HTTP_400_BAD_REQUEST)
-
-        except (DatabaseError, IntegrityError) as db_err:
-            return Response(
-                {'error': 'Database error during login.', 'details': str(db_err)},
-                status=status.HTTP_500_INTERNAL_SERVER_ERROR
-            )
-
-        except Exception as e:
-            return Response(
-                {'error': 'An unexpected error occurred during login.', 'details': str(e)},
-                status=status.HTTP_500_INTERNAL_SERVER_ERROR
-            )
+        return Response({"message": "Successfully logged out from all devices"}, status=status.HTTP_205_RESET_CONTENT)
 
 
-class LogoutUserView(APIView):
-    """
-    API endpoint for logging out.
+####################
+# *Register views* #
+####################
+class StudentRegisterView(APIView):
+    permission_classes = (AllowAny,)
 
-    Deletes the user's auth token to revoke access.
-    """
-    permission_classes = [IsAuthenticated]
-
-    @swagger_auto_schema(
-        operation_summary="Logout user",
-        request_body=openapi.Schema(
-            type=openapi.TYPE_OBJECT,
-            required=['refresh'],
-            properties={
-                'refresh': openapi.Schema(type=openapi.TYPE_STRING)
-            }
-        ),
-        responses={
-            200: "Logout successful",
-            400: "Missing or invalid token",
-            500: "Unexpected error"
-        }
-    )
     def post(self, request):
-        """
-        Invalidate user's token.
+        serializer = StudentSerializer(data=request.data)
 
-        Returns:
-            - 200: Success message.
-            - 401: If the user is not authenticated.
-            - 500: If an unexpected error occurs.
-        """
+        if serializer.is_valid():
+            serializer.save()
+            return Response({"message": "Student created successfully"}, status=status.HTTP_201_CREATED)
+
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
-        refresh_token = request.data.get("refresh")
-        # access_token = request.data.get("access")
+class ModeratorRegisterView(APIView):
+    permission_classes = (IsAdmin,)
 
-            # 1. Blacklist refresh token
-        if refresh_token:
+    def post(self, request):
+        serializer = ModeratorSerializer(data=request.data)
+
+        if serializer.is_valid():
+            serializer.save()
+            return Response({"message": "Moderator created successfully"}, status=status.HTTP_201_CREATED)
+
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+###################
+# *Profile views* #
+###################
+class UserOwnProfileView(APIView):
+    permission_classes = (IsAuthenticated,)
+
+    def get(self, request):
+        user = request.user
+
+        # Start with core user data from a serializer
+        serialized_user = UserSerializer(user).data
+
+        # Add student-specific data if the user is a student
+        if user.role == user.Role.STUDENT:
             try:
-                token = RefreshToken(refresh_token)
-                token.blacklist()
-                return Response({'message': 'Successfully logged out.'}, status=status.HTTP_200_OK)
-            except Exception:
-                return Response({"detail": "Invalid refresh token"}, status=status.HTTP_400_BAD_REQUEST)
+                student = Student.objects.get(user=user)
+                serialized_user.update({
+                    "address": student.address,
+                    "phone_no": student.phone_no,
+                    "profile_picture": request.build_absolute_uri(student.profile_picture.url)
+                        if student.profile_picture else None,
+                    "is_approved": student.is_approved
+                })
+            except Student.DoesNotExist:
+                pass
+
+        # todo: add moderator-specific data if the user is a moderator
+
+        return Response(serialized_user, status=status.HTTP_200_OK)
 
 
-class RefreshTokenView(APIView):
-    """
-    API endpoint to refresh access token using refresh token.
-    """
-    permission_classes = [AllowAny]
+class AdminUserDetailView(APIView):
+    permission_classes = (IsAdmin,)
 
-    @swagger_auto_schema(
-        operation_summary="Refresh access token",
-        request_body=openapi.Schema(
-            type=openapi.TYPE_OBJECT,
-            required=['refresh'],
-            properties={
-                'refresh': openapi.Schema(type=openapi.TYPE_STRING)
-            }
-        ),
-        responses={
-            200: openapi.Response("New access token"),
-            401: "Invalid refresh token",
-            500: "Error"
-        }
-    )
-    def post(self, request):
-        """
-        Generate a new access token from refresh token.
-        """
-        try:
-            refresh_token = request.data.get('refresh')
-            if not refresh_token:
-                return Response(
-                    {'error': 'Refresh token is required.'},
-                    status=status.HTTP_400_BAD_REQUEST
-                )
+    def get(self, request, username):
+        user = get_object_or_404(User, username=username)
+        data = UserSerializer(user).data
 
-            refresh = RefreshToken(refresh_token)
-            return Response({
-                'access': str(refresh.access_token),
-            }, status=status.HTTP_200_OK)
+        if user.role == user.Role.STUDENT:
+            try:
+                student = Student.objects.get(user=user)
+                data.update({
+                    "address": student.address,
+                    "phone_no": student.phone_no,
+                    "profile_picture": request.build_absolute_uri(student.profile_picture.url) if student.profile_picture else None,
+                    "is_approved": student.is_approved,
+                })
+            except Student.DoesNotExist:
+                pass
+        else:
+            data.update({
+                "first_name": user.first_name,
+                "last_name": user.last_name,
+                "role": user.role
+            })
 
-        except TokenError as te:
-            return Response(
-                {'error': 'Invalid or expired refresh token.', 'details': str(te)},
-                status=status.HTTP_401_UNAUTHORIZED
-            )
-        except Exception as e:
-            return Response(
-                {'error': 'Token refresh failed.', 'details': str(e)},
-                status=status.HTTP_500_INTERNAL_SERVER_ERROR
-            )
+        return Response(data, status=status.HTTP_200_OK)
 
 
-class CreateModeratorView(APIView):
-    """
-    API endpoint for creating moderator accounts.
+##################
+# *Update views* #
+##################
+class StudentProfileUpdateView(APIView):
+    permission_classes = (IsStudent,)
 
-    Restricted to users with the 'admin' role.
-    """
-    permission_classes = [IsAuthenticated, IsAdmin]
+    def put(self, request):
+        return Response(status=status.HTTP_405_METHOD_NOT_ALLOWED)
 
-    @swagger_auto_schema(
-        request_body=UserSerializer,
-        responses={
-            201: "Moderator created",
-            400: "Validation error",
-            500: "Unexpected error"
-        }
-    )
-    def post(self, request):
-        """
-        Create a new moderator.
-
-        Request body:
-            - Same as standard user registration fields.
-
-        Returns:
-            - 201: Moderator created.
-            - 400: Validation or input error.
-            - 500: Unexpected error.
-        """
-        try:
-            data = request.data.copy()
-            data['role'] = User.Role.MODERATOR  #! Force moderator role
-
-            serializer = UserSerializer(data=data)
-            serializer.is_valid(raise_exception=True)  # DRF-native validation
-
-            user = serializer.save()
-            assign_role(user, 'moderator')
-
-            return Response({'message': 'Moderator created successfully'}, status=status.HTTP_201_CREATED)
-
-        except ValidationError as ve:
-            return Response(ve.detail, status=status.HTTP_400_BAD_REQUEST)
-
-        except IntegrityError as ie:
-            return Response({'error': 'Database integrity error.', 'details': str(ie)}, status=status.HTTP_400_BAD_REQUEST)
-
-        except DatabaseError as db_err:
-            return Response({'error': 'Database error occurred.', 'details': str(db_err)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
-
-        except Exception as e:
-            return Response({'error': 'Unexpected error occurred.', 'details': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
-
-
-class DeleteUserView(APIView):
-    """
-    API endpoint to softly delete user accounts.
-
-    Users can deactivate their own account. Admins can deactivate any non-superuser.
-    """
-    permission_classes = [IsAuthenticated]
-
-    @swagger_auto_schema(
-        responses={
-            200: "User deactivated",
-            403: "Not allowed",
-            404: "User not found",
-            500: "Error"
-        }
-    )
-    def delete(self, request, username=None):
-        """
-        Deactivate a user (soft delete).
-
-        Parameters:
-            - username: Optional[str] (default to current user)
-
-        Returns:
-            - 200: Deactivated.
-            - 403: Not authorized.
-            - 404: User not found.
-        """
-        user = get_user_or_403(request, username)
-        if isinstance(user, Response):
-            return user
-
-        superuser_block = is_superuser_blocked(user)
-        if superuser_block:
-            return superuser_block
+    def patch(self, request):
+        user = request.user
 
         try:
-            if not user.is_active:
-                return Response({'message': 'User is already deactivated.'}, status=status.HTTP_200_OK)
+            student = Student.objects.get(user=user)
+        except Student.DoesNotExist:
+            return Response({"message": "Student profile not found"}, status=status.HTTP_404_NOT_FOUND)
 
+        serializer = StudentSerializer(student, data=request.data, partial=True)
+        if serializer.is_valid():
+            serializer.save()
+            return Response({"message": "Profile successfully updated!"}, status=status.HTTP_200_OK)
+
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+class ModeratorProfileUpdateView(APIView):
+    permission_classes = (IsModerator,)
+
+    def put(self, request):
+        return Response(status=status.HTTP_405_METHOD_NOT_ALLOWED)
+
+    def patch(self, request):
+        user = request.user
+
+        try:
+            moderator = Moderator.objects.get(user=user)
+        except Moderator.DoesNotExist:
+            return Response({"message": "Moderator profile not found"},
+                          status=status.HTTP_404_NOT_FOUND)
+
+        serializer = ModeratorSerializer(moderator, data=request.data, partial=True)
+        if serializer.is_valid():
+            serializer.save()
+            return Response({"message": "Profile successfully updated!"},
+                          status=status.HTTP_200_OK)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+#################
+# *Delete view* #
+#################
+def delete_token_helper(user):
+    for token in OutstandingToken.objects.filter(user=user):
+        BlacklistedToken.objects.get_or_create(token=token)
+
+def delete_user_role_helper(user):
+    if user.role == User.Role.STUDENT:
+        remove_role(user, 'student')
+    if user.role == User.Role.MODERATOR:
+        remove_role(user, 'moderator')
+
+
+# todo: take username and confirm the user is valid to ensure integrity
+class UserDeleteView(APIView):
+    permission_classes = (IsAuthenticated,)
+
+    def delete(self, request):
+        user = request.user
+
+        if user.role not in [User.Role.MODERATOR, User.Role.STUDENT]:
+            return Response({"message": "Only moderators and students can delete their account"}, status=status.HTTP_403_FORBIDDEN)
+
+        try:
+            delete_token_helper(user)
+            delete_user_role_helper(user)
+
+            # Soft delete the user by setting is_active to False
             user.is_active = False
             user.save()
 
-            return Response({'message': 'User deactivated successfully.'}, status=status.HTTP_200_OK)
-
-        except DatabaseError as db_err:
-            return Response({'error': 'Database error occurred.', 'details': str(db_err)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+            return Response(
+                {"message": "Account deleted successfully"},
+                status=status.HTTP_200_OK
+            )
 
         except Exception as e:
-            return Response({'error': 'Unexpected error occurred.', 'details': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+            return Response(
+                {"error": str(e)},
+                status=status.HTTP_500_INTERNAL_SERVER_ERROR
+            )
+
+
+class AdminDeleteUserView(APIView):
+    permission_classes = (IsAdmin,)
+
+    permanently_delete: bool = False
+
+    def delete(self, request, user_id):
+        admin = request.user
+
+        try:
+            user = get_object_or_404(User, pk=user_id)
+
+            # Prevent deletion of the admin account
+            if user.id == admin.id:
+                return Response({"message": "You cannot delete the admin account"}, status=status.HTTP_403_FORBIDDEN)
+
+            delete_token_helper(user)
+            delete_user_role_helper(user)
+
+            if self.permanently_delete:                 #! Permanently delete the user
+                user.delete()
+            else:                                       #! Soft delete the user by setting is_active to False
+                user.is_active = False
+                user.save()
+
+            return Response({"message": "Account deleted successfully"}, status=status.HTTP_200_OK)
+        except Exception as e:
+            return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
 class ReactivateUserView(APIView):
-    """
-    API endpoint to reactivate (enable) a previously deactivated user account.
+    permission_classes = (IsAdmin,)
 
-    Permissions:
-        - Only authenticated users with admin privileges can reactivate accounts.
-
-    HTTP Methods:
-        - POST: Reactivate the user specified by username.
-
-    Parameters:
-        - username (str, optional): The username of the user to reactivate.
-          If not provided, defaults to the current user (can be adjusted as needed).
-
-    Responses:
-        - 200 OK: If the user is successfully reactivated or already active.
-        - 404 Not Found or 403 Forbidden: If the user does not exist or is inaccessible.
-        - 500 Internal Server Error: For unexpected errors during reactivation.
-    """
-    permission_classes = [IsAuthenticated, IsAdmin]  # Restrict access to authenticated admins
-
-    @swagger_auto_schema(
-        manual_parameters=[
-            openapi.Parameter('username', openapi.IN_PATH, type=openapi.TYPE_STRING, required=True)
-        ],
-        responses={
-            200: "User reactivated",
-            403: "Permission denied",
-            404: "User not found",
-            500: "Error"
-        }
-    )
-    def post(self, request, username=None):
-        """
-        Handle POST request to reactivate a user account.
-
-        Args:
-            request (Request): DRF request object.
-            username (str, optional): Target user's username.
-
-        Returns:
-            Response: DRF response with a success or error message.
-        """
-        # Retrieve the target user or return the appropriate 403/404 response
-        user = get_user_or_403(request, username)
-        if isinstance(user, Response):
-            return user  # Early return if user retrieval failed
-
-        # Check if the user is already active to avoid unnecessary updates
-        if user.is_active:
-            return Response(
-                {'message': 'User is already active.'},
-                status=status.HTTP_200_OK
-            )
-
+    def post(self, request, user_id):
         try:
-            # Reactivate the user by setting is_active to True
+            # Get the inactive user
+            user = get_object_or_404(User, pk=user_id, is_active=False)
+
+            # Reactivate the account
             user.is_active = True
             user.save()
 
+            # Restore the appropriate role based on the user's role field
+            if user.role == User.Role.MODERATOR:
+                assign_role(user, 'moderator')
+            if user.role == User.Role.STUDENT:
+                assign_role(user, 'student')
+
             return Response(
-                {'message': 'User reactivated successfully.'},
+                {"message": "Account reactivated successfully with original role"},
                 status=status.HTTP_200_OK
             )
 
         except Exception as e:
-            # Catch all unexpected exceptions and respond with error details
             return Response(
-                {'error': 'Unexpected error.', 'details': str(e)},
+                {"error": str(e)},
                 status=status.HTTP_500_INTERNAL_SERVER_ERROR
             )
 
 
-class UserProfileView(APIView):
+# todo: list users by admin
+class UserFilter(filters.FilterSet):
     """
-    API endpoint to view user profiles.
-
-    Users can view their own profile. Admins can view any profile.
+    Filter set for the User model with various filtering options.
     """
-    permission_classes = [IsAuthenticated]
+    role = filters.ChoiceFilter(choices=User.Role.choices)
+    is_active = filters.BooleanFilter()
+    is_staff = filters.BooleanFilter()
+    is_superuser = filters.BooleanFilter()
 
-    @swagger_auto_schema(
-        manual_parameters=[
-            openapi.Parameter('username', openapi.IN_PATH, type=openapi.TYPE_STRING, required=True)
-        ],
-        responses={
-            200: openapi.Response("User data", UserSerializer),
-            403: "Forbidden",
-            404: "Not found",
-            500: "Error"
-        }
+    # Date filters
+    date_joined = filters.DateFromToRangeFilter()
+    last_login = filters.DateFromToRangeFilter()
+
+    # Text-based filters
+    username = filters.CharFilter(lookup_expr='icontains')
+    email = filters.CharFilter(lookup_expr='icontains')
+    first_name = filters.CharFilter(lookup_expr='icontains')
+    last_name = filters.CharFilter(lookup_expr='icontains')
+
+    # Multiple choice filters
+    roles = filters.MultipleChoiceFilter(
+        field_name='role',
+        choices=User.Role.choices
     )
-    def get(self, request, username=None):
+
+    class Meta:
+        model = User
+        fields = [
+            'role', 'roles', 'is_active', 'is_staff', 'is_superuser',
+            'username', 'email', 'first_name', 'last_name',
+            'date_joined', 'last_login'
+        ]
+
+
+class UserListAPIView(ListAPIView):
+    """
+    API view to list all users - accessible only by admins.
+
+    Supports filtering, searching, and ordering:
+    - Filter by role, active status, staff status, etc.
+    - Search by username, email, first_name, last_name
+    - Order by any field (use - prefix for descending order)
+
+    Example URLs:
+    - /api/users/                                    # List all users
+    - /api/users/?role=student                       # Filter by role
+    - /api/users/?roles=student,moderator            # Filter by multiple roles
+    - /api/users/?is_active=true                     # Filter by active status
+    - /api/users/?search=john                        # Search across username, email, names
+    - /api/users/?ordering=-date_joined              # Order by date joined (newest first)
+    - /api/users/?username__icontains=admin          # Filter usernames containing 'admin'
+    - /api/users/?date_joined__gte=2024-01-01        # Users joined after date
+    """
+
+    queryset = User.objects.all().select_related().order_by('-date_joined')
+    serializer_class = UserSerializer
+    permission_classes = [IsAdmin]
+
+    # Backend filters
+    filter_backends = [
+        DjangoFilterBackend,
+        SearchFilter,
+        OrderingFilter,
+    ]
+
+    # Django filter configuration
+    filterset_class = UserFilter
+
+    # Search configuration
+    search_fields = [
+        'username',
+        'email',
+        'first_name',
+        'last_name'
+    ]
+
+    # Ordering configuration
+    ordering_fields = [
+        'username',
+        'email',
+        'first_name',
+        'last_name',
+        'role',
+        'is_active',
+        'is_staff',
+        'date_joined',
+        'last_login'
+    ]
+
+    ordering = ['-date_joined']  # Default ordering
+
+    def get_queryset(self):
         """
-        Retrieve user profile.
+        Optionally restricts the returned users based on query parameters.
+        """
+        queryset = super().get_queryset()
 
-        Parameters:
-            - username: Optional[str] (defaults to current user)
+        return queryset
 
-        Returns:
-            - 200: User data.
-            - 403/404: Not allowed or not found.
-            - 500: Internal server error
+    def list(self, request, *args, **kwargs):
+        """
+        Override the list method to add custom response formatting if needed.
         """
         try:
-            user = get_user_or_403(request, username)
-            if isinstance(user, Response):
-                return user
+            queryset = self.filter_queryset(self.get_queryset())
 
-            serializer = UserSerializer(user)
-            return Response(serializer.data, status=status.HTTP_200_OK)
+            page = self.paginate_queryset(queryset)
+            if page is not None:
+                serializer = self.get_serializer(page, many=True)
+                return self.get_paginated_response(serializer.data)
 
-        except (DatabaseError, IntegrityError) as db_err:
-            return Response(
-                {'error': 'Database error while retrieving profile.', 'details': str(db_err)},
-                status=status.HTTP_500_INTERNAL_SERVER_ERROR
-            )
+            serializer = self.get_serializer(queryset, many=True)
 
-        except ValidationError as ve:
-            return Response(ve.detail, status=status.HTTP_400_BAD_REQUEST)
-
-        except Exception as e:
-            return Response(
-                {'error': 'An unexpected error occurred while retrieving profile.', 'details': str(e)},
-                status=status.HTTP_500_INTERNAL_SERVER_ERROR
-            )
-
-
-class EditUserView(APIView):
-    """
-    API endpoint to edit user details with the PATCH method.
-
-    Users can edit their own profile. Admins can edit any profile.
-    The user role cannot be modified after the initial assignment.
-    """
-    permission_classes = [IsAuthenticated]
-
-    @swagger_auto_schema(
-        manual_parameters=[
-            openapi.Parameter('username', openapi.IN_PATH, type=openapi.TYPE_STRING, required=True)
-        ],
-        request_body=UserSerializer,
-        responses={
-            200: "User updated successfully",
-            400: "Validation error",
-            403: "Forbidden",
-            404: "Not found",
-            500: "Error"
-        }
-    )
-    def patch(self, request, username=None):
-        """
-        Partially update user details.
-
-        Parameters:
-            - username: Optional[str] (defaults to current user)
-
-        Request Body:
-            - Any editable user fields (only include fields to update)
-
-        Returns:
-            - 200: User updated successfully
-            - 400: Validation error
-            - 403/404: Not allowed or not found
-            - 500: Internal server error
-        """
-        try:
-            # Get the user to be updated
-            user = get_user_or_403(request, username)
-            if isinstance(user, Response):
-                return user
-
-            # Prevent editing superusers unless current user is superuser
-            if user.is_superuser and not request.user.is_superuser:
-                return Response(
-                    {'error': 'You cannot edit superuser accounts.'},
-                    status=status.HTTP_403_FORBIDDEN
-                )
-
-            # Make a copy of the data and remove a role if present
-            data = request.data.copy()
-            if 'role' in data:
-                data.pop('role')  # Remove a role to prevent changes
-
-            # Validate and update the user with partial=True
-            serializer = UserSerializer(user, data=data, partial=True)
-            serializer.is_valid(raise_exception=True)
-            serializer.save()
-
-            return Response(
-                {
-                    'message': 'User updated successfully.',
-                    'data': serializer.data
-                },
-                status=status.HTTP_200_OK
-            )
-
-        except ValidationError as ve:
-            return Response(ve.detail, status=status.HTTP_400_BAD_REQUEST)
-
-        except (DatabaseError, IntegrityError) as db_err:
-            return Response(
-                {'error': 'Database error while updating profile.', 'details': str(db_err)},
-                status=status.HTTP_500_INTERNAL_SERVER_ERROR
-            )
+            return Response({
+                'success': True,
+                'count': queryset.count(),
+                'data': serializer.data
+            }, status=status.HTTP_200_OK)
 
         except Exception as e:
-            return Response(
-                {'error': 'An unexpected error occurred while updating profile.', 'details': str(e)},
-                status=status.HTTP_500_INTERNAL_SERVER_ERROR
-            )
+            return Response({
+                'success': False,
+                'error': 'Failed to retrieve users',
+                'detail': str(e)
+            }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+

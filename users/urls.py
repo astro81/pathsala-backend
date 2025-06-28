@@ -1,31 +1,35 @@
 from django.urls import path
-from .views import (
-    RegisterUserView, LoginUserView, LogoutUserView, RefreshTokenView,
-    CreateModeratorView, DeleteUserView,
-    ReactivateUserView, UserProfileView, EditUserView,
-)
+
+from users.views import (
+    LoginView, LogoutView, LogoutAllView,
+    StudentRegisterView, ModeratorRegisterView,
+    UserOwnProfileView, AdminUserDetailView,
+    StudentProfileUpdateView, ModeratorProfileUpdateView,
+    UserDeleteView, AdminDeleteUserView, ReactivateUserView, UserListAPIView)
 
 app_name = 'users'
 
-
 urlpatterns = [
-    path('register/', RegisterUserView.as_view(), name='register'),
-    path('login/', LoginUserView.as_view(), name='login'),
-    path('logout/', LogoutUserView.as_view(), name='logout'),
-    path('token/refresh/', RefreshTokenView.as_view(), name='token_refresh'),
+    path('login/', LoginView.as_view(), name='login'),
 
-    path('create-moderator/', CreateModeratorView.as_view(), name='create_moderator'),
+    path('logout/', LogoutView.as_view(), name='logout'),
+    path('logout-all/', LogoutAllView.as_view(), name='logout-all'),
 
-    path('user/edit/', EditUserView.as_view(), name='edit_self'),
-    path('user/edit/<str:username>/', EditUserView.as_view(), name='edit_user_by_admin'),
+    path('register/student/', StudentRegisterView.as_view(), name='student-register'),
+    path('register/moderator/', ModeratorRegisterView.as_view(), name='moderator-register'),
 
-    path('user/delete/', DeleteUserView.as_view(), name='delete_self'),
-    path('user/delete/<str:username>/', DeleteUserView.as_view(), name='delete_user_by_admin'),
+    path('user/profile/', UserOwnProfileView.as_view(), name='user-profile'),
+    path('admin/profile/<str:username>/', AdminUserDetailView.as_view(), name='admin-profile'),
 
-    path('user/reactivate/<str:username>/', ReactivateUserView.as_view(), name='reactivate_user'),
+    path('update/student/profile/', StudentProfileUpdateView.as_view(), name='update-student-profile'),
+    path('update/moderator/profile/', ModeratorProfileUpdateView.as_view(), name='update-moderator-profile'),
 
-    path('user/profile/', UserProfileView.as_view(), name='profile_self'),
-    path('user/profile/<str:username>/', UserProfileView.as_view(), name='profile_by_username'),
+    path('user/delete/', UserDeleteView.as_view(), name='user-delete'),
+    path('admin/delete/temporary/<str:user_id>/', AdminDeleteUserView.as_view(permanently_delete = False), name='admin-soft-delete-user'),
+    path('admin/delete/permanent/<str:user_id>/', AdminDeleteUserView.as_view(permanently_delete=True), name='admin-hard-delete-user'),
 
-    # path('user/list/', UserListView.as_view(), name='user_list'),
+    path('admin/reactivate/<str:user_id>/', ReactivateUserView.as_view(), name='admin-reactivate'),
+
+    path('users/', UserListAPIView.as_view(), name='user-list'),
 ]
+

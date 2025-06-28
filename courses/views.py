@@ -7,7 +7,7 @@ from rest_framework.response import Response
 
 from courses.models import Course
 from courses.serializers import CourseSerializer
-from users.permissions import HasCoursePermission
+from courses.permissions import HasCoursePermission
 
 
 # Create your views here.

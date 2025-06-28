@@ -1,8 +1,10 @@
 import uuid
+
 from django.contrib.auth.models import AbstractUser
-from django.core.validators import RegexValidator, EmailValidator
+from django.core.validators import EmailValidator, RegexValidator
 from django.db import models
 
+# Create your models here.
 class User(AbstractUser):
     class Role(models.TextChoices):
         ADMIN = 'admin', 'Admin'
@@ -31,9 +33,38 @@ class User(AbstractUser):
         max_length=20,
         choices=Role.choices,
         default=Role.STUDENT,
+        db_index=True,
         verbose_name="User Role",
         help_text="Primary role determining user permissions and access level."
     )
+
+    class Meta:
+        indexes = [
+            models.Index(fields=['role']),
+            models.Index(fields=['is_active']),
+            models.Index(fields=['date_joined']),
+        ]
+
+    def __str__(self):
+        return self.username
+
+
+class Admin(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
+
+    def __str__(self):
+        return self.user.username
+
+
+class Moderator(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
+
+    def __str__(self):
+        return self.user.username
+
+
+class Student(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
 
     address = models.TextField(
         blank=True,
@@ -59,26 +90,13 @@ class User(AbstractUser):
         help_text="Optional profile picture uploaded by the user."
     )
 
-
-    def save(self, *args, **kwargs):
-        """Prevent role changes after initial assignment"""
-        try:
-            if self.pk and not self._state.adding:  # Only for existing users
-                original = User.objects.get(pk=self.pk)
-                if self.role != original.role:
-                    raise ValueError("User roles cannot be changed after assignment")
-
-            super().save(*args, **kwargs)
-
-            # Only assign role on creation
-            if self._state.adding:
-                from rolepermissions.roles import assign_role
-                assign_role(self, self.role)
-        except Exception as e:
-            # Log the error or handle it appropriately
-            raise
+    is_approved = models.BooleanField(
+        default=False,
+        verbose_name="Is Approved",
+        help_text="Indicates whether the student has been approved to enroll in the course."
+    )
 
     def __str__(self):
-        return self.username
+        return self.user.username
 
 

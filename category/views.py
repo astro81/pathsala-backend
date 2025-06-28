@@ -8,7 +8,7 @@ from rest_framework import status
 from rest_framework.generics import  ListAPIView, CreateAPIView, RetrieveAPIView, UpdateAPIView, DestroyAPIView
 from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
-from users.permissions import HasCoursePermission
+from courses.permissions import HasCoursePermission
 
 # Create your views here.
 
