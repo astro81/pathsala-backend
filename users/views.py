@@ -1,9 +1,26 @@
+"""
+User Management API Views
+
+This module implements all user-related API endpoints including:
+- Authentication (login/logout)
+- Registration (student/moderator)
+- Profile management
+- User administration
+- Filtering and searching
+
+The views follow REST conventions and implement proper:
+- Authentication
+- Authorization
+- Input validation
+- Error handling
+- Security controls
+"""
+
 from django.contrib.auth import authenticate, get_user_model
 from django.core.exceptions import ObjectDoesNotExist
 from django.db import DatabaseError, IntegrityError
 from django_filters import rest_framework as filters
 from django_filters.rest_framework import DjangoFilterBackend
-from pyexpat.errors import messages
 from rest_framework import status
 from rest_framework.exceptions import ValidationError
 from rest_framework.filters import SearchFilter, OrderingFilter
@@ -11,7 +28,10 @@ from rest_framework.generics import get_object_or_404, ListAPIView
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from rest_framework_simplejwt.token_blacklist.models import OutstandingToken, BlacklistedToken
+from rest_framework_simplejwt.token_blacklist.models import (
+    OutstandingToken,
+    BlacklistedToken,
+)
 from rest_framework_simplejwt.tokens import RefreshToken
 from rolepermissions.roles import remove_role, assign_role
 
@@ -19,19 +39,48 @@ from users.models import Student, Moderator
 from users.permissions import IsAdmin, IsStudent, IsModerator
 from users.serializers import StudentSerializer, UserSerializer, ModeratorSerializer
 
-
-from icecream import ic
-
 User = get_user_model()
 
 
 class LoginView(APIView):
+    """Handle user authentication and JWT token generation.
+
+    This view:
+    - Validates username/password credentials
+    - Authenticates the user
+    - Generates JWT tokens upon successful authentication
+    - Handles inactive user accounts
+
+    Permissions:
+        AllowAny: Accessible to all users
+
+    Methods:
+        post: Authenticate user and return tokens
+    """
+
     permission_classes = (AllowAny,)
 
     def post(self, request):
+        """Authenticate the user and return JWT tokens.
+
+        Parameters
+        ----------
+        request : Request
+            Contains:
+                username: string (required)
+                password: string (required)
+
+        Returns
+        -------
+        Response
+            200: Success with tokens
+            400: Missing credentials
+            401: Invalid credentials or inactive account
+            500: Server error
+        """
         try:
-            username = request.data.get('username')
-            password = request.data.get('password')
+            username = request.data.get("username")
+            password = request.data.get("password")
 
             if not username:
                 raise ValidationError({"error": "Username is required"})
@@ -44,117 +93,298 @@ class LoginView(APIView):
                 raise ValidationError({"error": "Invalid credentials"})
 
             if not user.is_active:
-                return Response({"error": "User is inactive"}, status=status.HTTP_401_UNAUTHORIZED)
+                return Response(
+                    {"error": "User is inactive"},
+                    status=status.HTTP_401_UNAUTHORIZED,
+                )
 
             refresh = RefreshToken.for_user(user)
 
-            return Response({
-                'refresh': str(refresh),
-                'access': str(refresh.access_token),
-            }, status=status.HTTP_200_OK)
+            return Response(
+                {
+                    "refresh": str(refresh),
+                    "access": str(refresh.access_token),
+                },
+                status=status.HTTP_200_OK,
+            )
         except Exception as e:
-            return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+            return Response(
+                {"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR
+            )
+
 
 class LogoutView(APIView):
+    """Handle user logout by blacklisting refresh token.
+
+    This view:
+    - Invalidates the provided refresh token
+    - Effectively logs the user out of the current session
+
+    Permissions:
+        IsAuthenticated: Only logged-in users can logout
+
+    Methods:
+        post: Blacklist the provided refresh token
+    """
+
     permission_classes = (IsAuthenticated,)
-    
+
     def post(self, request):
+        """Invalidate the provided refresh token.
+
+        Parameters
+        ----------
+        request : Request
+            Contains:
+                refresh_token: string (required)
+
+        Returns
+        -------
+        Response
+            205: Successful logout
+            400: Missing or invalid token
+            500: Server error
+        """
         try:
             refresh_token = request.data["refresh_token"]
             if not refresh_token:
-                return Response({"error": "Refresh token is required"}, status=status.HTTP_400_BAD_REQUEST)
-            
+                return Response(
+                    {"error": "Refresh token is required"},
+                    status=status.HTTP_400_BAD_REQUEST,
+                )
+
             token = RefreshToken(refresh_token)
             token.blacklist()
 
-            return Response({"message": "Successfully logged out"}, status=status.HTTP_205_RESET_CONTENT)
+            return Response(
+                {"message": "Successfully logged out"},
+                status=status.HTTP_205_RESET_CONTENT,
+            )
         except Exception as e:
-            return Response({"error": str(e)}, status=status.HTTP_400_BAD_REQUEST)
+            return Response(
+                {"error": str(e)}, status=status.HTTP_400_BAD_REQUEST
+            )
 
 
 class LogoutAllView(APIView):
+    """Handle user logout from all devices.
+
+    This view:
+    - Blacklists all outstanding tokens for the user
+    - Effectively logs the user out from all sessions
+
+    Permissions:
+        IsAuthenticated: Only logged-in users can logout
+
+    Methods:
+        post: Blacklist all tokens for the current user
+    """
+
     permission_classes = (IsAuthenticated,)
-    
+
     def post(self, request):
+        """Invalidate all tokens for the current user.
+
+        Parameters
+        ----------
+        request : Request
+            None required in body
+
+        Returns
+        -------
+        Response
+            205: Successful logout from all devices
+            200: No active tokens found
+            500: Server error
+        """
         try:
             tokens = OutstandingToken.objects.filter(user_id=request.user.id)
             if not tokens.exists():
-                return Response({"message": "No active tokens found"}, status=status.HTTP_200_OK)
+                return Response(
+                    {"message": "No active tokens found"},
+                    status=status.HTTP_200_OK,
+                )
 
             for token in tokens:
                 BlacklistedToken.objects.get_or_create(token=token)
 
-            return Response({"message": "Successfully logged out from all devices"}, status=status.HTTP_205_RESET_CONTENT)
+            return Response(
+                {"message": "Successfully logged out from all devices"},
+                status=status.HTTP_205_RESET_CONTENT,
+            )
         except Exception as e:
-            return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+            return Response(
+                {"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR
+            )
 
 
-########################
-# *Registration views* #
-########################
 class StudentRegisterView(APIView):
+    """Handle student registration.
+
+    This view:
+    - Creates new student accounts
+    - Validates input data
+    - Assigns student role
+    - Handles errors appropriately
+
+    Permissions:
+        AllowAny: Accessible to all users
+
+    Methods:
+        post: Create a new student account
+    """
+
     permission_classes = (AllowAny,)
 
     def post(self, request):
+        """Register a new student account.
+
+        Parameters
+        ----------
+        request : Request
+            Contains student registration data
+
+        Returns
+        -------
+        Response
+            201: Student created successfully
+            400: Validation error
+            500: Server error
+        """
         try:
             serializer = StudentSerializer(data=request.data)
-
             serializer.is_valid(raise_exception=True)
             serializer.save()
-            return Response({"message": "Student created successfully"}, status=status.HTTP_201_CREATED)
-
-        except ValidationError as ve:
-            return Response(e.detail, status=status.HTTP_400_BAD_REQUEST)
-        except IntegrityError:
-            return Response({"error": "Database integrity error occurred"}, status=status.HTTP_400_BAD_REQUEST)
-        except DatabaseError:
-            return Response({"error": "Database operation failed"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
-        except Exception as e:
-            return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
-
-
-class ModeratorRegisterView(APIView):
-    permission_classes = (IsAdmin,)
-
-    def post(self, request):
-        try:
-            serializer = ModeratorSerializer(data=request.data)
-            serializer.is_valid(raise_exception=True)
-            serializer.save()
-            
-            return Response({"message": "Moderator created successfully"}, status=status.HTTP_201_CREATED)
+            return Response(
+                {"message": "Student created successfully"},
+                status=status.HTTP_201_CREATED,
+            )
 
         except ValidationError as e:
             return Response(e.detail, status=status.HTTP_400_BAD_REQUEST)
         except IntegrityError:
-            return Response({"error": "Database integrity error occurred"}, status=status.HTTP_400_BAD_REQUEST)
+            return Response(
+                {"error": "Database integrity error occurred"},
+                status=status.HTTP_400_BAD_REQUEST,
+            )
         except DatabaseError:
-            return Response({"error": "Database operation failed"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+            return Response(
+                {"error": "Database operation failed"},
+                status=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            )
         except Exception as e:
-            return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+            return Response(
+                {"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR
+            )
 
 
-###################
-# *Profile views* #
-###################
+class ModeratorRegisterView(APIView):
+    """Handle moderator registration.
+
+    This view:
+    - Creates new moderator accounts (admin only)
+    - Validates input data
+    - Assigns moderator role
+    - Handles errors appropriately
+
+    Permissions:
+        IsAdmin: Only administrators can create moderators
+
+    Methods:
+        post: Create a new moderator account
+    """
+
+    permission_classes = (IsAdmin,)
+
+    def post(self, request):
+        """Register a new moderator account.
+
+        Parameters
+        ----------
+        request : Request
+            Contains moderator registration data
+
+        Returns
+        -------
+        Response
+            201: Moderator created successfully
+            400: Validation error
+            403: Permission denied
+            500: Server error
+        """
+        try:
+            serializer = ModeratorSerializer(data=request.data)
+            serializer.is_valid(raise_exception=True)
+            serializer.save()
+
+            return Response(
+                {"message": "Moderator created successfully"},
+                status=status.HTTP_201_CREATED,
+            )
+
+        except ValidationError as e:
+            return Response(e.detail, status=status.HTTP_400_BAD_REQUEST)
+        except IntegrityError:
+            return Response(
+                {"error": "Database integrity error occurred"},
+                status=status.HTTP_400_BAD_REQUEST,
+            )
+        except DatabaseError:
+            return Response(
+                {"error": "Database operation failed"},
+                status=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            )
+        except Exception as e:
+            return Response(
+                {"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR
+            )
+
+
 class UserOwnProfileView(APIView):
+    """Handle retrieval of the current user's profile.
+
+    This view:
+    - Returns profile data for the authenticated user
+    - Includes student-specific fields if applicable
+    - Handles profile picture URL generation
+
+    Permissions:
+        IsAuthenticated: Only logged-in users can view their profile
+
+    Methods:
+        get: Retrieve current user's profile
+    """
+
     permission_classes = (IsAuthenticated,)
 
     def get(self, request):
+        """Get the authenticated user's profile.
+
+        Parameters
+        ----------
+        request : Request
+            None required in body
+
+        Returns
+        -------
+        Response
+            200: User profile data
+            500: Server error
+        """
         try:
             user = request.user
             serialized_user = UserSerializer(user).data
 
-            # Add student-specific data if the user is a student
+            # Add student-specific data if applicable
             if user.role == user.Role.STUDENT:
                 try:
                     student = Student.objects.get(user=user)
                     profile_data = {
                         "address": student.address,
                         "phone_no": student.phone_no,
-                        "is_approved": student.is_approved
+                        "is_approved": student.is_approved,
                     }
-                    
+
                     if student.profile_picture:
                         try:
                             profile_data["profile_picture"] = request.build_absolute_uri(
@@ -162,23 +392,54 @@ class UserOwnProfileView(APIView):
                             )
                         except Exception:
                             profile_data["profile_picture"] = None
-                            
+
                     serialized_user.update(profile_data)
-                    
+
                 except ObjectDoesNotExist:
                     pass
 
             return Response(serialized_user, status=status.HTTP_200_OK)
-        
-        except Exception as e:
-            return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
+        except Exception as e:
+            return Response(
+                {"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR
+            )
 
 
 class AdminUserDetailView(APIView):
+    """Handle user profile retrieval by administrators.
+
+    This view:
+    - Returns profile data for any user (admin only)
+    - Includes role-specific fields
+    - Handles profile picture URL generation
+
+    Permissions:
+        IsAdmin: Only administrators can view other users' profiles
+
+    Methods:
+        get: Retrieve user profile by username
+    """
+
     permission_classes = (IsAdmin,)
 
     def get(self, request, username):
+        """Get a user's profile by username.
+
+        Parameters
+        ----------
+        request : Request
+            None required in body
+        username : str
+            Username of the user to retrieve
+
+        Returns
+        -------
+        Response
+            200: User profile data
+            404: User not found
+            500: Server error
+        """
         try:
             user = get_object_or_404(User, username=username)
             data = UserSerializer(user).data
@@ -189,9 +450,9 @@ class AdminUserDetailView(APIView):
                     profile_data = {
                         "address": student.address,
                         "phone_no": student.phone_no,
-                        "is_approved": student.is_approved
+                        "is_approved": student.is_approved,
                     }
-                    
+
                     if student.profile_picture:
                         try:
                             profile_data["profile_picture"] = request.build_absolute_uri(
@@ -199,128 +460,246 @@ class AdminUserDetailView(APIView):
                             )
                         except Exception:
                             profile_data["profile_picture"] = None
-                            
+
                     data.update(profile_data)
-                    
+
                 except ObjectDoesNotExist:
                     pass
             else:
-                data.update({
-                    "first_name": user.first_name,
-                    "last_name": user.last_name,
-                    "role": user.role
-                })
+                data.update(
+                    {
+                        "first_name": user.first_name,
+                        "last_name": user.last_name,
+                        "role": user.role,
+                    }
+                )
 
             return Response(data, status=status.HTTP_200_OK)
-            
+
         except Exception as e:
-            return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+            return Response(
+                {"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR
+            )
 
 
-##################
-# *Update views* #
-##################
 class StudentProfileUpdateView(APIView):
+    """Handle student profile updates.
+
+    This view:
+    - Allows students to update their profiles
+    - Validates input data
+    - Handles partial updates
+
+    Permissions:
+        IsStudent: Only students can update their profiles
+
+    Methods:
+        patch: Partially update student profile
+    """
+
     permission_classes = (IsStudent,)
 
-    def put(self, request):
-        return Response(status=status.HTTP_405_METHOD_NOT_ALLOWED)
-
     def patch(self, request):
+        """Update the student's profile.
+
+        Parameters
+        ----------
+        request : Request
+            Contains profile fields to update
+
+        Returns
+        -------
+        Response
+            200: Profile updated successfully
+            400: Validation error
+            404: Profile not found
+            500: Server error
+        """
         try:
             user = request.user
             student = Student.objects.get(user=user)
-            
+
             serializer = StudentSerializer(
-                student, 
-                data=request.data, 
-                partial=True,
-                context={'request': request}
+                student, data=request.data, partial=True, context={"request": request}
             )
             serializer.is_valid(raise_exception=True)
             serializer.save()
-            
-            return Response({"message": "Profile successfully updated!"}, status=status.HTTP_200_OK)
-            
+
+            return Response(
+                {"message": "Profile successfully updated!"}, status=status.HTTP_200_OK
+            )
+
         except ObjectDoesNotExist:
-            return Response({"message": "Student profile not found"}, status=status.HTTP_404_NOT_FOUND)
+            return Response(
+                {"message": "Student profile not found"},
+                status=status.HTTP_404_NOT_FOUND,
+            )
         except ValidationError as e:
             return Response(e.detail, status=status.HTTP_400_BAD_REQUEST)
         except Exception as e:
-            return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+            return Response(
+                {"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR
+            )
 
 
 class ModeratorProfileUpdateView(APIView):
+    """Handle moderator profile updates.
+
+    This view:
+    - Allows moderators to update their profiles
+    - Validates input data
+    - Handles partial updates
+
+    Permissions:
+        IsModerator: Only moderators can update their profiles
+
+    Methods:
+        patch: Partially update moderator profile
+    """
+
     permission_classes = (IsModerator,)
 
-    def put(self, request):
-        return Response(status=status.HTTP_405_METHOD_NOT_ALLOWED)
-
     def patch(self, request):
+        """Update the moderator's profile.
+
+        Parameters
+        ----------
+        request : Request
+            Contains profile fields to update
+
+        Returns
+        -------
+        Response
+            200: Profile updated successfully
+            400: Validation error
+            404: Profile not found
+            500: Server error
+        """
         try:
             user = request.user
             moderator = Moderator.objects.get(user=user)
-            
+
             serializer = ModeratorSerializer(
-                moderator, 
-                data=request.data, 
-                partial=True,
-                context={'request': request}
+                moderator, data=request.data, partial=True, context={"request": request}
             )
             serializer.is_valid(raise_exception=True)
             serializer.save()
-            
+
             return Response(
-                {"message": "Profile successfully updated!"},
-                status=status.HTTP_200_OK
+                {"message": "Profile successfully updated!"}, status=status.HTTP_200_OK
             )
-            
+
         except ObjectDoesNotExist:
-            return Response({"message": "Moderator profile not found"}, status=status.HTTP_404_NOT_FOUND)
+            return Response(
+                {"message": "Moderator profile not found"},
+                status=status.HTTP_404_NOT_FOUND,
+            )
         except ValidationError as e:
             return Response(e.detail, status=status.HTTP_400_BAD_REQUEST)
         except Exception as e:
-            return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
-            
-            
-#################
-# *Delete view* #
-#################
+            return Response(
+                {"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR
+            )
+
+
 def delete_token_helper(user):
+    """Helper function to invalidate all tokens for a user.
+
+    Parameters
+    ----------
+    user : User
+        User whose tokens should be invalidated
+    """
     for token in OutstandingToken.objects.filter(user=user):
         BlacklistedToken.objects.get_or_create(token=token)
 
+
 def delete_user_role_helper(user):
+    """Helper function to remove role assignments from a user.
+
+    Parameters
+    ----------
+    user : User
+        User whose roles should be removed
+    """
     if user.role == User.Role.STUDENT:
-        remove_role(user, 'student')
+        remove_role(user, "student")
     if user.role == User.Role.MODERATOR:
-        remove_role(user, 'moderator')
+        remove_role(user, "moderator")
 
 
-# todo: take username and confirm the user is valid to ensure integrity
 class UserDeleteView(APIView):
+    """Handle user account deletion (self-service).
+
+    This view:
+    - Allows users to delete their own accounts
+    - Requires password confirmation
+    - Performs soft deletion (sets is_active=False)
+    - Invalidates all tokens
+    - Removes role assignments
+
+    Permissions:
+        IsAuthenticated: Only logged-in users can delete their accounts
+
+    Methods:
+        delete: Delete the user's account
+    """
+
     permission_classes = (IsAuthenticated,)
 
     def delete(self, request):
+        """Delete the authenticated user's account.
+
+        Parameters
+        ----------
+        request : Request
+            Contains:
+                username: string (required for confirmation)
+                password: string (required for confirmation)
+
+        Returns
+        -------
+        Response
+            200: Account deleted successfully
+            400: Missing/invalid credentials
+            401: Invalid credentials
+            403: Role not allowed to self-delete
+            500: Server error
+        """
         try:
             user = request.user
-            username = request.get.get('username')
-            password = request.get.get('password')
+            username = request.data.get("username")
+            password = request.data.get("password")
 
             if not username:
-                return Response({"error": "Username is required"}, status=status.HTTP_400_BAD_REQUEST)
+                return Response(
+                    {"error": "Username is required"},
+                    status=status.HTTP_400_BAD_REQUEST,
+                )
             if not password:
-                return Response({"error": "Password is required"}, status=status.HTTP_400_BAD_REQUEST)
+                return Response(
+                    {"error": "Password is required"},
+                    status=status.HTTP_400_BAD_REQUEST,
+                )
 
             if user.username != username:
-                return Response({"error": "Username does not matches the logged in user"}, status=status.HTTP_400_BAD_REQUEST)
+                return Response(
+                    {"error": "Username does not match the logged in user"},
+                    status=status.HTTP_400_BAD_REQUEST,
+                )
 
             authenticated_user = authenticate(username=username, password=password)
             if (not authenticated_user) or (authenticated_user != user):
-                return Response({"error": "Invalid credentials"}, status=status.HTTP_401_UNAUTHORIZED)
+                return Response(
+                    {"error": "Invalid credentials"},
+                    status=status.HTTP_401_UNAUTHORIZED,
+                )
 
             if user.role not in [User.Role.MODERATOR, User.Role.STUDENT]:
-                return Response({"message": "Only moderators and students can delete their account"}, status=status.HTTP_403_FORBIDDEN)
+                return Response(
+                    {"message": "Only moderators and students can delete their account"},
+                    status=status.HTTP_403_FORBIDDEN,
+                )
 
             delete_token_helper(user)
             delete_user_role_helper(user)
@@ -328,58 +707,145 @@ class UserDeleteView(APIView):
             user.is_active = False
             user.save()
 
-            return Response({"message": "Account deleted successfully"}, status=status.HTTP_200_OK)
-            
+            return Response(
+                {"message": "Account deleted successfully"}, status=status.HTTP_200_OK
+            )
+
         except Exception as e:
-            return Response({"error": str(e)},status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+            return Response(
+                {"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR
+            )
 
 
 class AdminDeleteUserView(APIView):
+    """Handle user deletion by administrators.
+
+    This view:
+    - Allows admins to delete other user accounts
+    - Requires username confirmation
+    - Prevents admin self-deletion
+    - Can perform soft or hard deletion based on flag
+    - Invalidates all tokens
+    - Removes role assignments
+
+    Permissions:
+        IsAdmin: Only administrators can delete users
+
+    Methods:
+        delete: Delete a user account
+    """
+
     permission_classes = (IsAdmin,)
-    permanently_delete: bool = False
+    permanently_delete = False  # Flag for hard vs soft deletion
 
     def delete(self, request, user_id):
+        """Delete a user account by ID.
+
+        Parameters
+        ----------
+        request : Request
+            Contains:
+                username: string (required for confirmation)
+        user_id : int
+            ID of the user to delete
+
+        Returns
+        -------
+        Response
+            200: User deleted/deactivated successfully
+            400: Missing/invalid confirmation
+            403: Attempted self-deletion
+            404: User not found
+            500: Server error
+        """
         try:
             admin = request.user
             user = get_object_or_404(User, pk=user_id)
 
             # Get confirmation username from request data
-            confirm_username = request.data.get('username')
+            confirm_username = request.data.get("username")
 
             # Validate confirmation username
             if not confirm_username:
-                return Response({"error": "Please provide the username of the user you want to delete as confirmation"}, status=status.HTTP_400_BAD_REQUEST)
+                return Response(
+                    {
+                        "error": "Please provide the username of the user you want to delete as confirmation"
+                    },
+                    status=status.HTTP_400_BAD_REQUEST,
+                )
 
             # Verify username matches the user being deleted
             if confirm_username != user.username:
-                return Response({"error": "Confirmation username does not match the user you're trying to delete"}, status=status.HTTP_400_BAD_REQUEST)
+                return Response(
+                    {
+                        "error": "Confirmation username does not match the user you're trying to delete"
+                    },
+                    status=status.HTTP_400_BAD_REQUEST,
+                )
 
             # Prevent deletion of the admin account
             if user.id == admin.id:
-                return Response({"message": "You cannot delete the admin account"}, status=status.HTTP_403_FORBIDDEN)
+                return Response(
+                    {"message": "You cannot delete the admin account"},
+                    status=status.HTTP_403_FORBIDDEN,
+                )
 
             delete_token_helper(user)
             delete_user_role_helper(user)
 
-            if self.permanently_delete:                 #! Permanently delete the user
+            if self.permanently_delete:  # Hard delete
                 user.delete()
                 message = "User permanently deleted!"
-            else:                                       #! Soft delete the user by setting is_active to False
+            else:  # Softly delete
                 user.is_active = False
                 user.save()
                 message = "User deactivated successfully!"
 
             return Response({"message": message}, status=status.HTTP_200_OK)
         except ObjectDoesNotExist:
-            return Response({"message": "User not found"}, status=status.HTTP_404_NOT_FOUND)
+            return Response(
+                {"message": "User not found"}, status=status.HTTP_404_NOT_FOUND
+            )
         except Exception as e:
-            return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+            return Response(
+                {"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR
+            )
 
 
 class ReactivateUserView(APIView):
+    """Handle user account reactivation by administrators.
+
+    This view:
+    - Reactivates deactivated accounts
+    - Restores original role assignments
+    - Handles errors appropriately
+
+    Permissions:
+        IsAdmin: Only administrators can reactivate accounts
+
+    Methods:
+        post: Reactivate a user account
+    """
+
     permission_classes = (IsAdmin,)
 
     def post(self, request, user_id):
+        """Reactivate a deactivated user account.
+
+        Parameters
+        ----------
+        request : Request
+            None required in body
+        user_id : int
+            ID of the user to reactivate
+
+        Returns
+        -------
+        Response
+            200: Account reactivated successfully
+            404: User not found
+            500: Server error
+        """
         try:
             # Get the inactive user
             user = get_object_or_404(User, pk=user_id, is_active=False)
@@ -390,25 +856,43 @@ class ReactivateUserView(APIView):
 
             # Restore the appropriate role based on the user's role field
             if user.role == User.Role.MODERATOR:
-                assign_role(user, 'moderator')
+                assign_role(user, "moderator")
             if user.role == User.Role.STUDENT:
-                assign_role(user, 'student')
+                assign_role(user, "student")
 
             return Response(
                 {"message": "Account reactivated successfully with original role"},
-                status=status.HTTP_200_OK
+                status=status.HTTP_200_OK,
             )
 
         except ObjectDoesNotExist:
-            return Response({"message": "Inactive user not found"}, status=status.HTTP_404_NOT_FOUND)
+            return Response(
+                {"message": "Inactive user not found"},
+                status=status.HTTP_404_NOT_FOUND,
+            )
         except Exception as e:
-            return Response({"error": str(e)},status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+            return Response(
+                {"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR
+            )
 
 
 class UserFilter(filters.FilterSet):
+    """FilterSet for advanced user filtering.
+
+    Provides filtering capabilities for the User model including:
+    - Role-based filtering
+    - Status flags (active, staff, superuser)
+    - Date ranges (joined, last login)
+    - Text search (username, email, names)
+    - Multiple choice filters
+
+    Example usage:
+    /api/users/?role=student
+    /api/users/?roles=student,moderator
+    /api/users/?date_joined__gte=2023-01-01
+    /api/users/?username__icontains=admin
     """
-    Filter set for the User model with various filtering options.
-    """
+
     role = filters.ChoiceFilter(choices=User.Role.choices)
     is_active = filters.BooleanFilter()
     is_staff = filters.BooleanFilter()
@@ -419,94 +903,93 @@ class UserFilter(filters.FilterSet):
     last_login = filters.DateFromToRangeFilter()
 
     # Text-based filters
-    username = filters.CharFilter(lookup_expr='icontains')
-    email = filters.CharFilter(lookup_expr='icontains')
-    first_name = filters.CharFilter(lookup_expr='icontains')
-    last_name = filters.CharFilter(lookup_expr='icontains')
+    username = filters.CharFilter(lookup_expr="icontains")
+    email = filters.CharFilter(lookup_expr="icontains")
+    first_name = filters.CharFilter(lookup_expr="icontains")
+    last_name = filters.CharFilter(lookup_expr="icontains")
 
     # Multiple choice filters
     roles = filters.MultipleChoiceFilter(
-        field_name='role',
-        choices=User.Role.choices
+        field_name="role", choices=User.Role.choices
     )
 
     class Meta:
         model = User
         fields = [
-            'role', 'roles', 'is_active', 'is_staff', 'is_superuser',
-            'username', 'email', 'first_name', 'last_name',
-            'date_joined', 'last_login'
+            "role",
+            "roles",
+            "is_active",
+            "is_staff",
+            "is_superuser",
+            "username",
+            "email",
+            "first_name",
+            "last_name",
+            "date_joined",
+            "last_login",
         ]
 
 
 class UserListAPIView(ListAPIView):
-    """
-    API view to list all users - accessible only by admins.
+    """API endpoint for listing and filtering users.
 
-    Supports filtering, searching, and ordering:
-    - Filter by role, active status, staff status, etc.
-    - Search by username, email, first_name, last_name
-    - Order by any field (use - prefix for descending order)
+    Provides comprehensive user listing with:
+    - Advanced filtering (UserFilter)
+    - Search capabilities
+    - Ordering options
+    - Pagination
 
-    Example URLs:
-    - /api/users/                                    # List all users
-    - /api/users/?role=student                       # Filter by role
-    - /api/users/?roles=student,moderator            # Filter by multiple roles
-    - /api/users/?is_active=true                     # Filter by active status
-    - /api/users/?search=john                        # Search across username, email, names
-    - /api/users/?ordering=-date_joined              # Order by date joined (newest first)
-    - /api/users/?username__icontains=admin          # Filter usernames containing 'admin'
-    - /api/users/?date_joined__gte=2024-01-01        # Users joined after date
+    Permissions:
+        IsAdmin: Only administrators can list users
+
+    Methods:
+        get: List users with optional filtering
     """
 
-    queryset = User.objects.all().select_related().order_by('-date_joined')
+    queryset = User.objects.all().select_related().order_by("-date_joined")
     serializer_class = UserSerializer
     permission_classes = [IsAdmin]
 
-    # Backend filters
+    # Filter backends
     filter_backends = [
         DjangoFilterBackend,
         SearchFilter,
         OrderingFilter,
     ]
 
-    # Django filter configuration
+    # Filter configuration
     filterset_class = UserFilter
 
     # Search configuration
-    search_fields = [
-        'username',
-        'email',
-        'first_name',
-        'last_name'
-    ]
+    search_fields = ["username", "email", "first_name", "last_name"]
 
     # Ordering configuration
     ordering_fields = [
-        'username',
-        'email',
-        'first_name',
-        'last_name',
-        'role',
-        'is_active',
-        'is_staff',
-        'date_joined',
-        'last_login'
+        "username",
+        "email",
+        "first_name",
+        "last_name",
+        "role",
+        "is_active",
+        "is_staff",
+        "date_joined",
+        "last_login",
     ]
-
-    ordering = ['-date_joined']  # Default ordering
-
-    def get_queryset(self):
-        """
-        Optionally restricts the returned users based on query parameters.
-        """
-        queryset = super().get_queryset()
-
-        return queryset
+    ordering = ["-date_joined"]  # Default ordering
 
     def list(self, request, *args, **kwargs):
-        """
-        Override the list method to add custom response formatting if needed.
+        """Override list method for a custom response format.
+
+        Parameters
+        ----------
+        request : Request
+            May contain filtering/ordering parameters
+
+        Returns
+        -------
+        Response
+            200: Success with user data
+            500: Server error
         """
         try:
             queryset = self.filter_queryset(self.get_queryset())
@@ -518,17 +1001,22 @@ class UserListAPIView(ListAPIView):
 
             serializer = self.get_serializer(queryset, many=True)
 
-            return Response({
-                'success': True,
-                'count': queryset.count(),
-                'data': serializer.data
-            }, status=status.HTTP_200_OK)
+            return Response(
+                {
+                    "success": True,
+                    "count": queryset.count(),
+                    "data": serializer.data,
+                },
+                status=status.HTTP_200_OK,
+            )
 
         except Exception as e:
-            return Response({
-                'success': False,
-                'error': 'Failed to retrieve users',
-                'detail': str(e)
-            }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
-
+            return Response(
+                {
+                    "success": False,
+                    "error": "Failed to retrieve users",
+                    "detail": str(e),
+                },
+                status=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            )
 
