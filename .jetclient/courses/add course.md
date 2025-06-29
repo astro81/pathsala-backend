@@ -7,7 +7,7 @@ id = '53c86376-5da4-4fe3-b68d-a794ee016325'
 
 [[headers]]
 key = 'Authorization'
-value = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxMDIyNDkxLCJpYXQiOjE3NTEwMjIxOTEsImp0aSI6IjQ2MGEwNTdiZTdiZTQ3YmNiMzFhMDY1MzM1NzgxMWY4IiwidXNlcl9pZCI6IjU5ZjdiYTM4LTk4NDgtNDFjMC1hYWE3LWVkOGVkOTg2ODAxNSJ9.li7xpLEMtzYINgvA-U-d0eHhjpwT2NJTjZF2ql4_kGw'
+value = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxMjgyMTM0LCJpYXQiOjE3NTExOTU3MzQsImp0aSI6IjgzMGY4NTExZjIwNjRiNTE4YWQzZjc0NzlmZWI2NjNmIiwidXNlcl9pZCI6ImY1YjdiNWYwLWM0ZTAtNGE4Zi1hMzdhLTVlZTNiZDI5YjQyNSJ9.1Yz_LufiBl-YiKzQBn5G_l_J5k0RxC6kCToK9dIofd8'
 
 [body]
 type = 'JSON'
@@ -22,6 +22,7 @@ raw = '''
   "training_level": "intermediate",
   "class_type": "online",
   "career_prospect": "DevOps Engineer | Site Reliability Engineer | Cloud Architect",
+  "categories" : ["App Development"],
   "description": {
     "course_introduction": "Master CI/CD pipelines, infrastructure as code, and cloud-native tooling",
     "course_overview": "Hands-on training with Docker, Kubernetes, Terraform, and AWS/GCP",
