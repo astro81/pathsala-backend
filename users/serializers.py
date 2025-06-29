@@ -221,3 +221,4 @@ class StudentSerializer(UserCreateUpdateMixin, serializers.ModelSerializer):
             self.invalidate_user_tokens(instance.user)
 
         return instance
+
