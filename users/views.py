@@ -21,6 +21,8 @@ from django.core.exceptions import ObjectDoesNotExist
 from django.db import DatabaseError, IntegrityError
 from django_filters import rest_framework as filters
 from django_filters.rest_framework import DjangoFilterBackend
+from drf_yasg import openapi
+from drf_yasg.utils import swagger_auto_schema
 from rest_framework import status
 from rest_framework.exceptions import ValidationError
 from rest_framework.filters import SearchFilter, OrderingFilter
@@ -60,6 +62,48 @@ class LoginView(APIView):
 
     permission_classes = (AllowAny,)
 
+
+    @swagger_auto_schema(
+        operation_description="Authenticate user with username/password and receive JWT tokens",
+        request_body=openapi.Schema(
+            type=openapi.TYPE_OBJECT,
+            required=['username', 'password'],
+            properties={
+                'username': openapi.Schema(type=openapi.TYPE_STRING, description='User identifier'),
+                'password': openapi.Schema(type=openapi.TYPE_STRING, description='User password', format='password')
+            }
+        ),
+        responses={
+            200: openapi.Response(
+                description="Successful authentication",
+                schema=openapi.Schema(
+                    type=openapi.TYPE_OBJECT,
+                    properties={
+                        'refresh': openapi.Schema(type=openapi.TYPE_STRING, description='Refresh token'),
+                        'access': openapi.Schema(type=openapi.TYPE_STRING, description='Access token')
+                    }
+                )
+            ),
+            400: openapi.Response(
+                description="Missing or invalid credentials",
+                schema=openapi.Schema(
+                    type=openapi.TYPE_OBJECT,
+                    properties={
+                        'error': openapi.Schema(type=openapi.TYPE_STRING)
+                    }
+                )
+            ),
+            401: openapi.Response(
+                description="Invalid credentials or inactive account",
+                examples={
+                    "application/json": {
+                        "error": "Invalid credentials"
+                    }
+                }
+            )
+        },
+        tags=['Authentication']
+    )
     def post(self, request):
         """Authenticate the user and return JWT tokens.
 
@@ -129,6 +173,39 @@ class LogoutView(APIView):
 
     permission_classes = (IsAuthenticated,)
 
+    @swagger_auto_schema(
+        operation_description="Logout by invalidating the refresh token",
+        request_body=openapi.Schema(
+            type=openapi.TYPE_OBJECT,
+            required=['refresh_token'],
+            properties={
+                'refresh_token': openapi.Schema(
+                    type=openapi.TYPE_STRING,
+                    description='Refresh token to invalidate'
+                )
+            }
+        ),
+        responses={
+            205: openapi.Response(
+                description="Successfully logged out",
+                examples={
+                    "application/json": {
+                        "message": "Successfully logged out"
+                    }
+                }
+            ),
+            400: openapi.Response(
+                description="Invalid or missing token",
+                examples={
+                    "application/json": {
+                        "error": "Refresh token is required"
+                    }
+                }
+            )
+        },
+        security=[{'Bearer': []}],
+        tags=['Authentication']
+    )
     def post(self, request):
         """Invalidate the provided refresh token.
 
@@ -182,6 +259,29 @@ class LogoutAllView(APIView):
 
     permission_classes = (IsAuthenticated,)
 
+    @swagger_auto_schema(
+        operation_description="Logout from all devices by invalidating all refresh tokens",
+        responses={
+            205: openapi.Response(
+                description="Successfully logged out from all devices",
+                examples={
+                    "application/json": {
+                        "message": "Successfully logged out from all devices"
+                    }
+                }
+            ),
+            200: openapi.Response(
+                description="No active tokens found",
+                examples={
+                    "application/json": {
+                        "message": "No active tokens found"
+                    }
+                }
+            )
+        },
+        security=[{'Bearer': []}],
+        tags=['Authentication']
+    )
     def post(self, request):
         """Invalidate all tokens for the current user.
 
@@ -236,6 +336,31 @@ class StudentRegisterView(APIView):
 
     permission_classes = (AllowAny,)
 
+    @swagger_auto_schema(
+        operation_description="Register a new student account",
+        request_body=StudentSerializer,
+        responses={
+            201: openapi.Response(
+                description="Student created successfully",
+                examples={
+                    "application/json": {
+                        "message": "Student created successfully"
+                    }
+                }
+            ),
+            400: openapi.Response(
+                description="Validation error",
+                schema=StudentSerializer,
+                examples={
+                    "application/json": {
+                        "username": ["This field is required."],
+                        "email": ["Enter a valid email address."]
+                    }
+                }
+            )
+        },
+        tags=['Registration']
+    )
     def post(self, request):
         """Register a new student account.
 
@@ -296,6 +421,34 @@ class ModeratorRegisterView(APIView):
 
     permission_classes = (IsAdmin,)
 
+    @swagger_auto_schema(
+        operation_description="Register a new moderator account (admin only)",
+        request_body=ModeratorSerializer,
+        responses={
+            201: openapi.Response(
+                description="Moderator created successfully",
+                examples={
+                    "application/json": {
+                        "message": "Moderator created successfully"
+                    }
+                }
+            ),
+            400: openapi.Response(
+                description="Validation error",
+                schema=ModeratorSerializer
+            ),
+            403: openapi.Response(
+                description="Permission denied",
+                examples={
+                    "application/json": {
+                        "detail": "You do not have permission to perform this action."
+                    }
+                }
+            )
+        },
+        security=[{'Bearer': []}],
+        tags=['Registration']
+    )
     def post(self, request):
         """Register a new moderator account.
 
@@ -357,6 +510,32 @@ class UserOwnProfileView(APIView):
 
     permission_classes = (IsAuthenticated,)
 
+    @swagger_auto_schema(
+        operation_description="Get the authenticated user's profile information",
+        responses={
+            200: openapi.Response(
+                description="User profile data",
+                schema=UserSerializer,
+                examples={
+                    "application/json": {
+                        "id": 1,
+                        "username": "student1",
+                        "email": "student@example.com",
+                        "first_name": "John",
+                        "last_name": "Doe",
+                        "role": "student",
+                        "is_active": True,
+                        "address": "123 Main St",
+                        "phone_no": "+1234567890",
+                        "is_approved": True,
+                        "profile_picture": "http://example.com/media/profile_pics/student1.jpg"
+                    }
+                }
+            )
+        },
+        security=[{'Bearer': []}],
+        tags=['Profile']
+    )
     def get(self, request):
         """Get the authenticated user's profile.
 
@@ -423,6 +602,33 @@ class AdminUserDetailView(APIView):
 
     permission_classes = (IsAdmin,)
 
+    @swagger_auto_schema(
+        operation_description="Get user profile by username (admin only)",
+        manual_parameters=[
+            openapi.Parameter(
+                'username',
+                openapi.IN_PATH,
+                description="Username of the user to retrieve",
+                type=openapi.TYPE_STRING
+            )
+        ],
+        responses={
+            200: openapi.Response(
+                description="User profile data",
+                schema=UserSerializer
+            ),
+            404: openapi.Response(
+                description="User not found",
+                examples={
+                    "application/json": {
+                        "detail": "Not found."
+                    }
+                }
+            )
+        },
+        security=[{'Bearer': []}],
+        tags=['Administration']
+    )
     def get(self, request, username):
         """Get a user's profile by username.
 
@@ -499,6 +705,34 @@ class StudentProfileUpdateView(APIView):
 
     permission_classes = (IsStudent,)
 
+    @swagger_auto_schema(
+        operation_description="Update student profile information",
+        request_body=StudentSerializer,
+        responses={
+            200: openapi.Response(
+                description="Profile updated successfully",
+                examples={
+                    "application/json": {
+                        "message": "Profile successfully updated!"
+                    }
+                }
+            ),
+            400: openapi.Response(
+                description="Validation error",
+                schema=StudentSerializer
+            ),
+            404: openapi.Response(
+                description="Profile not found",
+                examples={
+                    "application/json": {
+                        "message": "Student profile not found"
+                    }
+                }
+            )
+        },
+        security=[{'Bearer': []}],
+        tags=['Profile']
+    )
     def patch(self, request):
         """Update the student's profile.
 
@@ -559,6 +793,34 @@ class ModeratorProfileUpdateView(APIView):
 
     permission_classes = (IsModerator,)
 
+    @swagger_auto_schema(
+        operation_description="Update moderator profile information",
+        request_body=ModeratorSerializer,
+        responses={
+            200: openapi.Response(
+                description="Profile updated successfully",
+                examples={
+                    "application/json": {
+                        "message": "Profile successfully updated!"
+                    }
+                }
+            ),
+            400: openapi.Response(
+                description="Validation error",
+                schema=ModeratorSerializer
+            ),
+            404: openapi.Response(
+                description="Profile not found",
+                examples={
+                    "application/json": {
+                        "message": "Moderator profile not found"
+                    }
+                }
+            )
+        },
+        security=[{'Bearer': []}],
+        tags=['Profile']
+    )
     def patch(self, request):
         """Update the moderator's profile.
 
@@ -647,6 +909,60 @@ class UserDeleteView(APIView):
 
     permission_classes = (IsAuthenticated,)
 
+    @swagger_auto_schema(
+        operation_description="Delete the authenticated user's account (requires password confirmation)",
+        request_body=openapi.Schema(
+            type=openapi.TYPE_OBJECT,
+            required=['username', 'password'],
+            properties={
+                'username': openapi.Schema(
+                    type=openapi.TYPE_STRING,
+                    description='Username for confirmation'
+                ),
+                'password': openapi.Schema(
+                    type=openapi.TYPE_STRING,
+                    description='Password for confirmation',
+                    format='password'
+                )
+            }
+        ),
+        responses={
+            200: openapi.Response(
+                description="Account deleted successfully",
+                examples={
+                    "application/json": {
+                        "message": "Account deleted successfully"
+                    }
+                }
+            ),
+            400: openapi.Response(
+                description="Missing or invalid credentials",
+                examples={
+                    "application/json": {
+                        "error": "Username is required"
+                    }
+                }
+            ),
+            401: openapi.Response(
+                description="Invalid credentials",
+                examples={
+                    "application/json": {
+                        "error": "Invalid credentials"
+                    }
+                }
+            ),
+            403: openapi.Response(
+                description="Role not allowed to self-delete",
+                examples={
+                    "application/json": {
+                        "message": "Only moderators and students can delete their account"
+                    }
+                }
+            )
+        },
+        security=[{'Bearer': []}],
+        tags=['Profile']
+    )
     def delete(self, request):
         """Delete the authenticated user's account.
 
@@ -738,6 +1054,63 @@ class AdminDeleteUserView(APIView):
     permission_classes = (IsAdmin,)
     permanently_delete = False  # Flag for hard vs soft deletion
 
+    @swagger_auto_schema(
+        operation_description="Deactivate a user account (admin only)",
+        manual_parameters=[
+            openapi.Parameter(
+                'user_id',
+                openapi.IN_PATH,
+                description="ID of the user to deactivate",
+                type=openapi.TYPE_INTEGER
+            )
+        ],
+        request_body=openapi.Schema(
+            type=openapi.TYPE_OBJECT,
+            required=['username'],
+            properties={
+                'username': openapi.Schema(
+                    type=openapi.TYPE_STRING,
+                    description='Username for confirmation'
+                )
+            }
+        ),
+        responses={
+            200: openapi.Response(
+                description="User deactivated successfully",
+                examples={
+                    "application/json": {
+                        "message": "User deactivated successfully"
+                    }
+                }
+            ),
+            400: openapi.Response(
+                description="Missing/invalid confirmation",
+                examples={
+                    "application/json": {
+                        "error": "Confirmation username does not match"
+                    }
+                }
+            ),
+            403: openapi.Response(
+                description="Attempted self-deletion",
+                examples={
+                    "application/json": {
+                        "message": "You cannot delete the admin account"
+                    }
+                }
+            ),
+            404: openapi.Response(
+                description="User not found",
+                examples={
+                    "application/json": {
+                        "message": "User not found"
+                    }
+                }
+            )
+        },
+        security=[{'Bearer': []}],
+        tags=['Administration']
+    )
     def delete(self, request, user_id):
         """Delete a user account by ID.
 
@@ -829,6 +1202,37 @@ class ReactivateUserView(APIView):
 
     permission_classes = (IsAdmin,)
 
+    @swagger_auto_schema(
+        operation_description="Reactivate a deactivated user account (admin only)",
+        manual_parameters=[
+            openapi.Parameter(
+                'user_id',
+                openapi.IN_PATH,
+                description="ID of the user to reactivate",
+                type=openapi.TYPE_INTEGER
+            )
+        ],
+        responses={
+            200: openapi.Response(
+                description="Account reactivated successfully",
+                examples={
+                    "application/json": {
+                        "message": "Account reactivated successfully with original role"
+                    }
+                }
+            ),
+            404: openapi.Response(
+                description="Inactive user not found",
+                examples={
+                    "application/json": {
+                        "message": "Inactive user not found"
+                    }
+                }
+            )
+        },
+        security=[{'Bearer': []}],
+        tags=['Administration']
+    )
     def post(self, request, user_id):
         """Reactivate a deactivated user account.
 
@@ -977,6 +1381,61 @@ class UserListAPIView(ListAPIView):
     ]
     ordering = ["-date_joined"]  # Default ordering
 
+    @swagger_auto_schema(
+        operation_description="List and filter users (admin only)",
+        manual_parameters=[
+            openapi.Parameter(
+                'role',
+                openapi.IN_QUERY,
+                description="Filter by user role",
+                type=openapi.TYPE_STRING,
+                enum=['student', 'moderator', 'admin']
+            ),
+            openapi.Parameter(
+                'is_active',
+                openapi.IN_QUERY,
+                description="Filter by active status",
+                type=openapi.TYPE_BOOLEAN
+            ),
+            openapi.Parameter(
+                'username',
+                openapi.IN_QUERY,
+                description="Filter by username (contains)",
+                type=openapi.TYPE_STRING
+            ),
+            openapi.Parameter(
+                'date_joined__gte',
+                openapi.IN_QUERY,
+                description="Filter users joined after this date (YYYY-MM-DD)",
+                type=openapi.TYPE_STRING,
+                format='date'
+            ),
+            openapi.Parameter(
+                'ordering',
+                openapi.IN_QUERY,
+                description="Ordering field (prefix with - for descending)",
+                type=openapi.TYPE_STRING
+            )
+        ],
+        responses={
+            200: openapi.Response(
+                description="List of users",
+                schema=openapi.Schema(
+                    type=openapi.TYPE_OBJECT,
+                    properties={
+                        'success': openapi.Schema(type=openapi.TYPE_BOOLEAN),
+                        'count': openapi.Schema(type=openapi.TYPE_INTEGER),
+                        'data': openapi.Schema(
+                            type=openapi.TYPE_ARRAY,
+                            items=UserSerializer
+                        )
+                    }
+                )
+            )
+        },
+        security=[{'Bearer': []}],
+        tags=['User Listing']
+    )
     def list(self, request, *args, **kwargs):
         """Override list method for a custom response format.
 

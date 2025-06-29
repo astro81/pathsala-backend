@@ -478,7 +478,7 @@
                           <requestState>
                             <option name="body">
                               <bodyState>
-                                <option name="raw" value="{&#10;  &quot;refresh_token&quot;: &quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc1MTQ1OTk0OSwiaWF0IjoxNzUxMTE0MzQ5LCJqdGkiOiIxM2U3ZDQyZDMxODA0Y2NmYjA5NDMwY2Y1YTNlMjRjMCIsInVzZXJfaWQiOiI5Mjk4NDQ0Yy02ZGUwLTQ0NGItOTE1OC1kZTQzNWFjZTU0YmEifQ.0n_OrOE2kJZFpK7IW5MEVfKFVzAYeYLsFNJXsCNDh2s&quot;&#10;}" />
+                                <option name="raw" value="{&#10;  &quot;refresh_token&quot;: &quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc1MTUxNjU2NywiaWF0IjoxNzUxMTcwOTY3LCJqdGkiOiI1NDkxOTUwOTdkMzc0OGIyYjhlMDZlNmExNWY5ZmY1NyIsInVzZXJfaWQiOiJmNGQ0NmM5MC03NDgwLTRkMzktODU0NC03ZDY5ZThmOTkyMGUifQ.Q9CrSwpV8LU5oiqe9c1PxpCH2v5s07Z_peZ3De3UfOc&quot;&#10;}" />
                                 <option name="type" value="JSON" />
                               </bodyState>
                             </option>
@@ -487,7 +487,7 @@
                               <list>
                                 <headerState>
                                   <option name="key" value="Authorization" />
-                                  <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxMjAwNzQ5LCJpYXQiOjE3NTExMTQzNDksImp0aSI6ImYzNDY4M2VjNjBjMTQ5ZDViODVmYTU5ZTE2ZDNmZmIzIiwidXNlcl9pZCI6IjkyOTg0NDRjLTZkZTAtNDQ0Yi05MTU4LWRlNDM1YWNlNTRiYSJ9.F-x5OrIj551keTmwigrh3N34MiA5vV7TyctKY7NADKA" />
+                                  <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxMjU3MzY3LCJpYXQiOjE3NTExNzA5NjcsImp0aSI6IjA4MGRkMmI1OWM1YjQ0NjY4YjhjZTdhMDU0NDQ0YTlkIiwidXNlcl9pZCI6ImY0ZDQ2YzkwLTc0ODAtNGQzOS04NTQ0LTdkNjllOGY5OTIwZSJ9.N4_T8qnHKQQxCvEN2o2h1rHPG1kLVUzTyNpBMmkZxHU" />
                                 </headerState>
                               </list>
                             </option>
@@ -525,7 +525,7 @@
                               <list>
                                 <headerState>
                                   <option name="key" value="Authorization" />
-                                  <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxMjAwNzQ5LCJpYXQiOjE3NTExMTQzNDksImp0aSI6ImYzNDY4M2VjNjBjMTQ5ZDViODVmYTU5ZTE2ZDNmZmIzIiwidXNlcl9pZCI6IjkyOTg0NDRjLTZkZTAtNDQ0Yi05MTU4LWRlNDM1YWNlNTRiYSJ9.F-x5OrIj551keTmwigrh3N34MiA5vV7TyctKY7NADKA" />
+                                  <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxMjU3MzY3LCJpYXQiOjE3NTExNzA5NjcsImp0aSI6IjA4MGRkMmI1OWM1YjQ0NjY4YjhjZTdhMDU0NDQ0YTlkIiwidXNlcl9pZCI6ImY0ZDQ2YzkwLTc0ODAtNGQzOS04NTQ0LTdkNjllOGY5OTIwZSJ9.N4_T8qnHKQQxCvEN2o2h1rHPG1kLVUzTyNpBMmkZxHU" />
                                 </headerState>
                               </list>
                             </option>
@@ -538,7 +538,7 @@
                           <requestState>
                             <option name="body">
                               <bodyState>
-                                <option name="raw" value="{&#10;    &quot;first_name&quot;: &quot;John&quot;&#10;}" />
+                                <option name="raw" value="{&#10;    &quot;first_name&quot;: &quot;Jo&quot;&#10;}" />
                                 <option name="type" value="JSON" />
                               </bodyState>
                             </option>
@@ -547,7 +547,7 @@
                               <list>
                                 <headerState>
                                   <option name="key" value="Authorization" />
-                                  <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxMjAwNzQ5LCJpYXQiOjE3NTExMTQzNDksImp0aSI6ImYzNDY4M2VjNjBjMTQ5ZDViODVmYTU5ZTE2ZDNmZmIzIiwidXNlcl9pZCI6IjkyOTg0NDRjLTZkZTAtNDQ0Yi05MTU4LWRlNDM1YWNlNTRiYSJ9.F-x5OrIj551keTmwigrh3N34MiA5vV7TyctKY7NADKA" />
+                                  <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxMjU3MzY3LCJpYXQiOjE3NTExNzA5NjcsImp0aSI6IjA4MGRkMmI1OWM1YjQ0NjY4YjhjZTdhMDU0NDQ0YTlkIiwidXNlcl9pZCI6ImY0ZDQ2YzkwLTc0ODAtNGQzOS04NTQ0LTdkNjllOGY5OTIwZSJ9.N4_T8qnHKQQxCvEN2o2h1rHPG1kLVUzTyNpBMmkZxHU" />
                                 </headerState>
                               </list>
                             </option>
@@ -558,12 +558,18 @@
                             <option name="url" value="{{url}}/api/auth/update/student/profile/" />
                           </requestState>
                           <requestState>
+                            <option name="body">
+                              <bodyState>
+                                <option name="raw" value="{&#10;  &quot;username&quot;: &quot;test&quot;,&#10;  &quot;password&quot;: &quot;StrongPass!23&quot;&#10;}" />
+                                <option name="type" value="JSON" />
+                              </bodyState>
+                            </option>
                             <option name="description" value="- users can delete their own profile" />
                             <option name="headers">
                               <list>
                                 <headerState>
                                   <option name="key" value="Authorization" />
-                                  <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxMjAwNzQ5LCJpYXQiOjE3NTExMTQzNDksImp0aSI6ImYzNDY4M2VjNjBjMTQ5ZDViODVmYTU5ZTE2ZDNmZmIzIiwidXNlcl9pZCI6IjkyOTg0NDRjLTZkZTAtNDQ0Yi05MTU4LWRlNDM1YWNlNTRiYSJ9.F-x5OrIj551keTmwigrh3N34MiA5vV7TyctKY7NADKA" />
+                                  <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxMjU3MzY3LCJpYXQiOjE3NTExNzA5NjcsImp0aSI6IjA4MGRkMmI1OWM1YjQ0NjY4YjhjZTdhMDU0NDQ0YTlkIiwidXNlcl9pZCI6ImY0ZDQ2YzkwLTc0ODAtNGQzOS04NTQ0LTdkNjllOGY5OTIwZSJ9.N4_T8qnHKQQxCvEN2o2h1rHPG1kLVUzTyNpBMmkZxHU" />
                                 </headerState>
                               </list>
                             </option>
@@ -651,7 +657,7 @@
                               <list>
                                 <headerState>
                                   <option name="key" value="Authorization" />
-                                  <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxMjAyMzQ4LCJpYXQiOjE3NTExMTU5NDgsImp0aSI6IjVlNWQ4MTI4Mzc1NzQ3ODQ4NGE5Nzc5N2U0MWFjYWRiIiwidXNlcl9pZCI6ImI4ZjVlOTZhLTI1ZDgtNDEyMS1hNTRiLTIxNzIyNzVlMTRkZCJ9.Cy2Vqy1TEVVh71Otns60Kmex_2lB9qrVwIHWHDFXMpc" />
+                                  <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxMjU3NTkxLCJpYXQiOjE3NTExNzExOTEsImp0aSI6IjZiMDM1OTkxZDNiMzRhYjE4MmY5ZDZhNTliZjUyOWE5IiwidXNlcl9pZCI6ImY1YjdiNWYwLWM0ZTAtNGE4Zi1hMzdhLTVlZTNiZDI5YjQyNSJ9.7eEYHmBt06PrlZHJXQJdi_2SztQj6xD7H_ZiSe4AIhQ" />
                                 </headerState>
                               </list>
                             </option>
@@ -667,7 +673,7 @@
                               <list>
                                 <headerState>
                                   <option name="key" value="Authorization" />
-                                  <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxMjAyMzQ4LCJpYXQiOjE3NTExMTU5NDgsImp0aSI6IjVlNWQ4MTI4Mzc1NzQ3ODQ4NGE5Nzc5N2U0MWFjYWRiIiwidXNlcl9pZCI6ImI4ZjVlOTZhLTI1ZDgtNDEyMS1hNTRiLTIxNzIyNzVlMTRkZCJ9.Cy2Vqy1TEVVh71Otns60Kmex_2lB9qrVwIHWHDFXMpc" />
+                                  <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxMjU3NTkxLCJpYXQiOjE3NTExNzExOTEsImp0aSI6IjZiMDM1OTkxZDNiMzRhYjE4MmY5ZDZhNTliZjUyOWE5IiwidXNlcl9pZCI6ImY1YjdiNWYwLWM0ZTAtNGE4Zi1hMzdhLTVlZTNiZDI5YjQyNSJ9.7eEYHmBt06PrlZHJXQJdi_2SztQj6xD7H_ZiSe4AIhQ" />
                                 </headerState>
                               </list>
                             </option>
@@ -724,6 +730,22 @@
                             <option name="name" value="DELETE ACCOUNT" />
                             <option name="sortWeight" value="8000000" />
                             <option name="url" value="{{url}}/api/auth/admin/delete/permanent/9298444c-6de0-444b-9158-de435ace54ba/" />
+                          </requestState>
+                          <requestState>
+                            <option name="description" value="- List all the users in the system" />
+                            <option name="headers">
+                              <list>
+                                <headerState>
+                                  <option name="key" value="Authorization" />
+                                  <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxMjU3NTkxLCJpYXQiOjE3NTExNzExOTEsImp0aSI6IjZiMDM1OTkxZDNiMzRhYjE4MmY5ZDZhNTliZjUyOWE5IiwidXNlcl9pZCI6ImY1YjdiNWYwLWM0ZTAtNGE4Zi1hMzdhLTVlZTNiZDI5YjQyNSJ9.7eEYHmBt06PrlZHJXQJdi_2SztQj6xD7H_ZiSe4AIhQ" />
+                                </headerState>
+                              </list>
+                            </option>
+                            <option name="id" value="e8675f57-3f00-40cc-828a-e53a58d36ab2" />
+                            <option name="method" value="GET" />
+                            <option name="name" value="list users" />
+                            <option name="sortWeight" value="9000000" />
+                            <option name="url" value="{{url}}/api/auth/users/" />
                           </requestState>
                         </list>
                       </option>

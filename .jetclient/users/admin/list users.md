@@ -1,10 +1,10 @@
 ```toml
-name = 'View Others Profile'
-description = '- Admin can view others profile via username'
+name = 'list users'
+description = '- List all the users in the system'
 method = 'GET'
-url = '{{url}}/api/auth/admin/profile/test/'
-sortWeight = 5000000
-id = '9a23740e-c778-47fa-8e96-0cea81435ef3'
+url = '{{url}}/api/auth/users/'
+sortWeight = 9000000
+id = 'e8675f57-3f00-40cc-828a-e53a58d36ab2'
 
 [[headers]]
 key = 'Authorization'
