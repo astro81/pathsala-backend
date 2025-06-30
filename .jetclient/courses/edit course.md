@@ -13,7 +13,7 @@ value = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXN
 type = 'JSON'
 raw = '''
 {
-"categories": [" Developer"]
+"categories": ["Developer"]
 }
    '''
 ```

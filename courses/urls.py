@@ -1,13 +1,34 @@
-from django.urls import path
 
-from courses.views import ListCourseView, AddCourseView, ViewCourse, EditCourseView, DeleteCourseView
+"""URL configuration for courses application.
+
+Defines all the API endpoints related to course management including:
+- Course creation
+- Course listing
+- Course retrieval
+- Course modification
+- Course deletion
+- Featured courses listing
+"""
+
+from django.urls import path
+from courses.views import (
+    CreateCourseView,
+    ListCourseView,
+    RetrieveCourseView,
+    EditCourseView,
+    DeleteCourseView,
+    CourseFeaturedListView
+)
+
+app_name = 'courses'
+
 
 urlpatterns = [
-    path('list-courses/', ListCourseView.as_view(), name='list-courses'),
-    path('add-course/', AddCourseView.as_view(), name='add-course'),
-    path('view-course/<str:name>/', ViewCourse.as_view(), name='view-course'),
-    path('edit-course/<str:name>/', EditCourseView.as_view(), name='edit-course'),
-    path('delete-course/<str:name>/', DeleteCourseView.as_view(), name='delete-course'),
+    path('add/', CreateCourseView.as_view(), name='add_course'),
+    path('list/', ListCourseView.as_view(), name='list_course'),
+    path('<str:name>/', RetrieveCourseView.as_view(), name='view_course'),
+    path('update/<str:name>/', EditCourseView.as_view(), name='update_course'),
+    path('delete/<str:name>/', DeleteCourseView.as_view(), name='delete_course'),
+    path('featured/', CourseFeaturedListView.as_view(), name='featured_course'),
 ]
-
 

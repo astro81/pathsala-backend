@@ -7,14 +7,14 @@ id = '53c86376-5da4-4fe3-b68d-a794ee016325'
 
 [[headers]]
 key = 'Authorization'
-value = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxMjgyMTM0LCJpYXQiOjE3NTExOTU3MzQsImp0aSI6IjgzMGY4NTExZjIwNjRiNTE4YWQzZjc0NzlmZWI2NjNmIiwidXNlcl9pZCI6ImY1YjdiNWYwLWM0ZTAtNGE4Zi1hMzdhLTVlZTNiZDI5YjQyNSJ9.1Yz_LufiBl-YiKzQBn5G_l_J5k0RxC6kCToK9dIofd8'
+value = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxMjc5MjgzLCJpYXQiOjE3NTExOTI4ODMsImp0aSI6ImY5MmZjYTEzNDYxMzQ0YWQ5MzFkMDNkM2MzNjIwNDgxIiwidXNlcl9pZCI6ImY1YjdiNWYwLWM0ZTAtNGE4Zi1hMzdhLTVlZTNiZDI5YjQyNSJ9.YP0hA8tAMtAuT2jzEdWUVHwJbRCY0jLKNv_Rj5ci7q8'
 
 [body]
 type = 'JSON'
 raw = '''
 {
-  "name": "devops-engineering-2024",
-  "title": "Modern DevOps Engineering Bootcamp",
+  "name": "nginx",
+  "title": "Nginx hosting",
   "duration_value": 6,
   "duration_unit": "months",
   "price": "15000.00",
@@ -22,7 +22,7 @@ raw = '''
   "training_level": "intermediate",
   "class_type": "online",
   "career_prospect": "DevOps Engineer | Site Reliability Engineer | Cloud Architect",
-  "categories" : ["App Development"],
+  "categories": ["DevOps"],
   "description": {
     "course_introduction": "Master CI/CD pipelines, infrastructure as code, and cloud-native tooling",
     "course_overview": "Hands-on training with Docker, Kubernetes, Terraform, and AWS/GCP",
@@ -30,8 +30,8 @@ raw = '''
     "course_context": "For software engineers transitioning to DevOps roles"
   },
   "syllabus": {
-    "title": "DevOps Engineering Curriculum",
-    "syllabus_title_indexing": 8,
+    "title": "Nginx tutorial",
+    "syllabus_title_indexing": 2,
     "title_content": [
       {
         "title_content": "Linux & Shell Scripting",

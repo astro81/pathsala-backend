@@ -1,155 +1,237 @@
-from rest_framework import serializers
+"""Serializer for a Course model with extended functionality.
 
-from course_description.models import CourseDescription
-from course_description.serializers import CourseDescriptionSerializer
-from course_syllabus.models import CourseSyllabus, CourseSyllabusTitleContent
-from course_syllabus.serializers import CourseSyllabusSerializer
+This serializer handles conversion between Course model instances and JSON data,
+including special processing for objectives, prerequisites, outcomes, and categories.
+"""
+
+from django.db import IntegrityError, DatabaseError
+from rest_framework import serializers
+from rest_framework.exceptions import ValidationError
+from category.models import Category
+from course_ratings.serializers import CourseRatingSerializer
 from courses.models import Course
 
-from category.models import Category
-from category.serializers import CategorySerializer
 
 class CourseSerializer(serializers.ModelSerializer):
+    """Serializer for the Course model with custom field processing.
 
-    description = CourseDescriptionSerializer(required=False, allow_null=True)
-    syllabus = CourseSyllabusSerializer(required=False, allow_null=True)
-    categories = serializers.ListField(
-        child=serializers.CharField(),  # Accept category names
-        write_only=True
+    This serializer provides:
+    - List-based input/output for text fields (objectives, prerequisites, outcomes)
+    - Category management through list input
+    - Rating information inclusion
+    - Proper error handling for database operations
+
+    Attributes
+    ----------
+    objectives : ListField
+        Write-only field for objectives as list
+    prerequisites : ListField
+        Write-only field for prerequisites as list
+    outcomes : ListField
+        Write-only field for outcomes as list
+    objectives_list : ListField
+        Read-only representation of objectives as list
+    prerequisites_list : ListField
+        Read-only representation of prerequisites as list
+    outcomes_list : ListField
+        Read-only representation of outcomes as list
+    average_rating : DecimalField
+        Read-only average of all ratings
+    ratings : CourseRatingSerializer
+        Nested serializer for course ratings
+    categories : SerializerMethodField
+        Read-only list of category names
+    categories_input : ListField
+        Write-only field for category management
+    """
+
+    objectives = serializers.ListField(
+        child=serializers.CharField(),
+        write_only=True,
+        required=False,
+        help_text="List of learning objectives (converted to newline-separated text)"
     )
-    category_names = serializers.SerializerMethodField(read_only=True)
+    prerequisites = serializers.ListField(
+        child=serializers.CharField(),
+        write_only=True,
+        required=False,
+        help_text="List of prerequisites (converted to newline-separated text)"
+    )
+    outcomes = serializers.ListField(
+        child=serializers.CharField(),
+        write_only=True,
+        required=False,
+        help_text="List of learning outcomes (converted to newline-separated text)"
+    )
+    objectives_list = serializers.ListField(
+        child=serializers.CharField(),
+        read_only=True,
+        source='get_objectives_list',
+        help_text="List representation of objectives"
+    )
+    prerequisites_list = serializers.ListField(
+        child=serializers.CharField(),
+        read_only=True,
+        source='get_prerequisites_list',
+        help_text="List representation of prerequisites"
+    )
+    outcomes_list = serializers.ListField(
+        child=serializers.CharField(),
+        read_only=True,
+        source='get_outcomes_list',
+        help_text="List representation of outcomes"
+    )
+
+    average_rating = serializers.DecimalField(
+        max_digits=3,
+        decimal_places=2,
+        read_only=True,
+        help_text="Average rating from all course ratings"
+    )
+    ratings = CourseRatingSerializer(
+        many=True,
+        read_only=True,
+        help_text="Detailed rating information"
+    )
+
+    categories = serializers.SerializerMethodField(
+        read_only=True,
+        help_text="List of category names associated with the course"
+    )
+
+    categories_input = serializers.ListField(
+        child=serializers.CharField(),
+        write_only=True,
+        required=False,
+        help_text="List of category names for course association"
+    )
 
     class Meta:
+        """Metadata options for CourseSerializer.
+
+        Attributes
+        ----------
+        model : Model
+            The Course model class
+        fields : str
+            All model fields included
+        extra_kwargs : dict
+            Additional field options
+        """
         model = Course
         fields = '__all__'
         extra_kwargs = {
-            'rating': {'min_value': 0, 'max_value': 5, 'required': False},
-            'price': {'min_value': 0, 'required': False},
+            'categories': {'read_only': True}
         }
 
+    def get_categories(self, obj):
+        """Retrieve category names for serialization.
 
-    def get_duration(self, obj):
-        return obj.duration_display
+        Parameters
+        ----------
+        obj : Course
+            The course instance being serialized
 
-    def to_internal_value(self, data):
-        if 'duration' in data and isinstance(data['duration'], str):
-            duration = data.pop('duration', None)
-            try:
-                value, unit = duration.split()
-                data['duration'] = int(value)
-                data['duration_unit'] = unit
-                del data['duration_value']
-            except ValueError:
-                raise serializers.ValidationError({'duration': 'Invalid duration format. Expected "value unit".'})
-        return super().to_internal_value(data)
-
-    def get_category_names(self, obj):
-        return [cat.name for cat in obj.categories.all()]
-
+        Returns
+        -------
+        list
+            List of category names or empty list on error
+        """
+        try:
+            return [category.name for category in obj.categories.all()]
+        except Exception:
+            return []
 
     def create(self, validated_data):
-        description_data = validated_data.pop('description', None)
-        syllabus_data = validated_data.pop('syllabus', None)
+        """Create a new Course instance with related data.
 
-        category_names = validated_data.pop('categories', [])
-        course = Course.objects.create(**validated_data)
+        Parameters
+        ----------
+        validated_data : dict
+            Validated data for course creation
 
-        for name in category_names:
-            category, _ = Category.objects.get_or_create(name=name.strip())
-            course.categories.add(category)
+        Returns
+        -------
+        Course
+            The created course instance
 
-        if description_data:
-            course.description = CourseDescription.objects.create(**description_data)
-            course.save()
+        Raises
+        ------
+        ValidationError
+            If any error occurs during creation
+        """
+        try:
+            # Extract categories if provided
+            category_names = validated_data.pop('categories_input', [])
 
-        if syllabus_data:
-            # Create syllabus and its contents
-            syllabus_contents = syllabus_data.pop('course_syllabus_title_contents', [])
-            syllabus = CourseSyllabus.objects.create(**syllabus_data)
+            # Convert lists to text fields
+            if 'objectives' in validated_data:
+                validated_data['objectives'] = '\n'.join(validated_data.pop('objectives'))
+            if 'prerequisites' in validated_data:
+                validated_data['prerequisites'] = '\n'.join(validated_data.pop('prerequisites'))
+            if 'outcomes' in validated_data:
+                validated_data['outcomes'] = '\n'.join(validated_data.pop('outcomes'))
 
-            for content_data in syllabus_contents:
-                CourseSyllabusTitleContent.objects.create(
-                    syllabus_title_id=syllabus,
-                    **content_data
-                )
-            course.syllabus = syllabus
-            course.save()
+            course = Course.objects.create(**validated_data)
 
-        return course
+            # Add categories
+            for name in category_names:
+                try:
+                    category, _ = Category.objects.get_or_create(name=name.strip())
+                    course.categories.add(category)
+                except (IntegrityError, DatabaseError) as e:
+                    raise ValidationError({"error": f"Error creating category '{name}': {str(e)}"})
 
-
-
-    def _handle_description_update(self, instance, description_data):
-        if description_data is None:
-            instance.description = None
-        elif instance.description:
-            # Update existing description
-            for field, value in description_data.items():
-                setattr(instance.description, field, value)
-            instance.description.save()
-        else:
-            # Create new description
-            instance.description = CourseDescription.objects.create(**description_data)
-
-    def _handle_syllabus_update(self, instance, syllabus_data):
-        if syllabus_data is None:
-            instance.syllabus = None
-        elif instance.syllabus:
-            # Update existing syllabus
-            syllabus = instance.syllabus
-            contents = syllabus_data.pop('course_syllabus_title_contents', None)
-
-            for field, value in syllabus_data.items():
-                setattr(syllabus, field, value)
-            syllabus.save()
-
-            # Update contents if provided
-            if contents is not None:
-                syllabus.course_syllabus_title_contents.all().delete()
-                for content_data in contents:
-                    CourseSyllabusTitleContent.objects.create(
-                        syllabus_title_id=syllabus,
-                        **content_data
-                    )
-        else:
-            # Create new syllabus with contents
-            contents = syllabus_data.pop('course_syllabus_title_contents', [])
-            syllabus = CourseSyllabus.objects.create(**syllabus_data)
-
-            for content_data in contents:
-                CourseSyllabusTitleContent.objects.create(
-                    syllabus_title_id=syllabus,
-                    **content_data
-                )
-
-            instance.syllabus = syllabus
+            return course
+        except Exception as e:
+            raise ValidationError({"error": f"Error creating course: {str(e)}"})
 
     def update(self, instance, validated_data):
+        """Update an existing Course instance with related data.
 
-        # Handle category update
-        category_names = validated_data.pop('categories', None)
+        Parameters
+        ----------
+        instance : Course
+            The course instance to update
+        validated_data : dict
+            Validated data for course update
 
-        if category_names is not None:
-            instance.categories.clear()
-            for name in category_names:
-                category, _ = Category.objects.get_or_create(name=name.strip())
-                instance.categories.add(category)
+        Returns
+        -------
+        Course
+            The updated course instance
 
-        for attr, value in validated_data.items():
-            setattr(instance, attr, value)
+        Raises
+        ------
+        ValidationError
+            If any error occurs during the update
+        """
+        try:
+            # Handle categories update if provided
+            if 'categories_input' in validated_data:
+                category_names = validated_data.pop('categories_input')
+                instance.categories.clear()
+                for name in category_names:
+                    try:
+                        category, _ = Category.objects.get_or_create(name=name.strip())
+                        instance.categories.add(category)
+                    except (IntegrityError, DatabaseError) as e:
+                        raise ValidationError({"error": f"Error updating category '{name}': {str(e)}"})
 
+            # Convert lists to text fields
+            if 'objectives' in validated_data:
+                validated_data['objectives'] = '\n'.join(validated_data['objectives'])
+            if 'prerequisites' in validated_data:
+                validated_data['prerequisites'] = '\n'.join(validated_data['prerequisites'])
+            if 'outcomes' in validated_data:
+                validated_data['outcomes'] = '\n'.join(validated_data['outcomes'])
 
-        # Handle description update
-        if 'description' in validated_data:
-            self._handle_description_update(instance, validated_data.pop('description'))
+            # Update other fields
+            for attr, value in validated_data.items():
+                setattr(instance, attr, value)
 
-        # Handle syllabus update
-        if 'syllabus' in validated_data:
-            self._handle_syllabus_update(instance, validated_data.pop('syllabus'))
+            instance.save()
+            return instance
+        except Exception as e:
+            raise ValidationError({"error": f"Error updating course: {str(e)}"})
 
-        # Update basic course fields
-        for attr, value in validated_data.items():
-            setattr(instance, attr, value)
-
-        instance.save()
-        return instance
