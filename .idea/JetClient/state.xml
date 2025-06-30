@@ -210,6 +210,119 @@
                 <option name="sortWeight" value="1000000" />
               </folderState>
               <folderState>
+                <option name="id" value="ff8c406e-4f99-4585-9a66-e2b6eb00196d" />
+                <option name="name" value="category" />
+                <option name="requests">
+                  <list>
+                    <requestState>
+                      <option name="body">
+                        <bodyState>
+                          <option name="raw" value="{&#10;  &quot;name&quot;: &quot;Full Development&quot;&#10;}" />
+                          <option name="type" value="JSON" />
+                        </bodyState>
+                      </option>
+                      <option name="headers">
+                        <list>
+                          <headerState>
+                            <option name="key" value="Authorization" />
+                            <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxMDIxNzEwLCJpYXQiOjE3NTEwMjE0MTAsImp0aSI6IjIzMmRjNjc0NTk0ZjQ2MjFiMTMyNWNhNzYzZjNmOTQwIiwidXNlcl9pZCI6IjU5ZjdiYTM4LTk4NDgtNDFjMC1hYWE3LWVkOGVkOTg2ODAxNSJ9.9OWLxgwnAYz85YY3nGnfsa2ttT4Gic5UgH9GCoF6Z8k" />
+                          </headerState>
+                        </list>
+                      </option>
+                      <option name="id" value="a561f2b0-bafd-4994-9ab5-321b7353cb9b" />
+                      <option name="method" value="POST" />
+                      <option name="name" value="add category" />
+                      <option name="sortWeight" value="1000000" />
+                      <option name="url" value="{{url}}/api/category/add-category/" />
+                    </requestState>
+                    <requestState>
+                      <option name="body">
+                        <bodyState>
+                          <option name="type" value="JSON" />
+                        </bodyState>
+                      </option>
+                      <option name="headers">
+                        <list>
+                          <headerState>
+                            <option name="disabled" value="true" />
+                            <option name="key" value="Authorization" />
+                            <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUwOTE0ODY0LCJpYXQiOjE3NTA5MTQ1NjQsImp0aSI6IjFlMDk3YzZhMTk4YjQwOTFhMmVjOTVkNmViZDU5MTFhIiwidXNlcl9pZCI6IjI1MDk4YzBhLWNmNjQtNDVhNi04YTBjLTEzYzExMjQ0MzhkYyJ9.2wU0931Krp5ceMGVtZWv1dCzYhQMGsSn78CSxWeedpo" />
+                          </headerState>
+                        </list>
+                      </option>
+                      <option name="id" value="fcf0bc78-c65f-436b-8ac9-53766ef5fc4d" />
+                      <option name="method" value="GET" />
+                      <option name="name" value="list category" />
+                      <option name="sortWeight" value="1250000" />
+                      <option name="url" value="{{url}}/api/category/list-category/" />
+                    </requestState>
+                    <requestState>
+                      <option name="body">
+                        <bodyState>
+                          <option name="raw" value="{&#10;  &quot;name&quot;: &quot;Web Development&quot;&#10;}" />
+                          <option name="type" value="JSON" />
+                        </bodyState>
+                      </option>
+                      <option name="headers">
+                        <list>
+                          <headerState>
+                            <option name="key" value="Authorization" />
+                            <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUwOTE1NDU3LCJpYXQiOjE3NTA5MTUxNTcsImp0aSI6ImYxZjkyN2Y2MWJkYjQ0M2RhMjM2MzhiYWY5Y2NiMTcyIiwidXNlcl9pZCI6IjI1MDk4YzBhLWNmNjQtNDVhNi04YTBjLTEzYzExMjQ0MzhkYyJ9.6iNjnT7IRtcT8Cx3_3ADjbB4vAkJq24u7w_odtCZWRA" />
+                          </headerState>
+                        </list>
+                      </option>
+                      <option name="id" value="11935664-6fb0-469a-9075-c509aa7bc5b5" />
+                      <option name="method" value="GET" />
+                      <option name="name" value="view category" />
+                      <option name="sortWeight" value="1500000" />
+                      <option name="url" value="{{url}}/api/category/view-category/Frontend Development/" />
+                    </requestState>
+                    <requestState>
+                      <option name="body">
+                        <bodyState>
+                          <option name="raw" value="{&#10;  &quot;name&quot;: &quot;Web Development&quot;&#10;}" />
+                          <option name="type" value="JSON" />
+                        </bodyState>
+                      </option>
+                      <option name="headers">
+                        <list>
+                          <headerState>
+                            <option name="key" value="Authorization" />
+                            <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUwOTE1OTI0LCJpYXQiOjE3NTA5MTU2MjQsImp0aSI6ImM4NTJlMTJhMjA3ODQ0ZGRhZTZhODFkNGI0MjlhODA4IiwidXNlcl9pZCI6IjI1MDk4YzBhLWNmNjQtNDVhNi04YTBjLTEzYzExMjQ0MzhkYyJ9.fv9shIV9GSHGepcSf_F3lUrkvr2pOFneg78oz3ILPSc" />
+                          </headerState>
+                        </list>
+                      </option>
+                      <option name="id" value="7fd65886-3e4f-4e3f-b655-d155d996bc5d" />
+                      <option name="method" value="PATCH" />
+                      <option name="name" value="edit category" />
+                      <option name="sortWeight" value="2000000" />
+                      <option name="url" value="{{url}}/api/category/edit-category/WEB Development/" />
+                    </requestState>
+                    <requestState>
+                      <option name="body">
+                        <bodyState>
+                          <option name="type" value="JSON" />
+                        </bodyState>
+                      </option>
+                      <option name="headers">
+                        <list>
+                          <headerState>
+                            <option name="key" value="Authorization" />
+                            <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUwOTE2NzIxLCJpYXQiOjE3NTA5MTY0MjEsImp0aSI6ImQ5NzIzMGEzOWU0NzRlOTFiNjAyMzdmMzllNTAxMGY1IiwidXNlcl9pZCI6IjI1MDk4YzBhLWNmNjQtNDVhNi04YTBjLTEzYzExMjQ0MzhkYyJ9.0jNTkAkerbW5y72KqUVvhdu0t59B7G4fT7jdp0w4lWo" />
+                          </headerState>
+                        </list>
+                      </option>
+                      <option name="id" value="5f145b7c-9cdc-4a74-820d-b380a9797be5" />
+                      <option name="method" value="DELETE" />
+                      <option name="name" value="delete category" />
+                      <option name="sortWeight" value="4000000" />
+                      <option name="url" value="{{url}}/api/category/delete-category/Full Development/" />
+                    </requestState>
+                  </list>
+                </option>
+                <option name="sortWeight" value="1500000" />
+              </folderState>
+              <folderState>
                 <option name="id" value="21130c12-f790-4dd7-8237-5b5f0ad71e85" />
                 <option name="name" value="courses" />
                 <option name="requests">
@@ -243,7 +356,7 @@
                     <requestState>
                       <option name="body">
                         <bodyState>
-                          <option name="raw" value="{&#10;  &quot;name&quot;: &quot;advanced-python&quot;,&#10;  &quot;title&quot;: &quot;Advanced Python Programming&quot;,&#10;  &quot;duration_value&quot;: 8,&#10;  &quot;duration_unit&quot;: &quot;weeks&quot;,&#10;  &quot;price&quot;: 2500.00,&#10;  &quot;rating&quot;: 4.8,&#10;  &quot;training_level&quot;: &quot;advanced&quot;,&#10;  &quot;class_type&quot;: &quot;hybrid&quot;,&#10;  &quot;career_prospect&quot;: &quot;Backend Developer&quot;,&#10;   &quot;description&quot;: {&#10;    &quot;course_introduction&quot;: &quot;Learn the advace Python.&quot;,&#10;    &quot;course_context&quot;: &quot;Suitable for students and professionals.&quot;&#10;  }&#10;}&#10;" />
+                          <option name="raw" value="{&#10;  &quot;name&quot;: &quot;devops-engineering-2024&quot;,&#10;  &quot;title&quot;: &quot;Modern DevOps Engineering Bootcamp&quot;,&#10;  &quot;duration_value&quot;: 6,&#10;  &quot;duration_unit&quot;: &quot;months&quot;,&#10;  &quot;price&quot;: &quot;15000.00&quot;,&#10;  &quot;rating&quot;: 4.6,&#10;  &quot;training_level&quot;: &quot;intermediate&quot;,&#10;  &quot;class_type&quot;: &quot;online&quot;,&#10;  &quot;career_prospect&quot;: &quot;DevOps Engineer | Site Reliability Engineer | Cloud Architect&quot;,&#10;  &quot;description&quot;: {&#10;    &quot;course_introduction&quot;: &quot;Master CI/CD pipelines, infrastructure as code, and cloud-native tooling&quot;,&#10;    &quot;course_overview&quot;: &quot;Hands-on training with Docker, Kubernetes, Terraform, and AWS/GCP&quot;,&#10;    &quot;course_requirements&quot;: &quot;Linux basics and fundamental programming concepts&quot;,&#10;    &quot;course_context&quot;: &quot;For software engineers transitioning to DevOps roles&quot;&#10;  },&#10;  &quot;syllabus&quot;: {&#10;    &quot;title&quot;: &quot;DevOps Engineering Curriculum&quot;,&#10;    &quot;syllabus_title_indexing&quot;: 8,&#10;    &quot;title_content&quot;: [&#10;      {&#10;        &quot;title_content&quot;: &quot;Linux &amp; Shell Scripting&quot;,&#10;        &quot;syllabus_title_content_indexing&quot;: 1,&#10;        &quot;details&quot;: &quot;Advanced bash, system administration, process management&quot;&#10;      },&#10;      {&#10;        &quot;title_content&quot;: &quot;Containerization with Docker&quot;,&#10;        &quot;syllabus_title_content_indexing&quot;: 2,&#10;        &quot;details&quot;: &quot;Image creation, Dockerfiles, multi-stage builds&quot;&#10;      },&#10;      {&#10;        &quot;title_content&quot;: &quot;Kubernetes Orchestration&quot;,&#10;        &quot;syllabus_title_content_indexing&quot;: 3,&#10;        &quot;details&quot;: &quot;Pods, deployments, services, helm charts&quot;&#10;      },&#10;      {&#10;        &quot;title_content&quot;: &quot;Infrastructure as Code&quot;,&#10;        &quot;syllabus_title_content_indexing&quot;: 4,&#10;        &quot;details&quot;: &quot;Terraform modules, state management, cloud provisioning&quot;&#10;      },&#10;      {&#10;        &quot;title_content&quot;: &quot;CI/CD Pipelines&quot;,&#10;        &quot;syllabus_title_content_indexing&quot;: 5,&#10;        &quot;details&quot;: &quot;GitHub Actions, ArgoCD, Jenkins configuration&quot;&#10;      },&#10;      {&#10;        &quot;title_content&quot;: &quot;Cloud Monitoring&quot;,&#10;        &quot;syllabus_title_content_indexing&quot;: 6,&#10;        &quot;details&quot;: &quot;Prometheus, Grafana, ELK stack implementation&quot;&#10;      }&#10;    ]&#10;  }&#10;}" />
                           <option name="type" value="JSON" />
                         </bodyState>
                       </option>
@@ -251,7 +364,7 @@
                         <list>
                           <headerState>
                             <option name="key" value="Authorization" />
-                            <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUwODU2ODg0LCJpYXQiOjE3NTA4NTY1ODQsImp0aSI6IjZmNmMzNGE4MDIyNDQyNzQ5ZWJmMzQwZTFiMzQ2ZTVlIiwidXNlcl9pZCI6IjhhYTFjYzk5LTA4NjctNDBlZC05NjNjLWQ0YWY4MjhlODY1NyJ9.7oOwIIBmZ_Z-wFYLtfYH4lK9NBkG2HNx2K-LZE69JTQ" />
+                            <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxMDIyNDkxLCJpYXQiOjE3NTEwMjIxOTEsImp0aSI6IjQ2MGEwNTdiZTdiZTQ3YmNiMzFhMDY1MzM1NzgxMWY4IiwidXNlcl9pZCI6IjU5ZjdiYTM4LTk4NDgtNDFjMC1hYWE3LWVkOGVkOTg2ODAxNSJ9.li7xpLEMtzYINgvA-U-d0eHhjpwT2NJTjZF2ql4_kGw" />
                           </headerState>
                         </list>
                       </option>
@@ -272,7 +385,7 @@
                           <headerState>
                             <option name="disabled" value="true" />
                             <option name="key" value="Authorization" />
-                            <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUwNzc1MzY4LCJpYXQiOjE3NTA3NzUwNjgsImp0aSI6IjkwNWFjYzUxMDM4OTQxY2U5YTk0MWFmYWY4YThjNGQwIiwidXNlcl9pZCI6IjY4OGQzOWIzLWI2YzItNDU1MC1iOWMzLWQyZTIyZjM1YzFiNSJ9.DRkbMTUhoBSeTs59A-czTGsZ2I8DHFInRcQU9KO15mo" />
+                            <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUwODU0NzE2LCJpYXQiOjE3NTA4NTQ0MTYsImp0aSI6IjQ4YjM2OTA2YTczMzRjYzhiNzBjZDEzMDhmYjBlYjgyIiwidXNlcl9pZCI6IjllMWExYjI2LTViOGMtNDk3Ni1hMmQ3LWU1NmE0YWViYmIwMSJ9.JpnjPJvL-LixFpGP6czn_s1OjJDsfBA5ZLTuJRgT0uk" />
                           </headerState>
                         </list>
                       </option>
@@ -280,12 +393,12 @@
                       <option name="method" value="GET" />
                       <option name="name" value="view course" />
                       <option name="sortWeight" value="3000000" />
-                      <option name="url" value="http://127.0.0.1:8000/api/courses/view-course/Data Science/" />
+                      <option name="url" value="http://127.0.0.1:8000/api/courses/view-course/advanced-python/" />
                     </requestState>
                     <requestState>
                       <option name="body">
                         <bodyState>
-                          <option name="raw" value="{&#10;  &quot;career_prospect&quot;: &quot;Software Developer&quot;,&#10;  &quot;description&quot;: {&#10;     &quot;course_overview&quot;: &quot;basic python&quot;,&#10;  }&#10;}&#10;" />
+                          <option name="raw" value="{&#10;&quot;categories&quot;: [&quot; Developer&quot;]&#10;}&#10;   " />
                           <option name="type" value="JSON" />
                         </bodyState>
                       </option>
@@ -293,7 +406,7 @@
                         <list>
                           <headerState>
                             <option name="key" value="Authorization" />
-                            <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUwODU3MjU3LCJpYXQiOjE3NTA4NTY5NTcsImp0aSI6IjRkNWZlOGI5ZDhjMTQ5NGQ4ZDk3NTYzMmI4NmEwMGM2IiwidXNlcl9pZCI6IjhhYTFjYzk5LTA4NjctNDBlZC05NjNjLWQ0YWY4MjhlODY1NyJ9.NO8BmmDw_J_p6VDYMeK6TbNbryIM4s3zkTN2cQVnQGI" />
+                            <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxMDIyMjg3LCJpYXQiOjE3NTEwMjE5ODcsImp0aSI6ImE5M2E5NmZiODQ1YjQ4NWRhNDFlYzk1YzdkYTg1Yzc1IiwidXNlcl9pZCI6IjU5ZjdiYTM4LTk4NDgtNDFjMC1hYWE3LWVkOGVkOTg2ODAxNSJ9.-2LT3nKZZQIrvErhxCpU_pAfftOEZYHPXYnW5Y9f82U" />
                           </headerState>
                         </list>
                       </option>
@@ -301,7 +414,7 @@
                       <option name="method" value="PATCH" />
                       <option name="name" value="edit course" />
                       <option name="sortWeight" value="4000000" />
-                      <option name="url" value="http://127.0.0.1:8000/api/courses/edit-course/advanced-python/" />
+                      <option name="url" value="http://127.0.0.1:8000/api/courses/edit-course/devops-engineering-2024/" />
                     </requestState>
                     <requestState>
                       <option name="body">
@@ -313,7 +426,7 @@
                         <list>
                           <headerState>
                             <option name="key" value="Authorization" />
-                            <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUwODIwODk4LCJpYXQiOjE3NTA4MjA1OTgsImp0aSI6IjRmMDg5ZDU1NDk1NTRmZmI4MTYxZDdjY2FkNzcwYmQxIiwidXNlcl9pZCI6IjY4OGQzOWIzLWI2YzItNDU1MC1iOWMzLWQyZTIyZjM1YzFiNSJ9.q0lpojdEvtHp-jR8fQeVNspWsh3C6NjxRaL87G2h11M" />
+                            <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxMDIyNDA0LCJpYXQiOjE3NTEwMjIxMDQsImp0aSI6IjhmMDg2NTY1ODY4NTQzOTJhM2E4YzRhODBmNjczYzVkIiwidXNlcl9pZCI6IjU5ZjdiYTM4LTk4NDgtNDFjMC1hYWE3LWVkOGVkOTg2ODAxNSJ9.rA2Jw-1RsB95C3UcURqPw59O19FwTAjvcyfL9Dks30c" />
                           </headerState>
                         </list>
                       </option>
@@ -321,11 +434,328 @@
                       <option name="method" value="DELETE" />
                       <option name="name" value="delete course" />
                       <option name="sortWeight" value="5000000" />
-                      <option name="url" value="http://127.0.0.1:8000/api/courses/delete-course/Python/" />
+                      <option name="url" value="http://127.0.0.1:8000/api/courses/delete-course/devops-engineering-2024/" />
                     </requestState>
                   </list>
                 </option>
                 <option name="sortWeight" value="2000000" />
+              </folderState>
+              <folderState>
+                <option name="folders">
+                  <list>
+                    <folderState>
+                      <option name="id" value="73abeaf0-0eea-41aa-83a1-1c55c20d3a4b" />
+                      <option name="name" value="student" />
+                      <option name="requests">
+                        <list>
+                          <requestState>
+                            <option name="body">
+                              <bodyState>
+                                <option name="raw" value="{&#10;    &quot;username&quot;: &quot;test&quot;,&#10;    &quot;email&quot;: &quot;test@example.com&quot;,&#10;    &quot;password&quot;: &quot;StrongPass!23&quot;,&#10;    &quot;password2&quot;: &quot;StrongPass!23&quot;,&#10;    &quot;first_name&quot;: &quot;John&quot;,&#10;    &quot;last_name&quot;: &quot;Student&quot;,&#10;    &quot;address&quot;: &quot;123 Campus Rd&quot;,&#10;    &quot;phone_no&quot;: &quot;+1234567890&quot;,&#10;    &quot;profile_picture&quot;: null,&#10;  &#10;}&#10;" />
+                                <option name="type" value="JSON" />
+                              </bodyState>
+                            </option>
+                            <option name="id" value="a1ebd693-d67e-4e90-84c1-8f40996d3b1a" />
+                            <option name="method" value="POST" />
+                            <option name="name" value="register" />
+                            <option name="sortWeight" value="1000000" />
+                            <option name="url" value="{{url}}/api/auth/register/student/" />
+                          </requestState>
+                          <requestState>
+                            <option name="body">
+                              <bodyState>
+                                <option name="raw" value="{&#10;  &quot;username&quot;: &quot;test&quot;,&#10;  &quot;password&quot;: &quot;StrongPass!23&quot;&#10;}" />
+                                <option name="type" value="JSON" />
+                              </bodyState>
+                            </option>
+                            <option name="description" value="login the student by entering username and password and get auth tokens" />
+                            <option name="id" value="3169c91c-f3b2-4ce3-a63d-b23b14fbacf9" />
+                            <option name="method" value="POST" />
+                            <option name="name" value="login" />
+                            <option name="sortWeight" value="2000000" />
+                            <option name="url" value="{{url}}/api/auth/login/" />
+                          </requestState>
+                          <requestState>
+                            <option name="body">
+                              <bodyState>
+                                <option name="raw" value="{&#10;  &quot;refresh_token&quot;: &quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc1MTUxNjU2NywiaWF0IjoxNzUxMTcwOTY3LCJqdGkiOiI1NDkxOTUwOTdkMzc0OGIyYjhlMDZlNmExNWY5ZmY1NyIsInVzZXJfaWQiOiJmNGQ0NmM5MC03NDgwLTRkMzktODU0NC03ZDY5ZThmOTkyMGUifQ.Q9CrSwpV8LU5oiqe9c1PxpCH2v5s07Z_peZ3De3UfOc&quot;&#10;}" />
+                                <option name="type" value="JSON" />
+                              </bodyState>
+                            </option>
+                            <option name="description" value="insert access token in the header and refresh token in body to logout" />
+                            <option name="headers">
+                              <list>
+                                <headerState>
+                                  <option name="key" value="Authorization" />
+                                  <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxMjU3MzY3LCJpYXQiOjE3NTExNzA5NjcsImp0aSI6IjA4MGRkMmI1OWM1YjQ0NjY4YjhjZTdhMDU0NDQ0YTlkIiwidXNlcl9pZCI6ImY0ZDQ2YzkwLTc0ODAtNGQzOS04NTQ0LTdkNjllOGY5OTIwZSJ9.N4_T8qnHKQQxCvEN2o2h1rHPG1kLVUzTyNpBMmkZxHU" />
+                                </headerState>
+                              </list>
+                            </option>
+                            <option name="id" value="2995442e-5286-43c7-b431-fd322ad49b72" />
+                            <option name="method" value="POST" />
+                            <option name="name" value="logout" />
+                            <option name="sortWeight" value="3000000" />
+                            <option name="url" value="{{url}}/api/auth/logout-all/" />
+                          </requestState>
+                          <requestState>
+                            <option name="body">
+                              <bodyState>
+                                <option name="raw" value="{&#10;  &quot;refresh_token&quot;: &quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc1MTQ1OTk0OSwiaWF0IjoxNzUxMTE0MzQ5LCJqdGkiOiIxM2U3ZDQyZDMxODA0Y2NmYjA5NDMwY2Y1YTNlMjRjMCIsInVzZXJfaWQiOiI5Mjk4NDQ0Yy02ZGUwLTQ0NGItOTE1OC1kZTQzNWFjZTU0YmEifQ.0n_OrOE2kJZFpK7IW5MEVfKFVzAYeYLsFNJXsCNDh2s&quot;&#10;}" />
+                                <option name="type" value="JSON" />
+                              </bodyState>
+                            </option>
+                            <option name="description" value="insert access token in the header and refresh token in body to logout" />
+                            <option name="headers">
+                              <list>
+                                <headerState>
+                                  <option name="key" value="Authorization" />
+                                  <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxMjAwNzQ5LCJpYXQiOjE3NTExMTQzNDksImp0aSI6ImYzNDY4M2VjNjBjMTQ5ZDViODVmYTU5ZTE2ZDNmZmIzIiwidXNlcl9pZCI6IjkyOTg0NDRjLTZkZTAtNDQ0Yi05MTU4LWRlNDM1YWNlNTRiYSJ9.F-x5OrIj551keTmwigrh3N34MiA5vV7TyctKY7NADKA" />
+                                </headerState>
+                              </list>
+                            </option>
+                            <option name="id" value="5c12ce79-44b0-4acd-8291-d40653f71682" />
+                            <option name="method" value="POST" />
+                            <option name="name" value="logout from all devices" />
+                            <option name="sortWeight" value="4000000" />
+                            <option name="url" value="{{url}}/api/auth/logout/" />
+                          </requestState>
+                          <requestState>
+                            <option name="description" value="- view your own profile" />
+                            <option name="headers">
+                              <list>
+                                <headerState>
+                                  <option name="key" value="Authorization" />
+                                  <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxMjU3MzY3LCJpYXQiOjE3NTExNzA5NjcsImp0aSI6IjA4MGRkMmI1OWM1YjQ0NjY4YjhjZTdhMDU0NDQ0YTlkIiwidXNlcl9pZCI6ImY0ZDQ2YzkwLTc0ODAtNGQzOS04NTQ0LTdkNjllOGY5OTIwZSJ9.N4_T8qnHKQQxCvEN2o2h1rHPG1kLVUzTyNpBMmkZxHU" />
+                                </headerState>
+                              </list>
+                            </option>
+                            <option name="id" value="295c4c39-29f5-4815-9be5-e767f425a5ad" />
+                            <option name="method" value="GET" />
+                            <option name="name" value="view profile" />
+                            <option name="sortWeight" value="5000000" />
+                            <option name="url" value="{{url}}/api/auth/user/profile/" />
+                          </requestState>
+                          <requestState>
+                            <option name="body">
+                              <bodyState>
+                                <option name="raw" value="{&#10;    &quot;first_name&quot;: &quot;Jo&quot;&#10;}" />
+                                <option name="type" value="JSON" />
+                              </bodyState>
+                            </option>
+                            <option name="description" value="- partially update the student details " />
+                            <option name="headers">
+                              <list>
+                                <headerState>
+                                  <option name="key" value="Authorization" />
+                                  <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxMjU3MzY3LCJpYXQiOjE3NTExNzA5NjcsImp0aSI6IjA4MGRkMmI1OWM1YjQ0NjY4YjhjZTdhMDU0NDQ0YTlkIiwidXNlcl9pZCI6ImY0ZDQ2YzkwLTc0ODAtNGQzOS04NTQ0LTdkNjllOGY5OTIwZSJ9.N4_T8qnHKQQxCvEN2o2h1rHPG1kLVUzTyNpBMmkZxHU" />
+                                </headerState>
+                              </list>
+                            </option>
+                            <option name="id" value="f6e20d8a-8c77-4dda-bb80-7a00874b77ce" />
+                            <option name="method" value="PATCH" />
+                            <option name="name" value="update profile" />
+                            <option name="sortWeight" value="6000000" />
+                            <option name="url" value="{{url}}/api/auth/update/student/profile/" />
+                          </requestState>
+                          <requestState>
+                            <option name="body">
+                              <bodyState>
+                                <option name="raw" value="{&#10;  &quot;username&quot;: &quot;test&quot;,&#10;  &quot;password&quot;: &quot;StrongPass!23&quot;&#10;}" />
+                                <option name="type" value="JSON" />
+                              </bodyState>
+                            </option>
+                            <option name="description" value="- users can delete their own profile" />
+                            <option name="headers">
+                              <list>
+                                <headerState>
+                                  <option name="key" value="Authorization" />
+                                  <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxMjU3MzY3LCJpYXQiOjE3NTExNzA5NjcsImp0aSI6IjA4MGRkMmI1OWM1YjQ0NjY4YjhjZTdhMDU0NDQ0YTlkIiwidXNlcl9pZCI6ImY0ZDQ2YzkwLTc0ODAtNGQzOS04NTQ0LTdkNjllOGY5OTIwZSJ9.N4_T8qnHKQQxCvEN2o2h1rHPG1kLVUzTyNpBMmkZxHU" />
+                                </headerState>
+                              </list>
+                            </option>
+                            <option name="id" value="e4ddc6b1-3080-4a62-9dc1-c5ff51fa7ff4" />
+                            <option name="method" value="DELETE" />
+                            <option name="name" value="delete profile" />
+                            <option name="sortWeight" value="7000000" />
+                            <option name="url" value="{{url}}/api/auth/user/delete/" />
+                          </requestState>
+                        </list>
+                      </option>
+                      <option name="sortWeight" value="1000000" />
+                    </folderState>
+                    <folderState>
+                      <option name="id" value="0258798e-aa89-4b26-88a2-087b638dc689" />
+                      <option name="name" value="moderator" />
+                      <option name="sortWeight" value="2000000" />
+                    </folderState>
+                    <folderState>
+                      <option name="id" value="c28ab6d1-6201-43c4-880a-a3ba21bc3804" />
+                      <option name="name" value="admin" />
+                      <option name="requests">
+                        <list>
+                          <requestState>
+                            <option name="body">
+                              <bodyState>
+                                <option name="raw" value="{&#10;  &quot;username&quot;: &quot;admin&quot;,&#10;  &quot;password&quot;: &quot;1234&quot;&#10;}" />
+                                <option name="type" value="JSON" />
+                              </bodyState>
+                            </option>
+                            <option name="description" value="- login the admin which is create via script" />
+                            <option name="id" value="ffd2206e-8e7c-4003-9de6-e77e8ddabcb5" />
+                            <option name="method" value="POST" />
+                            <option name="name" value="login" />
+                            <option name="sortWeight" value="1000000" />
+                            <option name="url" value="{{url}}/api/auth/login/" />
+                          </requestState>
+                          <requestState>
+                            <option name="body">
+                              <bodyState>
+                                <option name="raw" value="{&#10;  &quot;refresh_token&quot;: &quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc1MTQ2MTU0OCwiaWF0IjoxNzUxMTE1OTQ4LCJqdGkiOiI0MGZjOGRiNWE5OTY0Y2FlOWI1NGRjOGI0NzJiMmRkYyIsInVzZXJfaWQiOiJiOGY1ZTk2YS0yNWQ4LTQxMjEtYTU0Yi0yMTcyMjc1ZTE0ZGQifQ.Fta6NXGS1qSKdY_wbLF6ql3e7BqmzPmgd688BnW7Gjo&quot;&#10;}" />
+                                <option name="type" value="JSON" />
+                              </bodyState>
+                            </option>
+                            <option name="description" value="- logout the admin" />
+                            <option name="headers">
+                              <list>
+                                <headerState>
+                                  <option name="key" value="Authorization" />
+                                  <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxMjAyMzQ4LCJpYXQiOjE3NTExMTU5NDgsImp0aSI6IjVlNWQ4MTI4Mzc1NzQ3ODQ4NGE5Nzc5N2U0MWFjYWRiIiwidXNlcl9pZCI6ImI4ZjVlOTZhLTI1ZDgtNDEyMS1hNTRiLTIxNzIyNzVlMTRkZCJ9.Cy2Vqy1TEVVh71Otns60Kmex_2lB9qrVwIHWHDFXMpc" />
+                                </headerState>
+                              </list>
+                            </option>
+                            <option name="id" value="c04a3fa9-0058-4ea3-8aea-256e19d3f3f4" />
+                            <option name="method" value="POST" />
+                            <option name="name" value="logout" />
+                            <option name="sortWeight" value="2000000" />
+                            <option name="url" value="{{url}}/api/auth/logout/" />
+                          </requestState>
+                          <requestState>
+                            <option name="body">
+                              <bodyState>
+                                <option name="raw" value="{&#10;  &quot;username&quot;: &quot;mod1&quot;,&#10;  &quot;email&quot;: &quot;mod1@sys.com&quot;,&#10;  &quot;password&quot;: &quot;Mod@1234&quot;,&#10;  &quot;password2&quot;: &quot;Mod@1234&quot;,&#10;  &quot;first_name&quot;: &quot;mod&quot;,&#10;  &quot;last_name&quot;: &quot;sys&quot;&#10;}" />
+                                <option name="type" value="JSON" />
+                              </bodyState>
+                            </option>
+                            <option name="description" value="- Only Admin can create a moderator" />
+                            <option name="headers">
+                              <list>
+                                <headerState>
+                                  <option name="key" value="Authorization" />
+                                  <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxMjAyMzQ4LCJpYXQiOjE3NTExMTU5NDgsImp0aSI6IjVlNWQ4MTI4Mzc1NzQ3ODQ4NGE5Nzc5N2U0MWFjYWRiIiwidXNlcl9pZCI6ImI4ZjVlOTZhLTI1ZDgtNDEyMS1hNTRiLTIxNzIyNzVlMTRkZCJ9.Cy2Vqy1TEVVh71Otns60Kmex_2lB9qrVwIHWHDFXMpc" />
+                                </headerState>
+                              </list>
+                            </option>
+                            <option name="id" value="93b107b5-afab-4cbd-9e9d-58a68cfe206e" />
+                            <option name="method" value="POST" />
+                            <option name="name" value="Register Moderator" />
+                            <option name="sortWeight" value="3000000" />
+                            <option name="url" value="{{url}}/api/auth/register/moderator/" />
+                          </requestState>
+                          <requestState>
+                            <option name="description" value="- Admin can view his own profile" />
+                            <option name="headers">
+                              <list>
+                                <headerState>
+                                  <option name="key" value="Authorization" />
+                                  <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxMjU3NTkxLCJpYXQiOjE3NTExNzExOTEsImp0aSI6IjZiMDM1OTkxZDNiMzRhYjE4MmY5ZDZhNTliZjUyOWE5IiwidXNlcl9pZCI6ImY1YjdiNWYwLWM0ZTAtNGE4Zi1hMzdhLTVlZTNiZDI5YjQyNSJ9.7eEYHmBt06PrlZHJXQJdi_2SztQj6xD7H_ZiSe4AIhQ" />
+                                </headerState>
+                              </list>
+                            </option>
+                            <option name="id" value="95b09847-18c7-4975-94f1-cae14dcc1301" />
+                            <option name="method" value="GET" />
+                            <option name="name" value="View Own Profile" />
+                            <option name="sortWeight" value="4000000" />
+                            <option name="url" value="{{url}}/api/auth/user/profile/" />
+                          </requestState>
+                          <requestState>
+                            <option name="description" value="- Admin can view others profile via username" />
+                            <option name="headers">
+                              <list>
+                                <headerState>
+                                  <option name="key" value="Authorization" />
+                                  <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxMjU3NTkxLCJpYXQiOjE3NTExNzExOTEsImp0aSI6IjZiMDM1OTkxZDNiMzRhYjE4MmY5ZDZhNTliZjUyOWE5IiwidXNlcl9pZCI6ImY1YjdiNWYwLWM0ZTAtNGE4Zi1hMzdhLTVlZTNiZDI5YjQyNSJ9.7eEYHmBt06PrlZHJXQJdi_2SztQj6xD7H_ZiSe4AIhQ" />
+                                </headerState>
+                              </list>
+                            </option>
+                            <option name="id" value="9a23740e-c778-47fa-8e96-0cea81435ef3" />
+                            <option name="method" value="GET" />
+                            <option name="name" value="View Others Profile" />
+                            <option name="sortWeight" value="5000000" />
+                            <option name="url" value="{{url}}/api/auth/admin/profile/test/" />
+                          </requestState>
+                          <requestState>
+                            <option name="description" value="- Soft Delete others account" />
+                            <option name="headers">
+                              <list>
+                                <headerState>
+                                  <option name="key" value="Authorization" />
+                                  <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxMjAyMzQ4LCJpYXQiOjE3NTExMTU5NDgsImp0aSI6IjVlNWQ4MTI4Mzc1NzQ3ODQ4NGE5Nzc5N2U0MWFjYWRiIiwidXNlcl9pZCI6ImI4ZjVlOTZhLTI1ZDgtNDEyMS1hNTRiLTIxNzIyNzVlMTRkZCJ9.Cy2Vqy1TEVVh71Otns60Kmex_2lB9qrVwIHWHDFXMpc" />
+                                </headerState>
+                              </list>
+                            </option>
+                            <option name="id" value="5d45bba4-deb4-4cd2-b7f2-34d4b16ed715" />
+                            <option name="method" value="DELETE" />
+                            <option name="name" value="Delete Account" />
+                            <option name="sortWeight" value="6000000" />
+                            <option name="url" value="{{url}}/api/auth/admin/delete/temporary/9298444c-6de0-444b-9158-de435ace54ba/" />
+                          </requestState>
+                          <requestState>
+                            <option name="description" value="- Admin can reactivate SOFT DELETED Account" />
+                            <option name="headers">
+                              <list>
+                                <headerState>
+                                  <option name="key" value="Authorization" />
+                                  <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxMjAyMzQ4LCJpYXQiOjE3NTExMTU5NDgsImp0aSI6IjVlNWQ4MTI4Mzc1NzQ3ODQ4NGE5Nzc5N2U0MWFjYWRiIiwidXNlcl9pZCI6ImI4ZjVlOTZhLTI1ZDgtNDEyMS1hNTRiLTIxNzIyNzVlMTRkZCJ9.Cy2Vqy1TEVVh71Otns60Kmex_2lB9qrVwIHWHDFXMpc" />
+                                </headerState>
+                              </list>
+                            </option>
+                            <option name="id" value="5104efaf-5243-46af-a509-c9dc206bd0f3" />
+                            <option name="method" value="POST" />
+                            <option name="name" value="Reactivate Account" />
+                            <option name="sortWeight" value="7000000" />
+                            <option name="url" value="{{url}}/api/auth/admin/reactivate/9298444c-6de0-444b-9158-de435ace54ba/" />
+                          </requestState>
+                          <requestState>
+                            <option name="description" value="- Permanently Delete User Account, Cannot be reactivated once deleted" />
+                            <option name="headers">
+                              <list>
+                                <headerState>
+                                  <option name="key" value="Authorization" />
+                                  <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxMjAyMzQ4LCJpYXQiOjE3NTExMTU5NDgsImp0aSI6IjVlNWQ4MTI4Mzc1NzQ3ODQ4NGE5Nzc5N2U0MWFjYWRiIiwidXNlcl9pZCI6ImI4ZjVlOTZhLTI1ZDgtNDEyMS1hNTRiLTIxNzIyNzVlMTRkZCJ9.Cy2Vqy1TEVVh71Otns60Kmex_2lB9qrVwIHWHDFXMpc" />
+                                </headerState>
+                              </list>
+                            </option>
+                            <option name="id" value="5fb1cbca-6781-413b-bff6-5608f62b2fde" />
+                            <option name="method" value="DELETE" />
+                            <option name="name" value="DELETE ACCOUNT" />
+                            <option name="sortWeight" value="8000000" />
+                            <option name="url" value="{{url}}/api/auth/admin/delete/permanent/9298444c-6de0-444b-9158-de435ace54ba/" />
+                          </requestState>
+                          <requestState>
+                            <option name="description" value="- List all the users in the system" />
+                            <option name="headers">
+                              <list>
+                                <headerState>
+                                  <option name="key" value="Authorization" />
+                                  <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxMjU3NTkxLCJpYXQiOjE3NTExNzExOTEsImp0aSI6IjZiMDM1OTkxZDNiMzRhYjE4MmY5ZDZhNTliZjUyOWE5IiwidXNlcl9pZCI6ImY1YjdiNWYwLWM0ZTAtNGE4Zi1hMzdhLTVlZTNiZDI5YjQyNSJ9.7eEYHmBt06PrlZHJXQJdi_2SztQj6xD7H_ZiSe4AIhQ" />
+                                </headerState>
+                              </list>
+                            </option>
+                            <option name="id" value="e8675f57-3f00-40cc-828a-e53a58d36ab2" />
+                            <option name="method" value="GET" />
+                            <option name="name" value="list users" />
+                            <option name="sortWeight" value="9000000" />
+                            <option name="url" value="{{url}}/api/auth/users/" />
+                          </requestState>
+                        </list>
+                      </option>
+                      <option name="sortWeight" value="3000000" />
+                    </folderState>
+                  </list>
+                </option>
+                <option name="id" value="4cf534e7-815e-43fd-bb6f-82eb3f17c384" />
+                <option name="name" value="users" />
+                <option name="sortWeight" value="3000000" />
               </folderState>
             </list>
           </option>
@@ -341,6 +771,11 @@
               <option name="autoSync" value="true" />
               <option name="folderPath" value="$PROJECT_DIR$/.jetclient" />
             </synchronizationPropertiesState>
+          </option>
+          <option name="variables">
+            <variablesState>
+              <option name="json" value="{&#10;  globals: {&#10;    url: 'http://127.0.0.1:8000'&#10;  }&#10;}" />
+            </variablesState>
           </option>
         </folderState>
       </list>

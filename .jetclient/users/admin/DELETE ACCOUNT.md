@@ -2,7 +2,7 @@
 name = 'DELETE ACCOUNT'
 description = '- Permanently Delete User Account, Cannot be reactivated once deleted'
 method = 'DELETE'
-url = '{{url/api/auth/admin/delete/permanent/9298444c-6de0-444b-9158-de435ace54ba/'
+url = '{{url}}/api/auth/admin/delete/permanent/9298444c-6de0-444b-9158-de435ace54ba/'
 sortWeight = 8000000
 id = '5fb1cbca-6781-413b-bff6-5608f62b2fde'
 
