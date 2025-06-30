@@ -31,10 +31,14 @@ class Enrollment(models.Model):
         default='pending',
     )
 
+    applied_Date = models.DateTimeField(
+        auto_now_add = True,
+    )
+
     Enrolled_Date = models.DateTimeField(
         null = True,
         blank = True,
-        auto_now_add = True, #todo: will avoid in manual change of create or update both.
+        auto_now_add = False, #todo: will avoid in manual change of create or update both.
     )
 
 
