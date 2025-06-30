@@ -14,7 +14,7 @@ value = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXN
 type = 'JSON'
 raw = '''
 {
-  "price": 500,
-     "categories_input": ["New Category 1", "New Category 2"]
+  "price": 5900,
+     "categories_input": ["New Category 3", "New Category 4"]
 }'''
 ```

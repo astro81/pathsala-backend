@@ -14,8 +14,8 @@ value = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXN
 type = 'JSON'
 raw = '''
 {
-    "name": "python-intermidate",
-    "title": "Python Programming Advance",
+    "name": "Django",
+    "title": "Python Framework",
     "duration_weeks": 8,
     "price": "15000.00",
     "training_level": "advanced",

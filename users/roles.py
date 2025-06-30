@@ -120,5 +120,6 @@ class Student(AbstractUserRole):
 
     available_permissions = {
         'view_course': True,
+        'rate_course': True,
     }
 

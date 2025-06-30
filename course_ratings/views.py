@@ -18,6 +18,7 @@ from course_ratings.models import CourseRating
 from course_ratings.serializers import CourseRatingSerializer
 from courses.models import Course
 from courses.permissions import HasCoursePermission
+from users.permissions import IsStudent
 
 
 class AddCourseRatingView(APIView):
@@ -31,8 +32,9 @@ class AddCourseRatingView(APIView):
     - post: Create or update a course rating
     """
 
-    permission_classes = [HasCoursePermission]
-    required_permission = 'rate_course'
+    permission_classes = [IsStudent]
+    # permission_classes = [HasCoursePermission]
+    # required_permission = 'rate_course'
 
     @swagger_auto_schema(
         operation_description="Add or update a course rating (students only)",
