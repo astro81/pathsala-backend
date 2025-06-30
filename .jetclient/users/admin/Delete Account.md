@@ -9,4 +9,7 @@ id = '5fb1cbca-6781-413b-bff6-5608f62b2fde'
 [[headers]]
 key = 'Authorization'
 value = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxMjAyMzQ4LCJpYXQiOjE3NTExMTU5NDgsImp0aSI6IjVlNWQ4MTI4Mzc1NzQ3ODQ4NGE5Nzc5N2U0MWFjYWRiIiwidXNlcl9pZCI6ImI4ZjVlOTZhLTI1ZDgtNDEyMS1hNTRiLTIxNzIyNzVlMTRkZCJ9.Cy2Vqy1TEVVh71Otns60Kmex_2lB9qrVwIHWHDFXMpc'
+
+[body]
+type = 'JSON'
 ```

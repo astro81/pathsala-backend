@@ -1,5 +1,5 @@
 ```toml
 name = 'courses'
-sortWeight = 2000000
-id = '21130c12-f790-4dd7-8237-5b5f0ad71e85'
+sortWeight = 4000000
+id = '4c46d89f-9622-4759-a47b-b275ed69dc08'
 ```
