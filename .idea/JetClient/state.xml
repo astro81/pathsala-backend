@@ -168,7 +168,7 @@
                         <list>
                           <headerState>
                             <option name="key" value="Authorization" />
-                            <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxMjc5MjgzLCJpYXQiOjE3NTExOTI4ODMsImp0aSI6ImY5MmZjYTEzNDYxMzQ0YWQ5MzFkMDNkM2MzNjIwNDgxIiwidXNlcl9pZCI6ImY1YjdiNWYwLWM0ZTAtNGE4Zi1hMzdhLTVlZTNiZDI5YjQyNSJ9.YP0hA8tAMtAuT2jzEdWUVHwJbRCY0jLKNv_Rj5ci7q8" />
+                            <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxMzY3NDMyLCJpYXQiOjE3NTEyODEwMzIsImp0aSI6ImVlYTE1NGZmZDE5ODQ5MjE5N2Y2NDJkMWI0NGI4OGNlIiwidXNlcl9pZCI6ImMzZWI5NjE1LTg2ODUtNDI1OC04ZDJmLWQ3MjMzZGI3MTJkNiJ9.asoNZJVgKL4b5i_IGaDs7Kmm_8eZrjAOKjD8PZVjusc" />
                           </headerState>
                         </list>
                       </option>
@@ -176,7 +176,7 @@
                       <option name="method" value="POST" />
                       <option name="name" value="add course" />
                       <option name="sortWeight" value="2000000" />
-                      <option name="url" value="http://127.0.0.1:8000/api/courses/add-course/" />
+                      <option name="url" value="{{url}}/api/courses/add/" />
                     </requestState>
                     <requestState>
                       <option name="body">

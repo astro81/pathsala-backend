@@ -372,93 +372,6 @@
           <option name="workspaceId" value="955b3e74-61d3-44d9-8c42-624b89c419d6" />
         </requestHistoryState>
         <requestHistoryState>
-          <option name="dateTime" value="1750856636467" />
-          <option name="id" value="5e9ff6cb-f5ec-4bd1-81fc-c750dd03ef28" />
-          <option name="request">
-            <requestState>
-              <option name="body">
-                <bodyState>
-                  <option name="raw" value="{&#10;  &quot;name&quot;: &quot;advanced-python&quot;,&#10;  &quot;title&quot;: &quot;Advanced Python Programming&quot;,&#10;  &quot;duration_value&quot;: 8,&#10;  &quot;duration_unit&quot;: &quot;weeks&quot;,&#10;  &quot;price&quot;: 2500.00,&#10;  &quot;rating&quot;: 4.8,&#10;  &quot;training_level&quot;: &quot;advanced&quot;,&#10;  &quot;class_type&quot;: &quot;hybrid&quot;,&#10;  &quot;career_prospect&quot;: &quot;Backend Developer&quot;&#10;}&#10;" />
-                  <option name="type" value="JSON" />
-                </bodyState>
-              </option>
-              <option name="headers">
-                <list>
-                  <headerState>
-                    <option name="key" value="Authorization" />
-                    <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUwODU2ODg0LCJpYXQiOjE3NTA4NTY1ODQsImp0aSI6IjZmNmMzNGE4MDIyNDQyNzQ5ZWJmMzQwZTFiMzQ2ZTVlIiwidXNlcl9pZCI6IjhhYTFjYzk5LTA4NjctNDBlZC05NjNjLWQ0YWY4MjhlODY1NyJ9.7oOwIIBmZ_Z-wFYLtfYH4lK9NBkG2HNx2K-LZE69JTQ" />
-                  </headerState>
-                </list>
-              </option>
-              <option name="id" value="53c86376-5da4-4fe3-b68d-a794ee016325" />
-              <option name="method" value="POST" />
-              <option name="name" value="add course" />
-              <option name="sortWeight" value="2000000" />
-              <option name="url" value="http://127.0.0.1:8000/api/courses/add-course/" />
-            </requestState>
-          </option>
-          <option name="response">
-            <responseState>
-              <option name="bodyBytesBase64" value="eyJkZXNjcmlwdGlvbiI6bnVsbCwibmFtZSI6ImFkdmFuY2VkLXB5dGhvbiIsInRpdGxlIjoiQWR2YW5jZWQgUHl0aG9uIFByb2dyYW1taW5nIiwiZHVyYXRpb25fdmFsdWUiOjgsImR1cmF0aW9uX3VuaXQiOiJ3ZWVrcyIsInByaWNlIjoiMjUwMC4wMCIsInJhdGluZyI6IjQuODAiLCJ0cmFpbmluZ19sZXZlbCI6ImFkdmFuY2VkIiwiY2xhc3NfdHlwZSI6Imh5YnJpZCIsImNhcmVlcl9wcm9zcGVjdCI6IkJhY2tlbmQgRGV2ZWxvcGVyIiwiaW1hZ2UiOm51bGx9" />
-              <option name="bodyString" value="{&#10;  &quot;description&quot;: null,&#10;  &quot;name&quot;: &quot;advanced-python&quot;,&#10;  &quot;title&quot;: &quot;Advanced Python Programming&quot;,&#10;  &quot;duration_value&quot;: 8,&#10;  &quot;duration_unit&quot;: &quot;weeks&quot;,&#10;  &quot;price&quot;: &quot;2500.00&quot;,&#10;  &quot;rating&quot;: &quot;4.80&quot;,&#10;  &quot;training_level&quot;: &quot;advanced&quot;,&#10;  &quot;class_type&quot;: &quot;hybrid&quot;,&#10;  &quot;career_prospect&quot;: &quot;Backend Developer&quot;,&#10;  &quot;image&quot;: null&#10;}" />
-              <option name="code" value="201" />
-              <option name="connectionEstablishingTime" value="1" />
-              <option name="contentType" value="application/json" />
-              <option name="headers">
-                <list>
-                  <headerState>
-                    <option name="key" value="Date" />
-                    <option name="value" value="Wed, 25 Jun 2025 13:03:56 GMT" />
-                  </headerState>
-                  <headerState>
-                    <option name="key" value="Server" />
-                    <option name="value" value="WSGIServer/0.2 CPython/3.12.10" />
-                  </headerState>
-                  <headerState>
-                    <option name="key" value="Content-Type" />
-                    <option name="value" value="application/json" />
-                  </headerState>
-                  <headerState>
-                    <option name="key" value="Vary" />
-                    <option name="value" value="Accept" />
-                  </headerState>
-                  <headerState>
-                    <option name="key" value="Allow" />
-                    <option name="value" value="POST, OPTIONS" />
-                  </headerState>
-                  <headerState>
-                    <option name="key" value="X-Frame-Options" />
-                    <option name="value" value="DENY" />
-                  </headerState>
-                  <headerState>
-                    <option name="key" value="Content-Length" />
-                    <option name="value" value="261" />
-                  </headerState>
-                  <headerState>
-                    <option name="key" value="X-Content-Type-Options" />
-                    <option name="value" value="nosniff" />
-                  </headerState>
-                  <headerState>
-                    <option name="key" value="Referrer-Policy" />
-                    <option name="value" value="same-origin" />
-                  </headerState>
-                  <headerState>
-                    <option name="key" value="Cross-Origin-Opener-Policy" />
-                    <option name="value" value="same-origin" />
-                  </headerState>
-                </list>
-              </option>
-              <option name="id" value="5e9ff6cb-f5ec-4bd1-81fc-c750dd03ef28" />
-              <option name="message" value="Created" />
-              <option name="prettyResponseType" value="JSON" />
-              <option name="rawBodyString" value="{&quot;description&quot;:null,&quot;name&quot;:&quot;advanced-python&quot;,&quot;title&quot;:&quot;Advanced Python Programming&quot;,&quot;duration_value&quot;:8,&quot;duration_unit&quot;:&quot;weeks&quot;,&quot;price&quot;:&quot;2500.00&quot;,&quot;rating&quot;:&quot;4.80&quot;,&quot;training_level&quot;:&quot;advanced&quot;,&quot;class_type&quot;:&quot;hybrid&quot;,&quot;career_prospect&quot;:&quot;Backend Developer&quot;,&quot;image&quot;:null}" />
-              <option name="size" value="261" />
-              <option name="time" value="16" />
-            </responseState>
-          </option>
-          <option name="workspaceId" value="955b3e74-61d3-44d9-8c42-624b89c419d6" />
-        </requestHistoryState>
-        <requestHistoryState>
           <option name="dateTime" value="1750856641632" />
           <option name="id" value="f2d37385-8f18-45d2-8985-7b2782a66c53" />
           <option name="request">
@@ -902,92 +815,6 @@
               <option name="rawBodyString" value="{&quot;id&quot;:&quot;d1023ec3-ceb5-4313-a468-e34b3c0ab040&quot;,&quot;description&quot;:{&quot;id&quot;:&quot;48e24ac7-9ae6-4860-87e1-ae8043c361bb&quot;,&quot;course_introduction&quot;:&quot;Learn the basics of Python.&quot;,&quot;course_overview&quot;:&quot;Variables, control flow, functions, lambda&quot;,&quot;course_requirements&quot;:&quot;Basic computer skills.&quot;,&quot;course_context&quot;:&quot;Suitable for career starters.&quot;},&quot;name&quot;:&quot;Python Basics&quot;,&quot;title&quot;:&quot;A comprehensive Python course&quot;,&quot;duration_value&quot;:6,&quot;duration_unit&quot;:&quot;weeks&quot;,&quot;price&quot;:&quot;999.99&quot;,&quot;rating&quot;:&quot;4.50&quot;,&quot;training_level&quot;:&quot;beginner&quot;,&quot;class_type&quot;:&quot;online&quot;,&quot;career_prospect&quot;:&quot;Software Developer&quot;,&quot;image&quot;:null,&quot;created_at&quot;:&quot;2025-06-25T13:03:27.236252Z&quot;,&quot;updated_at&quot;:&quot;2025-06-25T13:06:24.153942Z&quot;}" />
               <option name="size" value="643" />
               <option name="time" value="45" />
-            </responseState>
-          </option>
-          <option name="workspaceId" value="955b3e74-61d3-44d9-8c42-624b89c419d6" />
-        </requestHistoryState>
-        <requestHistoryState>
-          <option name="dateTime" value="1750856792960" />
-          <option name="id" value="22346b71-57e8-4948-9fcc-2ee153d887b1" />
-          <option name="request">
-            <requestState>
-              <option name="body">
-                <bodyState>
-                  <option name="raw" value="{&#10;  &quot;name&quot;: &quot;advanced-python&quot;,&#10;  &quot;title&quot;: &quot;Advanced Python Programming&quot;,&#10;  &quot;duration_value&quot;: 8,&#10;  &quot;duration_unit&quot;: &quot;weeks&quot;,&#10;  &quot;price&quot;: 2500.00,&#10;  &quot;rating&quot;: 4.8,&#10;  &quot;training_level&quot;: &quot;advanced&quot;,&#10;  &quot;class_type&quot;: &quot;hybrid&quot;,&#10;  &quot;career_prospect&quot;: &quot;Backend Developer&quot;&#10;}&#10;" />
-                  <option name="type" value="JSON" />
-                </bodyState>
-              </option>
-              <option name="headers">
-                <list>
-                  <headerState>
-                    <option name="key" value="Authorization" />
-                    <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUwODU2ODg0LCJpYXQiOjE3NTA4NTY1ODQsImp0aSI6IjZmNmMzNGE4MDIyNDQyNzQ5ZWJmMzQwZTFiMzQ2ZTVlIiwidXNlcl9pZCI6IjhhYTFjYzk5LTA4NjctNDBlZC05NjNjLWQ0YWY4MjhlODY1NyJ9.7oOwIIBmZ_Z-wFYLtfYH4lK9NBkG2HNx2K-LZE69JTQ" />
-                  </headerState>
-                </list>
-              </option>
-              <option name="id" value="53c86376-5da4-4fe3-b68d-a794ee016325" />
-              <option name="method" value="POST" />
-              <option name="name" value="add course" />
-              <option name="sortWeight" value="2000000" />
-              <option name="url" value="http://127.0.0.1:8000/api/courses/add-course/" />
-            </requestState>
-          </option>
-          <option name="response">
-            <responseState>
-              <option name="bodyBytesBase64" value="eyJkZXNjcmlwdGlvbiI6bnVsbCwibmFtZSI6ImFkdmFuY2VkLXB5dGhvbiIsInRpdGxlIjoiQWR2YW5jZWQgUHl0aG9uIFByb2dyYW1taW5nIiwiZHVyYXRpb25fdmFsdWUiOjgsImR1cmF0aW9uX3VuaXQiOiJ3ZWVrcyIsInByaWNlIjoiMjUwMC4wMCIsInJhdGluZyI6IjQuODAiLCJ0cmFpbmluZ19sZXZlbCI6ImFkdmFuY2VkIiwiY2xhc3NfdHlwZSI6Imh5YnJpZCIsImNhcmVlcl9wcm9zcGVjdCI6IkJhY2tlbmQgRGV2ZWxvcGVyIiwiaW1hZ2UiOm51bGx9" />
-              <option name="bodyString" value="{&#10;  &quot;description&quot;: null,&#10;  &quot;name&quot;: &quot;advanced-python&quot;,&#10;  &quot;title&quot;: &quot;Advanced Python Programming&quot;,&#10;  &quot;duration_value&quot;: 8,&#10;  &quot;duration_unit&quot;: &quot;weeks&quot;,&#10;  &quot;price&quot;: &quot;2500.00&quot;,&#10;  &quot;rating&quot;: &quot;4.80&quot;,&#10;  &quot;training_level&quot;: &quot;advanced&quot;,&#10;  &quot;class_type&quot;: &quot;hybrid&quot;,&#10;  &quot;career_prospect&quot;: &quot;Backend Developer&quot;,&#10;  &quot;image&quot;: null&#10;}" />
-              <option name="code" value="201" />
-              <option name="contentType" value="application/json" />
-              <option name="headers">
-                <list>
-                  <headerState>
-                    <option name="key" value="Date" />
-                    <option name="value" value="Wed, 25 Jun 2025 13:06:32 GMT" />
-                  </headerState>
-                  <headerState>
-                    <option name="key" value="Server" />
-                    <option name="value" value="WSGIServer/0.2 CPython/3.12.10" />
-                  </headerState>
-                  <headerState>
-                    <option name="key" value="Content-Type" />
-                    <option name="value" value="application/json" />
-                  </headerState>
-                  <headerState>
-                    <option name="key" value="Vary" />
-                    <option name="value" value="Accept" />
-                  </headerState>
-                  <headerState>
-                    <option name="key" value="Allow" />
-                    <option name="value" value="POST, OPTIONS" />
-                  </headerState>
-                  <headerState>
-                    <option name="key" value="X-Frame-Options" />
-                    <option name="value" value="DENY" />
-                  </headerState>
-                  <headerState>
-                    <option name="key" value="Content-Length" />
-                    <option name="value" value="261" />
-                  </headerState>
-                  <headerState>
-                    <option name="key" value="X-Content-Type-Options" />
-                    <option name="value" value="nosniff" />
-                  </headerState>
-                  <headerState>
-                    <option name="key" value="Referrer-Policy" />
-                    <option name="value" value="same-origin" />
-                  </headerState>
-                  <headerState>
-                    <option name="key" value="Cross-Origin-Opener-Policy" />
-                    <option name="value" value="same-origin" />
-                  </headerState>
-                </list>
-              </option>
-              <option name="id" value="22346b71-57e8-4948-9fcc-2ee153d887b1" />
-              <option name="message" value="Created" />
-              <option name="prettyResponseType" value="JSON" />
-              <option name="rawBodyString" value="{&quot;description&quot;:null,&quot;name&quot;:&quot;advanced-python&quot;,&quot;title&quot;:&quot;Advanced Python Programming&quot;,&quot;duration_value&quot;:8,&quot;duration_unit&quot;:&quot;weeks&quot;,&quot;price&quot;:&quot;2500.00&quot;,&quot;rating&quot;:&quot;4.80&quot;,&quot;training_level&quot;:&quot;advanced&quot;,&quot;class_type&quot;:&quot;hybrid&quot;,&quot;career_prospect&quot;:&quot;Backend Developer&quot;,&quot;image&quot;:null}" />
-              <option name="size" value="261" />
-              <option name="time" value="15" />
             </responseState>
           </option>
           <option name="workspaceId" value="955b3e74-61d3-44d9-8c42-624b89c419d6" />
@@ -1529,78 +1356,6 @@
               <option name="rawBodyString" value="[{&quot;id&quot;:&quot;a3708a0c-6a90-45fc-bf0c-f9ff0a8819bb&quot;,&quot;description&quot;:{&quot;id&quot;:&quot;da3d4889-b392-497c-a5c0-3d547814deb3&quot;,&quot;course_introduction&quot;:&quot;Learn the advace Python.&quot;,&quot;course_overview&quot;:&quot;basic python&quot;,&quot;course_requirements&quot;:null,&quot;course_context&quot;:&quot;Suitable for students and professionals.&quot;},&quot;name&quot;:&quot;advanced-python&quot;,&quot;title&quot;:&quot;Advanced Python Programming&quot;,&quot;duration_value&quot;:8,&quot;duration_unit&quot;:&quot;weeks&quot;,&quot;price&quot;:&quot;2500.00&quot;,&quot;rating&quot;:&quot;4.80&quot;,&quot;training_level&quot;:&quot;advanced&quot;,&quot;class_type&quot;:&quot;hybrid&quot;,&quot;career_prospect&quot;:&quot;Software Developer&quot;,&quot;image&quot;:null,&quot;created_at&quot;:&quot;2025-06-25T13:07:43.384123Z&quot;,&quot;updated_at&quot;:&quot;2025-06-25T13:09:33.359449Z&quot;},{&quot;id&quot;:&quot;d1023ec3-ceb5-4313-a468-e34b3c0ab040&quot;,&quot;description&quot;:{&quot;id&quot;:&quot;48e24ac7-9ae6-4860-87e1-ae8043c361bb&quot;,&quot;course_introduction&quot;:&quot;Learn the basics of Python.&quot;,&quot;course_overview&quot;:&quot;Variables, control flow, functions, lambda&quot;,&quot;course_requirements&quot;:&quot;Basic computer skills.&quot;,&quot;course_context&quot;:&quot;Suitable for career starters.&quot;},&quot;name&quot;:&quot;Python Basics&quot;,&quot;title&quot;:&quot;A comprehensive Python course&quot;,&quot;duration_value&quot;:6,&quot;duration_unit&quot;:&quot;weeks&quot;,&quot;price&quot;:&quot;999.99&quot;,&quot;rating&quot;:&quot;4.50&quot;,&quot;training_level&quot;:&quot;beginner&quot;,&quot;class_type&quot;:&quot;online&quot;,&quot;career_prospect&quot;:&quot;Software Developer&quot;,&quot;image&quot;:null,&quot;created_at&quot;:&quot;2025-06-25T13:03:27.236252Z&quot;,&quot;updated_at&quot;:&quot;2025-06-25T13:06:24.153942Z&quot;}]" />
               <option name="size" value="1248" />
               <option name="time" value="16" />
-            </responseState>
-          </option>
-          <option name="workspaceId" value="955b3e74-61d3-44d9-8c42-624b89c419d6" />
-        </requestHistoryState>
-        <requestHistoryState>
-          <option name="dateTime" value="1751114050261" />
-          <option name="id" value="7dd9eeac-1f6c-40b3-aa77-e17b792a8ac9" />
-          <option name="request">
-            <requestState>
-              <option name="body">
-                <bodyState>
-                  <option name="raw" value="{&#10;    &quot;username&quot;: &quot;test&quot;,&#10;    &quot;email&quot;: &quot;test@example.com&quot;,&#10;    &quot;password&quot;: &quot;StrongPass!23&quot;,&#10;    &quot;password2&quot;: &quot;StrongPass!23&quot;,&#10;    &quot;first_name&quot;: &quot;John&quot;,&#10;    &quot;last_name&quot;: &quot;Student&quot;,&#10;    &quot;address&quot;: &quot;123 Campus Rd&quot;,&#10;    &quot;phone_no&quot;: &quot;+1234567890&quot;,&#10;    &quot;profile_picture&quot;: null,&#10;  &#10;}&#10;" />
-                  <option name="type" value="JSON" />
-                </bodyState>
-              </option>
-              <option name="id" value="a1ebd693-d67e-4e90-84c1-8f40996d3b1a" />
-              <option name="method" value="POST" />
-              <option name="name" value="register" />
-              <option name="sortWeight" value="1000000" />
-              <option name="url" value="{{url}}api/register/student/" />
-            </requestState>
-          </option>
-          <option name="response">
-            <responseState>
-              <option name="bodyBytesBase64" value="PCFET0NUWVBFIGh0bWw+CjxodG1sIGxhbmc9ImVuIj4KPGhlYWQ+CiAgPG1ldGEgaHR0cC1lcXVpdj0iY29udGVudC10eXBlIiBjb250ZW50PSJ0ZXh0L2h0bWw7IGNoYXJzZXQ9dXRmLTgiPgogIDx0aXRsZT5QYWdlIG5vdCBmb3VuZCBhdCAvYXBpL3JlZ2lzdGVyL3N0dWRlbnQvPC90aXRsZT4KICA8bWV0YSBuYW1lPSJyb2JvdHMiIGNvbnRlbnQ9Ik5PTkUsTk9BUkNISVZFIj4KICA8c3R5bGU+CiAgICBodG1sICogeyBwYWRkaW5nOjA7IG1hcmdpbjowOyB9CiAgICBib2R5ICogeyBwYWRkaW5nOjEwcHggMjBweDsgfQogICAgYm9keSAqICogeyBwYWRkaW5nOjA7IH0KICAgIGJvZHkgeyBmb250LWZhbWlseTogc2Fucy1zZXJpZjsgYmFja2dyb3VuZDojZWVlOyBjb2xvcjojMDAwOyB9CiAgICBib2R5ID4gOndoZXJlKGhlYWRlciwgbWFpbiwgZm9vdGVyKSB7IGJvcmRlci1ib3R0b206MXB4IHNvbGlkICNkZGQ7IH0KICAgIGgxIHsgZm9udC13ZWlnaHQ6bm9ybWFsOyBtYXJnaW4tYm90dG9tOi40ZW07IH0KICAgIGgxIHNtYWxsIHsgZm9udC1zaXplOjYwJTsgY29sb3I6IzY2NjsgZm9udC13ZWlnaHQ6bm9ybWFsOyB9CiAgICB0YWJsZSB7IGJvcmRlcjpub25lOyBib3JkZXItY29sbGFwc2U6IGNvbGxhcHNlOyB3aWR0aDoxMDAlOyB9CiAgICB0ZCwgdGggeyB2ZXJ0aWNhbC1hbGlnbjp0b3A7IHBhZGRpbmc6MnB4IDNweDsgfQogICAgdGggeyB3aWR0aDoxMmVtOyB0ZXh0LWFsaWduOnJpZ2h0OyBjb2xvcjojNjY2OyBwYWRkaW5nLXJpZ2h0Oi41ZW07IH0KICAgICNpbmZvIHsgYmFja2dyb3VuZDojZjZmNmY2OyB9CiAgICAjaW5mbyBvbCB7IG1hcmdpbjogMC41ZW0gNGVtOyB9CiAgICAjaW5mbyBvbCBsaSB7IGZvbnQtZmFtaWx5OiBtb25vc3BhY2U7IH0KICAgICNzdW1tYXJ5IHsgYmFja2dyb3VuZDogI2ZmYzsgfQogICAgI2V4cGxhbmF0aW9uIHsgYmFja2dyb3VuZDojZWVlOyBib3JkZXItYm90dG9tOiAwcHggbm9uZTsgfQogICAgcHJlLmV4Y2VwdGlvbl92YWx1ZSB7IGZvbnQtZmFtaWx5OiBzYW5zLXNlcmlmOyBjb2xvcjogIzU3NTc1NzsgZm9udC1zaXplOiAxLjVlbTsgbWFyZ2luOiAxMHB4IDAgMTBweCAwOyB9CiAgPC9zdHlsZT4KPC9oZWFkPgo8Ym9keT4KICA8aGVhZGVyIGlkPSJzdW1tYXJ5Ij4KICAgIDxoMT5QYWdlIG5vdCBmb3VuZCA8c21hbGw+KDQwNCk8L3NtYWxsPjwvaDE+CiAgICAKICAgIDx0YWJsZSBjbGFzcz0ibWV0YSI+CiAgICAgIDx0cj4KICAgICAgICA8dGggc2NvcGU9InJvdyI+UmVxdWVzdCBNZXRob2Q6PC90aD4KICAgICAgICA8dGQ+UE9TVDwvdGQ+CiAgICAgIDwvdHI+CiAgICAgIDx0cj4KICAgICAgICA8dGggc2NvcGU9InJvdyI+UmVxdWVzdCBVUkw6PC90aD4KICAgICAgICA8dGQ+aHR0cDovLzEyNy4wLjAuMTo4MDAwL2FwaS9yZWdpc3Rlci9zdHVkZW50LzwvdGQ+CiAgICAgIDwvdHI+CiAgICAgIAogICAgPC90YWJsZT4KICA8L2hlYWRlcj4KCiAgPG1haW4gaWQ9ImluZm8iPgogICAgCiAgICAgIDxwPgogICAgICBVc2luZyB0aGUgVVJMY29uZiBkZWZpbmVkIGluIDxjb2RlPmNvbmZpZy51cmxzPC9jb2RlPiwKICAgICAgRGphbmdvIHRyaWVkIHRoZXNlIFVSTCBwYXR0ZXJucywgaW4gdGhpcyBvcmRlcjoKICAgICAgPC9wPgogICAgICA8b2w+CiAgICAgICAgCiAgICAgICAgICA8bGk+CiAgICAgICAgICAgIAogICAgICAgICAgICAgIDxjb2RlPgogICAgICAgICAgICAgICAgYWRtaW4vCiAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICA8L2NvZGU+CiAgICAgICAgICAgIAogICAgICAgICAgPC9saT4KICAgICAgICAKICAgICAgICAgIDxsaT4KICAgICAgICAgICAgCiAgICAgICAgICAgICAgPGNvZGU+CiAgICAgICAgICAgICAgICBhcGkvYXV0aC8KICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgIDwvY29kZT4KICAgICAgICAgICAgCiAgICAgICAgICA8L2xpPgogICAgICAgIAogICAgICAgICAgPGxpPgogICAgICAgICAgICAKICAgICAgICAgICAgICA8Y29kZT4KICAgICAgICAgICAgICAgIGFwaS9jb3Vyc2VzLwogICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgPC9jb2RlPgogICAgICAgICAgICAKICAgICAgICAgIDwvbGk+CiAgICAgICAgCiAgICAgICAgICA8bGk+CiAgICAgICAgICAgIAogICAgICAgICAgICAgIDxjb2RlPgogICAgICAgICAgICAgICAgYXBpL2NhdGVnb3J5LwogICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgPC9jb2RlPgogICAgICAgICAgICAKICAgICAgICAgIDwvbGk+CiAgICAgICAgCiAgICAgICAgICA8bGk+CiAgICAgICAgICAgIAogICAgICAgICAgICAgIDxjb2RlPgogICAgICAgICAgICAgICAgc3dhZ2dlci8KICAgICAgICAgICAgICAgIFtuYW1lPSdzY2hlbWEtc3dhZ2dlci11aSddCiAgICAgICAgICAgICAgPC9jb2RlPgogICAgICAgICAgICAKICAgICAgICAgIDwvbGk+CiAgICAgICAgCiAgICAgICAgICA8bGk+CiAgICAgICAgICAgIAogICAgICAgICAgICAgIDxjb2RlPgogICAgICAgICAgICAgICAgcmVkb2MvCiAgICAgICAgICAgICAgICBbbmFtZT0nc2NoZW1hLXJlZG9jJ10KICAgICAgICAgICAgICA8L2NvZGU+CiAgICAgICAgICAgIAogICAgICAgICAgPC9saT4KICAgICAgICAKICAgICAgICAgIDxsaT4KICAgICAgICAgICAgCiAgICAgICAgICAgICAgPGNvZGU+CiAgICAgICAgICAgICAgICBzd2FnZ2VyLmpzb24KICAgICAgICAgICAgICAgIFtuYW1lPSdzY2hlbWEtanNvbiddCiAgICAgICAgICAgICAgPC9jb2RlPgogICAgICAgICAgICAKICAgICAgICAgIDwvbGk+CiAgICAgICAgCiAgICAgIDwvb2w+CiAgICAgIDxwPgogICAgICAgIAogICAgICAgICAgVGhlIGN1cnJlbnQgcGF0aCwgPGNvZGU+YXBpL3JlZ2lzdGVyL3N0dWRlbnQvPC9jb2RlPiwKICAgICAgICAKICAgICAgICBkaWRu4oCZdCBtYXRjaCBhbnkgb2YgdGhlc2UuCiAgICAgIDwvcD4KICAgIAogIDwvbWFpbj4KCiAgPGZvb3RlciBpZD0iZXhwbGFuYXRpb24iPgogICAgPHA+CiAgICAgIFlvdeKAmXJlIHNlZWluZyB0aGlzIGVycm9yIGJlY2F1c2UgeW91IGhhdmUgPGNvZGU+REVCVUcgPSBUcnVlPC9jb2RlPiBpbgogICAgICB5b3VyIERqYW5nbyBzZXR0aW5ncyBmaWxlLiBDaGFuZ2UgdGhhdCB0byA8Y29kZT5GYWxzZTwvY29kZT4sIGFuZCBEamFuZ28KICAgICAgd2lsbCBkaXNwbGF5IGEgc3RhbmRhcmQgNDA0IHBhZ2UuCiAgICA8L3A+CiAgPC9mb290ZXI+CjwvYm9keT4KPC9odG1sPgo=" />
-              <option name="bodyString" value="&lt;!DOCTYPE html&gt;&#10;&lt;html lang=&quot;en&quot;&gt;&#10;&lt;head&gt;&#10;  &lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html; charset=utf-8&quot;&gt;&#10;  &lt;title&gt;Page not found at /api/register/student/&lt;/title&gt;&#10;  &lt;meta name=&quot;robots&quot; content=&quot;NONE,NOARCHIVE&quot;&gt;&#10;  &lt;style&gt;&#10;    html * { padding:0; margin:0; }&#10;    body * { padding:10px 20px; }&#10;    body * * { padding:0; }&#10;    body { font-family: sans-serif; background:#eee; color:#000; }&#10;    body &gt; :where(header, main, footer) { border-bottom:1px solid #ddd; }&#10;    h1 { font-weight:normal; margin-bottom:.4em; }&#10;    h1 small { font-size:60%; color:#666; font-weight:normal; }&#10;    table { border:none; border-collapse: collapse; width:100%; }&#10;    td, th { vertical-align:top; padding:2px 3px; }&#10;    th { width:12em; text-align:right; color:#666; padding-right:.5em; }&#10;    #info { background:#f6f6f6; }&#10;    #info ol { margin: 0.5em 4em; }&#10;    #info ol li { font-family: monospace; }&#10;    #summary { background: #ffc; }&#10;    #explanation { background:#eee; border-bottom: 0px none; }&#10;    pre.exception_value { font-family: sans-serif; color: #575757; font-size: 1.5em; margin: 10px 0 10px 0; }&#10;  &lt;/style&gt;&#10;&lt;/head&gt;&#10;&lt;body&gt;&#10;  &lt;header id=&quot;summary&quot;&gt;&#10;    &lt;h1&gt;Page not found &lt;small&gt;(404)&lt;/small&gt;&lt;/h1&gt;&#10;    &#10;    &lt;table class=&quot;meta&quot;&gt;&#10;      &lt;tr&gt;&#10;        &lt;th scope=&quot;row&quot;&gt;Request Method:&lt;/th&gt;&#10;        &lt;td&gt;POST&lt;/td&gt;&#10;      &lt;/tr&gt;&#10;      &lt;tr&gt;&#10;        &lt;th scope=&quot;row&quot;&gt;Request URL:&lt;/th&gt;&#10;        &lt;td&gt;http://127.0.0.1:8000/api/register/student/&lt;/td&gt;&#10;      &lt;/tr&gt;&#10;      &#10;    &lt;/table&gt;&#10;  &lt;/header&gt;&#10;&#10;  &lt;main id=&quot;info&quot;&gt;&#10;    &#10;      &lt;p&gt;&#10;      Using the URLconf defined in &lt;code&gt;config.urls&lt;/code&gt;,&#10;      Django tried these URL patterns, in this order:&#10;      &lt;/p&gt;&#10;      &lt;ol&gt;&#10;        &#10;          &lt;li&gt;&#10;            &#10;              &lt;code&gt;&#10;                admin/&#10;                &#10;              &lt;/code&gt;&#10;            &#10;          &lt;/li&gt;&#10;        &#10;          &lt;li&gt;&#10;            &#10;              &lt;code&gt;&#10;                api/auth/&#10;                &#10;              &lt;/code&gt;&#10;            &#10;          &lt;/li&gt;&#10;        &#10;          &lt;li&gt;&#10;            &#10;              &lt;code&gt;&#10;                api/courses/&#10;                &#10;              &lt;/code&gt;&#10;            &#10;          &lt;/li&gt;&#10;        &#10;          &lt;li&gt;&#10;            &#10;              &lt;code&gt;&#10;                api/category/&#10;                &#10;              &lt;/code&gt;&#10;            &#10;          &lt;/li&gt;&#10;        &#10;          &lt;li&gt;&#10;            &#10;              &lt;code&gt;&#10;                swagger/&#10;                [name='schema-swagger-ui']&#10;              &lt;/code&gt;&#10;            &#10;          &lt;/li&gt;&#10;        &#10;          &lt;li&gt;&#10;            &#10;              &lt;code&gt;&#10;                redoc/&#10;                [name='schema-redoc']&#10;              &lt;/code&gt;&#10;            &#10;          &lt;/li&gt;&#10;        &#10;          &lt;li&gt;&#10;            &#10;              &lt;code&gt;&#10;                swagger.json&#10;                [name='schema-json']&#10;              &lt;/code&gt;&#10;            &#10;          &lt;/li&gt;&#10;        &#10;      &lt;/ol&gt;&#10;      &lt;p&gt;&#10;        &#10;          The current path, &lt;code&gt;api/register/student/&lt;/code&gt;,&#10;        &#10;        didn’t match any of these.&#10;      &lt;/p&gt;&#10;    &#10;  &lt;/main&gt;&#10;&#10;  &lt;footer id=&quot;explanation&quot;&gt;&#10;    &lt;p&gt;&#10;      You’re seeing this error because you have &lt;code&gt;DEBUG = True&lt;/code&gt; in&#10;      your Django settings file. Change that to &lt;code&gt;False&lt;/code&gt;, and Django&#10;      will display a standard 404 page.&#10;    &lt;/p&gt;&#10;  &lt;/footer&gt;&#10;&lt;/body&gt;&#10;&lt;/html&gt;&#10;" />
-              <option name="code" value="404" />
-              <option name="connectionEstablishingTime" value="161" />
-              <option name="contentType" value="text/html; charset=utf-8" />
-              <option name="headers">
-                <list>
-                  <headerState>
-                    <option name="key" value="Date" />
-                    <option name="value" value="Sat, 28 Jun 2025 12:34:10 GMT" />
-                  </headerState>
-                  <headerState>
-                    <option name="key" value="Server" />
-                    <option name="value" value="WSGIServer/0.2 CPython/3.12.10" />
-                  </headerState>
-                  <headerState>
-                    <option name="key" value="Content-Type" />
-                    <option name="value" value="text/html; charset=utf-8" />
-                  </headerState>
-                  <headerState>
-                    <option name="key" value="X-Frame-Options" />
-                    <option name="value" value="DENY" />
-                  </headerState>
-                  <headerState>
-                    <option name="key" value="Content-Length" />
-                    <option name="value" value="3224" />
-                  </headerState>
-                  <headerState>
-                    <option name="key" value="X-Content-Type-Options" />
-                    <option name="value" value="nosniff" />
-                  </headerState>
-                  <headerState>
-                    <option name="key" value="Referrer-Policy" />
-                    <option name="value" value="same-origin" />
-                  </headerState>
-                  <headerState>
-                    <option name="key" value="Cross-Origin-Opener-Policy" />
-                    <option name="value" value="same-origin" />
-                  </headerState>
-                </list>
-              </option>
-              <option name="id" value="7dd9eeac-1f6c-40b3-aa77-e17b792a8ac9" />
-              <option name="message" value="Not Found" />
-              <option name="prettyResponseType" value="HTML" />
-              <option name="previewType" value="HTML" />
-              <option name="rawBodyString" value="&lt;!DOCTYPE html&gt;&#10;&lt;html lang=&quot;en&quot;&gt;&#10;&lt;head&gt;&#10;  &lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html; charset=utf-8&quot;&gt;&#10;  &lt;title&gt;Page not found at /api/register/student/&lt;/title&gt;&#10;  &lt;meta name=&quot;robots&quot; content=&quot;NONE,NOARCHIVE&quot;&gt;&#10;  &lt;style&gt;&#10;    html * { padding:0; margin:0; }&#10;    body * { padding:10px 20px; }&#10;    body * * { padding:0; }&#10;    body { font-family: sans-serif; background:#eee; color:#000; }&#10;    body &gt; :where(header, main, footer) { border-bottom:1px solid #ddd; }&#10;    h1 { font-weight:normal; margin-bottom:.4em; }&#10;    h1 small { font-size:60%; color:#666; font-weight:normal; }&#10;    table { border:none; border-collapse: collapse; width:100%; }&#10;    td, th { vertical-align:top; padding:2px 3px; }&#10;    th { width:12em; text-align:right; color:#666; padding-right:.5em; }&#10;    #info { background:#f6f6f6; }&#10;    #info ol { margin: 0.5em 4em; }&#10;    #info ol li { font-family: monospace; }&#10;    #summary { background: #ffc; }&#10;    #explanation { background:#eee; border-bottom: 0px none; }&#10;    pre.exception_value { font-family: sans-serif; color: #575757; font-size: 1.5em; margin: 10px 0 10px 0; }&#10;  &lt;/style&gt;&#10;&lt;/head&gt;&#10;&lt;body&gt;&#10;  &lt;header id=&quot;summary&quot;&gt;&#10;    &lt;h1&gt;Page not found &lt;small&gt;(404)&lt;/small&gt;&lt;/h1&gt;&#10;    &#10;    &lt;table class=&quot;meta&quot;&gt;&#10;      &lt;tr&gt;&#10;        &lt;th scope=&quot;row&quot;&gt;Request Method:&lt;/th&gt;&#10;        &lt;td&gt;POST&lt;/td&gt;&#10;      &lt;/tr&gt;&#10;      &lt;tr&gt;&#10;        &lt;th scope=&quot;row&quot;&gt;Request URL:&lt;/th&gt;&#10;        &lt;td&gt;http://127.0.0.1:8000/api/register/student/&lt;/td&gt;&#10;      &lt;/tr&gt;&#10;      &#10;    &lt;/table&gt;&#10;  &lt;/header&gt;&#10;&#10;  &lt;main id=&quot;info&quot;&gt;&#10;    &#10;      &lt;p&gt;&#10;      Using the URLconf defined in &lt;code&gt;config.urls&lt;/code&gt;,&#10;      Django tried these URL patterns, in this order:&#10;      &lt;/p&gt;&#10;      &lt;ol&gt;&#10;        &#10;          &lt;li&gt;&#10;            &#10;              &lt;code&gt;&#10;                admin/&#10;                &#10;              &lt;/code&gt;&#10;            &#10;          &lt;/li&gt;&#10;        &#10;          &lt;li&gt;&#10;            &#10;              &lt;code&gt;&#10;                api/auth/&#10;                &#10;              &lt;/code&gt;&#10;            &#10;          &lt;/li&gt;&#10;        &#10;          &lt;li&gt;&#10;            &#10;              &lt;code&gt;&#10;                api/courses/&#10;                &#10;              &lt;/code&gt;&#10;            &#10;          &lt;/li&gt;&#10;        &#10;          &lt;li&gt;&#10;            &#10;              &lt;code&gt;&#10;                api/category/&#10;                &#10;              &lt;/code&gt;&#10;            &#10;          &lt;/li&gt;&#10;        &#10;          &lt;li&gt;&#10;            &#10;              &lt;code&gt;&#10;                swagger/&#10;                [name='schema-swagger-ui']&#10;              &lt;/code&gt;&#10;            &#10;          &lt;/li&gt;&#10;        &#10;          &lt;li&gt;&#10;            &#10;              &lt;code&gt;&#10;                redoc/&#10;                [name='schema-redoc']&#10;              &lt;/code&gt;&#10;            &#10;          &lt;/li&gt;&#10;        &#10;          &lt;li&gt;&#10;            &#10;              &lt;code&gt;&#10;                swagger.json&#10;                [name='schema-json']&#10;              &lt;/code&gt;&#10;            &#10;          &lt;/li&gt;&#10;        &#10;      &lt;/ol&gt;&#10;      &lt;p&gt;&#10;        &#10;          The current path, &lt;code&gt;api/register/student/&lt;/code&gt;,&#10;        &#10;        didn’t match any of these.&#10;      &lt;/p&gt;&#10;    &#10;  &lt;/main&gt;&#10;&#10;  &lt;footer id=&quot;explanation&quot;&gt;&#10;    &lt;p&gt;&#10;      You’re seeing this error because you have &lt;code&gt;DEBUG = True&lt;/code&gt; in&#10;      your Django settings file. Change that to &lt;code&gt;False&lt;/code&gt;, and Django&#10;      will display a standard 404 page.&#10;    &lt;/p&gt;&#10;  &lt;/footer&gt;&#10;&lt;/body&gt;&#10;&lt;/html&gt;&#10;" />
-              <option name="size" value="3224" />
-              <option name="time" value="195" />
             </responseState>
           </option>
           <option name="workspaceId" value="955b3e74-61d3-44d9-8c42-624b89c419d6" />
@@ -7397,6 +7152,419 @@
               <option name="rawBodyString" value="{&quot;id&quot;:&quot;a0b75e1b-a60a-4c48-805f-3872720521e2&quot;,&quot;name&quot;:&quot;DevOps&quot;}" />
               <option name="size" value="61" />
               <option name="time" value="12" />
+            </responseState>
+          </option>
+          <option name="workspaceId" value="955b3e74-61d3-44d9-8c42-624b89c419d6" />
+        </requestHistoryState>
+        <requestHistoryState>
+          <option name="dateTime" value="1751280833698" />
+          <option name="id" value="b2771693-0b34-4b4c-99be-1b57238c05a6" />
+          <option name="request">
+            <requestState>
+              <option name="body">
+                <bodyState>
+                  <option name="raw" value="{&#10;    &quot;username&quot;: &quot;test&quot;,&#10;    &quot;email&quot;: &quot;test@example.com&quot;,&#10;    &quot;password&quot;: &quot;StrongPass!23&quot;,&#10;    &quot;password2&quot;: &quot;StrongPass!23&quot;,&#10;    &quot;first_name&quot;: &quot;John&quot;,&#10;    &quot;last_name&quot;: &quot;Student&quot;,&#10;    &quot;address&quot;: &quot;123 Campus Rd&quot;,&#10;    &quot;phone_no&quot;: &quot;+1234567890&quot;,&#10;    &quot;profile_picture&quot;: null,&#10;  &#10;}&#10;" />
+                  <option name="type" value="JSON" />
+                </bodyState>
+              </option>
+              <option name="id" value="a1ebd693-d67e-4e90-84c1-8f40996d3b1a" />
+              <option name="method" value="POST" />
+              <option name="name" value="register" />
+              <option name="sortWeight" value="1000000" />
+              <option name="url" value="{{url}}/api/auth/register/student/" />
+            </requestState>
+          </option>
+          <option name="response">
+            <responseState>
+              <option name="bodyBytesBase64" value="eyJtZXNzYWdlIjoiU3R1ZGVudCBjcmVhdGVkIHN1Y2Nlc3NmdWxseSJ9" />
+              <option name="bodyString" value="{&#10;  &quot;message&quot;: &quot;Student created successfully&quot;&#10;}" />
+              <option name="code" value="201" />
+              <option name="connectionEstablishingTime" value="192" />
+              <option name="contentType" value="application/json" />
+              <option name="headers">
+                <list>
+                  <headerState>
+                    <option name="key" value="Date" />
+                    <option name="value" value="Mon, 30 Jun 2025 10:53:53 GMT" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Server" />
+                    <option name="value" value="WSGIServer/0.2 CPython/3.12.10" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Content-Type" />
+                    <option name="value" value="application/json" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Vary" />
+                    <option name="value" value="Accept" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Allow" />
+                    <option name="value" value="POST, OPTIONS" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="X-Frame-Options" />
+                    <option name="value" value="DENY" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Content-Length" />
+                    <option name="value" value="42" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="X-Content-Type-Options" />
+                    <option name="value" value="nosniff" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Referrer-Policy" />
+                    <option name="value" value="same-origin" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Cross-Origin-Opener-Policy" />
+                    <option name="value" value="same-origin" />
+                  </headerState>
+                </list>
+              </option>
+              <option name="id" value="b2771693-0b34-4b4c-99be-1b57238c05a6" />
+              <option name="message" value="Created" />
+              <option name="prettyResponseType" value="JSON" />
+              <option name="rawBodyString" value="{&quot;message&quot;:&quot;Student created successfully&quot;}" />
+              <option name="size" value="42" />
+              <option name="time" value="1207" />
+            </responseState>
+          </option>
+          <option name="workspaceId" value="955b3e74-61d3-44d9-8c42-624b89c419d6" />
+        </requestHistoryState>
+        <requestHistoryState>
+          <option name="dateTime" value="1751280841030" />
+          <option name="id" value="dbdf1203-80a0-4839-a243-63f3a2418112" />
+          <option name="request">
+            <requestState>
+              <option name="body">
+                <bodyState>
+                  <option name="raw" value="{&#10;  &quot;username&quot;: &quot;test&quot;,&#10;  &quot;password&quot;: &quot;StrongPass!23&quot;&#10;}" />
+                  <option name="type" value="JSON" />
+                </bodyState>
+              </option>
+              <option name="description" value="login the student by entering username and password and get auth tokens" />
+              <option name="id" value="3169c91c-f3b2-4ce3-a63d-b23b14fbacf9" />
+              <option name="method" value="POST" />
+              <option name="name" value="login" />
+              <option name="sortWeight" value="2000000" />
+              <option name="url" value="{{url}}/api/auth/login/" />
+            </requestState>
+          </option>
+          <option name="response">
+            <responseState>
+              <option name="bodyBytesBase64" value="eyJyZWZyZXNoIjoiZXlKaGJHY2lPaUpJVXpJMU5pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SjBiMnRsYmw5MGVYQmxJam9pY21WbWNtVnphQ0lzSW1WNGNDSTZNVGMxTVRZeU5qUTBNQ3dpYVdGMElqb3hOelV4TWpnd09EUXdMQ0pxZEdraU9pSTNNamxsTjJVMk4yUmtZelUwWXpGa1ltSXpNekl5WmpObU56aGtabVkzTXlJc0luVnpaWEpmYVdRaU9pSTJNMkprTURrM015MDBaREF6TFRRMFltWXRZV1ZtWmkwek1qWmxOREF3TldRMVlXUWlmUS55OVFKaXRNdnVfUW9OMGxKYkFpRmNzWHBtRy1wdXJpazRveXpyLVhwLTN3IiwiYWNjZXNzIjoiZXlKaGJHY2lPaUpJVXpJMU5pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SjBiMnRsYmw5MGVYQmxJam9pWVdOalpYTnpJaXdpWlhod0lqb3hOelV4TXpZM01qUXdMQ0pwWVhRaU9qRTNOVEV5T0RBNE5EQXNJbXAwYVNJNklqa3pNVFZrWWpaaE5UWmxZVFJtTXpGaU1ESXhPRGhtT1RVNFlUVmlOemN6SWl3aWRYTmxjbDlwWkNJNklqWXpZbVF3T1RjekxUUmtNRE10TkRSaVppMWhaV1ptTFRNeU5tVTBNREExWkRWaFpDSjkueTdvdTJWVFBpTDRVOV9PT1dmUklnRFpva1J0d25ncTB4blBOX1NUalk4TSJ9" />
+              <option name="bodyString" value="{&#10;  &quot;refresh&quot;: &quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc1MTYyNjQ0MCwiaWF0IjoxNzUxMjgwODQwLCJqdGkiOiI3MjllN2U2N2RkYzU0YzFkYmIzMzIyZjNmNzhkZmY3MyIsInVzZXJfaWQiOiI2M2JkMDk3My00ZDAzLTQ0YmYtYWVmZi0zMjZlNDAwNWQ1YWQifQ.y9QJitMvu_QoN0lJbAiFcsXpmG-purik4oyzr-Xp-3w&quot;,&#10;  &quot;access&quot;: &quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxMzY3MjQwLCJpYXQiOjE3NTEyODA4NDAsImp0aSI6IjkzMTVkYjZhNTZlYTRmMzFiMDIxODhmOTU4YTViNzczIiwidXNlcl9pZCI6IjYzYmQwOTczLTRkMDMtNDRiZi1hZWZmLTMyNmU0MDA1ZDVhZCJ9.y7ou2VTPiL4U9_OOWfRIgDZokRtwngq0xnPN_STjY8M&quot;&#10;}" />
+              <option name="code" value="200" />
+              <option name="connectionEstablishingTime" value="1" />
+              <option name="contentType" value="application/json" />
+              <option name="headers">
+                <list>
+                  <headerState>
+                    <option name="key" value="Date" />
+                    <option name="value" value="Mon, 30 Jun 2025 10:54:01 GMT" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Server" />
+                    <option name="value" value="WSGIServer/0.2 CPython/3.12.10" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Content-Type" />
+                    <option name="value" value="application/json" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Vary" />
+                    <option name="value" value="Accept" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Allow" />
+                    <option name="value" value="POST, OPTIONS" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="X-Frame-Options" />
+                    <option name="value" value="DENY" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Content-Length" />
+                    <option name="value" value="582" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="X-Content-Type-Options" />
+                    <option name="value" value="nosniff" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Referrer-Policy" />
+                    <option name="value" value="same-origin" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Cross-Origin-Opener-Policy" />
+                    <option name="value" value="same-origin" />
+                  </headerState>
+                </list>
+              </option>
+              <option name="id" value="dbdf1203-80a0-4839-a243-63f3a2418112" />
+              <option name="message" value="OK" />
+              <option name="prettyResponseType" value="JSON" />
+              <option name="rawBodyString" value="{&quot;refresh&quot;:&quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc1MTYyNjQ0MCwiaWF0IjoxNzUxMjgwODQwLCJqdGkiOiI3MjllN2U2N2RkYzU0YzFkYmIzMzIyZjNmNzhkZmY3MyIsInVzZXJfaWQiOiI2M2JkMDk3My00ZDAzLTQ0YmYtYWVmZi0zMjZlNDAwNWQ1YWQifQ.y9QJitMvu_QoN0lJbAiFcsXpmG-purik4oyzr-Xp-3w&quot;,&quot;access&quot;:&quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxMzY3MjQwLCJpYXQiOjE3NTEyODA4NDAsImp0aSI6IjkzMTVkYjZhNTZlYTRmMzFiMDIxODhmOTU4YTViNzczIiwidXNlcl9pZCI6IjYzYmQwOTczLTRkMDMtNDRiZi1hZWZmLTMyNmU0MDA1ZDVhZCJ9.y7ou2VTPiL4U9_OOWfRIgDZokRtwngq0xnPN_STjY8M&quot;}" />
+              <option name="size" value="582" />
+              <option name="time" value="866" />
+            </responseState>
+          </option>
+          <option name="workspaceId" value="955b3e74-61d3-44d9-8c42-624b89c419d6" />
+        </requestHistoryState>
+        <requestHistoryState>
+          <option name="dateTime" value="1751281032264" />
+          <option name="id" value="b94c364c-b0bc-44a6-ae09-d475f88adc4f" />
+          <option name="request">
+            <requestState>
+              <option name="body">
+                <bodyState>
+                  <option name="raw" value="{&#10;  &quot;username&quot;: &quot;admin&quot;,&#10;  &quot;password&quot;: &quot;1234&quot;&#10;}" />
+                  <option name="type" value="JSON" />
+                </bodyState>
+              </option>
+              <option name="description" value="- login the admin which is create via script" />
+              <option name="id" value="ffd2206e-8e7c-4003-9de6-e77e8ddabcb5" />
+              <option name="method" value="POST" />
+              <option name="name" value="login" />
+              <option name="sortWeight" value="1000000" />
+              <option name="url" value="{{url}}/api/auth/login/" />
+            </requestState>
+          </option>
+          <option name="response">
+            <responseState>
+              <option name="bodyBytesBase64" value="eyJyZWZyZXNoIjoiZXlKaGJHY2lPaUpJVXpJMU5pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SjBiMnRsYmw5MGVYQmxJam9pY21WbWNtVnphQ0lzSW1WNGNDSTZNVGMxTVRZeU5qWXpNaXdpYVdGMElqb3hOelV4TWpneE1ETXlMQ0pxZEdraU9pSTVZMlZrTm1SaFltRTBORFEwWm1JeU9EVTVORGd5TlRaa05USmtOell5WlNJc0luVnpaWEpmYVdRaU9pSmpNMlZpT1RZeE5TMDROamcxTFRReU5UZ3RPR1F5Wmkxa056SXpNMlJpTnpFeVpEWWlmUS55OGhnZ1BTOUllbXhqX2hmOUp2THRKTUJacW4tM2R3UnY3Qk9NcFpjYVA4IiwiYWNjZXNzIjoiZXlKaGJHY2lPaUpJVXpJMU5pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SjBiMnRsYmw5MGVYQmxJam9pWVdOalpYTnpJaXdpWlhod0lqb3hOelV4TXpZM05ETXlMQ0pwWVhRaU9qRTNOVEV5T0RFd016SXNJbXAwYVNJNkltVmxZVEUxTkdabVpERTVPRFE1TWpFNU4yWTJOREprTVdJME5HSTRPR05sSWl3aWRYTmxjbDlwWkNJNkltTXpaV0k1TmpFMUxUZzJPRFV0TkRJMU9DMDRaREptTFdRM01qTXpaR0kzTVRKa05pSjkuYXNvTlpKVmdLTDRiNWlfSUdhRHM3S21tXzhlWnJqQU9LakQ4UFpWanVzYyJ9" />
+              <option name="bodyString" value="{&#10;  &quot;refresh&quot;: &quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc1MTYyNjYzMiwiaWF0IjoxNzUxMjgxMDMyLCJqdGkiOiI5Y2VkNmRhYmE0NDQ0ZmIyODU5NDgyNTZkNTJkNzYyZSIsInVzZXJfaWQiOiJjM2ViOTYxNS04Njg1LTQyNTgtOGQyZi1kNzIzM2RiNzEyZDYifQ.y8hggPS9Iemxj_hf9JvLtJMBZqn-3dwRv7BOMpZcaP8&quot;,&#10;  &quot;access&quot;: &quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxMzY3NDMyLCJpYXQiOjE3NTEyODEwMzIsImp0aSI6ImVlYTE1NGZmZDE5ODQ5MjE5N2Y2NDJkMWI0NGI4OGNlIiwidXNlcl9pZCI6ImMzZWI5NjE1LTg2ODUtNDI1OC04ZDJmLWQ3MjMzZGI3MTJkNiJ9.asoNZJVgKL4b5i_IGaDs7Kmm_8eZrjAOKjD8PZVjusc&quot;&#10;}" />
+              <option name="code" value="200" />
+              <option name="connectionEstablishingTime" value="3" />
+              <option name="contentType" value="application/json" />
+              <option name="headers">
+                <list>
+                  <headerState>
+                    <option name="key" value="Date" />
+                    <option name="value" value="Mon, 30 Jun 2025 10:57:12 GMT" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Server" />
+                    <option name="value" value="WSGIServer/0.2 CPython/3.12.10" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Content-Type" />
+                    <option name="value" value="application/json" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Vary" />
+                    <option name="value" value="Accept" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Allow" />
+                    <option name="value" value="POST, OPTIONS" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="X-Frame-Options" />
+                    <option name="value" value="DENY" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Content-Length" />
+                    <option name="value" value="582" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="X-Content-Type-Options" />
+                    <option name="value" value="nosniff" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Referrer-Policy" />
+                    <option name="value" value="same-origin" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Cross-Origin-Opener-Policy" />
+                    <option name="value" value="same-origin" />
+                  </headerState>
+                </list>
+              </option>
+              <option name="id" value="b94c364c-b0bc-44a6-ae09-d475f88adc4f" />
+              <option name="message" value="OK" />
+              <option name="prettyResponseType" value="JSON" />
+              <option name="rawBodyString" value="{&quot;refresh&quot;:&quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc1MTYyNjYzMiwiaWF0IjoxNzUxMjgxMDMyLCJqdGkiOiI5Y2VkNmRhYmE0NDQ0ZmIyODU5NDgyNTZkNTJkNzYyZSIsInVzZXJfaWQiOiJjM2ViOTYxNS04Njg1LTQyNTgtOGQyZi1kNzIzM2RiNzEyZDYifQ.y8hggPS9Iemxj_hf9JvLtJMBZqn-3dwRv7BOMpZcaP8&quot;,&quot;access&quot;:&quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxMzY3NDMyLCJpYXQiOjE3NTEyODEwMzIsImp0aSI6ImVlYTE1NGZmZDE5ODQ5MjE5N2Y2NDJkMWI0NGI4OGNlIiwidXNlcl9pZCI6ImMzZWI5NjE1LTg2ODUtNDI1OC04ZDJmLWQ3MjMzZGI3MTJkNiJ9.asoNZJVgKL4b5i_IGaDs7Kmm_8eZrjAOKjD8PZVjusc&quot;}" />
+              <option name="size" value="582" />
+              <option name="time" value="846" />
+            </responseState>
+          </option>
+          <option name="workspaceId" value="955b3e74-61d3-44d9-8c42-624b89c419d6" />
+        </requestHistoryState>
+        <requestHistoryState>
+          <option name="dateTime" value="1751281067049" />
+          <option name="id" value="5b9d2bca-c56d-4906-a32f-b9c313854f40" />
+          <option name="request">
+            <requestState>
+              <option name="body">
+                <bodyState>
+                  <option name="raw" value="{&#10;  &quot;name&quot;: &quot;nginx&quot;,&#10;  &quot;title&quot;: &quot;Nginx hosting&quot;,&#10;  &quot;duration_value&quot;: 6,&#10;  &quot;duration_unit&quot;: &quot;months&quot;,&#10;  &quot;price&quot;: &quot;15000.00&quot;,&#10;  &quot;rating&quot;: 4.6,&#10;  &quot;training_level&quot;: &quot;intermediate&quot;,&#10;  &quot;class_type&quot;: &quot;online&quot;,&#10;  &quot;career_prospect&quot;: &quot;DevOps Engineer | Site Reliability Engineer | Cloud Architect&quot;,&#10;  &quot;categories&quot;: [&quot;DevOps&quot;],&#10;  &quot;description&quot;: {&#10;    &quot;course_introduction&quot;: &quot;Master CI/CD pipelines, infrastructure as code, and cloud-native tooling&quot;,&#10;    &quot;course_overview&quot;: &quot;Hands-on training with Docker, Kubernetes, Terraform, and AWS/GCP&quot;,&#10;    &quot;course_requirements&quot;: &quot;Linux basics and fundamental programming concepts&quot;,&#10;    &quot;course_context&quot;: &quot;For software engineers transitioning to DevOps roles&quot;&#10;  },&#10;  &quot;syllabus&quot;: {&#10;    &quot;title&quot;: &quot;Nginx tutorial&quot;,&#10;    &quot;syllabus_title_indexing&quot;: 2,&#10;    &quot;title_content&quot;: [&#10;      {&#10;        &quot;title_content&quot;: &quot;Linux &amp; Shell Scripting&quot;,&#10;        &quot;syllabus_title_content_indexing&quot;: 1,&#10;        &quot;details&quot;: &quot;Advanced bash, system administration, process management&quot;&#10;      },&#10;      {&#10;        &quot;title_content&quot;: &quot;Containerization with Docker&quot;,&#10;        &quot;syllabus_title_content_indexing&quot;: 2,&#10;        &quot;details&quot;: &quot;Image creation, Dockerfiles, multi-stage builds&quot;&#10;      },&#10;      {&#10;        &quot;title_content&quot;: &quot;Kubernetes Orchestration&quot;,&#10;        &quot;syllabus_title_content_indexing&quot;: 3,&#10;        &quot;details&quot;: &quot;Pods, deployments, services, helm charts&quot;&#10;      },&#10;      {&#10;        &quot;title_content&quot;: &quot;Infrastructure as Code&quot;,&#10;        &quot;syllabus_title_content_indexing&quot;: 4,&#10;        &quot;details&quot;: &quot;Terraform modules, state management, cloud provisioning&quot;&#10;      },&#10;      {&#10;        &quot;title_content&quot;: &quot;CI/CD Pipelines&quot;,&#10;        &quot;syllabus_title_content_indexing&quot;: 5,&#10;        &quot;details&quot;: &quot;GitHub Actions, ArgoCD, Jenkins configuration&quot;&#10;      },&#10;      {&#10;        &quot;title_content&quot;: &quot;Cloud Monitoring&quot;,&#10;        &quot;syllabus_title_content_indexing&quot;: 6,&#10;        &quot;details&quot;: &quot;Prometheus, Grafana, ELK stack implementation&quot;&#10;      }&#10;    ]&#10;  }&#10;}" />
+                  <option name="type" value="JSON" />
+                </bodyState>
+              </option>
+              <option name="headers">
+                <list>
+                  <headerState>
+                    <option name="key" value="Authorization" />
+                    <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxMzY3NDMyLCJpYXQiOjE3NTEyODEwMzIsImp0aSI6ImVlYTE1NGZmZDE5ODQ5MjE5N2Y2NDJkMWI0NGI4OGNlIiwidXNlcl9pZCI6ImMzZWI5NjE1LTg2ODUtNDI1OC04ZDJmLWQ3MjMzZGI3MTJkNiJ9.asoNZJVgKL4b5i_IGaDs7Kmm_8eZrjAOKjD8PZVjusc" />
+                  </headerState>
+                </list>
+              </option>
+              <option name="id" value="53c86376-5da4-4fe3-b68d-a794ee016325" />
+              <option name="method" value="POST" />
+              <option name="name" value="add course" />
+              <option name="sortWeight" value="2000000" />
+              <option name="url" value="http://127.0.0.1:8000/api/courses/add-course/" />
+            </requestState>
+          </option>
+          <option name="response">
+            <responseState>
+              <option name="bodyBytesBase64" value="eyJkZXRhaWwiOiJNZXRob2QgXCJQT1NUXCIgbm90IGFsbG93ZWQuIn0=" />
+              <option name="bodyString" value="{&#10;  &quot;detail&quot;: &quot;Method \&quot;POST\&quot; not allowed.&quot;&#10;}" />
+              <option name="code" value="405" />
+              <option name="connectionEstablishingTime" value="1" />
+              <option name="contentType" value="application/json" />
+              <option name="headers">
+                <list>
+                  <headerState>
+                    <option name="key" value="Date" />
+                    <option name="value" value="Mon, 30 Jun 2025 10:57:47 GMT" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Server" />
+                    <option name="value" value="WSGIServer/0.2 CPython/3.12.10" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Content-Type" />
+                    <option name="value" value="application/json" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Vary" />
+                    <option name="value" value="Accept" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Allow" />
+                    <option name="value" value="GET, HEAD, OPTIONS" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="X-Frame-Options" />
+                    <option name="value" value="DENY" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Content-Length" />
+                    <option name="value" value="41" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="X-Content-Type-Options" />
+                    <option name="value" value="nosniff" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Referrer-Policy" />
+                    <option name="value" value="same-origin" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Cross-Origin-Opener-Policy" />
+                    <option name="value" value="same-origin" />
+                  </headerState>
+                </list>
+              </option>
+              <option name="id" value="5b9d2bca-c56d-4906-a32f-b9c313854f40" />
+              <option name="message" value="Method Not Allowed" />
+              <option name="prettyResponseType" value="JSON" />
+              <option name="rawBodyString" value="{&quot;detail&quot;:&quot;Method \&quot;POST\&quot; not allowed.&quot;}" />
+              <option name="size" value="41" />
+              <option name="time" value="10" />
+            </responseState>
+          </option>
+          <option name="workspaceId" value="955b3e74-61d3-44d9-8c42-624b89c419d6" />
+        </requestHistoryState>
+        <requestHistoryState>
+          <option name="dateTime" value="1751281094145" />
+          <option name="id" value="3e55e3fe-1de8-4e05-ac09-e27ab862a92d" />
+          <option name="request">
+            <requestState>
+              <option name="body">
+                <bodyState>
+                  <option name="raw" value="{&#10;  &quot;name&quot;: &quot;nginx&quot;,&#10;  &quot;title&quot;: &quot;Nginx hosting&quot;,&#10;  &quot;duration_value&quot;: 6,&#10;  &quot;duration_unit&quot;: &quot;months&quot;,&#10;  &quot;price&quot;: &quot;15000.00&quot;,&#10;  &quot;rating&quot;: 4.6,&#10;  &quot;training_level&quot;: &quot;intermediate&quot;,&#10;  &quot;class_type&quot;: &quot;online&quot;,&#10;  &quot;career_prospect&quot;: &quot;DevOps Engineer | Site Reliability Engineer | Cloud Architect&quot;,&#10;  &quot;categories&quot;: [&quot;DevOps&quot;],&#10;  &quot;description&quot;: {&#10;    &quot;course_introduction&quot;: &quot;Master CI/CD pipelines, infrastructure as code, and cloud-native tooling&quot;,&#10;    &quot;course_overview&quot;: &quot;Hands-on training with Docker, Kubernetes, Terraform, and AWS/GCP&quot;,&#10;    &quot;course_requirements&quot;: &quot;Linux basics and fundamental programming concepts&quot;,&#10;    &quot;course_context&quot;: &quot;For software engineers transitioning to DevOps roles&quot;&#10;  },&#10;  &quot;syllabus&quot;: {&#10;    &quot;title&quot;: &quot;Nginx tutorial&quot;,&#10;    &quot;syllabus_title_indexing&quot;: 2,&#10;    &quot;title_content&quot;: [&#10;      {&#10;        &quot;title_content&quot;: &quot;Linux &amp; Shell Scripting&quot;,&#10;        &quot;syllabus_title_content_indexing&quot;: 1,&#10;        &quot;details&quot;: &quot;Advanced bash, system administration, process management&quot;&#10;      },&#10;      {&#10;        &quot;title_content&quot;: &quot;Containerization with Docker&quot;,&#10;        &quot;syllabus_title_content_indexing&quot;: 2,&#10;        &quot;details&quot;: &quot;Image creation, Dockerfiles, multi-stage builds&quot;&#10;      },&#10;      {&#10;        &quot;title_content&quot;: &quot;Kubernetes Orchestration&quot;,&#10;        &quot;syllabus_title_content_indexing&quot;: 3,&#10;        &quot;details&quot;: &quot;Pods, deployments, services, helm charts&quot;&#10;      },&#10;      {&#10;        &quot;title_content&quot;: &quot;Infrastructure as Code&quot;,&#10;        &quot;syllabus_title_content_indexing&quot;: 4,&#10;        &quot;details&quot;: &quot;Terraform modules, state management, cloud provisioning&quot;&#10;      },&#10;      {&#10;        &quot;title_content&quot;: &quot;CI/CD Pipelines&quot;,&#10;        &quot;syllabus_title_content_indexing&quot;: 5,&#10;        &quot;details&quot;: &quot;GitHub Actions, ArgoCD, Jenkins configuration&quot;&#10;      },&#10;      {&#10;        &quot;title_content&quot;: &quot;Cloud Monitoring&quot;,&#10;        &quot;syllabus_title_content_indexing&quot;: 6,&#10;        &quot;details&quot;: &quot;Prometheus, Grafana, ELK stack implementation&quot;&#10;      }&#10;    ]&#10;  }&#10;}" />
+                  <option name="type" value="JSON" />
+                </bodyState>
+              </option>
+              <option name="headers">
+                <list>
+                  <headerState>
+                    <option name="key" value="Authorization" />
+                    <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxMzY3NDMyLCJpYXQiOjE3NTEyODEwMzIsImp0aSI6ImVlYTE1NGZmZDE5ODQ5MjE5N2Y2NDJkMWI0NGI4OGNlIiwidXNlcl9pZCI6ImMzZWI5NjE1LTg2ODUtNDI1OC04ZDJmLWQ3MjMzZGI3MTJkNiJ9.asoNZJVgKL4b5i_IGaDs7Kmm_8eZrjAOKjD8PZVjusc" />
+                  </headerState>
+                </list>
+              </option>
+              <option name="id" value="53c86376-5da4-4fe3-b68d-a794ee016325" />
+              <option name="method" value="POST" />
+              <option name="name" value="add course" />
+              <option name="sortWeight" value="2000000" />
+              <option name="url" value="{{url}}/api/courses/add/" />
+            </requestState>
+          </option>
+          <option name="response">
+            <responseState>
+              <option name="bodyBytesBase64" value="eyJpZCI6IjM4MGU2ZjViLWRiZjMtNDgxZi1iOWU3LTY0N2EzYjE5YTE2NiIsIm9iamVjdGl2ZXNfbGlzdCI6W10sInByZXJlcXVpc2l0ZXNfbGlzdCI6W10sIm91dGNvbWVzX2xpc3QiOltdLCJhdmVyYWdlX3JhdGluZyI6IjAuMDAiLCJyYXRpbmdzIjpbXSwiY2F0ZWdvcmllcyI6W10sIm5hbWUiOiJuZ2lueCIsInRpdGxlIjoiTmdpbnggaG9zdGluZyIsImR1cmF0aW9uX3dlZWtzIjo0LCJwcmljZSI6IjE1MDAwLjAwIiwidHJhaW5pbmdfbGV2ZWwiOiJpbnRlcm1lZGlhdGUiLCJjbGFzc190eXBlIjoib25saW5lIiwiaW1hZ2UiOm51bGwsImNyZWF0ZWRfYXQiOiIyMDI1LTA2LTMwVDEwOjU4OjE0LjEzMDE5NVoiLCJ1cGRhdGVkX2F0IjoiMjAyNS0wNi0zMFQxMDo1ODoxNC4xMzAyNTVaIiwib3ZlcnZpZXciOm51bGwsImN1cnJpY3VsdW0iOltdLCJvd25lciI6ImMzZWI5NjE1LTg2ODUtNDI1OC04ZDJmLWQ3MjMzZGI3MTJkNiJ9" />
+              <option name="bodyString" value="{&#10;  &quot;id&quot;: &quot;380e6f5b-dbf3-481f-b9e7-647a3b19a166&quot;,&#10;  &quot;objectives_list&quot;: [],&#10;  &quot;prerequisites_list&quot;: [],&#10;  &quot;outcomes_list&quot;: [],&#10;  &quot;average_rating&quot;: &quot;0.00&quot;,&#10;  &quot;ratings&quot;: [],&#10;  &quot;categories&quot;: [],&#10;  &quot;name&quot;: &quot;nginx&quot;,&#10;  &quot;title&quot;: &quot;Nginx hosting&quot;,&#10;  &quot;duration_weeks&quot;: 4,&#10;  &quot;price&quot;: &quot;15000.00&quot;,&#10;  &quot;training_level&quot;: &quot;intermediate&quot;,&#10;  &quot;class_type&quot;: &quot;online&quot;,&#10;  &quot;image&quot;: null,&#10;  &quot;created_at&quot;: &quot;2025-06-30T10:58:14.130195Z&quot;,&#10;  &quot;updated_at&quot;: &quot;2025-06-30T10:58:14.130255Z&quot;,&#10;  &quot;overview&quot;: null,&#10;  &quot;curriculum&quot;: [],&#10;  &quot;owner&quot;: &quot;c3eb9615-8685-4258-8d2f-d7233db712d6&quot;&#10;}" />
+              <option name="code" value="201" />
+              <option name="connectionEstablishingTime" value="1" />
+              <option name="contentType" value="application/json" />
+              <option name="headers">
+                <list>
+                  <headerState>
+                    <option name="key" value="Date" />
+                    <option name="value" value="Mon, 30 Jun 2025 10:58:14 GMT" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Server" />
+                    <option name="value" value="WSGIServer/0.2 CPython/3.12.10" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Content-Type" />
+                    <option name="value" value="application/json" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Vary" />
+                    <option name="value" value="Accept" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Allow" />
+                    <option name="value" value="POST, OPTIONS" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="X-Frame-Options" />
+                    <option name="value" value="DENY" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Content-Length" />
+                    <option name="value" value="471" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="X-Content-Type-Options" />
+                    <option name="value" value="nosniff" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Referrer-Policy" />
+                    <option name="value" value="same-origin" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Cross-Origin-Opener-Policy" />
+                    <option name="value" value="same-origin" />
+                  </headerState>
+                </list>
+              </option>
+              <option name="id" value="3e55e3fe-1de8-4e05-ac09-e27ab862a92d" />
+              <option name="message" value="Created" />
+              <option name="prettyResponseType" value="JSON" />
+              <option name="rawBodyString" value="{&quot;id&quot;:&quot;380e6f5b-dbf3-481f-b9e7-647a3b19a166&quot;,&quot;objectives_list&quot;:[],&quot;prerequisites_list&quot;:[],&quot;outcomes_list&quot;:[],&quot;average_rating&quot;:&quot;0.00&quot;,&quot;ratings&quot;:[],&quot;categories&quot;:[],&quot;name&quot;:&quot;nginx&quot;,&quot;title&quot;:&quot;Nginx hosting&quot;,&quot;duration_weeks&quot;:4,&quot;price&quot;:&quot;15000.00&quot;,&quot;training_level&quot;:&quot;intermediate&quot;,&quot;class_type&quot;:&quot;online&quot;,&quot;image&quot;:null,&quot;created_at&quot;:&quot;2025-06-30T10:58:14.130195Z&quot;,&quot;updated_at&quot;:&quot;2025-06-30T10:58:14.130255Z&quot;,&quot;overview&quot;:null,&quot;curriculum&quot;:[],&quot;owner&quot;:&quot;c3eb9615-8685-4258-8d2f-d7233db712d6&quot;}" />
+              <option name="size" value="471" />
+              <option name="time" value="68" />
             </responseState>
           </option>
           <option name="workspaceId" value="955b3e74-61d3-44d9-8c42-624b89c419d6" />
