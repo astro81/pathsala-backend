@@ -40,6 +40,7 @@ urlpatterns = [
     path('api/courses/', include('courses.urls')),
     path('api/category/', include('category.urls')),
     path('api/course-ratings/', include('course_ratings.urls')),
+    path('api/enrollment/', include('enrollment.urls')),
 
     # Swagger and Redoc
     path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
