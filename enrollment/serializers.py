@@ -13,14 +13,4 @@ class EnrollmentSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
-    def create(self, validated_data):
-        if validated_data.get('status') == 'approved':
-            validated_data['Enrolled_Date'] = timezone.now()
-        return super().create(validated_data)
-
-    def update(self, instance, validated_data):
-        if validated_data.get('status') and instance.status != 'approved':
-            validated_data['Enrolled_Date'] = timezone.now()
-        return super().update(instance, validated_data)
-
 

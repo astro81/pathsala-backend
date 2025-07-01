@@ -43,7 +43,7 @@ class EditEnrollmentView(UpdateAPIView):
             # Check if status is becoming approved
             new_status = serializer.validated_data.get("status") # Field which is used while updating through patch.
             if new_status == "approved" and enrollment.status != "approved":
-                serializer.save(Enrolled_Date=timezone.now())
+                serializer.save(Enrolled_Date=timezone.now(), approved_by=self.request.user.role)
 
             else:
                 serializer.save()

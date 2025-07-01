@@ -39,6 +39,7 @@ urlpatterns = [
     path('api/auth/', include('users.urls')),
     path('api/courses/', include('courses.urls')),
     path('api/category/', include('category.urls')),
+    path('api/enrollment/', include('enrollment.urls')),
     path('api/course-ratings/', include('course_ratings.urls')),
 
     # Swagger and Redoc
