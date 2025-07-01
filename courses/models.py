@@ -12,7 +12,7 @@ from django.contrib.auth import get_user_model
 from django.core.validators import MinValueValidator
 from django.db import models
 from django.utils.translation import gettext_lazy as _
-
+from decimal import Decimal
 from category.models import Category
 
 User = get_user_model()
@@ -111,7 +111,7 @@ class Course(models.Model):
         max_digits=10,
         decimal_places=2,
         default=0.00,
-        validators=[MinValueValidator(0.00, message=_("Price cannot be negative"))],
+        validators=[MinValueValidator(Decimal("0.00"), message=_("Price cannot be negative"))],
         help_text="Course price in NPR"
     )
 

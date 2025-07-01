@@ -2,7 +2,7 @@
 name = 'View Ratings'
 description = '- check the ratings made to a specific course'
 method = 'GET'
-url = '{{url}}/api/course-ratings/check/bbf1e0b3-b83c-4cc7-9727-b95792bccffe/'
+url = '{{url}}/api/course-ratings/check/d5ead67d-8af6-475e-ba64-988b303225bf/'
 sortWeight = 2000000
 id = 'c953fa1b-1a93-40f6-92e2-9814c83ba77d'
 

@@ -26,6 +26,7 @@ from rest_framework.generics import (
     UpdateAPIView,
     DestroyAPIView
 )
+from rest_framework.parsers import MultiPartParser, FormParser
 from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 
@@ -51,6 +52,7 @@ class CreateCourseView(CreateAPIView):
 
     permission_classes = (HasCoursePermission,)
     required_permission = 'add_course'
+    parser_classes = [MultiPartParser, FormParser]  # Enables file upload
     queryset = Course.objects.all()
     serializer_class = CourseSerializer
 
@@ -315,6 +317,7 @@ class EditCourseView(UpdateAPIView):
 
     permission_classes = (HasCoursePermission,)
     required_permission = 'edit_course'
+    parser_classes = [MultiPartParser, FormParser]  # Enables file upload
     serializer_class = CourseSerializer
     queryset = Course.objects.all()
     lookup_field = 'name'

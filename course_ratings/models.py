@@ -12,7 +12,7 @@ from django.db import DatabaseError, IntegrityError
 from django.contrib.auth import get_user_model
 from django.core.validators import MinValueValidator, MaxValueValidator
 from django.db import models
-
+from decimal import Decimal
 from courses.models import Course
 
 User = get_user_model()
@@ -59,10 +59,10 @@ class CourseRating(models.Model):
     rating = models.DecimalField(
         max_digits=3,
         decimal_places=2,
-        default=0.0,
+        default=0.00,
         validators=[
-            MinValueValidator(0.0, message="Rating cannot be less than 0"),
-            MaxValueValidator(5.0, message="Rating cannot exceed 5")
+            MinValueValidator(Decimal("0.00"), message="Rating cannot be less than 0"),
+            MaxValueValidator(Decimal("5.00"), message="Rating cannot exceed 5")
         ],
         help_text="Numeric rating between 0.0 and 5.0 (required)"
     )

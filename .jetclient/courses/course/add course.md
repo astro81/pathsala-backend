@@ -8,14 +8,14 @@ id = '830c008d-0c3b-42a8-a662-0d5136589806'
 
 [[headers]]
 key = 'Authorization'
-value = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxMzQwMjE1LCJpYXQiOjE3NTEyNTM4MTUsImp0aSI6IjlhZjVhZWFmYzk5ZDRmMjI5ZjhkMWFiZTcwYjAzMzhjIiwidXNlcl9pZCI6ImYzMGM0MzZkLTY3MGUtNGJjMy1hMmU4LWZkMWU4YmJlYWZmOSJ9.dIL5uLdkl9ezjeLOa8_orwUqEzNVbPFO5ncPb6hlvvE'
+value = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxNDI3MTY2LCJpYXQiOjE3NTEzNDA3NjYsImp0aSI6IjdhOWE5MWY0ZTcwZDQ2NjViOTU0NmViMjc1ODZkYjJmIiwidXNlcl9pZCI6ImMzZWI5NjE1LTg2ODUtNDI1OC04ZDJmLWQ3MjMzZGI3MTJkNiJ9.XP-VExj7BTw8UQuu8_NjV3f-gm98l-sKwaLQ6HDymkU'
 
 [body]
 type = 'JSON'
 raw = '''
 {
-    "name": "Django",
-    "title": "Python Framework",
+    "name": "Svelte",
+    "title": " JS Framework",
     "duration_weeks": 8,
     "price": "15000.00",
     "training_level": "advanced",

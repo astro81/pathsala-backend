@@ -7,12 +7,12 @@ id = 'a561f2b0-bafd-4994-9ab5-321b7353cb9b'
 
 [[headers]]
 key = 'Authorization'
-value = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxMDIxNzEwLCJpYXQiOjE3NTEwMjE0MTAsImp0aSI6IjIzMmRjNjc0NTk0ZjQ2MjFiMTMyNWNhNzYzZjNmOTQwIiwidXNlcl9pZCI6IjU5ZjdiYTM4LTk4NDgtNDFjMC1hYWE3LWVkOGVkOTg2ODAxNSJ9.9OWLxgwnAYz85YY3nGnfsa2ttT4Gic5UgH9GCoF6Z8k'
+value = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxNDI3MTY2LCJpYXQiOjE3NTEzNDA3NjYsImp0aSI6IjdhOWE5MWY0ZTcwZDQ2NjViOTU0NmViMjc1ODZkYjJmIiwidXNlcl9pZCI6ImMzZWI5NjE1LTg2ODUtNDI1OC04ZDJmLWQ3MjMzZGI3MTJkNiJ9.XP-VExj7BTw8UQuu8_NjV3f-gm98l-sKwaLQ6HDymkU'
 
 [body]
 type = 'JSON'
 raw = '''
 {
-  "name": "Full Development"
+  "name": "Frontend Development"
 }'''
 ```

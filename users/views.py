@@ -27,6 +27,7 @@ from rest_framework import status
 from rest_framework.exceptions import ValidationError
 from rest_framework.filters import SearchFilter, OrderingFilter
 from rest_framework.generics import get_object_or_404, ListAPIView
+from rest_framework.parsers import MultiPartParser, FormParser
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
@@ -61,7 +62,6 @@ class LoginView(APIView):
     """
 
     permission_classes = (AllowAny,)
-
 
     @swagger_auto_schema(
         operation_description="Authenticate user with username/password and receive JWT tokens",
@@ -335,6 +335,7 @@ class StudentRegisterView(APIView):
     """
 
     permission_classes = (AllowAny,)
+    parser_classes = [MultiPartParser, FormParser]  # Enables file upload
 
     @swagger_auto_schema(
         operation_description="Register a new student account",
@@ -509,6 +510,7 @@ class UserOwnProfileView(APIView):
     """
 
     permission_classes = (IsAuthenticated,)
+
 
     @swagger_auto_schema(
         operation_description="Get the authenticated user's profile information",
@@ -704,6 +706,7 @@ class StudentProfileUpdateView(APIView):
     """
 
     permission_classes = (IsStudent,)
+    parser_classes = [MultiPartParser, FormParser]  # Enables file upload
 
     @swagger_auto_schema(
         operation_description="Update student profile information",
