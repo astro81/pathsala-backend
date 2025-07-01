@@ -7,14 +7,14 @@ id = '5c7bb2ea-af5b-455d-bf26-7fa5efa2ae5e'
 
 [[headers]]
 key = 'Authorization'
-value = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxMzY2NTAyLCJpYXQiOjE3NTEyODAxMDIsImp0aSI6ImZjZjdkMTQyOTQ5ZDRjYjU4YWVlMjkyZWU2MTU2N2M2IiwidXNlcl9pZCI6ImU0OGU5Mzc5LTY2N2QtNDcwZS04NGMwLTFiNzJiNWU0M2IyZCJ9.dxFklI-aeFcT9m4gwUJ5EVqCb6VHGkOt8-7pcvnRDio'
+value = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxNDI1ODg2LCJpYXQiOjE3NTEzMzk0ODYsImp0aSI6IjUwMzIwMjRiNTBiNTQwNDdhYTlhYTUyNmNiMmM1NTg5IiwidXNlcl9pZCI6ImUxZTIyOGU0LTAyMDEtNDE4MC1iOWM4LTU0YzEyMTEyYjQ5MSJ9.5Kb6Uwu_oshxyU_aZIvs0wR6YbV3zwupfQwQX1Nbib4'
 
 [body]
 type = 'JSON'
 raw = '''
 {
-  "course" : "1506a09d-9879-47cb-be9d-db281baa9639",
-  "user" : "fc606c65-ad6f-488e-af27-ca656dba12b8",
+  "course" : "536d0dbc-493a-4c91-ba77-a898071346bd",
+  "user" : "e1e228e4-0201-4180-b9c8-54c12112b491",
  
 }'''
 ```

@@ -45,8 +45,7 @@ INSTALLED_APPS = [
     'django_filters',
     'users',
     'courses',
-    'course_description',
-    'course_syllabus',
+    'course_ratings',
     'category',
     'enrollment',
 ]
@@ -129,8 +128,8 @@ USE_TZ = True
 
 
 STATIC_URL = 'static/'
-MEDIA_ROOT = BASE_DIR / 'media'
 MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
@@ -140,6 +139,11 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [ 'rest_framework.permissions.IsAuthenticated' ],
     'DEFAULT_AUTHENTICATION_CLASSES': [ 'rest_framework_simplejwt.authentication.JWTAuthentication' ],
+    'DEFAULT_FILTER_BACKENDS': [
+        'django_filters.rest_framework.DjangoFilterBackend',
+        'rest_framework.filters.OrderingFilter',
+        'rest_framework.filters.SearchFilter',
+    ]
 }
 
 SIMPLE_JWT = {

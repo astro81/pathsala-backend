@@ -1,19 +1,18 @@
 ```toml
 name = 'edit enrollement'
 method = 'PATCH'
-url = '{{url}}/api/enrollment/editenrollment/5e35ecd7-8ccc-4b3e-932b-fb7d51d7b22d/'
+url = '{{url}}/api/enrollment/editenrollment/b711ff6f-be5f-4b1e-8107-92431adf5b2d/'
 sortWeight = 4000000
 id = '96416c43-b8de-4aad-a75c-327663726412'
 
 [[headers]]
 key = 'Authorization'
-value = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxMzcyNDk5LCJpYXQiOjE3NTEyODYwOTksImp0aSI6ImMxZGQzMjAwZTMwNzQ0NjA4OTZjODQwMDM3OTU3NTAzIiwidXNlcl9pZCI6Ijc0NTRkMjg5LTRmZjQtNGVmYS05OTAxLTQ1ZGI3MzJjYzQzNCJ9.TMvlP57oA7V4cD3jd8doebk95pqxsw9yMedfFy19fTw'
+value = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxNDI1NzMyLCJpYXQiOjE3NTEzMzkzMzIsImp0aSI6IjMyZmIzN2RmNGQ1NjRkYjViN2E2MTdhNDQwZjA3NWI2IiwidXNlcl9pZCI6IjIzMjk4YTY0LTc0NmUtNGVlNC05ODI0LTNjODlhMjlhODBjMSJ9.2EE6sLGZNTgOrUoRODTc1dkU7EhRwuFCzczPjh69Wts'
 
 [body]
 type = 'JSON'
 raw = '''
 {
-  "approved_by" : "moderator",
-  "status": "pending"
+  "status": "approved"
 }'''
 ```
