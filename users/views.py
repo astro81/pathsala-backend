@@ -337,7 +337,6 @@ class StudentRegisterView(APIView):
     """
 
     permission_classes = (AllowAny,)
-    parser_classes = [MultiPartParser, FormParser]  # Enables file upload
 
     @swagger_auto_schema(
         operation_description="Register a new student account",
