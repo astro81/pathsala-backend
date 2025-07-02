@@ -796,6 +796,7 @@ class ModeratorProfileUpdateView(APIView):
     """
 
     permission_classes = (IsModerator,)
+    parser_classes = [MultiPartParser, FormParser]  # Enables file upload
 
     @swagger_auto_schema(
         operation_description="Update moderator profile information",
