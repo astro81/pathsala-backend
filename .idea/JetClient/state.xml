@@ -127,124 +127,6 @@
                 <option name="sortWeight" value="1500000" />
               </folderState>
               <folderState>
-                <option name="id" value="21130c12-f790-4dd7-8237-5b5f0ad71e85" />
-                <option name="name" value="courses" />
-                <option name="requests">
-                  <list>
-                    <requestState>
-                      <option name="id" value="91a82eae-1d77-4769-974d-30a6ca416a21" />
-                      <option name="method" value="GET" />
-                      <option name="name" value="list courses" />
-                      <option name="queryParams">
-                        <list>
-                          <queryParamState>
-                            <option name="disabled" value="true" />
-                            <option name="key" value="training_level" />
-                            <option name="value" value="advanced" />
-                          </queryParamState>
-                          <queryParamState>
-                            <option name="disabled" value="true" />
-                            <option name="key" value="class_type" />
-                            <option name="value" value="offline" />
-                          </queryParamState>
-                          <queryParamState>
-                            <option name="disabled" value="true" />
-                            <option name="key" value="duration" />
-                            <option name="value" value="60" />
-                          </queryParamState>
-                        </list>
-                      </option>
-                      <option name="sortWeight" value="1000000" />
-                      <option name="url" value="http://127.0.0.1:8000/api/courses/list-courses/" />
-                    </requestState>
-                    <requestState>
-                      <option name="body">
-                        <bodyState>
-                          <option name="raw" value="{&#10;  &quot;name&quot;: &quot;nginx&quot;,&#10;  &quot;title&quot;: &quot;Nginx hosting&quot;,&#10;  &quot;duration_value&quot;: 6,&#10;  &quot;duration_unit&quot;: &quot;months&quot;,&#10;  &quot;price&quot;: &quot;15000.00&quot;,&#10;  &quot;rating&quot;: 4.6,&#10;  &quot;training_level&quot;: &quot;intermediate&quot;,&#10;  &quot;class_type&quot;: &quot;online&quot;,&#10;  &quot;career_prospect&quot;: &quot;DevOps Engineer | Site Reliability Engineer | Cloud Architect&quot;,&#10;  &quot;categories&quot;: [&quot;DevOps&quot;],&#10;  &quot;description&quot;: {&#10;    &quot;course_introduction&quot;: &quot;Master CI/CD pipelines, infrastructure as code, and cloud-native tooling&quot;,&#10;    &quot;course_overview&quot;: &quot;Hands-on training with Docker, Kubernetes, Terraform, and AWS/GCP&quot;,&#10;    &quot;course_requirements&quot;: &quot;Linux basics and fundamental programming concepts&quot;,&#10;    &quot;course_context&quot;: &quot;For software engineers transitioning to DevOps roles&quot;&#10;  },&#10;  &quot;syllabus&quot;: {&#10;    &quot;title&quot;: &quot;Nginx tutorial&quot;,&#10;    &quot;syllabus_title_indexing&quot;: 2,&#10;    &quot;title_content&quot;: [&#10;      {&#10;        &quot;title_content&quot;: &quot;Linux &amp; Shell Scripting&quot;,&#10;        &quot;syllabus_title_content_indexing&quot;: 1,&#10;        &quot;details&quot;: &quot;Advanced bash, system administration, process management&quot;&#10;      },&#10;      {&#10;        &quot;title_content&quot;: &quot;Containerization with Docker&quot;,&#10;        &quot;syllabus_title_content_indexing&quot;: 2,&#10;        &quot;details&quot;: &quot;Image creation, Dockerfiles, multi-stage builds&quot;&#10;      },&#10;      {&#10;        &quot;title_content&quot;: &quot;Kubernetes Orchestration&quot;,&#10;        &quot;syllabus_title_content_indexing&quot;: 3,&#10;        &quot;details&quot;: &quot;Pods, deployments, services, helm charts&quot;&#10;      },&#10;      {&#10;        &quot;title_content&quot;: &quot;Infrastructure as Code&quot;,&#10;        &quot;syllabus_title_content_indexing&quot;: 4,&#10;        &quot;details&quot;: &quot;Terraform modules, state management, cloud provisioning&quot;&#10;      },&#10;      {&#10;        &quot;title_content&quot;: &quot;CI/CD Pipelines&quot;,&#10;        &quot;syllabus_title_content_indexing&quot;: 5,&#10;        &quot;details&quot;: &quot;GitHub Actions, ArgoCD, Jenkins configuration&quot;&#10;      },&#10;      {&#10;        &quot;title_content&quot;: &quot;Cloud Monitoring&quot;,&#10;        &quot;syllabus_title_content_indexing&quot;: 6,&#10;        &quot;details&quot;: &quot;Prometheus, Grafana, ELK stack implementation&quot;&#10;      }&#10;    ]&#10;  }&#10;}" />
-                          <option name="type" value="JSON" />
-                        </bodyState>
-                      </option>
-                      <option name="headers">
-                        <list>
-                          <headerState>
-                            <option name="key" value="Authorization" />
-                            <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxMzY3NDMyLCJpYXQiOjE3NTEyODEwMzIsImp0aSI6ImVlYTE1NGZmZDE5ODQ5MjE5N2Y2NDJkMWI0NGI4OGNlIiwidXNlcl9pZCI6ImMzZWI5NjE1LTg2ODUtNDI1OC04ZDJmLWQ3MjMzZGI3MTJkNiJ9.asoNZJVgKL4b5i_IGaDs7Kmm_8eZrjAOKjD8PZVjusc" />
-                          </headerState>
-                        </list>
-                      </option>
-                      <option name="id" value="53c86376-5da4-4fe3-b68d-a794ee016325" />
-                      <option name="method" value="POST" />
-                      <option name="name" value="add course" />
-                      <option name="sortWeight" value="2000000" />
-                      <option name="url" value="{{url}}/api/courses/add/" />
-                    </requestState>
-                    <requestState>
-                      <option name="body">
-                        <bodyState>
-                          <option name="type" value="JSON" />
-                        </bodyState>
-                      </option>
-                      <option name="headers">
-                        <list>
-                          <headerState>
-                            <option name="disabled" value="true" />
-                            <option name="key" value="Authorization" />
-                            <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxMjc5MjgzLCJpYXQiOjE3NTExOTI4ODMsImp0aSI6ImY5MmZjYTEzNDYxMzQ0YWQ5MzFkMDNkM2MzNjIwNDgxIiwidXNlcl9pZCI6ImY1YjdiNWYwLWM0ZTAtNGE4Zi1hMzdhLTVlZTNiZDI5YjQyNSJ9.YP0hA8tAMtAuT2jzEdWUVHwJbRCY0jLKNv_Rj5ci7q8" />
-                          </headerState>
-                        </list>
-                      </option>
-                      <option name="id" value="ef775a6b-4a1f-41f1-9a3a-f5baebea7a81" />
-                      <option name="method" value="GET" />
-                      <option name="name" value="view course" />
-                      <option name="sortWeight" value="3000000" />
-                      <option name="url" value="http://127.0.0.1:8000/api/courses/view-course/nginx/" />
-                    </requestState>
-                    <requestState>
-                      <option name="body">
-                        <bodyState>
-                          <option name="raw" value="{&#10;&quot;categories&quot;: [&quot;Developer&quot;]&#10;}&#10;   " />
-                          <option name="type" value="JSON" />
-                        </bodyState>
-                      </option>
-                      <option name="headers">
-                        <list>
-                          <headerState>
-                            <option name="key" value="Authorization" />
-                            <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxMDIyMjg3LCJpYXQiOjE3NTEwMjE5ODcsImp0aSI6ImE5M2E5NmZiODQ1YjQ4NWRhNDFlYzk1YzdkYTg1Yzc1IiwidXNlcl9pZCI6IjU5ZjdiYTM4LTk4NDgtNDFjMC1hYWE3LWVkOGVkOTg2ODAxNSJ9.-2LT3nKZZQIrvErhxCpU_pAfftOEZYHPXYnW5Y9f82U" />
-                          </headerState>
-                        </list>
-                      </option>
-                      <option name="id" value="b1e88c78-0712-4926-a3e4-7ec3973daf52" />
-                      <option name="method" value="PATCH" />
-                      <option name="name" value="edit course" />
-                      <option name="sortWeight" value="4000000" />
-                      <option name="url" value="http://127.0.0.1:8000/api/courses/edit-course/devops-engineering-2024/" />
-                    </requestState>
-                    <requestState>
-                      <option name="body">
-                        <bodyState>
-                          <option name="type" value="JSON" />
-                        </bodyState>
-                      </option>
-                      <option name="headers">
-                        <list>
-                          <headerState>
-                            <option name="key" value="Authorization" />
-                            <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxMDIyNDA0LCJpYXQiOjE3NTEwMjIxMDQsImp0aSI6IjhmMDg2NTY1ODY4NTQzOTJhM2E4YzRhODBmNjczYzVkIiwidXNlcl9pZCI6IjU5ZjdiYTM4LTk4NDgtNDFjMC1hYWE3LWVkOGVkOTg2ODAxNSJ9.rA2Jw-1RsB95C3UcURqPw59O19FwTAjvcyfL9Dks30c" />
-                          </headerState>
-                        </list>
-                      </option>
-                      <option name="id" value="69cee8de-9494-4bfe-a7e0-76769975864c" />
-                      <option name="method" value="DELETE" />
-                      <option name="name" value="delete course" />
-                      <option name="sortWeight" value="5000000" />
-                      <option name="url" value="http://127.0.0.1:8000/api/courses/delete-course/devops-engineering-2024/" />
-                    </requestState>
-                  </list>
-                </option>
-                <option name="sortWeight" value="2000000" />
-              </folderState>
-              <folderState>
                 <option name="folders">
                   <list>
                     <folderState>
@@ -268,7 +150,7 @@
                           <requestState>
                             <option name="body">
                               <bodyState>
-                                <option name="raw" value="{&#10;  &quot;username&quot;: &quot;test&quot;,&#10;  &quot;password&quot;: &quot;StrongPass!23&quot;&#10;}" />
+                                <option name="raw" value="{&#10;  &quot;username&quot;: &quot;test&quot;,&#10;  &quot;password&quot;: &quot;StrongPass!23&quot;&#10;//  &#10;//   &quot;username&quot;: &quot;mod1&quot;,&#10;//  &quot;password&quot;: &quot;Mod@1234&quot;&#10;}" />
                                 <option name="type" value="JSON" />
                               </bodyState>
                             </option>
@@ -390,6 +272,23 @@
                     <folderState>
                       <option name="id" value="0258798e-aa89-4b26-88a2-087b638dc689" />
                       <option name="name" value="moderator" />
+                      <option name="requests">
+                        <list>
+                          <requestState>
+                            <option name="body">
+                              <bodyState>
+                                <option name="raw" value="{&#10;  &quot;username&quot;: &quot;mod1&quot;,&#10;  &quot;password&quot;: &quot;Mod@1234&quot;&#10;}" />
+                                <option name="type" value="JSON" />
+                              </bodyState>
+                            </option>
+                            <option name="id" value="32e30ee3-09f7-42c1-aa33-75ac4128c001" />
+                            <option name="method" value="POST" />
+                            <option name="name" value="Login Moderator" />
+                            <option name="sortWeight" value="1000000" />
+                            <option name="url" value="{{url}}/api/auth/login/" />
+                          </requestState>
+                        </list>
+                      </option>
                       <option name="sortWeight" value="2000000" />
                     </folderState>
                     <folderState>
@@ -400,7 +299,7 @@
                           <requestState>
                             <option name="body">
                               <bodyState>
-                                <option name="raw" value="{&#10;  &quot;username&quot;: &quot;admin&quot;,&#10;  &quot;password&quot;: &quot;1234&quot;&#10;}" />
+                                <option name="raw" value="{&#10;  &quot;username&quot;: &quot;admin&quot;,&#10;  &quot;password&quot;: &quot;1234&quot;&#10;  &#10;//  &quot;username&quot;: &quot;mod1&quot;,&#10;//  &quot;password&quot;: &quot;Mod@1234&quot;&#10;}" />
                                 <option name="type" value="JSON" />
                               </bodyState>
                             </option>
@@ -445,7 +344,7 @@
                               <list>
                                 <headerState>
                                   <option name="key" value="Authorization" />
-                                  <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxMjAyMzQ4LCJpYXQiOjE3NTExMTU5NDgsImp0aSI6IjVlNWQ4MTI4Mzc1NzQ3ODQ4NGE5Nzc5N2U0MWFjYWRiIiwidXNlcl9pZCI6ImI4ZjVlOTZhLTI1ZDgtNDEyMS1hNTRiLTIxNzIyNzVlMTRkZCJ9.Cy2Vqy1TEVVh71Otns60Kmex_2lB9qrVwIHWHDFXMpc" />
+                                  <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxMzM4Mzg0LCJpYXQiOjE3NTEyNTE5ODQsImp0aSI6ImUzZDYzNGRhYTUyODRhZGNiNTJkZTE5MjQxOWY1NGVhIiwidXNlcl9pZCI6IjcxMmM2OTU1LTk3YmQtNDg3Mi1iN2NmLTgyMjUyODczMjIzMyJ9._mjZw9zEvkysVWWBsDLMPgCR0F-WnDe8iIcFT8UNWoE" />
                                 </headerState>
                               </list>
                             </option>
@@ -461,7 +360,7 @@
                               <list>
                                 <headerState>
                                   <option name="key" value="Authorization" />
-                                  <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxMjU3NTkxLCJpYXQiOjE3NTExNzExOTEsImp0aSI6IjZiMDM1OTkxZDNiMzRhYjE4MmY5ZDZhNTliZjUyOWE5IiwidXNlcl9pZCI6ImY1YjdiNWYwLWM0ZTAtNGE4Zi1hMzdhLTVlZTNiZDI5YjQyNSJ9.7eEYHmBt06PrlZHJXQJdi_2SztQj6xD7H_ZiSe4AIhQ" />
+                                  <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxMjg2NDE0LCJpYXQiOjE3NTEyMDAwMTQsImp0aSI6ImZhYTA1NDc5YWU0NzRiNTRhMjA2YjMwYmVmYTI4M2UzIiwidXNlcl9pZCI6ImQxYTEzNWNmLTU4NDMtNGMxZS1iZmNjLTJhNmUxNTY5MjE2OSJ9.OyT997Oaj6kzQVffNtDPvy3p-ktmCLhMbTmRukdoxTM" />
                                 </headerState>
                               </list>
                             </option>
@@ -488,6 +387,11 @@
                             <option name="url" value="{{url}}/api/auth/admin/profile/test/" />
                           </requestState>
                           <requestState>
+                            <option name="body">
+                              <bodyState>
+                                <option name="type" value="JSON" />
+                              </bodyState>
+                            </option>
                             <option name="description" value="- Soft Delete others account" />
                             <option name="headers">
                               <list>
@@ -541,7 +445,7 @@
                               <list>
                                 <headerState>
                                   <option name="key" value="Authorization" />
-                                  <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxMjU3NTkxLCJpYXQiOjE3NTExNzExOTEsImp0aSI6IjZiMDM1OTkxZDNiMzRhYjE4MmY5ZDZhNTliZjUyOWE5IiwidXNlcl9pZCI6ImY1YjdiNWYwLWM0ZTAtNGE4Zi1hMzdhLTVlZTNiZDI5YjQyNSJ9.7eEYHmBt06PrlZHJXQJdi_2SztQj6xD7H_ZiSe4AIhQ" />
+                                  <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxMzc1MjkxLCJpYXQiOjE3NTEyODg4OTEsImp0aSI6IjE0NjZmOTVlYzc4OTRjOTk4NjNkMWE5YmEyMzRlNDIyIiwidXNlcl9pZCI6ImMzZWI5NjE1LTg2ODUtNDI1OC04ZDJmLWQ3MjMzZGI3MTJkNiJ9.y3i8KQjI_UVMKwAm_RCwm8ss8Gn_kD-xvZw5ydRv6Xg" />
                                 </headerState>
                               </list>
                             </option>
@@ -560,6 +464,139 @@
                 <option name="id" value="4cf534e7-815e-43fd-bb6f-82eb3f17c384" />
                 <option name="name" value="users" />
                 <option name="sortWeight" value="3000000" />
+              </folderState>
+              <folderState>
+                <option name="folders">
+                  <list>
+                    <folderState>
+                      <option name="id" value="e94b743d-6cad-4c4b-b6c8-bb9b6ffc3626" />
+                      <option name="name" value="course" />
+                      <option name="requests">
+                        <list>
+                          <requestState>
+                            <option name="body">
+                              <bodyState>
+                                <option name="raw" value="{&#10;    &quot;name&quot;: &quot;Django&quot;,&#10;    &quot;title&quot;: &quot;Python Framework&quot;,&#10;    &quot;duration_weeks&quot;: 8,&#10;    &quot;price&quot;: &quot;15000.00&quot;,&#10;    &quot;training_level&quot;: &quot;advanced&quot;,&#10;    &quot;class_type&quot;: &quot;online&quot;,&#10;    &quot;categories&quot;: [&quot;Web Dev&quot;, &quot;Backend&quot;],&#10;    &quot;overview&quot;: &quot;Learn the fundamentals of Python programming language from scratch.&quot;,&#10;    &quot;objectives&quot;: [&#10;        &quot;Understand basic Python syntax&quot;,&#10;        &quot;Learn about variables and data types&quot;,&#10;        &quot;Master control flow statements&quot;,&#10;        &quot;Write simple Python programs&quot;&#10;    ],&#10;    &quot;prerequisites&quot;: [&#10;        &quot;Basic computer literacy&quot;,&#10;        &quot;No prior programming experience required&quot;&#10;    ],&#10;    &quot;outcomes&quot;: [&#10;        &quot;Ability to write Python scripts&quot;,&#10;        &quot;Understanding of core programming concepts&quot;,&#10;        &quot;Foundation for advanced Python topics&quot;&#10;    ],&#10;    &quot;curriculum&quot;: [&#10;        {&#10;            &quot;week&quot;: 1,&#10;            &quot;title&quot;: &quot;Introduction to Python&quot;,&#10;            &quot;topics&quot;: [&quot;Installation&quot;, &quot;Syntax basics&quot;, &quot;Variables&quot;]&#10;        },&#10;        {&#10;            &quot;week&quot;: 2,&#10;            &quot;title&quot;: &quot;Control Flow&quot;,&#10;            &quot;topics&quot;: [&quot;Conditionals&quot;, &quot;Loops&quot;, &quot;Functions&quot;]&#10;        }&#10;    ]&#10;}" />
+                                <option name="type" value="JSON" />
+                              </bodyState>
+                            </option>
+                            <option name="description" value="- Add a new course" />
+                            <option name="headers">
+                              <list>
+                                <headerState>
+                                  <option name="key" value="Authorization" />
+                                  <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxMzQwMjE1LCJpYXQiOjE3NTEyNTM4MTUsImp0aSI6IjlhZjVhZWFmYzk5ZDRmMjI5ZjhkMWFiZTcwYjAzMzhjIiwidXNlcl9pZCI6ImYzMGM0MzZkLTY3MGUtNGJjMy1hMmU4LWZkMWU4YmJlYWZmOSJ9.dIL5uLdkl9ezjeLOa8_orwUqEzNVbPFO5ncPb6hlvvE" />
+                                </headerState>
+                              </list>
+                            </option>
+                            <option name="id" value="830c008d-0c3b-42a8-a662-0d5136589806" />
+                            <option name="method" value="POST" />
+                            <option name="name" value="add course" />
+                            <option name="sortWeight" value="1000000" />
+                            <option name="url" value="{{url}}/api/courses/add/" />
+                          </requestState>
+                          <requestState>
+                            <option name="description" value="- List of all of the courses" />
+                            <option name="id" value="cd4b2054-5030-413b-8b32-722122e28833" />
+                            <option name="method" value="GET" />
+                            <option name="name" value="list courses" />
+                            <option name="sortWeight" value="2000000" />
+                            <option name="url" value="{{url}}/api/courses/list/" />
+                          </requestState>
+                          <requestState>
+                            <option name="body">
+                              <bodyState>
+                                <option name="raw" value="{&#10;  &quot;price&quot;: 500,&#10;  &quot;categories_input&quot;: [&quot;New Category 1&quot;, &quot;New Category 2&quot;]&#10;}" />
+                                <option name="type" value="JSON" />
+                              </bodyState>
+                            </option>
+                            <option name="description" value="- Update a prexisting course" />
+                            <option name="headers">
+                              <list>
+                                <headerState>
+                                  <option name="key" value="Authorization" />
+                                  <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxMzQwMjE1LCJpYXQiOjE3NTEyNTM4MTUsImp0aSI6IjlhZjVhZWFmYzk5ZDRmMjI5ZjhkMWFiZTcwYjAzMzhjIiwidXNlcl9pZCI6ImYzMGM0MzZkLTY3MGUtNGJjMy1hMmU4LWZkMWU4YmJlYWZmOSJ9.dIL5uLdkl9ezjeLOa8_orwUqEzNVbPFO5ncPb6hlvvE" />
+                                </headerState>
+                              </list>
+                            </option>
+                            <option name="id" value="a2a88939-7759-49f5-8a4c-3a9f1803cfb7" />
+                            <option name="method" value="PATCH" />
+                            <option name="name" value="Update Course" />
+                            <option name="sortWeight" value="3000000" />
+                            <option name="url" value="{{url}}/api/courses/update/python-intermidate/" />
+                          </requestState>
+                          <requestState>
+                            <option name="description" value="- Most rated courses" />
+                            <option name="id" value="70863ee2-886e-4474-91fe-e956ff0f5759" />
+                            <option name="method" value="GET" />
+                            <option name="name" value="Featured Course" />
+                            <option name="sortWeight" value="4000000" />
+                            <option name="url" value="{{url}}/api/courses/featured/" />
+                          </requestState>
+                        </list>
+                      </option>
+                      <option name="sortWeight" value="1000000" />
+                    </folderState>
+                    <folderState>
+                      <option name="id" value="9acc002e-c3b6-4520-bb3e-92f19a36cd58" />
+                      <option name="name" value="ratings" />
+                      <option name="requests">
+                        <list>
+                          <requestState>
+                            <option name="body">
+                              <bodyState>
+                                <option name="raw" value="{&#10;  &quot;rating&quot;: 5.0,&#10;  &quot;review&quot;: &quot;Great introduction to Python!&quot;&#10;}z" />
+                                <option name="type" value="JSON" />
+                              </bodyState>
+                            </option>
+                            <option name="description" value="- Only for students" />
+                            <option name="headers">
+                              <list>
+                                <headerState>
+                                  <option name="key" value="Authorization" />
+                                  <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxNDI1MjkwLCJpYXQiOjE3NTEzMzg4OTAsImp0aSI6IjFmNTc5ZTcyZGUyMjQ5ZjVhN2Q5NGI5OWFlODVjNWMzIiwidXNlcl9pZCI6IjYzYmQwOTczLTRkMDMtNDRiZi1hZWZmLTMyNmU0MDA1ZDVhZCJ9.75_ha4w9jGNkrOwADoM-BtD83wyyXo44NbrMhFVNGTs" />
+                                </headerState>
+                              </list>
+                            </option>
+                            <option name="id" value="4742a2a6-9317-4412-b099-d1a40eb55ced" />
+                            <option name="method" value="POST" />
+                            <option name="name" value="Rate Course" />
+                            <option name="sortWeight" value="1000000" />
+                            <option name="url" value="{{url}}/api/course-ratings/rate/bbf1e0b3-b83c-4cc7-9727-b95792bccffe/" />
+                          </requestState>
+                          <requestState>
+                            <option name="description" value="- check the ratings made to a specific course" />
+                            <option name="headers">
+                              <list>
+                                <headerState>
+                                  <option name="key" value="Authorization" />
+                                  <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxNDI1MjkwLCJpYXQiOjE3NTEzMzg4OTAsImp0aSI6IjFmNTc5ZTcyZGUyMjQ5ZjVhN2Q5NGI5OWFlODVjNWMzIiwidXNlcl9pZCI6IjYzYmQwOTczLTRkMDMtNDRiZi1hZWZmLTMyNmU0MDA1ZDVhZCJ9.75_ha4w9jGNkrOwADoM-BtD83wyyXo44NbrMhFVNGTs" />
+                                </headerState>
+                              </list>
+                            </option>
+                            <option name="id" value="c953fa1b-1a93-40f6-92e2-9814c83ba77d" />
+                            <option name="method" value="GET" />
+                            <option name="name" value="View Ratings" />
+                            <option name="sortWeight" value="2000000" />
+                            <option name="url" value="{{url}}/api/course-ratings/check/bbf1e0b3-b83c-4cc7-9727-b95792bccffe/" />
+                          </requestState>
+                          <requestState>
+                            <option name="description" value="- list all the ratings for a given course" />
+                            <option name="id" value="feac02db-9bf8-4436-b33d-d37c863151f0" />
+                            <option name="method" value="GET" />
+                            <option name="name" value="List Ratings" />
+                            <option name="sortWeight" value="3000000" />
+                            <option name="url" value="{{url}}/api/course-ratings/list/bbf1e0b3-b83c-4cc7-9727-b95792bccffe/" />
+                          </requestState>
+                        </list>
+                      </option>
+                      <option name="sortWeight" value="2000000" />
+                    </folderState>
+                  </list>
+                </option>
+                <option name="id" value="4c46d89f-9622-4759-a47b-b275ed69dc08" />
+                <option name="name" value="courses" />
+                <option name="sortWeight" value="4000000" />
               </folderState>
             </list>
           </option>
