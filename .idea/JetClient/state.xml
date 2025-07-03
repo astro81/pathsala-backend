@@ -21,7 +21,7 @@
                     <requestState>
                       <option name="body">
                         <bodyState>
-                          <option name="raw" value="{&#10;  &quot;name&quot;: &quot;Full Development&quot;&#10;}" />
+                          <option name="raw" value="{&#10;  &quot;name&quot;: &quot;Frontend Development&quot;&#10;}" />
                           <option name="type" value="JSON" />
                         </bodyState>
                       </option>
@@ -29,7 +29,7 @@
                         <list>
                           <headerState>
                             <option name="key" value="Authorization" />
-                            <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxMDIxNzEwLCJpYXQiOjE3NTEwMjE0MTAsImp0aSI6IjIzMmRjNjc0NTk0ZjQ2MjFiMTMyNWNhNzYzZjNmOTQwIiwidXNlcl9pZCI6IjU5ZjdiYTM4LTk4NDgtNDFjMC1hYWE3LWVkOGVkOTg2ODAxNSJ9.9OWLxgwnAYz85YY3nGnfsa2ttT4Gic5UgH9GCoF6Z8k" />
+                            <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxNDI3MTY2LCJpYXQiOjE3NTEzNDA3NjYsImp0aSI6IjdhOWE5MWY0ZTcwZDQ2NjViOTU0NmViMjc1ODZkYjJmIiwidXNlcl9pZCI6ImMzZWI5NjE1LTg2ODUtNDI1OC04ZDJmLWQ3MjMzZGI3MTJkNiJ9.XP-VExj7BTw8UQuu8_NjV3f-gm98l-sKwaLQ6HDymkU" />
                           </headerState>
                         </list>
                       </option>
@@ -71,7 +71,7 @@
                         <list>
                           <headerState>
                             <option name="key" value="Authorization" />
-                            <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxMjc5MjgzLCJpYXQiOjE3NTExOTI4ODMsImp0aSI6ImY5MmZjYTEzNDYxMzQ0YWQ5MzFkMDNkM2MzNjIwNDgxIiwidXNlcl9pZCI6ImY1YjdiNWYwLWM0ZTAtNGE4Zi1hMzdhLTVlZTNiZDI5YjQyNSJ9.YP0hA8tAMtAuT2jzEdWUVHwJbRCY0jLKNv_Rj5ci7q8" />
+                            <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxNDI3MTY2LCJpYXQiOjE3NTEzNDA3NjYsImp0aSI6IjdhOWE5MWY0ZTcwZDQ2NjViOTU0NmViMjc1ODZkYjJmIiwidXNlcl9pZCI6ImMzZWI5NjE1LTg2ODUtNDI1OC04ZDJmLWQ3MjMzZGI3MTJkNiJ9.XP-VExj7BTw8UQuu8_NjV3f-gm98l-sKwaLQ6HDymkU" />
                           </headerState>
                         </list>
                       </option>
@@ -79,7 +79,7 @@
                       <option name="method" value="GET" />
                       <option name="name" value="view category" />
                       <option name="sortWeight" value="1500000" />
-                      <option name="url" value="{{url}}/api/category/view-category/DevOps/" />
+                      <option name="url" value="{{url}}/api/category/view-category/Frontend Development/" />
                     </requestState>
                     <requestState>
                       <option name="body">
@@ -137,7 +137,7 @@
                           <requestState>
                             <option name="body">
                               <bodyState>
-                                <option name="raw" value="{&#10;    &quot;username&quot;: &quot;test&quot;,&#10;    &quot;email&quot;: &quot;test@example.com&quot;,&#10;    &quot;password&quot;: &quot;StrongPass!23&quot;,&#10;    &quot;password2&quot;: &quot;StrongPass!23&quot;,&#10;    &quot;first_name&quot;: &quot;John&quot;,&#10;    &quot;last_name&quot;: &quot;Student&quot;,&#10;    &quot;address&quot;: &quot;123 Campus Rd&quot;,&#10;    &quot;phone_no&quot;: &quot;+1234567890&quot;,&#10;    &quot;profile_picture&quot;: null,&#10;  &#10;}&#10;" />
+                                <option name="raw" value="{&#10;    &quot;username&quot;: &quot;test5&quot;,&#10;    &quot;email&quot;: &quot;test5@example.com&quot;,&#10;    &quot;password&quot;: &quot;StrongPass!23&quot;,&#10;    &quot;password2&quot;: &quot;StrongPass!23&quot;,&#10;    &quot;first_name&quot;: &quot;John&quot;,&#10;    &quot;last_name&quot;: &quot;Student&quot;,&#10;    &quot;address&quot;: &quot;123 Campus Rd&quot;,&#10;    &quot;phone_no&quot;: &quot;+1234567890&quot;,&#10;    &quot;profile_picture&quot;: null,&#10;  &#10;}&#10;" />
                                 <option name="type" value="JSON" />
                               </bodyState>
                             </option>
@@ -211,7 +211,7 @@
                               <list>
                                 <headerState>
                                   <option name="key" value="Authorization" />
-                                  <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxMjU3MzY3LCJpYXQiOjE3NTExNzA5NjcsImp0aSI6IjA4MGRkMmI1OWM1YjQ0NjY4YjhjZTdhMDU0NDQ0YTlkIiwidXNlcl9pZCI6ImY0ZDQ2YzkwLTc0ODAtNGQzOS04NTQ0LTdkNjllOGY5OTIwZSJ9.N4_T8qnHKQQxCvEN2o2h1rHPG1kLVUzTyNpBMmkZxHU" />
+                                  <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxNDUwNjI2LCJpYXQiOjE3NTEzNjQyMjYsImp0aSI6IjEwNGExMDgwZGZjMzRjNjY5ZDRjOTJlYjFiZWVhMmQ1IiwidXNlcl9pZCI6IjYzYmQwOTczLTRkMDMtNDRiZi1hZWZmLTMyNmU0MDA1ZDVhZCJ9.pyuM7NWvVfxpCYU-8FO5Qo0VcWnUakcLme1ZJzD1Gek" />
                                 </headerState>
                               </list>
                             </option>
@@ -224,8 +224,16 @@
                           <requestState>
                             <option name="body">
                               <bodyState>
-                                <option name="raw" value="{&#10;    &quot;first_name&quot;: &quot;Jo&quot;&#10;}" />
-                                <option name="type" value="JSON" />
+                                <option name="formData">
+                                  <list>
+                                    <formDataParameterState>
+                                      <option name="key" value="profile_picture" />
+                                      <option name="type" value="FILE" />
+                                      <option name="value" value="C:\Users\Acer\OneDrive\Pictures\Screenshots\Screenshot_2024-11-27-18-30-12-633_com.android.chrome.jpg" />
+                                    </formDataParameterState>
+                                  </list>
+                                </option>
+                                <option name="type" value="FORM_DATA" />
                               </bodyState>
                             </option>
                             <option name="description" value="- partially update the student details " />
@@ -233,7 +241,7 @@
                               <list>
                                 <headerState>
                                   <option name="key" value="Authorization" />
-                                  <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxMjU3MzY3LCJpYXQiOjE3NTExNzA5NjcsImp0aSI6IjA4MGRkMmI1OWM1YjQ0NjY4YjhjZTdhMDU0NDQ0YTlkIiwidXNlcl9pZCI6ImY0ZDQ2YzkwLTc0ODAtNGQzOS04NTQ0LTdkNjllOGY5OTIwZSJ9.N4_T8qnHKQQxCvEN2o2h1rHPG1kLVUzTyNpBMmkZxHU" />
+                                  <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxNDMyODkxLCJpYXQiOjE3NTEzNDY0OTEsImp0aSI6ImU4MzZmOGJjMTFiNzQ1NWViZDljMDYyZTgyNGMxM2I5IiwidXNlcl9pZCI6IjUxYjFmOTY4LWUyNjQtNDJhZi04MjFiLWQ4YTc1MDJlMTNkNCJ9.89OUl8fWIQswFrX8rpFLcMMylW24ML5MmL2hsD1e5dU" />
                                 </headerState>
                               </list>
                             </option>
@@ -344,7 +352,7 @@
                               <list>
                                 <headerState>
                                   <option name="key" value="Authorization" />
-                                  <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxMzM4Mzg0LCJpYXQiOjE3NTEyNTE5ODQsImp0aSI6ImUzZDYzNGRhYTUyODRhZGNiNTJkZTE5MjQxOWY1NGVhIiwidXNlcl9pZCI6IjcxMmM2OTU1LTk3YmQtNDg3Mi1iN2NmLTgyMjUyODczMjIzMyJ9._mjZw9zEvkysVWWBsDLMPgCR0F-WnDe8iIcFT8UNWoE" />
+                                  <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxNDI1MTkxLCJpYXQiOjE3NTEzMzg3OTEsImp0aSI6IjMyZDk0MDc5OGY1NjRiMTA5ZDEzZDIyMWQ1MWIxMjIzIiwidXNlcl9pZCI6ImMzZWI5NjE1LTg2ODUtNDI1OC04ZDJmLWQ3MjMzZGI3MTJkNiJ9.gF0DjGDwwS8XNrfelFcMXsID99JEDI7n_rBtb9DVqxw" />
                                 </headerState>
                               </list>
                             </option>
@@ -389,6 +397,7 @@
                           <requestState>
                             <option name="body">
                               <bodyState>
+                                <option name="raw" value="{&#10;  &quot;username&quot; : &quot;test3&quot;&#10;}" />
                                 <option name="type" value="JSON" />
                               </bodyState>
                             </option>
@@ -397,7 +406,7 @@
                               <list>
                                 <headerState>
                                   <option name="key" value="Authorization" />
-                                  <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxMjAyMzQ4LCJpYXQiOjE3NTExMTU5NDgsImp0aSI6IjVlNWQ4MTI4Mzc1NzQ3ODQ4NGE5Nzc5N2U0MWFjYWRiIiwidXNlcl9pZCI6ImI4ZjVlOTZhLTI1ZDgtNDEyMS1hNTRiLTIxNzIyNzVlMTRkZCJ9.Cy2Vqy1TEVVh71Otns60Kmex_2lB9qrVwIHWHDFXMpc" />
+                                  <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxNDI3MTY2LCJpYXQiOjE3NTEzNDA3NjYsImp0aSI6IjdhOWE5MWY0ZTcwZDQ2NjViOTU0NmViMjc1ODZkYjJmIiwidXNlcl9pZCI6ImMzZWI5NjE1LTg2ODUtNDI1OC04ZDJmLWQ3MjMzZGI3MTJkNiJ9.XP-VExj7BTw8UQuu8_NjV3f-gm98l-sKwaLQ6HDymkU" />
                                 </headerState>
                               </list>
                             </option>
@@ -405,7 +414,7 @@
                             <option name="method" value="DELETE" />
                             <option name="name" value="Delete Account" />
                             <option name="sortWeight" value="6000000" />
-                            <option name="url" value="{{url}}/api/auth/admin/delete/temporary/9298444c-6de0-444b-9158-de435ace54ba/" />
+                            <option name="url" value="{{url}}/api/auth/admin/delete/temporary/51b1f968-e264-42af-821b-d8a7502e13d4/" />
                           </requestState>
                           <requestState>
                             <option name="description" value="- Admin can reactivate SOFT DELETED Account" />
@@ -413,7 +422,7 @@
                               <list>
                                 <headerState>
                                   <option name="key" value="Authorization" />
-                                  <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxMjAyMzQ4LCJpYXQiOjE3NTExMTU5NDgsImp0aSI6IjVlNWQ4MTI4Mzc1NzQ3ODQ4NGE5Nzc5N2U0MWFjYWRiIiwidXNlcl9pZCI6ImI4ZjVlOTZhLTI1ZDgtNDEyMS1hNTRiLTIxNzIyNzVlMTRkZCJ9.Cy2Vqy1TEVVh71Otns60Kmex_2lB9qrVwIHWHDFXMpc" />
+                                  <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxNDI3MTY2LCJpYXQiOjE3NTEzNDA3NjYsImp0aSI6IjdhOWE5MWY0ZTcwZDQ2NjViOTU0NmViMjc1ODZkYjJmIiwidXNlcl9pZCI6ImMzZWI5NjE1LTg2ODUtNDI1OC04ZDJmLWQ3MjMzZGI3MTJkNiJ9.XP-VExj7BTw8UQuu8_NjV3f-gm98l-sKwaLQ6HDymkU" />
                                 </headerState>
                               </list>
                             </option>
@@ -421,7 +430,7 @@
                             <option name="method" value="POST" />
                             <option name="name" value="Reactivate Account" />
                             <option name="sortWeight" value="7000000" />
-                            <option name="url" value="{{url}}/api/auth/admin/reactivate/9298444c-6de0-444b-9158-de435ace54ba/" />
+                            <option name="url" value="{{url}}/api/auth/admin/reactivate/51b1f968-e264-42af-821b-d8a7502e13d4/" />
                           </requestState>
                           <requestState>
                             <option name="description" value="- Permanently Delete User Account, Cannot be reactivated once deleted" />
@@ -476,7 +485,7 @@
                           <requestState>
                             <option name="body">
                               <bodyState>
-                                <option name="raw" value="{&#10;    &quot;name&quot;: &quot;Django&quot;,&#10;    &quot;title&quot;: &quot;Python Framework&quot;,&#10;    &quot;duration_weeks&quot;: 8,&#10;    &quot;price&quot;: &quot;15000.00&quot;,&#10;    &quot;training_level&quot;: &quot;advanced&quot;,&#10;    &quot;class_type&quot;: &quot;online&quot;,&#10;    &quot;categories&quot;: [&quot;Web Dev&quot;, &quot;Backend&quot;],&#10;    &quot;overview&quot;: &quot;Learn the fundamentals of Python programming language from scratch.&quot;,&#10;    &quot;objectives&quot;: [&#10;        &quot;Understand basic Python syntax&quot;,&#10;        &quot;Learn about variables and data types&quot;,&#10;        &quot;Master control flow statements&quot;,&#10;        &quot;Write simple Python programs&quot;&#10;    ],&#10;    &quot;prerequisites&quot;: [&#10;        &quot;Basic computer literacy&quot;,&#10;        &quot;No prior programming experience required&quot;&#10;    ],&#10;    &quot;outcomes&quot;: [&#10;        &quot;Ability to write Python scripts&quot;,&#10;        &quot;Understanding of core programming concepts&quot;,&#10;        &quot;Foundation for advanced Python topics&quot;&#10;    ],&#10;    &quot;curriculum&quot;: [&#10;        {&#10;            &quot;week&quot;: 1,&#10;            &quot;title&quot;: &quot;Introduction to Python&quot;,&#10;            &quot;topics&quot;: [&quot;Installation&quot;, &quot;Syntax basics&quot;, &quot;Variables&quot;]&#10;        },&#10;        {&#10;            &quot;week&quot;: 2,&#10;            &quot;title&quot;: &quot;Control Flow&quot;,&#10;            &quot;topics&quot;: [&quot;Conditionals&quot;, &quot;Loops&quot;, &quot;Functions&quot;]&#10;        }&#10;    ]&#10;}" />
+                                <option name="raw" value="{&#10;    &quot;name&quot;: &quot;Svelte&quot;,&#10;    &quot;title&quot;: &quot; JS Framework&quot;,&#10;    &quot;duration_weeks&quot;: 8,&#10;    &quot;price&quot;: &quot;15000.00&quot;,&#10;    &quot;training_level&quot;: &quot;advanced&quot;,&#10;    &quot;class_type&quot;: &quot;online&quot;,&#10;    &quot;categories&quot;: [&quot;Web Dev&quot;, &quot;Backend&quot;],&#10;    &quot;overview&quot;: &quot;Learn the fundamentals of Python programming language from scratch.&quot;,&#10;    &quot;objectives&quot;: [&#10;        &quot;Understand basic Python syntax&quot;,&#10;        &quot;Learn about variables and data types&quot;,&#10;        &quot;Master control flow statements&quot;,&#10;        &quot;Write simple Python programs&quot;&#10;    ],&#10;    &quot;prerequisites&quot;: [&#10;        &quot;Basic computer literacy&quot;,&#10;        &quot;No prior programming experience required&quot;&#10;    ],&#10;    &quot;outcomes&quot;: [&#10;        &quot;Ability to write Python scripts&quot;,&#10;        &quot;Understanding of core programming concepts&quot;,&#10;        &quot;Foundation for advanced Python topics&quot;&#10;    ],&#10;    &quot;curriculum&quot;: [&#10;        {&#10;            &quot;week&quot;: 1,&#10;            &quot;title&quot;: &quot;Introduction to Python&quot;,&#10;            &quot;topics&quot;: [&quot;Installation&quot;, &quot;Syntax basics&quot;, &quot;Variables&quot;]&#10;        },&#10;        {&#10;            &quot;week&quot;: 2,&#10;            &quot;title&quot;: &quot;Control Flow&quot;,&#10;            &quot;topics&quot;: [&quot;Conditionals&quot;, &quot;Loops&quot;, &quot;Functions&quot;]&#10;        }&#10;    ]&#10;}" />
                                 <option name="type" value="JSON" />
                               </bodyState>
                             </option>
@@ -485,7 +494,7 @@
                               <list>
                                 <headerState>
                                   <option name="key" value="Authorization" />
-                                  <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxMzQwMjE1LCJpYXQiOjE3NTEyNTM4MTUsImp0aSI6IjlhZjVhZWFmYzk5ZDRmMjI5ZjhkMWFiZTcwYjAzMzhjIiwidXNlcl9pZCI6ImYzMGM0MzZkLTY3MGUtNGJjMy1hMmU4LWZkMWU4YmJlYWZmOSJ9.dIL5uLdkl9ezjeLOa8_orwUqEzNVbPFO5ncPb6hlvvE" />
+                                  <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxNDI3MTY2LCJpYXQiOjE3NTEzNDA3NjYsImp0aSI6IjdhOWE5MWY0ZTcwZDQ2NjViOTU0NmViMjc1ODZkYjJmIiwidXNlcl9pZCI6ImMzZWI5NjE1LTg2ODUtNDI1OC04ZDJmLWQ3MjMzZGI3MTJkNiJ9.XP-VExj7BTw8UQuu8_NjV3f-gm98l-sKwaLQ6HDymkU" />
                                 </headerState>
                               </list>
                             </option>
@@ -506,8 +515,16 @@
                           <requestState>
                             <option name="body">
                               <bodyState>
-                                <option name="raw" value="{&#10;  &quot;price&quot;: 500,&#10;  &quot;categories_input&quot;: [&quot;New Category 1&quot;, &quot;New Category 2&quot;]&#10;}" />
-                                <option name="type" value="JSON" />
+                                <option name="formData">
+                                  <list>
+                                    <formDataParameterState>
+                                      <option name="key" value="image" />
+                                      <option name="type" value="FILE" />
+                                      <option name="value" value="D:\Digital pathsala\python image.jpg" />
+                                    </formDataParameterState>
+                                  </list>
+                                </option>
+                                <option name="type" value="FORM_DATA" />
                               </bodyState>
                             </option>
                             <option name="description" value="- Update a prexisting course" />
@@ -515,7 +532,7 @@
                               <list>
                                 <headerState>
                                   <option name="key" value="Authorization" />
-                                  <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxMzQwMjE1LCJpYXQiOjE3NTEyNTM4MTUsImp0aSI6IjlhZjVhZWFmYzk5ZDRmMjI5ZjhkMWFiZTcwYjAzMzhjIiwidXNlcl9pZCI6ImYzMGM0MzZkLTY3MGUtNGJjMy1hMmU4LWZkMWU4YmJlYWZmOSJ9.dIL5uLdkl9ezjeLOa8_orwUqEzNVbPFO5ncPb6hlvvE" />
+                                  <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxNDMyNDYzLCJpYXQiOjE3NTEzNDYwNjMsImp0aSI6IjNiMzQxZjQ3ZTljNjQwM2RiY2JhYzI4MDVkZTU2YWM5IiwidXNlcl9pZCI6ImMzZWI5NjE1LTg2ODUtNDI1OC04ZDJmLWQ3MjMzZGI3MTJkNiJ9.gjXNnXX_pVeam7qOAW5FshCeWtk-o9pWkviBS_-S3Dg" />
                                 </headerState>
                               </list>
                             </option>
@@ -533,6 +550,13 @@
                             <option name="sortWeight" value="4000000" />
                             <option name="url" value="{{url}}/api/courses/featured/" />
                           </requestState>
+                          <requestState>
+                            <option name="id" value="1f625b84-5bd9-4e11-ad55-ab7d696056d2" />
+                            <option name="method" value="GET" />
+                            <option name="name" value="retrieve course" />
+                            <option name="sortWeight" value="5000000" />
+                            <option name="url" value="{{url}}/api/courses/Django/" />
+                          </requestState>
                         </list>
                       </option>
                       <option name="sortWeight" value="1000000" />
@@ -545,7 +569,7 @@
                           <requestState>
                             <option name="body">
                               <bodyState>
-                                <option name="raw" value="{&#10;  &quot;rating&quot;: 5.0,&#10;  &quot;review&quot;: &quot;Great introduction to Python!&quot;&#10;}z" />
+                                <option name="raw" value="{&#10;  &quot;rating&quot;: 3.9,&#10;  &quot;review&quot;: &quot;Awesome Course Content&quot;&#10;}" />
                                 <option name="type" value="JSON" />
                               </bodyState>
                             </option>
@@ -554,7 +578,7 @@
                               <list>
                                 <headerState>
                                   <option name="key" value="Authorization" />
-                                  <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxNDI1MjkwLCJpYXQiOjE3NTEzMzg4OTAsImp0aSI6IjFmNTc5ZTcyZGUyMjQ5ZjVhN2Q5NGI5OWFlODVjNWMzIiwidXNlcl9pZCI6IjYzYmQwOTczLTRkMDMtNDRiZi1hZWZmLTMyNmU0MDA1ZDVhZCJ9.75_ha4w9jGNkrOwADoM-BtD83wyyXo44NbrMhFVNGTs" />
+                                  <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxNDI5OTkzLCJpYXQiOjE3NTEzNDM1OTMsImp0aSI6ImUxZGY2YzU2NjU2MTQxYjliYzY2YzBiNjZkZDFkZDVjIiwidXNlcl9pZCI6IjUxYjFmOTY4LWUyNjQtNDJhZi04MjFiLWQ4YTc1MDJlMTNkNCJ9.UBupzodd3MJalI0W_WO0FxYiCayK48sv41usAPngvwI" />
                                 </headerState>
                               </list>
                             </option>
@@ -562,7 +586,7 @@
                             <option name="method" value="POST" />
                             <option name="name" value="Rate Course" />
                             <option name="sortWeight" value="1000000" />
-                            <option name="url" value="{{url}}/api/course-ratings/rate/bbf1e0b3-b83c-4cc7-9727-b95792bccffe/" />
+                            <option name="url" value="{{url}}/api/course-ratings/rate/d5ead67d-8af6-475e-ba64-988b303225bf/" />
                           </requestState>
                           <requestState>
                             <option name="description" value="- check the ratings made to a specific course" />
@@ -578,7 +602,7 @@
                             <option name="method" value="GET" />
                             <option name="name" value="View Ratings" />
                             <option name="sortWeight" value="2000000" />
-                            <option name="url" value="{{url}}/api/course-ratings/check/bbf1e0b3-b83c-4cc7-9727-b95792bccffe/" />
+                            <option name="url" value="{{url}}/api/course-ratings/check/d5ead67d-8af6-475e-ba64-988b303225bf/" />
                           </requestState>
                           <requestState>
                             <option name="description" value="- list all the ratings for a given course" />
@@ -586,7 +610,7 @@
                             <option name="method" value="GET" />
                             <option name="name" value="List Ratings" />
                             <option name="sortWeight" value="3000000" />
-                            <option name="url" value="{{url}}/api/course-ratings/list/bbf1e0b3-b83c-4cc7-9727-b95792bccffe/" />
+                            <option name="url" value="{{url}}/api/course-ratings/list/d5ead67d-8af6-475e-ba64-988b303225bf/" />
                           </requestState>
                         </list>
                       </option>
@@ -597,6 +621,72 @@
                 <option name="id" value="4c46d89f-9622-4759-a47b-b275ed69dc08" />
                 <option name="name" value="courses" />
                 <option name="sortWeight" value="4000000" />
+              </folderState>
+              <folderState>
+                <option name="id" value="ebda2c7b-6b21-4760-b3f1-8ad63c45598b" />
+                <option name="name" value="enrollment" />
+                <option name="requests">
+                  <list>
+                    <requestState>
+                      <option name="body">
+                        <bodyState>
+                          <option name="raw" value="{&#10;  &quot;course&quot; : &quot;d5ead67d-8af6-475e-ba64-988b303225bf&quot;,&#10;  &quot;user&quot; : &quot;63bd0973-4d03-44bf-aeff-326e4005d5ad&quot;&#10;}" />
+                          <option name="type" value="JSON" />
+                        </bodyState>
+                      </option>
+                      <option name="headers">
+                        <list>
+                          <headerState>
+                            <option name="key" value="Authorization" />
+                            <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxNDI5OTkzLCJpYXQiOjE3NTEzNDM1OTMsImp0aSI6ImUxZGY2YzU2NjU2MTQxYjliYzY2YzBiNjZkZDFkZDVjIiwidXNlcl9pZCI6IjUxYjFmOTY4LWUyNjQtNDJhZi04MjFiLWQ4YTc1MDJlMTNkNCJ9.UBupzodd3MJalI0W_WO0FxYiCayK48sv41usAPngvwI" />
+                          </headerState>
+                        </list>
+                      </option>
+                      <option name="id" value="5dc2cf32-9658-45b2-b311-1684c4024bb8" />
+                      <option name="method" value="POST" />
+                      <option name="name" value="add enrollment" />
+                      <option name="sortWeight" value="1000000" />
+                      <option name="url" value="{{url}}/api/enrollment/addenrollment/" />
+                    </requestState>
+                    <requestState>
+                      <option name="headers">
+                        <list>
+                          <headerState>
+                            <option name="key" value="Authorization" />
+                            <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxNDMwODc3LCJpYXQiOjE3NTEzNDQ0NzcsImp0aSI6IjFiY2M0NWU2ODZjNDQ1NmQ5ZGE4YzBkYmJjNDM3Yjk0IiwidXNlcl9pZCI6IjZkNjhhY2U5LTgyMmMtNDExYi1iMjAyLTU0MDU3YzkwMmI0ZSJ9.fMVKI61xR-RFMFf_0QfaKi2blqjzbMoNN-YsDbkWQb8" />
+                          </headerState>
+                        </list>
+                      </option>
+                      <option name="id" value="edc45e9d-b6aa-472a-b232-1b80dff8b276" />
+                      <option name="method" value="GET" />
+                      <option name="name" value="list enrollment" />
+                      <option name="sortWeight" value="2000000" />
+                      <option name="url" value="{{url}}/api/enrollment/listenrollment/" />
+                    </requestState>
+                    <requestState>
+                      <option name="body">
+                        <bodyState>
+                          <option name="raw" value="{&#10;  &quot;status&quot; : &quot;approved&quot;&#10;}" />
+                          <option name="type" value="JSON" />
+                        </bodyState>
+                      </option>
+                      <option name="headers">
+                        <list>
+                          <headerState>
+                            <option name="key" value="Authorization" />
+                            <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxNDUwNzIwLCJpYXQiOjE3NTEzNjQzMjAsImp0aSI6ImRhM2QxYTIxMDMxMTRiN2E5ZTc5MzY3NTdkMTgyNzQ5IiwidXNlcl9pZCI6IjZkNjhhY2U5LTgyMmMtNDExYi1iMjAyLTU0MDU3YzkwMmI0ZSJ9.xFPIivTfS_bSBTcsVG-Pbd2wH3g4sFQXLtSzWxoHJYc" />
+                          </headerState>
+                        </list>
+                      </option>
+                      <option name="id" value="e39303c4-2ae0-42c6-b462-37d02e61dd2f" />
+                      <option name="method" value="PATCH" />
+                      <option name="name" value="edit enrollment" />
+                      <option name="sortWeight" value="3000000" />
+                      <option name="url" value="{{url}}/api/enrollment/editenrollment/fdeb7bde-dc3e-4a79-b7b4-829b1d2a6b81/" />
+                    </requestState>
+                  </list>
+                </option>
+                <option name="sortWeight" value="5000000" />
               </folderState>
             </list>
           </option>

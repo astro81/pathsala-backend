@@ -32,7 +32,7 @@ from rest_framework.response import Response
 
 from courses.models import Course
 from courses.permissions import HasCoursePermission
-from courses.serializers import CourseSerializer
+from courses.serializers import CourseSerializer, CourseListSerializer
 
 
 class CreateCourseView(CreateAPIView):
@@ -147,7 +147,7 @@ class ListCourseView(ListAPIView):
     """
 
     permission_classes = (AllowAny,)
-    serializer_class = CourseSerializer
+    serializer_class = CourseListSerializer
     queryset = Course.objects.all()
     filter_backends = [DjangoFilterBackend, SearchFilter, OrderingFilter]
     filterset_fields = {
@@ -209,15 +209,6 @@ class ListCourseView(ListAPIView):
     )
     def list(self, request, *args, **kwargs):
         """Handle course listing with error handling.
-
-        Parameters
-        ----------
-        request : Request
-            The incoming HTTP request
-        *args : tuple
-            Additional positional arguments
-        **kwargs : dict
-            Additional keyword arguments
 
         Returns
         -------
