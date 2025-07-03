@@ -79,9 +79,9 @@ class LoginView(APIView):
                 schema=openapi.Schema(
                     type=openapi.TYPE_OBJECT,
                     properties={
-                        'refresh': openapi.Schema(type=openapi.TYPE_STRING, description='Refresh token'),
-                        'access': openapi.Schema(type=openapi.TYPE_STRING, description='Access token'),
-                        'role': openapi.Schema(type=openapi.TYPE_STRING, description='User role')
+                        'refresh_token': openapi.Schema(type=openapi.TYPE_STRING, description='Refresh token'),
+                        'access_token': openapi.Schema(type=openapi.TYPE_STRING, description='Access token'),
+                        'role_token': openapi.Schema(type=openapi.TYPE_STRING, description='User role')
                     }
                 )
             ),
@@ -147,8 +147,8 @@ class LoginView(APIView):
 
             return Response(
                 {
-                    "refresh": str(refresh),
-                    "access": str(refresh.access_token),
+                    "refresh_token": str(refresh),
+                    "access_token": str(refresh.access_token),
                     "role": user.role
                 },
                 status=status.HTTP_200_OK,

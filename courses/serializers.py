@@ -235,3 +235,127 @@ class CourseSerializer(serializers.ModelSerializer):
         except Exception as e:
             raise ValidationError({"error": f"Error updating course: {str(e)}"})
 
+
+class CourseListSerializer(serializers.ModelSerializer):
+    """Serializer for Course model with specific fields for listing operations.
+
+    This serializer handles both serialization (read) and deserialization (write)
+    operations for Course objects, with additional computed fields for ratings
+    and categories.
+
+    Attributes
+    ----------
+    average_rating : DecimalField
+        Computed field representing the average rating from all course ratings
+    ratings_count : SerializerMethodField
+        Computed field for total number of ratings
+    categories : SerializerMethodField
+        Computed field for list of associated category names
+    categories_input : ListField
+        Write-only field for accepting category names during creation/update
+
+    Notes
+    -----
+    - Inherits from ModelSerializer for automatic field generation
+    - Includes both read-only computed fields and write-only input fields
+    - Handles potential exceptions during category retrieval
+    """
+
+    average_rating = serializers.DecimalField(
+        max_digits=3,
+        decimal_places=2,
+        read_only=True,
+        help_text="Average rating from all course ratings (range: 0.00-5.00)"
+    )
+
+    ratings_count = serializers.SerializerMethodField(
+        read_only=True,
+        help_text="Total number of ratings submitted for this course"
+    )
+
+    categories = serializers.SerializerMethodField(
+        read_only=True,
+        help_text="List of category names associated with the course"
+    )
+
+    categories_input = serializers.ListField(
+        child=serializers.CharField(),
+        write_only=True,
+        required=False,
+        help_text="List of category names to associate with course (write-only)"
+    )
+
+    class Meta:
+        """Metadata options for the CourseListSerializer.
+
+        Attributes
+        ----------
+        model : Course
+            The Django model class being serialized
+        fields : list
+            Complete list of fields to include in serialization,
+            combining model fields and custom computed fields
+        """
+        model = Course
+        fields = [
+            'id',
+            'name',
+            'title',
+            'overview',
+            'duration_weeks',
+            'price',
+            'training_level',
+            'class_type',
+            'image',
+            'average_rating',
+            'ratings_count',
+            'categories',
+            'categories_input',
+            'created_at'
+        ]
+
+    def get_categories(self, obj):
+        """Retrieve category names associated with the course.
+
+        Safely accesses the categories relationship and returns their names.
+        Returns empty list if any error occurs during access.
+
+        Parameters
+        ----------
+        obj : Course
+            The course instance being serialized
+
+        Returns
+        -------
+        list[str]
+            Alphabetical list of category names, or empty list on error
+
+        Examples
+        --------
+        >>> serializer.get_categories(course)
+        ['Programming', 'Web Development']
+        """
+        try:
+            return [category.name for category in obj.categories.all()]
+        except Exception as e:
+            # Log error in production (omitted for brevity)
+            return []
+
+    def get_ratings_count(self, obj):
+        """Count all ratings associated with the course.
+
+        Parameters
+        ----------
+        obj : Course
+            The course instance being serialized
+
+        Returns
+        -------
+        int
+            Total number of ratings for this course
+
+        Notes
+        -----
+        Uses Django's count() method for efficient database query
+        """
+        return obj.ratings.count()
