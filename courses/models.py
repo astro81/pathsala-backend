@@ -133,6 +133,7 @@ class Course(models.Model):
         upload_to='courses/images/',
         null=True,
         blank=True,
+        default='courses/images/default.jpg',
         help_text="Course promotional image"
     )
 

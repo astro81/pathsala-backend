@@ -121,7 +121,8 @@ class CourseSerializer(serializers.ModelSerializer):
         model = Course
         fields = '__all__'
         extra_kwargs = {
-            'categories': {'read_only': True}
+            'categories': {'read_only': True},
+            'image': {'read_only': True},
         }
 
     def get_categories(self, obj):
@@ -359,3 +360,13 @@ class CourseListSerializer(serializers.ModelSerializer):
         Uses Django's count() method for efficient database query
         """
         return obj.ratings.count()
+
+
+class CourseImageSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Course
+        fields = ['image']
+        extra_kwargs = {
+            'image': {'required': True}
+        }
+

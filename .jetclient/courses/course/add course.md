@@ -8,13 +8,13 @@ id = '830c008d-0c3b-42a8-a662-0d5136589806'
 
 [[headers]]
 key = 'Authorization'
-value = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxNDI3MTY2LCJpYXQiOjE3NTEzNDA3NjYsImp0aSI6IjdhOWE5MWY0ZTcwZDQ2NjViOTU0NmViMjc1ODZkYjJmIiwidXNlcl9pZCI6ImMzZWI5NjE1LTg2ODUtNDI1OC04ZDJmLWQ3MjMzZGI3MTJkNiJ9.XP-VExj7BTw8UQuu8_NjV3f-gm98l-sKwaLQ6HDymkU'
+value = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxNjg5MTE0LCJpYXQiOjE3NTE2MDI3MTQsImp0aSI6ImI1OTgwNjcxYTBlNTRlMDZiYTgyMWRiZDdiZTI0ZDI4IiwidXNlcl9pZCI6ImMzZWI5NjE1LTg2ODUtNDI1OC04ZDJmLWQ3MjMzZGI3MTJkNiJ9.zViTKJSdPDHK0ALIlvOHKpinspJW7S7YW7usirJ8Wp0'
 
 [body]
 type = 'JSON'
 raw = '''
 {
-    "name": "Svelte",
+    "name": "React",
     "title": " JS Framework",
     "duration_weeks": 8,
     "price": "15000.00",

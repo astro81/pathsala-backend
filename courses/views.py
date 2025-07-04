@@ -32,7 +32,7 @@ from rest_framework.response import Response
 
 from courses.models import Course
 from courses.permissions import HasCoursePermission
-from courses.serializers import CourseSerializer, CourseListSerializer
+from courses.serializers import CourseSerializer, CourseListSerializer, CourseImageSerializer
 
 
 class CreateCourseView(CreateAPIView):
@@ -52,7 +52,6 @@ class CreateCourseView(CreateAPIView):
 
     permission_classes = (HasCoursePermission,)
     required_permission = 'add_course'
-    parser_classes = [MultiPartParser, FormParser]  # Enables file upload
     queryset = Course.objects.all()
     serializer_class = CourseSerializer
 
@@ -308,7 +307,6 @@ class EditCourseView(UpdateAPIView):
 
     permission_classes = (HasCoursePermission,)
     required_permission = 'edit_course'
-    parser_classes = [MultiPartParser, FormParser]  # Enables file upload
     serializer_class = CourseSerializer
     queryset = Course.objects.all()
     lookup_field = 'name'
@@ -507,3 +505,42 @@ class CourseFeaturedListView(ListAPIView):
                 status=status.HTTP_500_INTERNAL_SERVER_ERROR
             )
 
+
+class UpdateCourseImageView(UpdateAPIView):
+    """API endpoint specifically for updating course images."""
+
+    permission_classes = (HasCoursePermission,)
+    required_permission = 'edit_course'
+    parser_classes = [MultiPartParser]  # Only accept multipart/form-data
+    serializer_class = CourseImageSerializer
+    queryset = Course.objects.all()
+    lookup_field = 'name'
+
+    def update(self, request, *args, **kwargs):
+        try:
+            instance = self.get_object()
+            serializer = self.get_serializer(instance, data=request.data, partial=True)
+            serializer.is_valid(raise_exception=True)
+            self.perform_update(serializer)
+
+            return Response({
+                'status': 'success',
+                'message': 'Image updated successfully',
+                'image_url': instance.image.url if instance.image else None
+            }, status=status.HTTP_200_OK)
+
+        except ValidationError as e:
+            return Response(
+                {'error': str(e)},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+        except PermissionDenied:
+            return Response(
+                {'error': 'You do not have permission to perform this action'},
+                status=status.HTTP_403_FORBIDDEN
+            )
+        except Exception as e:
+            return Response(
+                {'error': f"Failed to update image: {str(e)}"},
+                status=status.HTTP_500_INTERNAL_SERVER_ERROR
+            )
