@@ -17,7 +17,7 @@ from courses.views import (
     RetrieveCourseView,
     EditCourseView,
     DeleteCourseView,
-    CourseFeaturedListView
+    CourseFeaturedListView, UpdateCourseImageView
 )
 
 app_name = 'courses'
@@ -30,5 +30,6 @@ urlpatterns = [
     path('update/<str:name>/', EditCourseView.as_view(), name='update_course'),
     path('delete/<str:name>/', DeleteCourseView.as_view(), name='delete_course'),
     path('featured/', CourseFeaturedListView.as_view(), name='featured_course'),
+    path('<str:name>/image/', UpdateCourseImageView.as_view(), name='course-image-update'),
 ]
 
