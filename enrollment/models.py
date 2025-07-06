@@ -56,6 +56,16 @@ class Enrollment(models.Model):
         help_text="Current status of the enrollment request"
     )
 
+    payment = models.CharField(
+        choices=[
+            ('paid', 'Paid'),
+            ('Not paid', 'not paid'),
+            ('Pending', 'Pending'),
+        ],
+        default='unpaid',
+        help_text="Current status of the payment request"
+    )
+
     applied_Date = models.DateTimeField(
         auto_now_add=True,
         help_text="Date when the enrollment was first applied for"

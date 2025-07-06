@@ -9,8 +9,8 @@ id = 'a1ebd693-d67e-4e90-84c1-8f40996d3b1a'
 type = 'JSON'
 raw = '''
 {
-    "username": "Aship123",
-    "email": "aship123@gmail.com",
+    "username": "test11",
+    "email": "test11@gmail.com",
     "password": "StrongPass!23",
     "password2": "StrongPass!23",
   

@@ -8,16 +8,16 @@ id = '830c008d-0c3b-42a8-a662-0d5136589806'
 
 [[headers]]
 key = 'Authorization'
-value = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxODYyMzQxLCJpYXQiOjE3NTE3NzU5NDEsImp0aSI6ImE0ZWQ0Y2JkN2U2YTRhYTE5YWVjMGYyODM3NTgwM2QyIiwidXNlcl9pZCI6ImY0OWY4NjhhLTViYmMtNGE3Mi04MjY2LTBhMjA4OGQ0ZDI4MCJ9.m2fx39SLLrVx22hfcddR-LP0bMyJW-yv-xk7kz4T8sE'
+value = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxOTA3MzcwLCJpYXQiOjE3NTE4MjA5NzAsImp0aSI6IjBkYzM1MmU0NjIzZTRmODc5YmQ4YmZjNzhiOTQwYTVlIiwidXNlcl9pZCI6ImYxZDUwMTQ2LWUyZjQtNDY1NC1iNzhjLTUxNGQ0OWUyODgyYyJ9.HfZcgWHDMsWbZYnWc2PA8G8XWzkx9pyS7dXTstRDt_o'
 
 [body]
 type = 'JSON'
 raw = '''
 {
-    "name": "Astro",
-    "title": "Astro Framework",
+    "name": "Svelte",
+    "title": "Js Framework",
     "duration_weeks": 8,
-    "price": "15000.00",
+    "price": "3000.00",
     "training_level": "advanced",
     "class_type": "online",
     "categories": ["Web Dev", "Frontend"],
