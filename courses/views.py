@@ -8,8 +8,9 @@ This module contains all API endpoints for course operations including:
 - Course deletion
 - Featured courses listing
 """
-
+from django.db.models import Avg
 from django_filters.rest_framework import DjangoFilterBackend
+from django_filters import rest_framework as filters
 from drf_yasg import openapi
 from drf_yasg.utils import swagger_auto_schema
 from rest_framework import status
@@ -30,9 +31,10 @@ from rest_framework.parsers import MultiPartParser, FormParser
 from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 
+from courses.filters import CourseFilter
 from courses.models import Course
 from courses.permissions import HasCoursePermission
-from courses.serializers import CourseSerializer
+from courses.serializers import CourseSerializer, CourseListSerializer, CourseImageSerializer
 
 
 class CreateCourseView(CreateAPIView):
@@ -52,7 +54,6 @@ class CreateCourseView(CreateAPIView):
 
     permission_classes = (HasCoursePermission,)
     required_permission = 'add_course'
-    parser_classes = [MultiPartParser, FormParser]  # Enables file upload
     queryset = Course.objects.all()
     serializer_class = CourseSerializer
 
@@ -124,118 +125,33 @@ class CreateCourseView(CreateAPIView):
 
 
 class ListCourseView(ListAPIView):
-    """API endpoint for listing and filtering courses.
-
-    Attributes
-    ----------
-    permission_classes : tuple
-        Permission settings (AllowAny for listing)
-    serializer_class : Serializer
-        Serializer for course data
-    queryset : QuerySet
-        Base queryset of all courses
-    filter_backends : list
-        List of filter backends (DjangoFilter, Search, Ordering)
-    filterset_fields : dict
-        Fields available for exact filtering and range filtering
-    search_fields : list
-        Fields available for search functionality
-    ordering_fields : list
-        Fields available for ordering results
-    ordering : list
-        Default ordering (-created_at for the newest first)
-    """
+    """API endpoint for listing and filtering courses."""
 
     permission_classes = (AllowAny,)
-    serializer_class = CourseSerializer
     queryset = Course.objects.all()
-    filter_backends = [DjangoFilterBackend, SearchFilter, OrderingFilter]
-    filterset_fields = {
-        'training_level': ['exact'],
-        'class_type': ['exact'],
-        'duration_weeks': ['exact', 'gte', 'lte'],
-        'price': ['exact', 'gte', 'lte'],
-    }
-    search_fields = ['name', 'title', 'overview']
-    ordering_fields = ['name', 'price', 'duration_weeks', 'created_at']
+    serializer_class = CourseListSerializer
+    filter_backends = [filters.DjangoFilterBackend, SearchFilter, OrderingFilter]
+    filterset_class = CourseFilter
+
+    search_fields = ['name', 'title', 'overview', 'categories__name']
+
+    ordering_fields = [
+        'name',
+        'title',
+        'price',
+        'duration_weeks',
+        'created_at',
+        'average_rating',  # Changed from average_rating to average_rating
+    ]
+
     ordering = ['-created_at']
 
     @swagger_auto_schema(
-        operation_description="List all courses with filtering, searching and ordering capabilities",
-        manual_parameters=[
-            openapi.Parameter(
-                'training_level',
-                openapi.IN_QUERY,
-                description="Filter by training level",
-                type=openapi.TYPE_STRING
-            ),
-            openapi.Parameter(
-                'class_type',
-                openapi.IN_QUERY,
-                description="Filter by class type",
-                type=openapi.TYPE_STRING
-            ),
-            openapi.Parameter(
-                'duration_weeks',
-                openapi.IN_QUERY,
-                description="Filter by duration in weeks (exact, gte, lte)",
-                type=openapi.TYPE_INTEGER
-            ),
-            openapi.Parameter(
-                'price',
-                openapi.IN_QUERY,
-                description="Filter by price (exact, gte, lte)",
-                type=openapi.TYPE_NUMBER
-            ),
-            openapi.Parameter(
-                'search',
-                openapi.IN_QUERY,
-                description="Search in name, title, or overview",
-                type=openapi.TYPE_STRING
-            ),
-            openapi.Parameter(
-                'ordering',
-                openapi.IN_QUERY,
-                description="Which field to use when ordering the results (name, price, duration_weeks, created_at)",
-                type=openapi.TYPE_STRING
-            ),
-        ],
-        responses={
-            200: CourseSerializer(many=True),
-            400: "Bad Request - Invalid parameters",
-            500: "Internal Server Error"
-        },
-        tags=['Courses']
+        operation_description="List all courses with filtering options",
+        responses={200: CourseListSerializer(many=True)}
     )
-    def list(self, request, *args, **kwargs):
-        """Handle course listing with error handling.
-
-        Parameters
-        ----------
-        request : Request
-            The incoming HTTP request
-        *args : tuple
-            Additional positional arguments
-        **kwargs : dict
-            Additional keyword arguments
-
-        Returns
-        -------
-        Response
-            HTTP response with course list or error message
-        """
-        try:
-            return super().list(request, *args, **kwargs)
-        except (ValidationError, ParseError) as e:
-            return Response(
-                {'error': str(e)},
-                status=status.HTTP_400_BAD_REQUEST
-            )
-        except Exception as e:
-            return Response(
-                {'error': f"Failed to list courses: {str(e)}"},
-                status=status.HTTP_500_INTERNAL_SERVER_ERROR
-            )
+    def get(self, request, *args, **kwargs):
+        return super().get(request, *args, **kwargs)
 
 
 class RetrieveCourseView(RetrieveAPIView):
@@ -317,7 +233,6 @@ class EditCourseView(UpdateAPIView):
 
     permission_classes = (HasCoursePermission,)
     required_permission = 'edit_course'
-    parser_classes = [MultiPartParser, FormParser]  # Enables file upload
     serializer_class = CourseSerializer
     queryset = Course.objects.all()
     lookup_field = 'name'
@@ -516,3 +431,42 @@ class CourseFeaturedListView(ListAPIView):
                 status=status.HTTP_500_INTERNAL_SERVER_ERROR
             )
 
+
+class UpdateCourseImageView(UpdateAPIView):
+    """API endpoint specifically for updating course images."""
+
+    permission_classes = (HasCoursePermission,)
+    required_permission = 'edit_course'
+    parser_classes = [MultiPartParser]  # Only accept multipart/form-data
+    serializer_class = CourseImageSerializer
+    queryset = Course.objects.all()
+    lookup_field = 'name'
+
+    def update(self, request, *args, **kwargs):
+        try:
+            instance = self.get_object()
+            serializer = self.get_serializer(instance, data=request.data, partial=True)
+            serializer.is_valid(raise_exception=True)
+            self.perform_update(serializer)
+
+            return Response({
+                'status': 'success',
+                'message': 'Image updated successfully',
+                'image_url': instance.image.url if instance.image else None
+            }, status=status.HTTP_200_OK)
+
+        except ValidationError as e:
+            return Response(
+                {'error': str(e)},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+        except PermissionDenied:
+            return Response(
+                {'error': 'You do not have permission to perform this action'},
+                status=status.HTTP_403_FORBIDDEN
+            )
+        except Exception as e:
+            return Response(
+                {'error': f"Failed to update image: {str(e)}"},
+                status=status.HTTP_500_INTERNAL_SERVER_ERROR
+            )

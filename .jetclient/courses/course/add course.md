@@ -8,19 +8,19 @@ id = '830c008d-0c3b-42a8-a662-0d5136589806'
 
 [[headers]]
 key = 'Authorization'
-value = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxNDI3MTY2LCJpYXQiOjE3NTEzNDA3NjYsImp0aSI6IjdhOWE5MWY0ZTcwZDQ2NjViOTU0NmViMjc1ODZkYjJmIiwidXNlcl9pZCI6ImMzZWI5NjE1LTg2ODUtNDI1OC04ZDJmLWQ3MjMzZGI3MTJkNiJ9.XP-VExj7BTw8UQuu8_NjV3f-gm98l-sKwaLQ6HDymkU'
+value = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxODYyMzQxLCJpYXQiOjE3NTE3NzU5NDEsImp0aSI6ImE0ZWQ0Y2JkN2U2YTRhYTE5YWVjMGYyODM3NTgwM2QyIiwidXNlcl9pZCI6ImY0OWY4NjhhLTViYmMtNGE3Mi04MjY2LTBhMjA4OGQ0ZDI4MCJ9.m2fx39SLLrVx22hfcddR-LP0bMyJW-yv-xk7kz4T8sE'
 
 [body]
 type = 'JSON'
 raw = '''
 {
-    "name": "Svelte",
-    "title": " JS Framework",
+    "name": "Astro",
+    "title": "Astro Framework",
     "duration_weeks": 8,
     "price": "15000.00",
     "training_level": "advanced",
     "class_type": "online",
-    "categories": ["Web Dev", "Backend"],
+    "categories": ["Web Dev", "Frontend"],
     "overview": "Learn the fundamentals of Python programming language from scratch.",
     "objectives": [
         "Understand basic Python syntax",

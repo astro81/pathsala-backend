@@ -79,8 +79,9 @@ class LoginView(APIView):
                 schema=openapi.Schema(
                     type=openapi.TYPE_OBJECT,
                     properties={
-                        'refresh': openapi.Schema(type=openapi.TYPE_STRING, description='Refresh token'),
-                        'access': openapi.Schema(type=openapi.TYPE_STRING, description='Access token')
+                        'refresh_token': openapi.Schema(type=openapi.TYPE_STRING, description='Refresh token'),
+                        'access_token': openapi.Schema(type=openapi.TYPE_STRING, description='Access token'),
+                        'role_token': openapi.Schema(type=openapi.TYPE_STRING, description='User role')
                     }
                 )
             ),
@@ -117,7 +118,7 @@ class LoginView(APIView):
         Returns
         -------
         Response
-            200: Success with tokens
+            200: Success with tokens and user's role
             400: Missing credentials
             401: Invalid credentials or inactive account
             500: Server error
@@ -146,8 +147,9 @@ class LoginView(APIView):
 
             return Response(
                 {
-                    "refresh": str(refresh),
-                    "access": str(refresh.access_token),
+                    "refresh_token": str(refresh),
+                    "access_token": str(refresh.access_token),
+                    "role": user.role
                 },
                 status=status.HTTP_200_OK,
             )
@@ -335,7 +337,6 @@ class StudentRegisterView(APIView):
     """
 
     permission_classes = (AllowAny,)
-    parser_classes = [MultiPartParser, FormParser]  # Enables file upload
 
     @swagger_auto_schema(
         operation_description="Register a new student account",
@@ -795,6 +796,7 @@ class ModeratorProfileUpdateView(APIView):
     """
 
     permission_classes = (IsModerator,)
+    parser_classes = [MultiPartParser, FormParser]  # Enables file upload
 
     @swagger_auto_schema(
         operation_description="Update moderator profile information",

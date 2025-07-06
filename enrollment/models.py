@@ -68,12 +68,35 @@ class Enrollment(models.Model):
         help_text="Date when the enrollment was officially processed"
     )
 
+    whatsApp = models.CharField(
+        null=False,
+        blank=False,
+        help_text="WhatsApp app number of a enroll person",
+    )
+
+    refer_by = models.CharField(
+        null=True,
+        blank=True,
+        help_text="WhatsApp app number of a person who refer to the enrollment",
+    )
+
     course = models.ForeignKey(
         Course,
         on_delete=models.CASCADE,
         related_name='enrollments',
         help_text="The course being enrolled in"
     )
+
+    fullName = models.CharField(
+        null=False,
+        blank=False,
+    )
+
+    email = models.EmailField(
+        null=False,
+        blank=False,
+    )
+
 
     user = models.ForeignKey(
         User,

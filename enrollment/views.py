@@ -5,14 +5,13 @@ from drf_yasg import openapi
 from drf_yasg.utils import swagger_auto_schema
 from rest_framework import status
 from rest_framework.generics import (
-    CreateAPIView,
     ListAPIView,
-    RetrieveAPIView,
     UpdateAPIView,
     DestroyAPIView
 )
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
+from rest_framework.views import APIView
 from users.permissions import IsAdmin, IsModerator, IsStudent
 from enrollment.serializers import EnrollmentSerializer
 from enrollment.models import Enrollment
@@ -21,7 +20,7 @@ from users.serializers import StudentSerializer
 from users.models import Student
 
 
-class AddEnrollmentView(CreateAPIView):
+class AddEnrollmentView(APIView):
     """
     API endpoint that allows students to create new enrollment requests.
 
@@ -56,8 +55,18 @@ class AddEnrollmentView(CreateAPIView):
         tags=['Enrollments'],
         request_body=EnrollmentSerializer
     )
-    def post(self, request, *args, **kwargs):
-        return super().post(request, *args, **kwargs)
+    def post(self, request):
+
+        serializer = EnrollmentSerializer(data=request.data, context={'request': request})
+        if serializer.is_valid():
+            course = serializer.validated_data['course']
+            if Enrollment.objects.filter(user=request.user, course=course).exists():
+                return Response({'message': 'Already enrolled'}, status=status.HTTP_400_BAD_REQUEST)
+
+            serializer.save()
+            return Response({'message': 'Enrolled successfully'}, status=status.HTTP_201_CREATED)
+
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
 class ListEnrollmentView(ListAPIView):
@@ -214,9 +223,10 @@ class EditEnrollmentView(UpdateAPIView):
             # Check if status is becoming approved
             new_status = serializer.validated_data.get("status")
             if new_status == "approved" and enrollment.status != "approved":
+                approver = self.request.user
                 serializer.save(
                     Enrolled_Date=timezone.now(),
-                    approved_by=self.request.user.role    # i.e. Either 'admin' or 'moderator'
+                    approved_by= f'{approver.username} ({approver.role})'    # i.e. Either 'admin' or 'moderator' in a role and their respective username.
                 )
 
                 try:

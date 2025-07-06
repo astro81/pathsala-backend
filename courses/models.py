@@ -11,6 +11,7 @@ from django.db import DatabaseError, IntegrityError
 from django.contrib.auth import get_user_model
 from django.core.validators import MinValueValidator
 from django.db import models
+from django.db.models import Avg
 from django.utils.translation import gettext_lazy as _
 from decimal import Decimal
 from category.models import Category
@@ -133,6 +134,7 @@ class Course(models.Model):
         upload_to='courses/images/',
         null=True,
         blank=True,
+        default='courses/images/default.jpg',
         help_text="Course promotional image"
     )
 
@@ -186,6 +188,14 @@ class Course(models.Model):
         Category,
         related_name='category',
         help_text="Categories this course belongs to"
+    )
+
+    average_rating = models.DecimalField(
+        max_digits=3,
+        decimal_places=2,
+        default=0.00,
+        editable=False,
+        help_text="Cached average of all ratings (auto-updated)"
     )
 
     class Meta:
@@ -254,21 +264,15 @@ class Course(models.Model):
         except AttributeError:
             return {"error": "Duration not available"}
 
-    @property
-    def average_rating(self):
-        """Calculate the average rating from all course ratings.
 
-        Returns
-        -------
-        float
-            Average rating (0.0 if no ratings or error occurs).
-        """
-        from django.db.models import Avg
-        try:
-            result = self.ratings.aggregate(average=Avg('rating'))
-            return result['average'] if result['average'] is not None else 0.0
-        except Exception as e:
-            return 0.0
+    def update_average_rating(self):
+        """Recalculates and updates the average rating from all reviews."""
+        result = self.ratings.aggregate(average=Avg('rating'))
+        new_avg = result['average'] if result['average'] is not None else 0.00
+        if self.average_rating != new_avg:
+            self.average_rating = Decimal(new_avg).quantize(Decimal('0.00'))
+            self.save(update_fields=['average_rating'])
+
 
     def get_objectives_list(self):
         """Convert objectives text to a cleaned list.
@@ -282,6 +286,7 @@ class Course(models.Model):
             return [obj.strip() for obj in self.objectives.split('\n') if obj.strip()]
         except AttributeError:
             return []
+
 
     def get_prerequisites_list(self):
         """Convert prerequisites text to a cleaned list.
