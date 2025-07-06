@@ -8,8 +8,9 @@ This module contains all API endpoints for course operations including:
 - Course deletion
 - Featured courses listing
 """
-
+from django.db.models import Avg
 from django_filters.rest_framework import DjangoFilterBackend
+from django_filters import rest_framework as filters
 from drf_yasg import openapi
 from drf_yasg.utils import swagger_auto_schema
 from rest_framework import status
@@ -122,110 +123,57 @@ class CreateCourseView(CreateAPIView):
         serializer.save(owner=self.request.user)
 
 
-class ListCourseView(ListAPIView):
-    """API endpoint for listing and filtering courses.
+class CourseFilter(filters.FilterSet):
+    average_rating = filters.NumberFilter(method='filter_average_rating')
+    average_rating__gte = filters.NumberFilter(method='filter_average_rating_gte')
+    average_rating__lte = filters.NumberFilter(method='filter_average_rating_lte')
 
-    Attributes
-    ----------
-    permission_classes : tuple
-        Permission settings (AllowAny for listing)
-    serializer_class : Serializer
-        Serializer for course data
-    queryset : QuerySet
-        Base queryset of all courses
-    filter_backends : list
-        List of filter backends (DjangoFilter, Search, Ordering)
-    filterset_fields : dict
-        Fields available for exact filtering and range filtering
-    search_fields : list
-        Fields available for search functionality
-    ordering_fields : list
-        Fields available for ordering results
-    ordering : list
-        Default ordering (-created_at for the newest first)
-    """
+    def filter_average_rating(self, queryset, name, value):
+        return queryset.annotate(avg_rating=Avg('ratings__rating')).filter(avg_rating=value)
+
+    def filter_average_rating_gte(self, queryset, name, value):
+        return queryset.annotate(avg_rating=Avg('ratings__rating')).filter(avg_rating__gte=value)
+
+    def filter_average_rating_lte(self, queryset, name, value):
+        return queryset.annotate(avg_rating=Avg('ratings__rating')).filter(avg_rating__lte=value)
+
+    class Meta:
+        model = Course
+        fields = {
+            'training_level': ['exact'],
+            'class_type': ['exact'],
+            'duration_weeks': ['exact', 'gte', 'lte'],
+            'price': ['exact', 'gte', 'lte'],
+            'title': ['exact', 'icontains'],
+            'categories__name': ['exact', 'icontains'],
+        }
+
+class ListCourseView(ListAPIView):
+    """API endpoint for listing and filtering courses."""
 
     permission_classes = (AllowAny,)
     serializer_class = CourseListSerializer
-    queryset = Course.objects.all()
-    filter_backends = [DjangoFilterBackend, SearchFilter, OrderingFilter]
-    filterset_fields = {
-        'training_level': ['exact'],
-        'class_type': ['exact'],
-        'duration_weeks': ['exact', 'gte', 'lte'],
-        'price': ['exact', 'gte', 'lte'],
-    }
-    search_fields = ['name', 'title', 'overview']
-    ordering_fields = ['name', 'price', 'duration_weeks', 'created_at']
+    filter_backends = [filters.DjangoFilterBackend, SearchFilter, OrderingFilter]
+    filterset_class = CourseFilter
+
+    search_fields = ['name', 'title', 'overview', 'categories__name']
+
+    ordering_fields = [
+        'name',
+        'title',
+        'price',
+        'duration_weeks',
+        'created_at',
+        'avg_rating',  # Changed from average_rating to avg_rating
+    ]
+
     ordering = ['-created_at']
 
-    @swagger_auto_schema(
-        operation_description="List all courses with filtering, searching and ordering capabilities",
-        manual_parameters=[
-            openapi.Parameter(
-                'training_level',
-                openapi.IN_QUERY,
-                description="Filter by training level",
-                type=openapi.TYPE_STRING
-            ),
-            openapi.Parameter(
-                'class_type',
-                openapi.IN_QUERY,
-                description="Filter by class type",
-                type=openapi.TYPE_STRING
-            ),
-            openapi.Parameter(
-                'duration_weeks',
-                openapi.IN_QUERY,
-                description="Filter by duration in weeks (exact, gte, lte)",
-                type=openapi.TYPE_INTEGER
-            ),
-            openapi.Parameter(
-                'price',
-                openapi.IN_QUERY,
-                description="Filter by price (exact, gte, lte)",
-                type=openapi.TYPE_NUMBER
-            ),
-            openapi.Parameter(
-                'search',
-                openapi.IN_QUERY,
-                description="Search in name, title, or overview",
-                type=openapi.TYPE_STRING
-            ),
-            openapi.Parameter(
-                'ordering',
-                openapi.IN_QUERY,
-                description="Which field to use when ordering the results (name, price, duration_weeks, created_at)",
-                type=openapi.TYPE_STRING
-            ),
-        ],
-        responses={
-            200: CourseSerializer(many=True),
-            400: "Bad Request - Invalid parameters",
-            500: "Internal Server Error"
-        },
-        tags=['Courses']
-    )
-    def list(self, request, *args, **kwargs):
-        """Handle course listing with error handling.
-
-        Returns
-        -------
-        Response
-            HTTP response with course list or error message
-        """
-        try:
-            return super().list(request, *args, **kwargs)
-        except (ValidationError, ParseError) as e:
-            return Response(
-                {'error': str(e)},
-                status=status.HTTP_400_BAD_REQUEST
-            )
-        except Exception as e:
-            return Response(
-                {'error': f"Failed to list courses: {str(e)}"},
-                status=status.HTTP_500_INTERNAL_SERVER_ERROR
-            )
+    def get_queryset(self):
+        """Annotate the queryset with avg_rating for ordering."""
+        return Course.objects.annotate(
+            avg_rating=Avg('ratings__rating')
+        ).all()
 
 
 class RetrieveCourseView(RetrieveAPIView):

@@ -290,9 +290,10 @@ class CourseListSerializer(serializers.ModelSerializer):
         Write-only field maintained for backward compatibility
     """
 
-    average_rating = serializers.DecimalField(
+    avg_rating = serializers.DecimalField(
         max_digits=3,
         decimal_places=2,
+        default=0.00,
         read_only=True,
         help_text="Average rating from all course ratings (range: 0.00-5.00)"
     )
@@ -338,7 +339,7 @@ class CourseListSerializer(serializers.ModelSerializer):
             'training_level',
             'class_type',
             'image',
-            'average_rating',
+            'avg_rating',
             'ratings_count',
             'categories',
             'categories_input',
