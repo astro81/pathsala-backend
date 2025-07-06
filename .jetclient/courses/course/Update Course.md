@@ -2,7 +2,7 @@
 name = 'Update Course'
 description = '- Update a prexisting course'
 method = 'PATCH'
-url = '{{url}}/api/courses/update/linux/'
+url = '{{url}}/api/courses/update/Astro/'
 sortWeight = 3000000
 id = 'a2a88939-7759-49f5-8a4c-3a9f1803cfb7'
 

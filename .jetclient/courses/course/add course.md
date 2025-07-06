@@ -14,13 +14,13 @@ value = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXN
 type = 'JSON'
 raw = '''
 {
-    "name": "Angurlar",
-    "title": " ANgular Framework",
+    "name": "Astro",
+    "title": "Astro Framework",
     "duration_weeks": 8,
     "price": "15000.00",
     "training_level": "advanced",
     "class_type": "online",
-    "categories": ["Web Dev", "Backend"],
+    "categories": ["Web Dev", "Frontend"],
     "overview": "Learn the fundamentals of Python programming language from scratch.",
     "objectives": [
         "Understand basic Python syntax",

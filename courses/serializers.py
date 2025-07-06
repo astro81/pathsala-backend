@@ -127,6 +127,7 @@ class CourseSerializer(serializers.ModelSerializer):
         fields = '__all__'
         extra_kwargs = {
             'image': {'read_only': True},
+            'average_rating': {'read_only': True},
         }
 
     def get_fields(self):
@@ -290,7 +291,7 @@ class CourseListSerializer(serializers.ModelSerializer):
         Write-only field maintained for backward compatibility
     """
 
-    avg_rating = serializers.DecimalField(
+    average_rating = serializers.DecimalField(
         max_digits=3,
         decimal_places=2,
         default=0.00,
@@ -339,13 +340,16 @@ class CourseListSerializer(serializers.ModelSerializer):
             'training_level',
             'class_type',
             'image',
-            'avg_rating',
+            'average_rating',
             'ratings_count',
             'categories',
             'categories_input',
             'created_at'
         ]
 
+    def get_ratings_count(self, obj):
+        return obj.ratings.count()
+    
     def get_fields(self):
         """Dynamically adjust fields based on request method.
 

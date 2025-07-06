@@ -31,6 +31,7 @@ from rest_framework.parsers import MultiPartParser, FormParser
 from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 
+from courses.filters import CourseFilter
 from courses.models import Course
 from courses.permissions import HasCoursePermission
 from courses.serializers import CourseSerializer, CourseListSerializer, CourseImageSerializer
@@ -123,35 +124,11 @@ class CreateCourseView(CreateAPIView):
         serializer.save(owner=self.request.user)
 
 
-class CourseFilter(filters.FilterSet):
-    average_rating = filters.NumberFilter(method='filter_average_rating')
-    average_rating__gte = filters.NumberFilter(method='filter_average_rating_gte')
-    average_rating__lte = filters.NumberFilter(method='filter_average_rating_lte')
-
-    def filter_average_rating(self, queryset, name, value):
-        return queryset.annotate(avg_rating=Avg('ratings__rating')).filter(avg_rating=value)
-
-    def filter_average_rating_gte(self, queryset, name, value):
-        return queryset.annotate(avg_rating=Avg('ratings__rating')).filter(avg_rating__gte=value)
-
-    def filter_average_rating_lte(self, queryset, name, value):
-        return queryset.annotate(avg_rating=Avg('ratings__rating')).filter(avg_rating__lte=value)
-
-    class Meta:
-        model = Course
-        fields = {
-            'training_level': ['exact'],
-            'class_type': ['exact'],
-            'duration_weeks': ['exact', 'gte', 'lte'],
-            'price': ['exact', 'gte', 'lte'],
-            'title': ['exact', 'icontains'],
-            'categories__name': ['exact', 'icontains'],
-        }
-
 class ListCourseView(ListAPIView):
     """API endpoint for listing and filtering courses."""
 
     permission_classes = (AllowAny,)
+    queryset = Course.objects.all()
     serializer_class = CourseListSerializer
     filter_backends = [filters.DjangoFilterBackend, SearchFilter, OrderingFilter]
     filterset_class = CourseFilter
@@ -164,16 +141,17 @@ class ListCourseView(ListAPIView):
         'price',
         'duration_weeks',
         'created_at',
-        'avg_rating',  # Changed from average_rating to avg_rating
+        'average_rating',  # Changed from average_rating to average_rating
     ]
 
     ordering = ['-created_at']
 
-    def get_queryset(self):
-        """Annotate the queryset with avg_rating for ordering."""
-        return Course.objects.annotate(
-            avg_rating=Avg('ratings__rating')
-        ).all()
+    @swagger_auto_schema(
+        operation_description="List all courses with filtering options",
+        responses={200: CourseListSerializer(many=True)}
+    )
+    def get(self, request, *args, **kwargs):
+        return super().get(request, *args, **kwargs)
 
 
 class RetrieveCourseView(RetrieveAPIView):
