@@ -17,9 +17,10 @@ class CourseSerializer(serializers.ModelSerializer):
 
     This serializer provides:
     - List-based input/output for text fields (objectives, prerequisites, outcomes)
-    - Category management through list input
+    - Category management through list input (using 'categories' field for both read/write)
     - Rating information inclusion
     - Proper error handling for database operations
+    - Backward compatibility with 'categories_input' during transition
 
     Attributes
     ----------
@@ -40,9 +41,11 @@ class CourseSerializer(serializers.ModelSerializer):
     ratings : CourseRatingSerializer
         Nested serializer for course ratings
     categories : SerializerMethodField
-        Read-only list of category names
+        Read-only list of category names (default)
+    categories : ListField
+        Write-only field when creating/updating (context-sensitive)
     categories_input : ListField
-        Write-only field for category management
+        Write-only field maintained for backward compatibility
     """
 
     objectives = serializers.ListField(
@@ -94,16 +97,18 @@ class CourseSerializer(serializers.ModelSerializer):
         help_text="Detailed rating information"
     )
 
+    # Primary field for categories (context-sensitive)
     categories = serializers.SerializerMethodField(
         read_only=True,
         help_text="List of category names associated with the course"
     )
 
+    # Backward compatibility field
     categories_input = serializers.ListField(
         child=serializers.CharField(),
         write_only=True,
         required=False,
-        help_text="List of category names for course association"
+        help_text="DEPRECATED: Use 'categories' instead. List of category names for course association"
     )
 
     class Meta:
@@ -121,9 +126,26 @@ class CourseSerializer(serializers.ModelSerializer):
         model = Course
         fields = '__all__'
         extra_kwargs = {
-            'categories': {'read_only': True},
             'image': {'read_only': True},
         }
+
+    def get_fields(self):
+        """Dynamically adjust fields based on request method.
+
+        Adds a write-only version of the 'categories' field for create/update operations
+        while maintaining a read-only version for list/retrieve operations.
+        """
+        fields = super().get_fields()
+
+        # Add write-only categories field for write operations
+        if self.context.get('request') and self.context['request'].method in ['POST', 'PUT', 'PATCH']:
+            fields['categories'] = serializers.ListField(
+                child=serializers.CharField(),
+                write_only=True,
+                required=False,
+                help_text="List of category names for course association"
+            )
+        return fields
 
     def get_categories(self, obj):
         """Retrieve category names for serialization.
@@ -142,6 +164,16 @@ class CourseSerializer(serializers.ModelSerializer):
             return [category.name for category in obj.categories.all()]
         except Exception:
             return []
+
+    def validate(self, data):
+        """Handle backward compatibility for categories_input.
+
+        If categories_input is provided but categories is not, copy the value
+        to categories to maintain backward compatibility during transition.
+        """
+        if 'categories_input' in data and 'categories' not in data:
+            data['categories'] = data['categories_input']
+        return data
 
     def create(self, validated_data):
         """Create a new Course instance with related data.
@@ -162,8 +194,8 @@ class CourseSerializer(serializers.ModelSerializer):
             If any error occurs during creation
         """
         try:
-            # Extract categories if provided
-            category_names = validated_data.pop('categories_input', [])
+            # Extract categories if provided (using the new field name)
+            category_names = validated_data.pop('categories', [])
 
             # Convert lists to text fields
             if 'objectives' in validated_data:
@@ -208,9 +240,9 @@ class CourseSerializer(serializers.ModelSerializer):
             If any error occurs during the update
         """
         try:
-            # Handle categories update if provided
-            if 'categories_input' in validated_data:
-                category_names = validated_data.pop('categories_input')
+            # Handle categories update if provided (using new field name)
+            if 'categories' in validated_data:
+                category_names = validated_data.pop('categories')
                 instance.categories.clear()
                 for name in category_names:
                     try:
@@ -242,7 +274,7 @@ class CourseListSerializer(serializers.ModelSerializer):
 
     This serializer handles both serialization (read) and deserialization (write)
     operations for Course objects, with additional computed fields for ratings
-    and categories.
+    and categories. Uses consistent 'categories' field name for both read/write.
 
     Attributes
     ----------
@@ -251,15 +283,11 @@ class CourseListSerializer(serializers.ModelSerializer):
     ratings_count : SerializerMethodField
         Computed field for total number of ratings
     categories : SerializerMethodField
-        Computed field for list of associated category names
+        Computed field for list of associated category names (read)
+    categories : ListField
+        Write-only field when creating/updating (context-sensitive)
     categories_input : ListField
-        Write-only field for accepting category names during creation/update
-
-    Notes
-    -----
-    - Inherits from ModelSerializer for automatic field generation
-    - Includes both read-only computed fields and write-only input fields
-    - Handles potential exceptions during category retrieval
+        Write-only field maintained for backward compatibility
     """
 
     average_rating = serializers.DecimalField(
@@ -274,16 +302,18 @@ class CourseListSerializer(serializers.ModelSerializer):
         help_text="Total number of ratings submitted for this course"
     )
 
+    # Primary field for categories (context-sensitive)
     categories = serializers.SerializerMethodField(
         read_only=True,
         help_text="List of category names associated with the course"
     )
 
+    # Backward compatibility field
     categories_input = serializers.ListField(
         child=serializers.CharField(),
         write_only=True,
         required=False,
-        help_text="List of category names to associate with course (write-only)"
+        help_text="DEPRECATED: Use 'categories' instead. List of category names to associate with course"
     )
 
     class Meta:
@@ -315,11 +345,36 @@ class CourseListSerializer(serializers.ModelSerializer):
             'created_at'
         ]
 
+    def get_fields(self):
+        """Dynamically adjust fields based on request method.
+
+        Adds write-only version of 'categories' field for create/update operations
+        while maintaining read-only version for list/retrieve operations.
+        """
+        fields = super().get_fields()
+
+        # Add write-only categories field for write operations
+        if self.context.get('request') and self.context['request'].method in ['POST', 'PUT', 'PATCH']:
+            fields['categories'] = serializers.ListField(
+                child=serializers.CharField(),
+                write_only=True,
+                required=False,
+                help_text="List of category names for course association"
+            )
+        return fields
+
+    def validate(self, data):
+        """Handle backward compatibility for categories_input.
+
+        If categories_input is provided but categories is not, copy the value
+        to categories to maintain backward compatibility during transition.
+        """
+        if 'categories_input' in data and 'categories' not in data:
+            data['categories'] = data['categories_input']
+        return data
+
     def get_categories(self, obj):
         """Retrieve category names associated with the course.
-
-        Safely accesses the categories relationship and returns their names.
-        Returns empty list if any error occurs during access.
 
         Parameters
         ----------
@@ -330,16 +385,10 @@ class CourseListSerializer(serializers.ModelSerializer):
         -------
         list[str]
             Alphabetical list of category names, or empty list on error
-
-        Examples
-        --------
-        >>> serializer.get_categories(course)
-        ['Programming', 'Web Development']
         """
         try:
             return [category.name for category in obj.categories.all()]
         except Exception as e:
-            # Log error in production (omitted for brevity)
             return []
 
     def get_ratings_count(self, obj):
@@ -354,10 +403,6 @@ class CourseListSerializer(serializers.ModelSerializer):
         -------
         int
             Total number of ratings for this course
-
-        Notes
-        -----
-        Uses Django's count() method for efficient database query
         """
         return obj.ratings.count()
 

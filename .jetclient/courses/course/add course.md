@@ -8,14 +8,14 @@ id = '830c008d-0c3b-42a8-a662-0d5136589806'
 
 [[headers]]
 key = 'Authorization'
-value = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxNzg0NDQxLCJpYXQiOjE3NTE2OTgwNDEsImp0aSI6Ijc2ZTczMGE4MTJkNjQ0YjRiZWY0ZjRjMjZkY2MyZDQ3IiwidXNlcl9pZCI6ImY0OWY4NjhhLTViYmMtNGE3Mi04MjY2LTBhMjA4OGQ0ZDI4MCJ9.oek7kqXLRzsOSeZf1zfk7XU3UDh-_nllohC1RTwVcWg'
+value = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxODYyMzQxLCJpYXQiOjE3NTE3NzU5NDEsImp0aSI6ImE0ZWQ0Y2JkN2U2YTRhYTE5YWVjMGYyODM3NTgwM2QyIiwidXNlcl9pZCI6ImY0OWY4NjhhLTViYmMtNGE3Mi04MjY2LTBhMjA4OGQ0ZDI4MCJ9.m2fx39SLLrVx22hfcddR-LP0bMyJW-yv-xk7kz4T8sE'
 
 [body]
 type = 'JSON'
 raw = '''
 {
-    "name": "React",
-    "title": " JS Framework",
+    "name": "Angurlar",
+    "title": " ANgular Framework",
     "duration_weeks": 8,
     "price": "15000.00",
     "training_level": "advanced",

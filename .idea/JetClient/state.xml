@@ -137,7 +137,7 @@
                           <requestState>
                             <option name="body">
                               <bodyState>
-                                <option name="raw" value="{&#10;    &quot;username&quot;: &quot;test11&quot;,&#10;    &quot;email&quot;: &quot;test11@example.com&quot;,&#10;    &quot;password&quot;: &quot;StrongPass!23&quot;,&#10;    &quot;password2&quot;: &quot;StrongPass!23&quot;,&#10;    &quot;first_name&quot;: &quot;John&quot;,&#10;    &quot;last_name&quot;: &quot;Student&quot;,&#10;    &quot;address&quot;: &quot;123 Campus Rd&quot;,&#10;    &quot;phone_no&quot;: &quot;+1234567890&quot;,&#10;    &quot;profile_picture&quot;: null,&#10;  &#10;}&#10;" />
+                                <option name="raw" value="{&#10;    &quot;username&quot;: &quot;Aship123&quot;,&#10;    &quot;email&quot;: &quot;aship123@gmail.com&quot;,&#10;    &quot;password&quot;: &quot;StrongPass!23&quot;,&#10;    &quot;password2&quot;: &quot;StrongPass!23&quot;,&#10;  &#10;    &#10;  &#10;}&#10;" />
                                 <option name="type" value="JSON" />
                               </bodyState>
                             </option>
@@ -150,7 +150,7 @@
                           <requestState>
                             <option name="body">
                               <bodyState>
-                                <option name="raw" value="{&#10;  &quot;username&quot;: &quot;test&quot;,&#10;  &quot;password&quot;: &quot;StrongPass!23&quot;&#10;//  &#10;//   &quot;username&quot;: &quot;mod1&quot;,&#10;//  &quot;password&quot;: &quot;Mod@1234&quot;&#10;}" />
+                                <option name="raw" value="{&#10;  &quot;username&quot;: &quot;Aship123&quot;,&#10;  &quot;password&quot;: &quot;StrongPass!23&quot;&#10;//  &#10;//   &quot;username&quot;: &quot;mod1&quot;,&#10;//  &quot;password&quot;: &quot;Mod@1234&quot;&#10;}" />
                                 <option name="type" value="JSON" />
                               </bodyState>
                             </option>
@@ -352,7 +352,7 @@
                               <list>
                                 <headerState>
                                   <option name="key" value="Authorization" />
-                                  <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxNDI1MTkxLCJpYXQiOjE3NTEzMzg3OTEsImp0aSI6IjMyZDk0MDc5OGY1NjRiMTA5ZDEzZDIyMWQ1MWIxMjIzIiwidXNlcl9pZCI6ImMzZWI5NjE1LTg2ODUtNDI1OC04ZDJmLWQ3MjMzZGI3MTJkNiJ9.gF0DjGDwwS8XNrfelFcMXsID99JEDI7n_rBtb9DVqxw" />
+                                  <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxNzg0NDQxLCJpYXQiOjE3NTE2OTgwNDEsImp0aSI6Ijc2ZTczMGE4MTJkNjQ0YjRiZWY0ZjRjMjZkY2MyZDQ3IiwidXNlcl9pZCI6ImY0OWY4NjhhLTViYmMtNGE3Mi04MjY2LTBhMjA4OGQ0ZDI4MCJ9.oek7kqXLRzsOSeZf1zfk7XU3UDh-_nllohC1RTwVcWg" />
                                 </headerState>
                               </list>
                             </option>
@@ -416,7 +416,7 @@
                               <list>
                                 <headerState>
                                   <option name="key" value="Authorization" />
-                                  <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxNTU0MzE1LCJpYXQiOjE3NTE0Njc5MTUsImp0aSI6ImE2NDQ5Y2ZlMjM2MzQwOTZiODQwZDM0ZjY3MDVjOGU3IiwidXNlcl9pZCI6ImMzZWI5NjE1LTg2ODUtNDI1OC04ZDJmLWQ3MjMzZGI3MTJkNiJ9.jNVFWlWWbNvVhqbcGAMKB1OlFm2xDj_ufTuPTL3eWtA" />
+                                  <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxNzYwMzg4LCJpYXQiOjE3NTE2NzM5ODgsImp0aSI6IjhhNjA3NzUxMDgyMTRhOGQ5MjU4NjA4ZDc0ZmJkYzQyIiwidXNlcl9pZCI6ImY0OWY4NjhhLTViYmMtNGE3Mi04MjY2LTBhMjA4OGQ0ZDI4MCJ9.lYEwFKCujPqi41Dz_c5uCm6ivKe34-X111TNZkevTU0" />
                                 </headerState>
                               </list>
                             </option>
@@ -447,7 +447,7 @@
                           <requestState>
                             <option name="body">
                               <bodyState>
-                                <option name="raw" value="{&#10;    &quot;name&quot;: &quot;React&quot;,&#10;    &quot;title&quot;: &quot; JS Framework&quot;,&#10;    &quot;duration_weeks&quot;: 8,&#10;    &quot;price&quot;: &quot;15000.00&quot;,&#10;    &quot;training_level&quot;: &quot;advanced&quot;,&#10;    &quot;class_type&quot;: &quot;online&quot;,&#10;    &quot;categories&quot;: [&quot;Web Dev&quot;, &quot;Backend&quot;],&#10;    &quot;overview&quot;: &quot;Learn the fundamentals of Python programming language from scratch.&quot;,&#10;    &quot;objectives&quot;: [&#10;        &quot;Understand basic Python syntax&quot;,&#10;        &quot;Learn about variables and data types&quot;,&#10;        &quot;Master control flow statements&quot;,&#10;        &quot;Write simple Python programs&quot;&#10;    ],&#10;    &quot;prerequisites&quot;: [&#10;        &quot;Basic computer literacy&quot;,&#10;        &quot;No prior programming experience required&quot;&#10;    ],&#10;    &quot;outcomes&quot;: [&#10;        &quot;Ability to write Python scripts&quot;,&#10;        &quot;Understanding of core programming concepts&quot;,&#10;        &quot;Foundation for advanced Python topics&quot;&#10;    ],&#10;    &quot;curriculum&quot;: [&#10;        {&#10;            &quot;week&quot;: 1,&#10;            &quot;title&quot;: &quot;Introduction to Python&quot;,&#10;            &quot;topics&quot;: [&quot;Installation&quot;, &quot;Syntax basics&quot;, &quot;Variables&quot;]&#10;        },&#10;        {&#10;            &quot;week&quot;: 2,&#10;            &quot;title&quot;: &quot;Control Flow&quot;,&#10;            &quot;topics&quot;: [&quot;Conditionals&quot;, &quot;Loops&quot;, &quot;Functions&quot;]&#10;        }&#10;    ]&#10;}" />
+                                <option name="raw" value="{&#10;    &quot;name&quot;: &quot;Angurlar&quot;,&#10;    &quot;title&quot;: &quot; ANgular Framework&quot;,&#10;    &quot;duration_weeks&quot;: 8,&#10;    &quot;price&quot;: &quot;15000.00&quot;,&#10;    &quot;training_level&quot;: &quot;advanced&quot;,&#10;    &quot;class_type&quot;: &quot;online&quot;,&#10;    &quot;categories&quot;: [&quot;Web Dev&quot;, &quot;Backend&quot;],&#10;    &quot;overview&quot;: &quot;Learn the fundamentals of Python programming language from scratch.&quot;,&#10;    &quot;objectives&quot;: [&#10;        &quot;Understand basic Python syntax&quot;,&#10;        &quot;Learn about variables and data types&quot;,&#10;        &quot;Master control flow statements&quot;,&#10;        &quot;Write simple Python programs&quot;&#10;    ],&#10;    &quot;prerequisites&quot;: [&#10;        &quot;Basic computer literacy&quot;,&#10;        &quot;No prior programming experience required&quot;&#10;    ],&#10;    &quot;outcomes&quot;: [&#10;        &quot;Ability to write Python scripts&quot;,&#10;        &quot;Understanding of core programming concepts&quot;,&#10;        &quot;Foundation for advanced Python topics&quot;&#10;    ],&#10;    &quot;curriculum&quot;: [&#10;        {&#10;            &quot;week&quot;: 1,&#10;            &quot;title&quot;: &quot;Introduction to Python&quot;,&#10;            &quot;topics&quot;: [&quot;Installation&quot;, &quot;Syntax basics&quot;, &quot;Variables&quot;]&#10;        },&#10;        {&#10;            &quot;week&quot;: 2,&#10;            &quot;title&quot;: &quot;Control Flow&quot;,&#10;            &quot;topics&quot;: [&quot;Conditionals&quot;, &quot;Loops&quot;, &quot;Functions&quot;]&#10;        }&#10;    ]&#10;}" />
                                 <option name="type" value="JSON" />
                               </bodyState>
                             </option>
@@ -456,7 +456,7 @@
                               <list>
                                 <headerState>
                                   <option name="key" value="Authorization" />
-                                  <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxNjg5MTE0LCJpYXQiOjE3NTE2MDI3MTQsImp0aSI6ImI1OTgwNjcxYTBlNTRlMDZiYTgyMWRiZDdiZTI0ZDI4IiwidXNlcl9pZCI6ImMzZWI5NjE1LTg2ODUtNDI1OC04ZDJmLWQ3MjMzZGI3MTJkNiJ9.zViTKJSdPDHK0ALIlvOHKpinspJW7S7YW7usirJ8Wp0" />
+                                  <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxODYyMzQxLCJpYXQiOjE3NTE3NzU5NDEsImp0aSI6ImE0ZWQ0Y2JkN2U2YTRhYTE5YWVjMGYyODM3NTgwM2QyIiwidXNlcl9pZCI6ImY0OWY4NjhhLTViYmMtNGE3Mi04MjY2LTBhMjA4OGQ0ZDI4MCJ9.m2fx39SLLrVx22hfcddR-LP0bMyJW-yv-xk7kz4T8sE" />
                                 </headerState>
                               </list>
                             </option>
@@ -477,6 +477,7 @@
                           <requestState>
                             <option name="body">
                               <bodyState>
+                                <option name="raw" value="{&#10;    &quot;categories&quot;: [&quot;dev&quot;]&#10;}" />
                                 <option name="type" value="JSON" />
                               </bodyState>
                             </option>
@@ -485,7 +486,7 @@
                               <list>
                                 <headerState>
                                   <option name="key" value="Authorization" />
-                                  <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxNDMyNDYzLCJpYXQiOjE3NTEzNDYwNjMsImp0aSI6IjNiMzQxZjQ3ZTljNjQwM2RiY2JhYzI4MDVkZTU2YWM5IiwidXNlcl9pZCI6ImMzZWI5NjE1LTg2ODUtNDI1OC04ZDJmLWQ3MjMzZGI3MTJkNiJ9.gjXNnXX_pVeam7qOAW5FshCeWtk-o9pWkviBS_-S3Dg" />
+                                  <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxODYyMzQxLCJpYXQiOjE3NTE3NzU5NDEsImp0aSI6ImE0ZWQ0Y2JkN2U2YTRhYTE5YWVjMGYyODM3NTgwM2QyIiwidXNlcl9pZCI6ImY0OWY4NjhhLTViYmMtNGE3Mi04MjY2LTBhMjA4OGQ0ZDI4MCJ9.m2fx39SLLrVx22hfcddR-LP0bMyJW-yv-xk7kz4T8sE" />
                                 </headerState>
                               </list>
                             </option>
@@ -493,7 +494,7 @@
                             <option name="method" value="PATCH" />
                             <option name="name" value="Update Course" />
                             <option name="sortWeight" value="3000000" />
-                            <option name="url" value="{{url}}/api/courses/update/python-intermidate/" />
+                            <option name="url" value="{{url}}/api/courses/update/linux/" />
                           </requestState>
                           <requestState>
                             <option name="description" value="- Most rated courses" />
@@ -508,7 +509,7 @@
                             <option name="method" value="GET" />
                             <option name="name" value="retrieve course" />
                             <option name="sortWeight" value="5000000" />
-                            <option name="url" value="{{url}}/api/courses/SvelteKit/" />
+                            <option name="url" value="{{url}}/api/courses/linux/" />
                           </requestState>
                           <requestState>
                             <option name="body">
@@ -610,7 +611,7 @@
                     <requestState>
                       <option name="body">
                         <bodyState>
-                          <option name="raw" value="{&#10;  &quot;course&quot; : &quot;d5ead67d-8af6-475e-ba64-988b303225bf&quot;,&#10;  &quot;user&quot; : &quot;63bd0973-4d03-44bf-aeff-326e4005d5ad&quot;&#10;}" />
+                          <option name="raw" value="{&#10;  &quot;course&quot; : &quot;65c94f96-5882-4fa5-bbcf-8485be787c39&quot;,&#10;  &quot;fullName&quot; : &quot;Aship Aalam&quot;,&#10;  &quot;email&quot; : &quot;aship@Student.com&quot;,&#10;  &quot;whatsApp&quot; : &quot;9876543210&quot;,&#10;  &#10;}" />
                           <option name="type" value="JSON" />
                         </bodyState>
                       </option>
@@ -618,7 +619,7 @@
                         <list>
                           <headerState>
                             <option name="key" value="Authorization" />
-                            <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxNDI5OTkzLCJpYXQiOjE3NTEzNDM1OTMsImp0aSI6ImUxZGY2YzU2NjU2MTQxYjliYzY2YzBiNjZkZDFkZDVjIiwidXNlcl9pZCI6IjUxYjFmOTY4LWUyNjQtNDJhZi04MjFiLWQ4YTc1MDJlMTNkNCJ9.UBupzodd3MJalI0W_WO0FxYiCayK48sv41usAPngvwI" />
+                            <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxNzYwMDYxLCJpYXQiOjE3NTE2NzM2NjEsImp0aSI6IjI0NWUyNmYzNjY0MjRmMTM4Y2UyNjZlMzgwY2M4ZjBlIiwidXNlcl9pZCI6IjY0MTBkNmY1LTViZTYtNGEzOC1hYTI4LTBmNzhlZmUwZDE5YSJ9.4rOscoo1pQZu-AqpKdUU8yF9WHL8ZjQOqhHepWZ5Xw4" />
                           </headerState>
                         </list>
                       </option>
@@ -633,7 +634,7 @@
                         <list>
                           <headerState>
                             <option name="key" value="Authorization" />
-                            <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxNDMwODc3LCJpYXQiOjE3NTEzNDQ0NzcsImp0aSI6IjFiY2M0NWU2ODZjNDQ1NmQ5ZGE4YzBkYmJjNDM3Yjk0IiwidXNlcl9pZCI6IjZkNjhhY2U5LTgyMmMtNDExYi1iMjAyLTU0MDU3YzkwMmI0ZSJ9.fMVKI61xR-RFMFf_0QfaKi2blqjzbMoNN-YsDbkWQb8" />
+                            <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxNzYwMzg4LCJpYXQiOjE3NTE2NzM5ODgsImp0aSI6IjhhNjA3NzUxMDgyMTRhOGQ5MjU4NjA4ZDc0ZmJkYzQyIiwidXNlcl9pZCI6ImY0OWY4NjhhLTViYmMtNGE3Mi04MjY2LTBhMjA4OGQ0ZDI4MCJ9.lYEwFKCujPqi41Dz_c5uCm6ivKe34-X111TNZkevTU0" />
                           </headerState>
                         </list>
                       </option>
@@ -654,7 +655,7 @@
                         <list>
                           <headerState>
                             <option name="key" value="Authorization" />
-                            <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxNDUwNzIwLCJpYXQiOjE3NTEzNjQzMjAsImp0aSI6ImRhM2QxYTIxMDMxMTRiN2E5ZTc5MzY3NTdkMTgyNzQ5IiwidXNlcl9pZCI6IjZkNjhhY2U5LTgyMmMtNDExYi1iMjAyLTU0MDU3YzkwMmI0ZSJ9.xFPIivTfS_bSBTcsVG-Pbd2wH3g4sFQXLtSzWxoHJYc" />
+                            <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxNzg1MjM4LCJpYXQiOjE3NTE2OTg4MzgsImp0aSI6IjY4NjYyOTcwZWUyMDRlZGFhY2YxMzBlYWMzOGFiMmU1IiwidXNlcl9pZCI6ImY2MTE5MTcwLTc5YmMtNDA4Yy1iOWU2LWMzNTlhYmU3MjI5OSJ9.g3uFlzFKk0bA9iGui3UAW1uR1uJRvZpTM0pulu0iFG0" />
                           </headerState>
                         </list>
                       </option>
@@ -662,7 +663,7 @@
                       <option name="method" value="PATCH" />
                       <option name="name" value="edit enrollment" />
                       <option name="sortWeight" value="3000000" />
-                      <option name="url" value="{{url}}/api/enrollment/editenrollment/fdeb7bde-dc3e-4a79-b7b4-829b1d2a6b81/" />
+                      <option name="url" value="{{url}}/api/enrollment/editenrollment/a259259d-4fc3-494f-9bb6-a74b0252904d/" />
                     </requestState>
                   </list>
                 </option>
