@@ -59,8 +59,8 @@ class Enrollment(models.Model):
     payment = models.CharField(
         choices=[
             ('paid', 'Paid'),
-            ('Not paid', 'not paid'),
-            ('Pending', 'Pending'),
+            ('verify', 'Verify'),
+            ('pending', 'Pending'),
         ],
         default='unpaid',
         help_text="Current status of the payment request"

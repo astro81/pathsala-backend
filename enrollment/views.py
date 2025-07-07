@@ -63,8 +63,8 @@ class AddEnrollmentView(APIView):
             if Enrollment.objects.filter(user=request.user, course=course).exists():
                 return Response({'message': 'Already enrolled'}, status=status.HTTP_400_BAD_REQUEST)
 
-            serializer.save()
-            return Response({'message': 'Enrolled successfully'}, status=status.HTTP_201_CREATED)
+            serializer.save(course = course)
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
 
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
@@ -222,7 +222,8 @@ class EditEnrollmentView(UpdateAPIView):
         if serializer.is_valid():
             # Check if status is becoming approved
             new_status = serializer.validated_data.get("status")
-            if new_status == "approved" and enrollment.status != "approved":
+            new_payment = serializer.validated_data.get("payment")
+            if (new_status == "approved" and enrollment.status != "approved") and (new_payment == "paid" and enrollment.payment != "paid" ) :
                 approver = self.request.user
                 serializer.save(
                     Enrolled_Date=timezone.now(),

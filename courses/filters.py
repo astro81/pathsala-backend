@@ -28,7 +28,7 @@ class CourseFilter(django_filters.FilterSet):
             'duration_weeks': ['exact', 'gte', 'lte'],
             'training_level': ['exact'],
             'class_type': ['exact'],
-            'categories__name': ['exact', 'icontains'],
+            'categories__name': ['icontains'],
         }
 
     def filter_by_rating(self, queryset, name, value):
