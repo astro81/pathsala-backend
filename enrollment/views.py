@@ -243,7 +243,7 @@ class EditEnrollmentView(UpdateAPIView):
 
             else:
                 serializer.save()
-                return Response({"message" : "Enrollment already approved"},status=status.HTTP_400_BAD_REQUEST)
+                return Response({"message" : "Enrollment Made Denied"},status=status.HTTP_200_OK)
 
 
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
