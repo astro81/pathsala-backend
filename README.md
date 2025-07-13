@@ -10,7 +10,7 @@ nix-shell -p uv python312
 
 ## Required Libraries
 ```python
-django django-role-permissions djangorestframework pillow djangorestframework-simplejwt drf-yasg
+django django-role-permissions djangorestframework pillow djangorestframework-simplejwt drf-yasg icecream(optional)
 ```
 
 # Create Super Admin
